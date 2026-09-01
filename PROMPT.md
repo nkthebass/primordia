@@ -71,10 +71,13 @@ burn-in at full scale, and the world left running.
 
 A second session — the one that produced this file — added:
 
-- costs for traits that had no cost (a 272-sim-year run showed camouflage, armour,
-  lifespan and toxin tolerance all pinned to 1.0: saturation, not selection)
-- grazing reach that scales with body size, so being large is not purely a metabolic tax
-- perception in squared distance and `bincount` scatter-adds (throughput work)
+- costs for traits that had no cost, and body-size mechanics that give mass a return
+  (a 272-sim-year run showed camouflage, armour, lifespan and toxin tolerance all pinned
+  to 1.0 while size collapsed to the floor: saturation, not selection). These work, and
+  they destabilise the predator tier, so they ship off by default and documented — see
+  the realism pack in the README
+- perception in squared distance and adaptive `bincount` scatter-adds (throughput work)
+- a guard so a benchmark can no longer overwrite a long-lived saved world, which it did
 - the game-master skill and its scheduled task
 - this repository
 

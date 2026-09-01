@@ -116,9 +116,9 @@
     "graze_floor": 0.12,
     "repro_cooldown": 220,
     "juvenile_size": 0.45,
-    "cooldown_lifespan": 0.3,
-    "reach_size_min": 0.12,
-    "reach_size_span": 0.55
+    "cooldown_lifespan": 1.0,
+    "reach_size_min": 99.0,
+    "reach_size_span": 1.0
   },
   "energy": {
     "basal_rate": 0.1,
@@ -144,16 +144,19 @@
     "struct_birth_frac": 0.45,
     "tissue_floor": 0.3,
     "cost_camouflage": 0.35,
-    "cost_toxin_tol": 0.85,
-    "cost_sense": 0.4,
-    "cost_armor": 0.25,
+    "cost_toxin_tol": 0.6,
+    "cost_sense": 0.16,
+    "cost_armor": 0.16,
     "cost_fangs": 0.2,
     "move_cost_armor": 0.6,
-    "store_eff_penalty": 1.4,
-    "speed_eff_penalty": 1.55,
-    "digest_size_min": 0.55,
-    "digest_size_gain": 0.95,
-    "cost_lifespan": 0.3
+    "store_eff_penalty": 1.0,
+    "speed_eff_penalty": 1.0,
+    "digest_size_min": 1.0,
+    "digest_size_gain": 0.0,
+    "cost_lifespan": 0.12,
+    "fangs_reach": 0.0,
+    "trait_cost_scale": 0.0,
+    "meta_floor": 0.0
   },
   "genetics": {
     "mutation_rate_global": 1.0,

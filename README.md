@@ -147,14 +147,6 @@ reporting buckets. Species are not declared — they are clusters in genome spac
 that drift apart, get a procedural Latin binomial and a stable hue, and are recorded
 with their parent so the phylogeny is a real record of descent.
 
-**Traits cost something.** Left free, selection pins every beneficial gene to its ceiling
-within a few dozen generations — a 272-sim-year run had camouflage at 0.95, armour 0.92,
-lifespan 0.93 and metabolic efficiency 0.94, which is saturation rather than selection.
-Camouflage, toxin tolerance, sense range, armour and fangs are paid for in upkeep; armour
-also in movement; metabolic efficiency in reserve capacity and power output; long life in
-breeding rate. Grazing reach scales with body size, so being large buys a bigger meal
-rather than only a bigger metabolic bill.
-
 **Brains are genes.** Each creature carries its own 13→8→6 MLP as 166 weight genes.
 One forward pass covers the whole population as two batched matmuls. There are no
 per-creature Python loops anywhere in the hot path.
@@ -171,6 +163,35 @@ biosphere starves before selection can act. After the founders, every one of tho
 weights is an ordinary mutable gene and nothing is held in place. Predators are seeded
 once the prey base can carry them — a prey *density*, with a tick floor so the wave cannot
 fire on the founder stock itself — and not onto bare rock.
+
+---
+
+## The realism pack (off by default)
+
+Left free, selection pins every beneficial gene to its ceiling. A 272-sim-year run
+finished with camouflage 0.95, armour 0.92, lifespan 0.93 and metabolic efficiency 0.94,
+while body size collapsed to the floor at 0.08 — saturation rather than selection, and no
+body left large enough to be anybody's prey.
+
+The mechanics that fix that are implemented and measured, but they destabilise the top of
+the food chain, so they ship **off**. Each is a config value in `config/default.json`:
+
+| knob | off | on | what it does |
+|---|---|---|---|
+| `energy.trait_cost_scale` | `0.0` | `0.5` | camouflage, toxin tolerance, sense range, armour, fangs and lifespan cost upkeep; armour also costs movement |
+| `energy.digest_size_min` / `digest_size_gain` | `1.0` / `0.0` | `0.75` / `0.42` | Jarman–Bell: a larger gut extracts more from the same forage |
+| `fauna.reach_size_min` / `reach_size_span` | `99` / `1.0` | `0.12` / `0.55` | large grazers crop the neighbouring cells, not only the one they stand on |
+| `energy.fangs_reach` | `0.0` | `0.85` | weapons offset body mass when deciding what counts as prey |
+| `energy.speed_eff_penalty` | `1.0` | `1.55` | metabolic efficiency trades against power output |
+| `energy.store_eff_penalty` | `1.0` | `1.40` | metabolic efficiency trades against reserve capacity |
+| `energy.meta_floor` | `0.0` | `0.40` | diminishing returns on metabolic efficiency |
+| `fauna.cooldown_lifespan` | `1.0` | `0.30` | long life trades against breeding rate |
+
+Turned on together, camouflage settles around 0.27–0.34 and armour 0.29–0.50 instead of
+pinning, and body size holds near 0.5 instead of collapsing. The cost is the predator
+tier: herbivores evolving large bodies get harder to prey on, and in 20-sim-year runs the
+carnivores did not persist past year 5. Both halves of that are real and neither is
+solved — the knobs are there so you can see the trade rather than inherit my choice.
 
 ---
 

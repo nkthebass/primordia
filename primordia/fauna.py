@@ -343,17 +343,22 @@ class Fauna:
         # lifespan, toxin tolerance and metabolic efficiency all pin to 1.0 within a few
         # dozen generations -- a free lunch is not a selection pressure, it is a ratchet.
         e = self.cfg.energy
-        upkeep = (1.0
-                  + float(e["cost_camouflage"]) * d[rows, gi["camouflage"]]
+        # One knob for the whole trade-off.  At 0 every trait is free and selection pins
+        # them all to 1.0; at 1 they are fully costed and settle at interior optima, but
+        # predators -- who cannot economise on sense range -- pay the most and the top of
+        # the food chain gets fragile.  See README, "Traits cost something".
+        tcs = float(e["trait_cost_scale"])
+        upkeep = (1.0 + tcs * (
+                  float(e["cost_camouflage"]) * d[rows, gi["camouflage"]]
                   + float(e["cost_toxin_tol"]) * d[rows, gi["toxin_tolerance"]]
                   + float(e["cost_sense"]) * d[rows, gi["sense_range"]]
                   + float(e["cost_armor"]) * d[rows, gi["armor"]]
                   + float(e["cost_fangs"]) * d[rows, gi["fangs"]]
-                  + float(e["cost_lifespan"]) * d[rows, gi["lifespan"]]).astype(np.float32)
+                  + float(e["cost_lifespan"]) * d[rows, gi["lifespan"]])).astype(np.float32)
         stats = {
             "size": size,
             "basal_cost": upkeep,
-            "move_cost": (1.0 + float(e["move_cost_armor"])
+            "move_cost": (1.0 + tcs * float(e["move_cost_armor"])
                           * d[rows, gi["armor"]]).astype(np.float32),
             "bite_size": float(self.cfg.fauna["bite_scale"]) * size,
             "attack_power": d[rows, gi["fangs"]] + 0.6 * size,
@@ -400,6 +405,13 @@ class Fauna:
         cy, cx, by, bx = self._bins(rows)
         size = stats["size"]
         diet = d[rows, gi["diet"]]
+        # What decides whether you can take something is not mass alone but mass plus
+        # weaponry.  Tying predation to raw size means that when herbivores evolve large
+        # bodies no predator can be big enough to eat them and the tier goes extinct.
+        hunt = (size * (1.0 + float(self.cfg.energy["fangs_reach"])
+                        * d[rows, gi["fangs"]])).astype(np.float32)
+        hunt_full = np.zeros(self.cap, np.float32)
+        hunt_full[rows] = hunt
         sense = 1.0 + d[rows, gi["sense_range"]] * MAX_SENSE + stats["sense_bonus"] * 4.0
 
         # --- bin representatives: largest and smallest creature per bin -------
@@ -452,14 +464,14 @@ class Fauna:
                     # Kin recognition.  With ontogeny the smallest creature in any bin is
                     # usually somebody's juvenile, so without this a founding predator
                     # stock eats its own recruitment and cannot establish.
-                    pm = (visible & (size_full[c] < size * PREY_SIZE_RATIO)
+                    pm = (visible & (size_full[c] < hunt * PREY_SIZE_RATIO)
                           & (diet > 0.18)
                           & (self.species[c] != self.species[rows]))
                     upd = pm & (dist < best_prey_d)
                     best_prey_d = np.where(upd, dist, best_prey_d)
                     best_prey = np.where(upd, c, best_prey)
                 else:
-                    tm = (visible & (size_full[c] > size * THREAT_SIZE_RATIO)
+                    tm = (visible & (hunt_full[c] > size * THREAT_SIZE_RATIO)
                           & (diet_full[c] > 0.35))
                     upd = tm & (dist < best_threat_d)
                     best_threat_d = np.where(upd, dist, best_threat_d)
@@ -839,7 +851,8 @@ class Fauna:
 
         basal = (float(cfg_e["basal_rate"]) * np.power(np.maximum(size, 0.02),
                                                        float(cfg_e["size_exp"]))
-                 / (0.40 + 0.60 * meta))
+                 / np.maximum(float(cfg_e["meta_floor"])
+                              + (1.0 - float(cfg_e["meta_floor"])) * meta, 0.1))
         # predators run slightly leaner per unit mass (plan §13)
         basal *= (1.0 - float(cfg_e["carnivore_basal_discount"]) * diet)
         basal *= stats["basal_cost"]
