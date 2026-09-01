@@ -239,6 +239,13 @@ class Sim:
                 self._ckpt_last = time.time()
             self._ckpt_fails = 0
             return p
+        except ckpt.StaleSaveRefused as e:
+            # not a failure: this run is deliberately not allowed to clobber a longer one
+            self.checkpoints_enabled = False
+            self._ckpt_last = time.time()
+            self.log_event("checkpoint",
+                           f"Checkpointing disabled for this run: {e}")
+            return ""
         except Exception as e:
             self._ckpt_fails += 1
             self._ckpt_last = time.time()

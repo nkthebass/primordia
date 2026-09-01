@@ -11,6 +11,7 @@ import numpy as np
 
 LATEST = "checkpoint_latest"
 ROTATIONS = 3
+STALE_GUARD_TICKS = 5000     # slack so a normal resume-and-continue is never blocked
 
 
 def _state_dir(root: str) -> str:
@@ -20,9 +21,29 @@ def _state_dir(root: str) -> str:
     return d
 
 
-def save(sim, root: str, label: str | None = None) -> str:
+class StaleSaveRefused(Exception):
+    """Raised when a save would replace a checkpoint from a much longer-lived world."""
+
+
+def save(sim, root: str, label: str | None = None, force: bool = False) -> str:
     d = _state_dir(root)
     base = os.path.join(d, LATEST)
+
+    # A benchmark or a test run pointed at the default state/ directory will happily
+    # save over a world that has been going for hundreds of sim-years.  Refuse, loudly,
+    # unless the caller says it means it.
+    if not force and os.path.exists(base + ".json"):
+        try:
+            with open(base + ".json", "r", encoding="utf-8") as f:
+                existing = int(json.load(f).get("tick", 0))
+        except Exception:
+            existing = 0
+        if existing > int(sim.tick) + STALE_GUARD_TICKS:
+            raise StaleSaveRefused(
+                f"refusing to overwrite state/{LATEST} at tick {existing} with a save at "
+                f"tick {sim.tick}; this run is {existing - int(sim.tick)} ticks behind the "
+                f"world already saved there. Point the run at its own root directory, set "
+                f"sim.checkpoints_enabled = False, or save with force=True.")
     arrays: dict = {}
     for part in (sim.world, sim.weather, sim.flora, sim.decomposers, sim.fauna,
                  sim.scent, sim.events):
