@@ -1,0 +1,41 @@
+PRIMORDIA intervention files
+============================
+Drop a .json file (one object, or a list of objects) into this folder.  The sim polls
+every `sim.intervention_every` ticks, applies it, and moves it to done/ (or failed/
+with a .err.txt explaining why).  Nothing here is executed as code.
+
+{"type":"trigger_event","event":"wildfire","x":120,"y":300,"radius":25,"intensity":0.8}
+  events: storm | wildfire | flood | volcano | cold_snap | meteor
+
+{"type":"climate","param":"rain_mult","value":0.7,"ramp_ticks":2000}
+  param: rain_mult (0.05-4.0) | temp_offset (-0.6-0.6)
+
+{"type":"tune","path":"energy.basal_rate","value":0.13}
+  any hot-reloadable config leaf (weather./events./flora./decomposer./fauna./energy./
+  genetics./speciation./scent./sim./monitor.)
+
+{"type":"seed_organism","kingdom":"fauna","count":10,"x":50,"y":50,
+ "genome":"random_alien"}
+{"type":"seed_organism","kingdom":"fauna","count":30,"x":50,"y":50,
+ "genome":{"diet":0.9,"size":0.7,"speed":0.8}}
+
+{"type":"note","text":"Carnivores were collapsing so I seeded a prey refuge."}
+
+{"type":"add_gene","kingdom":"fauna","name":"bioluminescence",
+ "init":{"mean":0.05,"std":0.05},"mut_std":0.04,
+ "effects":[
+   {"stat":"mate_appeal","op":"add","per_unit":0.5,"when":{"is_night":true}},
+   {"stat":"detectability","op":"add","per_unit":0.4,"when":{"is_night":true}},
+   {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.1}]}
+
+  stats: basal_cost move_cost bite_size attack_power armor_eff detectability
+         sense_bonus mate_appeal cold_resist heat_resist toxin_resist plant_digest
+         meat_digest fire_resist swim_eff scent_strength fertility_local
+         growth_mult seed_bonus water_efficiency toxin_bonus   (last four: flora)
+  ops:   add | mul_per_unit
+  when:  is_night(bool) season(spring|summer|autumn|winter)
+         biome(ocean|coast|plains|hills|mountain) in_water(bool)
+         moisture_gt/lt(num) temp_gt/lt(num)
+
+{"type":"checkpoint","label":"before-the-great-drought"}
+{"type":"set_speed","value":16}

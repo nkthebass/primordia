@@ -1,0 +1,224 @@
+"""History series, warning detection, state/summary.json writer."""
+from __future__ import annotations
+
+import json
+import os
+import time
+from collections import deque
+
+import numpy as np
+
+SERIES = ("tick", "herbivore", "omnivore", "carnivore", "flora_biomass",
+          "species_count", "diet_mean", "temp", "climate_osc", "decomposer",
+          "fertility", "nutrients", "tps", "pop", "gen_variance", "meat")
+
+
+class Stats:
+    def __init__(self, cfg, sim):
+        self.cfg = cfg
+        self.sim = sim
+        n = int(cfg.sim["history_max"])
+        self.h = {k: deque(maxlen=n) for k in SERIES}
+        self.markers: deque = deque(maxlen=400)   # disaster tick markers
+        self.year_snapshots: dict[int, dict] = {}
+        self.warnings: list[str] = []
+        self.last_summary_tick = -1
+
+    # ---------------------------------------------------------------- sampling
+    def sample(self, tick: int) -> None:
+        s = self.sim
+        fa, fl, wr, wx = s.fauna, s.flora, s.world, s.weather
+        herb, omni, carn = fa.trophic_counts()
+        rows = fa.alive_idx
+        diet_mean = float(fa.gene("diet", rows).mean()) if len(rows) else 0.0
+        var = self._genetic_variance(rows)
+        vals = {
+            "tick": tick, "herbivore": herb, "omnivore": omni, "carnivore": carn,
+            "flora_biomass": float(fl.biomass.sum()),
+            "species_count": len(s.speciation.living()),
+            "diet_mean": diet_mean,
+            "temp": float(wr.temperature.mean()),
+            "climate_osc": float(wx.climate_osc),
+            "decomposer": float(s.decomposers.density.sum()),
+            "fertility": float(wr.soil_fertility.mean()),
+            "nutrients": float(wr.nutrients.mean()),
+            "tps": float(s.tps),
+            "pop": int(fa.pop),
+            "gen_variance": var,
+            "meat": float(fa.meat.sum()),
+        }
+        for k, v in vals.items():
+            self.h[k].append(v)
+
+    def _genetic_variance(self, rows) -> float:
+        fa = self.sim.fauna
+        if len(rows) < 8:
+            return 0.0
+        cols = self.sim.speciation.cols
+        v = fa.schema.data[np.ix_(rows[::max(1, len(rows) // 2000)], cols)]
+        return float(v.var(axis=0).mean())
+
+    def mark(self, tick: int, kind: str) -> None:
+        self.markers.append({"tick": int(tick), "kind": kind})
+
+    # ---------------------------------------------------------------- warnings
+    def compute_warnings(self, tick: int) -> list[str]:
+        w: list[str] = []
+        s = self.sim
+        tpy = int(self.cfg.weather["ticks_per_year"])
+        h = self.h
+        n = len(h["tick"])
+        if n < 4:
+            return w
+        step = max(1, tpy // int(self.cfg.sim["housekeeping_every"]))
+        prev_i = max(0, n - 1 - step)
+        cur = {k: h[k][-1] for k in ("herbivore", "omnivore", "carnivore",
+                                     "flora_biomass", "gen_variance", "pop")}
+        old = {k: h[k][prev_i] for k in cur}
+
+        for level in ("herbivore", "omnivore", "carnivore"):
+            c, o = cur[level], old[level]
+            if c == 0 and o > 0:
+                w.append(f"{level}s are extinct")
+            elif o > 30 and c < 0.5 * o:
+                w.append(f"{level} biomass down {100 * (1 - c / max(o, 1)):.0f}% over last year")
+            elif 0 < c < 25:
+                w.append(f"{level} population critically low ({c})")
+
+        if cur["flora_biomass"] < 0.35 * max(old["flora_biomass"], 1e-6):
+            w.append("flora biomass down >65% over last year")
+
+        # stagnation: variance plateau over 3 years
+        need = 3 * step
+        if n > need:
+            recent = [h["gen_variance"][i] for i in range(n - need, n)]
+            if recent and max(recent) > 0:
+                spread = (max(recent) - min(recent)) / max(recent)
+                if spread < 0.06:
+                    w.append("genetic variance flat for 3 years (stagnation)")
+
+        living = s.speciation.living()
+        total = max(1, s.fauna.pop)
+        for sp in living[:3]:
+            if sp.pop / total > 0.7:
+                w.append(f"monoculture: {sp.name} is {100 * sp.pop / total:.0f}% of all fauna")
+        if s.fauna.pop >= 0.97 * s.fauna.cap:
+            w.append("population at hard cap (runaway)")
+        if s.fauna.pop == 0:
+            w.append("TOTAL FAUNAL EXTINCTION")
+        if s.monitor:
+            w += s.monitor.warnings()
+        self.warnings = w
+        return w
+
+    # ---------------------------------------------------------------- summary
+    def summary(self, tick: int) -> dict:
+        s = self.sim
+        fa, fl, wr, wx = s.fauna, s.flora, s.world, s.weather
+        herb, omni, carn = fa.trophic_counts()
+        species = []
+        for sp in s.speciation.living()[:24]:
+            trend = self._trend(sp)
+            species.append({
+                "id": sp.id, "name": sp.name, "rank": sp.rank, "pop": sp.pop,
+                "parent": sp.parent, "founded_tick": sp.founded,
+                "diet_mean": round(sp.diet_mean, 3), "trend": trend,
+                "notable_traits": {k: v for k, v in sorted(
+                    sp.traits.items(), key=lambda kv: -abs(kv[1] - 0.4))[:4]},
+            })
+        res = s.monitor.snapshot() if s.monitor else {}
+        recent = [f"{e['kind']} {e['stamp']}" for e in list(s.chronicle.recent)[-8:]
+                  if e["kind"] in ("wildfire", "flood", "volcano", "meteor", "storm",
+                                   "cold_snap", "speciation", "extinction", "gene")]
+        return {
+            "tick": int(tick), "year": wx.year(tick), "season": wx.season(tick),
+            "tps": round(float(s.tps), 2),
+            "real_time": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "climate": {"osc": round(float(wx.climate_osc), 3),
+                        "global_temp_offset": round(float(wx.global_temp_offset), 3),
+                        "mean_temp": round(float(wr.temperature.mean()), 3),
+                        "drought": bool(wx.is_drought()),
+                        "rain_mult": round(float(self.cfg.weather["rain_mult"]), 3)},
+            "populations": {
+                "flora_biomass": round(float(fl.biomass.sum()), 1),
+                "flora_cover": round(float((fl.biomass > 1e-3).mean()), 4),
+                "herbivore": herb, "omnivore": omni, "carnivore": carn,
+                "total_fauna": int(fa.pop),
+                "decomposer": round(float(s.decomposers.density.sum()), 1),
+                "carrion": round(float(fa.meat.sum()), 1),
+            },
+            "soil": {"fertility_mean": round(float(wr.soil_fertility.mean()), 4),
+                     "nutrients_mean": round(float(wr.nutrients.mean()), 4)},
+            "species": species,
+            "species_total_ever": len(s.speciation.species),
+            "genetic_variance": round(self._genetic_variance(fa.alive_idx), 5),
+            "warnings": self.compute_warnings(tick),
+            "recent_events": recent,
+            "active_events": [e.to_json() for e in s.events.active][:10],
+            "runtime_genes": [
+                {"kingdom": k, "name": g.name, "added_tick": g.added_tick,
+                 "effects": g.effects,
+                 "mean": round(float(self._gene_mean(k, g.name)), 4)}
+                for k, g in s.runtime_gene_list()],
+            "interventions": {"applied": s.intervention.applied_count,
+                              "failed": s.intervention.failed_count,
+                              "last_tick": s.intervention.last_tick},
+            "resources": res,
+            "config_hot": {"mutation_rate_global": self.cfg.genetics["mutation_rate_global"],
+                           "energy.basal_rate": self.cfg.energy["basal_rate"]},
+        }
+
+    def _gene_mean(self, kingdom: str, name: str) -> float:
+        s = self.sim
+        if kingdom == "fauna":
+            rows = s.fauna.alive_idx
+            if len(rows) == 0 or not s.fauna.schema.has(name):
+                return 0.0
+            return float(s.fauna.gene(name, rows).mean())
+        if not s.flora.genome.has(name):
+            return 0.0
+        m = s.flora.biomass > 1e-3
+        p = s.flora.genome.plane(name)
+        return float(p[m].mean()) if m.any() else 0.0
+
+    def _trend(self, sp) -> str:
+        ser = [p for _, p in sp.pop_series[-14:]]
+        if len(ser) < 4:
+            return "new"
+        a = sum(ser[:len(ser) // 2]) / max(1, len(ser) // 2)
+        b = sum(ser[len(ser) // 2:]) / max(1, len(ser) - len(ser) // 2)
+        if b > a * 1.18:
+            return "growing"
+        if b < a * 0.82:
+            return "declining"
+        return "stable"
+
+    def write_summary(self, tick: int, path: str) -> dict:
+        d = self.summary(tick)
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=2)
+        os.replace(tmp, path)
+        self.last_summary_tick = tick
+        return d
+
+    # ---------------------------------------------------------------- viewer
+    def series(self, max_points: int = 1000) -> dict:
+        n = len(self.h["tick"])
+        if n == 0:
+            return {k: [] for k in SERIES} | {"markers": []}
+        step = max(1, n // max_points)
+        out = {k: list(self.h[k])[::step] for k in SERIES}
+        out["markers"] = list(self.markers)
+        return out
+
+    def meta(self) -> dict:
+        return {"h": {k: list(v) for k, v in self.h.items()},
+                "markers": list(self.markers)}
+
+    def load(self, meta: dict) -> None:
+        n = int(self.cfg.sim["history_max"])
+        for k, v in meta.get("h", {}).items():
+            if k in self.h:
+                self.h[k] = deque(v, maxlen=n)
+        self.markers = deque(meta.get("markers", []), maxlen=400)
