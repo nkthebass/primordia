@@ -280,6 +280,7 @@ function applyState(d){
     row("CPU",r.cpu_pct||0,100,"%")+
     row("RAM",r.ram_gb||0,20,"GB")+
     row("VRAM",r.vram_gb||0,10,"GB")+
+    (r.vram_card_gb!==undefined?`<div title="whole card, including other applications">card</div><div class="bar"><i style="width:${Math.min(100,100*r.vram_card_gb/10)}%"></i></div><div>${r.vram_card_gb.toFixed(1)}GB</div>`:"")+
     row("GPU",r.gpu_temp_c||0,90,"°C")+
     `<div>flora</div><div class="bar"><i style="width:${(d.flora_cover*100).toFixed(0)}%"></i></div><div>${(d.flora_cover*100).toFixed(0)}%</div>`+
     `<div>soil</div><div class="bar"><i style="width:${Math.min(100,d.fertility*50).toFixed(0)}%"></i></div><div>${d.fertility.toFixed(3)}</div>`+

@@ -238,7 +238,10 @@ both once at startup and picks the winner, reporting the choice in the viewer's 
 
 ## Safety
 
-`monitor.py` samples CPU/RAM/VRAM/GPU-temp every 2 s. Three consecutive breaches walk a
+`monitor.py` samples CPU/RAM/VRAM/GPU-temp every 2 s. VRAM is measured **per process**,
+not per card — on a machine that is also a daily desktop, another application's memory
+would otherwise pin the simulation at the bottom of the throttle ladder forever. The
+viewer shows both, ours and the card total. Three consecutive breaches walk a
 throttle ladder — drop max population 10 %, halve the viewer frame rate, cap the tick
 rate, finally pause with a Chronicle alert — and it steps back down as soon as the box
 recovers. The world checkpoints every 5 minutes, on every sim-year, and on clean

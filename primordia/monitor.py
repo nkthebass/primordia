@@ -29,10 +29,39 @@ def _init_nvml():
     return _nvml
 
 
+def _self_vram_gb(nv) -> float:
+    """VRAM attributable to *this* process, in GB.
+
+    nvmlDeviceGetMemoryInfo reports the whole card, which on a daily-driver desktop is
+    mostly somebody else's browser.  Throttling the simulation for memory it never
+    allocated pins it at the bottom of the ladder forever.
+    """
+    pid = os.getpid()
+    for fn in ("nvmlDeviceGetComputeRunningProcesses_v3",
+               "nvmlDeviceGetComputeRunningProcesses_v2",
+               "nvmlDeviceGetComputeRunningProcesses"):
+        getter = getattr(nv, fn, None)
+        if getter is None:
+            continue
+        try:
+            for proc in getter(_nvml_handle):
+                if int(proc.pid) == pid and proc.usedGpuMemory:
+                    return float(proc.usedGpuMemory) / 1e9
+            return 0.0
+        except Exception:
+            continue
+    try:
+        from . import fields
+        return float(fields.vram_used_gb())
+    except Exception:
+        return 0.0
+
+
 def gpu_sample() -> dict:
     nv = _init_nvml()
     if not nv:
-        return {"vram_gb": 0.0, "gpu_util": 0.0, "gpu_temp_c": 0.0, "gpu": "n/a"}
+        return {"vram_gb": 0.0, "vram_card_gb": 0.0, "gpu_util": 0.0,
+                "gpu_temp_c": 0.0, "gpu": "n/a"}
     try:
         mem = nv.nvmlDeviceGetMemoryInfo(_nvml_handle)
         util = nv.nvmlDeviceGetUtilizationRates(_nvml_handle)
@@ -40,10 +69,13 @@ def gpu_sample() -> dict:
         name = nv.nvmlDeviceGetName(_nvml_handle)
         if isinstance(name, bytes):
             name = name.decode()
-        return {"vram_gb": mem.used / 1e9, "gpu_util": float(util.gpu),
+        return {"vram_gb": _self_vram_gb(nv),        # ours -- what the cap governs
+                "vram_card_gb": mem.used / 1e9,      # whole card -- context only
+                "gpu_util": float(util.gpu),
                 "gpu_temp_c": float(temp), "gpu": name}
     except Exception:
-        return {"vram_gb": 0.0, "gpu_util": 0.0, "gpu_temp_c": 0.0, "gpu": "n/a"}
+        return {"vram_gb": 0.0, "vram_card_gb": 0.0, "gpu_util": 0.0,
+                "gpu_temp_c": 0.0, "gpu": "n/a"}
 
 
 class Monitor:
@@ -102,7 +134,8 @@ class Monitor:
         try:
             with open(self.logfile, "a", encoding="utf-8") as f:
                 f.write(f"{s['t']:.0f} cpu={s['cpu_pct']:.0f} ram={s['ram_gb']:.2f} "
-                        f"vram={s['vram_gb']:.2f} gputemp={s['gpu_temp_c']:.0f} "
+                        f"vram={s['vram_gb']:.2f} vramcard={s.get('vram_card_gb', 0):.2f} "
+                        f"gputemp={s['gpu_temp_c']:.0f} "
                         f"gpuutil={s['gpu_util']:.0f} throttle={self.throttle_level}\n")
         except Exception:
             pass
@@ -116,7 +149,7 @@ class Monitor:
         if s["ram_gb"] > float(m["ram_cap_gb"]):
             out.append(f"RAM {s['ram_gb']:.1f}GB > {m['ram_cap_gb']}GB")
         if s["vram_gb"] > float(m["vram_cap_gb"]):
-            out.append(f"VRAM {s['vram_gb']:.1f}GB > {m['vram_cap_gb']}GB")
+            out.append(f"VRAM {s['vram_gb']:.1f}GB > {m['vram_cap_gb']}GB (this process)")
         if s["gpu_temp_c"] > float(m["gpu_temp_cap_c"]):
             out.append(f"GPU {s['gpu_temp_c']:.0f}C > {m['gpu_temp_cap_c']}C")
         return out
