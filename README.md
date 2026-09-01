@@ -172,7 +172,11 @@ weights is an ordinary mutable gene and nothing is held in place. Predators are 
 once the prey base can carry them — a prey *density*, with a tick floor so the wave cannot
 fire on the founder stock itself — and not onto bare rock. Founders arrive provisioned:
 seeded with a single `start_energy` a predator wave has about 250 ticks of fuel and 221 of
-255 starve inside that window, before any of them find a first kill.
+255 starve inside that window, before any of them find a first kill. And they arrive in
+**three waves** at fresh hotspots rather than one: a single wave is a single gamble that
+overshoots its local prey and crashes, and whether the survivors recover is a coin-flip.
+Three smaller waves are three independent chances, which took the acceptance result from
+3 of 6 seeds to 5 of 6.
 
 ---
 
@@ -198,11 +202,16 @@ the food chain, so they ship **off**. Each is a config value in `config/default.
 | `fauna.cooldown_lifespan` | `1.0` | `0.30` | long life trades against breeding rate |
 
 Turned on together, camouflage settles around 0.27–0.34 and armour 0.29–0.50 instead of
-pinning, and body size holds near 0.5 instead of collapsing. They remain off by default
-because they were measured against a predation model that has since been replaced — the
-size treadmill they interacted badly with is gone, so they deserve re-measuring rather
-than the blanket warning they used to carry. `config/realism.json` turns the whole set on
-in one go:
+pinning, and body size holds near 0.5 instead of collapsing.
+
+They stay off by default, and re-measuring them against the current predation model says
+why. Over the same six seeds the pack passes S4 in **2 of 6** against the default's 5 of 6,
+and total fauna lands at 407–1,025 against 2,384–5,689. The original diagnosis — that they
+fed a body-size treadmill predators could not win — is obsolete, since predation no longer
+turns on body mass. What remains is simpler: when every trait costs upkeep, the same
+primary production supports far fewer animals, and small populations are demographically
+fragile. The genes behave better and the ecosystem is thinner. That is a real trade, not a
+bug, and it is yours to make. `config/realism.json` turns the whole set on in one go:
 
 ```bash
 .venv\Scripts\python.exe -m primordia.main --config config/realism.json
@@ -215,13 +224,12 @@ in at least one of three seeded runs. Measured over six seeds at 384²:
 
 | | result |
 |---|---|
-| full criterion met | **3 of 6 seeds** |
-| carnivores present at year 5 | 3 of 6 |
-| omnivores present at year 5 | **6 of 6** (15–119 individuals) |
-| speciation events | 18–21 in every seed |
+| full criterion met | **5 of 6 seeds** |
+| carnivores present at year 5 | 5 of 6 |
+| omnivores present at year 5 | **6 of 6** (39–61 individuals) |
+| speciation events | 15–19 in every seed |
 
-The carnivore tier establishes about half the time. That is stochastic rather than
-configurable: the founder wave overshoots, crashes, and either recovers or does not.
+The one failing seed loses its carnivores and keeps everything else.
 
 ---
 
@@ -256,12 +264,16 @@ chronicle/   chronicle.md + chronicle.jsonl
 
 ## Performance
 
-Measured at 384²: ~36 ticks/s early in a run, ~37 at 4k creatures, and **24.6 ticks/s at
-9.2k** — still under the plan's ≥30-at-10k budget. Perception is no longer the hot path
+Measured at 384²: ~36 ticks/s early in a run, ~37 at 4k creatures, and **25.3 ticks/s
+held at 10.2k** — 84% of the plan's ≥30-at-10k budget. Perception is no longer the hot path
 (squared-distance comparison and bins sized so a 3×3 neighbourhood already covers maximum
 sense range took it from 42% of the tick to 20%); what remains is spread evenly across
 perception, action, the microbe layer, flora growth and weather, with no single target
-left. Closing the last 20% means numba or a restructure, not another micro-optimisation.
+left. Closing the last 16% is not a numba job: a JIT'd parallel perception scan, verified to
+produce identical targets across 13,932 selections, measured **21.0 tps against numpy's
+27.0** and was removed rather than shipped. The scan is ~139k tiny iterations per tick, so
+parallel dispatch costs more than it saves while numpy's gathers are already
+memory-bandwidth-bound. What is left would be a restructure, not an optimisation.
 
 Scatter-adds pick `bincount` or `ufunc.at` per call by population-to-grid ratio, since
 bincount always costs O(grid) and loses badly when few creatures scatter onto a large one.

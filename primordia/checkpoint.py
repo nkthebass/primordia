@@ -64,6 +64,9 @@ def save(sim, root: str, label: str | None = None, force: bool = False) -> str:
         "rng": _rng_state(sim.rng),
         "runtime_genes": sim.runtime_gene_defs(),
         "pending_predators": int(sim.pending_predators),
+        "predator_waves": int(sim.predator_waves),
+        "predator_waves_total": int(sim.predator_waves_total),
+        "next_predator_tick": int(sim.next_predator_tick),
     }
     # pid-tagged temp names: two processes sharing a state/ directory must not fight
     # over the same scratch file
@@ -147,6 +150,9 @@ def load(sim, root: str) -> int:
     except Exception:
         pass
     sim.pending_predators = int(meta.get("pending_predators", -1))
+    sim.predator_waves = int(meta.get("predator_waves", 0))
+    sim.predator_waves_total = int(meta.get("predator_waves_total", 1))
+    sim.next_predator_tick = int(meta.get("next_predator_tick", 0))
     sim.tick = int(meta["tick"])
     return sim.tick
 

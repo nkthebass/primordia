@@ -197,7 +197,9 @@
     "predator_delay_ticks": 4000,
     "predator_seed_prey_density": 0.0115,
     "predator_min_tick": 900,
-    "predator_seed_frac": 0.1
+    "predator_seed_frac": 0.12,
+    "predator_waves": 3,
+    "predator_wave_gap": 900
   },
   "monitor": {
     "sample_interval": 2.0,

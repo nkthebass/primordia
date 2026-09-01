@@ -414,7 +414,7 @@ class Fauna:
         d = self.schema.data
         gi = self.gi
         cy, cx, by, bx = self._bins(rows)
-        size = stats["size"]
+        size = np.asarray(stats["size"], np.float32)
         diet = d[rows, gi["diet"]]
         # What decides whether you can take something is not mass alone but mass plus
         # weaponry.  Tying predation to raw size means that when herbivores evolve large
@@ -424,8 +424,8 @@ class Fauna:
         # must out-grow them, the gene ceiling arrives, and the tier dies.  Power against
         # armour makes fangs and armour the arms race -- which is what those genes are
         # for -- and lets a small well-armed hunter take a large soft grazer.
-        power = stats["attack_power"]
-        armour = stats["armor_eff"]
+        power = np.asarray(stats["attack_power"], np.float32)
+        armour = np.asarray(stats["armor_eff"], np.float32)
         power_full = np.zeros(self.cap, np.float32)
         power_full[rows] = power
         armour_full = np.zeros(self.cap, np.float32)
@@ -499,6 +499,13 @@ class Fauna:
                     best_threat_d = np.where(upd, dist, best_threat_d)
                     best_threat = np.where(upd, c, best_threat)
 
+        return self._finish_perceive(
+            rows, ctx, stats, n, G, d, gi, cy, cx, diet,
+            best_prey, best_prey_d, best_threat, best_threat_d)
+
+    def _finish_perceive(self, rows, ctx, stats, n, G, d, gi, cy, cx, diet,
+                         best_prey, best_prey_d, best_threat, best_threat_d):
+        """Turn the chosen targets into the brain's input vector."""
         def rel(target, tdist):
             has = target >= 0
             t = np.where(has, target, 0)

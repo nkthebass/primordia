@@ -64,6 +64,9 @@ class Sim:
 
         self.frame_listeners: list = []
         self.pending_predators = -1
+        self.predator_waves_total = 1
+        self.predator_waves = 0
+        self.next_predator_tick = 0
         self.seeded = False
         self.last_summary: dict = {}
         self.paused_reason = ""
@@ -90,6 +93,9 @@ class Sim:
         # deadline, not a schedule: predators arrive as soon as the prey base can carry
         # them, or at this tick at the latest
         self.pending_predators = int(self.cfg.sim.get("predator_delay_ticks", 4000))
+        self.predator_waves_total = max(1, int(self.cfg.sim.get("predator_waves", 3)))
+        self.predator_waves = self.predator_waves_total
+        self.next_predator_tick = int(self.cfg.sim.get("predator_min_tick", 900))
         self.seeded = True
         self.log_event("world",
                        f"A world of {self.world.G}x{self.world.G} cells condenses out of "
@@ -157,21 +163,30 @@ class Sim:
 
     def _housekeeping(self, tick: int) -> None:
         cfg = self.cfg
-        if self.pending_predators >= 0 and tick >= int(cfg.sim.get("predator_min_tick", 900)):
+        if self.predator_waves > 0 and tick >= self.next_predator_tick:
             h, o, _ = self.fauna.trophic_counts()
             # A density, not a count: 600 prey is a crowd on a 192 grid and a rumour on a
-            # 384 one.  The tick floor above stops the wave firing on the founder stock
+            # 384 one.  The tick floor stops the first wave firing on the founder stock
             # itself, before the herbivores have had a single generation to establish.
             need = float(cfg.sim.get("predator_seed_prey_density", 0.0115)) * (self.world.G ** 2)
             if (h + o) >= need or tick >= self.pending_predators:
-                self.pending_predators = -1
-                n = self.fauna.seed_founders(
-                    tick, only={"hunter"}, at=self.fauna.prey_hotspot(),
-                    count=int(np.clip(float(cfg.sim.get("predator_seed_frac", 0.10))
-                                      * (h + o), 30, 1500)))
+                # One big wave is a single gamble: it overshoots the local prey, crashes,
+                # and either the survivors recover or the tier is gone for good.  Several
+                # smaller waves at fresh hotspots are several independent chances.
+                total = int(np.clip(float(cfg.sim.get("predator_seed_frac", 0.12)) * (h + o),
+                                    30, 1500))
+                per = max(10, total // max(1, self.predator_waves_total))
+                n = self.fauna.seed_founders(tick, only={"hunter"},
+                                             at=self.fauna.prey_hotspot(), count=per)
+                self.predator_waves -= 1
+                self.next_predator_tick = tick + int(cfg.sim.get("predator_wave_gap", 900))
+                if self.predator_waves == 0:
+                    self.pending_predators = -1
+                wave = self.predator_waves_total - self.predator_waves
                 self.log_event(
                     "world",
-                    f"Something learns to hunt: {n} predators appear among herds "
+                    f"Something learns to hunt (wave {wave} of "
+                    f"{self.predator_waves_total}): {n} predators appear among herds "
                     f"{h + o} strong.")
         every = int(cfg.sim["housekeeping_every"])
         if tick % int(cfg.world["erosion_interval"]) == 0:
