@@ -271,6 +271,12 @@ class Sim:
             return ""
 
     def resume(self) -> int:
+        saved_g = int(ckpt.load_meta(self.root)["world"]["G"])
+        if saved_g != self.world.G:
+            raise ValueError(
+                f"this simulation is {self.world.G}x{self.world.G} but the checkpoint "
+                f"holds a {saved_g}x{saved_g} world. Resume it at its own size "
+                f"(--size {saved_g}) or start fresh.")
         with self.lock:
             t = ckpt.load(self, self.root)
             self.seeded = True

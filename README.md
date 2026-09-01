@@ -29,7 +29,8 @@ Then launch the world:
 ```
 
 Open **http://127.0.0.1:8710**. To continue an existing world instead of generating a
-new one, add `--resume`.
+new one, add `--resume` — the saved world's grid size and population cap win over
+anything on the command line, since you are resuming *that* world.
 
 Useful flags: `--seed N`, `--headless --ticks N`, `--report path.json`, `--fresh`,
 `--no-monitor`, `--config extra.json`.

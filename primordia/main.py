@@ -149,6 +149,29 @@ def main(argv=None) -> int:
         return stage_test(args)
 
     cfg = build_config(args)
+
+    # A checkpoint describes a world of a particular size.  Resuming it into a simulation
+    # built at some other size loads the arrays and then dies on a shape mismatch several
+    # ticks later, so the saved world's geometry wins over anything on the command line.
+    if args.resume and not args.fresh and ckpt.exists(ROOT):
+        try:
+            saved = ckpt.load_meta(ROOT).get("config", {})
+            for path, label in (("world.size", "--size"),
+                                ("fauna.max_pop", "--max-pop")):
+                sec, key = path.split(".")
+                want = saved.get(sec, {}).get(key)
+                if want is None:
+                    continue
+                have = cfg.get(path)
+                if have != want:
+                    print(f"[primordia] {label} {have} ignored: the saved world is "
+                          f"{want}; resuming it as it was")
+                cfg.set(path, want)
+        except Exception as e:
+            print(f"[primordia] could not read the checkpoint header ({e}); "
+                  f"starting fresh instead")
+            args.resume = False
+
     backend = fields.init_backend(cfg.get("device", "auto"))
     sim = Sim(cfg, ROOT, with_monitor=not args.no_monitor)
 
