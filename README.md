@@ -138,6 +138,14 @@ the soil matter a gram of plant returns when it dies; animals excrete continuous
 fire releases a plant's own matter as ash rather than inventing any. Energy is the only
 thing that enters, and it enters as sunlight.
 
+**Predation is decided by weapons, not weight.** Whether something counts as prey is
+attack power against armour, with a clear margin — not a body-mass ratio. A mass ratio
+forces a treadmill: prey evolve larger, predators have to out-grow them, the gene ceiling
+arrives, and the tier dies. Power against armour makes fangs and armour the arms race,
+which is what those genes are for, and lets a small well-armed hunter take a large soft
+grazer. Meat-eaters also sprint: prey speed is under ferocious selection and shares the
+same gene ceiling, so without a diet-scaled burst no chase ever closes.
+
 **Nothing is scripted.** Biomes are not painted — plants carry twelve genes and the
 best-fitted seedling wins each cell, so forest, scrub and desert fall out of selection.
 Trophic roles are not behaviour branches — one continuous `diet` gene sets plant and
@@ -162,7 +170,9 @@ gradient) and a hunger gate on attacking. A random MLP never eats and the whole
 biosphere starves before selection can act. After the founders, every one of those
 weights is an ordinary mutable gene and nothing is held in place. Predators are seeded
 once the prey base can carry them — a prey *density*, with a tick floor so the wave cannot
-fire on the founder stock itself — and not onto bare rock.
+fire on the founder stock itself — and not onto bare rock. Founders arrive provisioned:
+seeded with a single `start_energy` a predator wave has about 250 ticks of fuel and 221 of
+255 starve inside that window, before any of them find a first kill.
 
 ---
 
@@ -188,10 +198,30 @@ the food chain, so they ship **off**. Each is a config value in `config/default.
 | `fauna.cooldown_lifespan` | `1.0` | `0.30` | long life trades against breeding rate |
 
 Turned on together, camouflage settles around 0.27–0.34 and armour 0.29–0.50 instead of
-pinning, and body size holds near 0.5 instead of collapsing. The cost is the predator
-tier: herbivores evolving large bodies get harder to prey on, and in 20-sim-year runs the
-carnivores did not persist past year 5. Both halves of that are real and neither is
-solved — the knobs are there so you can see the trade rather than inherit my choice.
+pinning, and body size holds near 0.5 instead of collapsing. They remain off by default
+because they were measured against a predation model that has since been replaced — the
+size treadmill they interacted badly with is gone, so they deserve re-measuring rather
+than the blanket warning they used to carry. `config/realism.json` turns the whole set on
+in one go:
+
+```bash
+.venv\Scripts\python.exe -m primordia.main --config config/realism.json
+```
+
+## Acceptance
+
+S4 asks for ≥2 speciation events in five sim-years and all three trophic buckets nonzero,
+in at least one of three seeded runs. Measured over six seeds at 384²:
+
+| | result |
+|---|---|
+| full criterion met | **3 of 6 seeds** |
+| carnivores present at year 5 | 3 of 6 |
+| omnivores present at year 5 | **6 of 6** (15–119 individuals) |
+| speciation events | 18–21 in every seed |
+
+The carnivore tier establishes about half the time. That is stochastic rather than
+configurable: the founder wave overshoots, crashes, and either recovers or does not.
 
 ---
 
@@ -226,11 +256,19 @@ chronicle/   chronicle.md + chronicle.jsonl
 
 ## Performance
 
-At 384² the staged test measures 43.5 ticks/s early in a run, settling to ~26 ticks/s at
-around 10k creatures — under the plan's ≥30 budget at that population. Perception is the
-hot path; the spatial bins are sized so a 3x3 neighbourhood already reaches maximum sense
-range, and the microbe layer and plant seeding are substepped (verified to leave the flora
-equilibrium unchanged: cover 0.634 vs 0.635, biomass within 7%).
+Measured at 384²: ~36 ticks/s early in a run, ~37 at 4k creatures, and **24.6 ticks/s at
+9.2k** — still under the plan's ≥30-at-10k budget. Perception is no longer the hot path
+(squared-distance comparison and bins sized so a 3×3 neighbourhood already covers maximum
+sense range took it from 42% of the tick to 20%); what remains is spread evenly across
+perception, action, the microbe layer, flora growth and weather, with no single target
+left. Closing the last 20% means numba or a restructure, not another micro-optimisation.
+
+Scatter-adds pick `bincount` or `ufunc.at` per call by population-to-grid ratio, since
+bincount always costs O(grid) and loses badly when few creatures scatter onto a large one.
+The microbe layer and plant seeding are substepped, verified to leave the flora equilibrium
+unchanged (cover 0.634 vs 0.635, biomass within 7%). One consequence worth knowing: because
+the scatter algorithm varies with population, floating-point summation order does too, so a
+seed no longer reproduces a fixed world run to run.
 
 torch/CUDA is detected and kept as the fallback contract, but at these grid sizes the
 host<->device copy dominates a 3x3 stencil and numpy is 9-16x faster. The sim benchmarks

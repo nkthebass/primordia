@@ -118,7 +118,8 @@
     "juvenile_size": 0.45,
     "cooldown_lifespan": 1.0,
     "reach_size_min": 99.0,
-    "reach_size_span": 1.0
+    "reach_size_span": 1.0,
+    "founder_energy_mult": 3.5
   },
   "energy": {
     "basal_rate": 0.1,
@@ -156,7 +157,9 @@
     "cost_lifespan": 0.12,
     "fangs_reach": 0.0,
     "trait_cost_scale": 0.0,
-    "meta_floor": 0.0
+    "meta_floor": 0.0,
+    "sprint_diet": 0.38,
+    "founder_condition": 0.55
   },
   "genetics": {
     "mutation_rate_global": 1.0,

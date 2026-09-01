@@ -38,11 +38,12 @@ MAX_SENSE = 12.0         # cells at sense_range == 1
 MAX_SPEED = 0.85         # cells/tick at speed == 1
 BIN = 6                  # spatial bin size in cells
 NEIGH = [(dy, dx) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
-# A predator takes prey distinctly smaller than itself.  At a near-parity threshold every
-# creature is prey to anything a hair larger, and a predator guild grinds itself to
-# nothing on its own members instead of eating herbivores.
-PREY_SIZE_RATIO = 0.72
-THREAT_SIZE_RATIO = 1.30
+# Predation is decided by attack power against armour, with a clear margin so that
+# near-parity does not turn a guild into a meat grinder that consumes itself, and a loose
+# mass ceiling so nothing hunts something several times its own size.
+PREY_POWER_MARGIN = 1.25
+THREAT_POWER_MARGIN = 1.25
+MAX_PREY_SIZE_MULT = 2.5
 
 ACT_IDLE, ACT_MOVE, ACT_EAT, ACT_ATTACK, ACT_BREED, ACT_FLEE = 0, 1, 2, 3, 4, 5
 ACTION_NAMES = ("idle", "move", "eat", "attack", "breed", "flee")
@@ -105,8 +106,8 @@ FOUNDERS = [
                   "sense_range": 0.45, BIAS_EAT: 1.3,
                   BIAS_BREED: 0.6, **CHASE, **FLEE, **TRACK, **HUNGER_GATE,
                   _w2(4, OUT_ATTACK): 1.4, BIAS_ATTACK: -0.2}),
-    ("hunter",   2.20, {"diet": 0.85, "size": 0.46, "speed": 0.72, "fangs": 0.62,
-                  "sense_range": 0.78, BIAS_EAT: 1.2,
+    ("hunter",   2.20, {"diet": 0.85, "size": 0.46, "speed": 0.85, "fangs": 0.62,
+                  "sense_range": 0.78, "speed": 0.85, BIAS_EAT: 1.2,
                   BIAS_BREED: 0.6, **CHASE, **TRACK, **HUNGER_GATE,
                   _w2(4, OUT_ATTACK): 2.0, BIAS_ATTACK: 0.1}),
 ]
@@ -219,7 +220,8 @@ class Fauna:
 
     def spawn(self, n: int, cx: float | None = None, cy: float | None = None,
               radius: float = 12.0, archetype: dict | None = None,
-              alien: bool = False, tick: int = 0) -> np.ndarray:
+              alien: bool = False, tick: int = 0,
+              energy_mult: float = 1.0) -> np.ndarray:
         """Vectorized spawn.  Returns the indices created."""
         idx = self._free_slots(n)
         if len(idx) == 0:
@@ -254,8 +256,13 @@ class Fauna:
         self.y[idx] = py
         self.x[idx] = px
         self.alive[idx] = True
-        self.energy[idx] = float(self.cfg.energy["start_energy"])
-        self.tissue[idx] = 0.0
+        # Founders arrive as established adults, not as newborns.  Seeded with one
+        # start_energy a predator wave has about 250 ticks of fuel and starves before it
+        # can find its first kill -- 221 of 255 died inside that window.
+        self.energy[idx] = float(self.cfg.energy["start_energy"]) * float(energy_mult)
+        self.tissue[idx] = (float(self.cfg.energy["tissue_store"])
+                            * self.schema.data[idx, self.schema.index["size"]]
+                            * float(self.cfg.energy["founder_condition"]))
         self.health[idx] = 1.0
         self.age[idx] = 0.0
         self.matter[idx] = 0.0
@@ -317,8 +324,12 @@ class Fauna:
             cy = float(np.clip(base_y + self.rng.normal(0, off), 0, self.G - 1))
             cx = float((base_x + self.rng.normal(0, off)) % self.G)
             want = int(count) if count is not None else int(per * share)
+            # a predator wave crowded into one hotspot competes with itself for the same
+            # few prey, so spread it wider than the herbivore cradle
+            spread = 0.45 if name == "hunter" else 0.30
             n += len(self.spawn(max(4, want), cx=cx, cy=cy,
-                                radius=self.G * 0.30, tick=tick, archetype=arch))
+                                radius=self.G * spread, tick=tick, archetype=arch,
+                                energy_mult=float(self.cfg.fauna["founder_energy_mult"])))
         return n
 
     def _refresh(self) -> None:
@@ -408,18 +419,26 @@ class Fauna:
         # What decides whether you can take something is not mass alone but mass plus
         # weaponry.  Tying predation to raw size means that when herbivores evolve large
         # bodies no predator can be big enough to eat them and the tier goes extinct.
-        hunt = (size * (1.0 + float(self.cfg.energy["fangs_reach"])
-                        * d[rows, gi["fangs"]])).astype(np.float32)
-        hunt_full = np.zeros(self.cap, np.float32)
-        hunt_full[rows] = hunt
+        # What makes something huntable is whether you could beat it, not what it weighs.
+        # A hard size ratio forces a body-mass treadmill: prey evolve larger, predators
+        # must out-grow them, the gene ceiling arrives, and the tier dies.  Power against
+        # armour makes fangs and armour the arms race -- which is what those genes are
+        # for -- and lets a small well-armed hunter take a large soft grazer.
+        power = stats["attack_power"]
+        armour = stats["armor_eff"]
+        power_full = np.zeros(self.cap, np.float32)
+        power_full[rows] = power
+        armour_full = np.zeros(self.cap, np.float32)
+        armour_full[rows] = armour
         sense = 1.0 + d[rows, gi["sense_range"]] * MAX_SENSE + stats["sense_bonus"] * 4.0
 
-        # --- bin representatives: largest and smallest creature per bin -------
+        # --- bin representatives: the softest target and the hardest hitter ----
         big_idx = np.full((nb, nb), -1, np.int64)
         small_idx = np.full((nb, nb), -1, np.int64)
-        order = np.argsort(size, kind="stable")
-        big_idx[by[order], bx[order]] = rows[order]        # last write = largest
-        small_idx[by[order[::-1]], bx[order[::-1]]] = rows[order[::-1]]
+        o_pow = np.argsort(power, kind="stable")
+        big_idx[by[o_pow], bx[o_pow]] = rows[o_pow]          # last write = most dangerous
+        o_arm = np.argsort(-armour, kind="stable")
+        small_idx[by[o_arm], bx[o_arm]] = rows[o_arm]        # last write = least armoured
 
         # visibility: camouflage shrinks the range at which you are seen (2x at night)
         detect = np.clip(stats["detectability"], 0.05, 2.0)
@@ -464,14 +483,17 @@ class Fauna:
                     # Kin recognition.  With ontogeny the smallest creature in any bin is
                     # usually somebody's juvenile, so without this a founding predator
                     # stock eats its own recruitment and cannot establish.
-                    pm = (visible & (size_full[c] < hunt * PREY_SIZE_RATIO)
+                    pm = (visible
+                          & (power > armour_full[c] * PREY_POWER_MARGIN)
+                          & (size_full[c] < size * MAX_PREY_SIZE_MULT)
                           & (diet > 0.18)
                           & (self.species[c] != self.species[rows]))
                     upd = pm & (dist < best_prey_d)
                     best_prey_d = np.where(upd, dist, best_prey_d)
                     best_prey = np.where(upd, c, best_prey)
                 else:
-                    tm = (visible & (hunt_full[c] > size * THREAT_SIZE_RATIO)
+                    tm = (visible
+                          & (power_full[c] > armour * THREAT_POWER_MARGIN)
                           & (diet_full[c] > 0.35))
                     upd = tm & (dist < best_threat_d)
                     best_threat_d = np.where(upd, dist, best_threat_d)
@@ -542,7 +564,13 @@ class Fauna:
         power = (float(cfg_e["speed_eff_penalty"])
                  - (float(cfg_e["speed_eff_penalty"]) - 1.0)
                  * d[rows, gi["metabolism_eff"]]).astype(np.float32)
-        vel = (mv + noise) * (speed_g * MAX_SPEED * power)[:, None] * (1.0 + 0.35 * flee)[:, None]
+        # Sprint musculature.  Prey speed is under ferocious selection and shares the same
+        # gene ceiling as a hunter's, so once the herds are as fast as the predators no
+        # chase ever closes and the top of the food chain quietly starves. A meat-eater
+        # trades endurance for burst; this is the fast-twitch half of that trade.
+        sprint = 1.0 + float(cfg_e["sprint_diet"]) * d[rows, gi["diet"]]
+        vel = ((mv + noise) * (speed_g * MAX_SPEED * power * sprint)[:, None]
+               * (1.0 + 0.35 * flee)[:, None])
         vmag = np.sqrt(vel[:, 0] ** 2 + vel[:, 1] ** 2)
         newx = wrap_x(self.x[rows] + vel[:, 0], G)
         newy = np.clip(self.y[rows] + vel[:, 1], 0.0, G - 1.001)
@@ -581,12 +609,16 @@ class Fauna:
         graze = float(cfg_f["graze_fraction"])
         reach = np.clip((size - float(cfg_f["reach_size_min"]))
                         / float(cfg_f["reach_size_span"]), 0.0, 1.0).astype(np.float32)
-        ny = [np.clip(cy - 1, 0, G - 1), np.clip(cy + 1, 0, G - 1), cy, cy]
-        nx = [cx, cx, (cx - 1) % G, (cx + 1) % G]
-        near = [np.maximum(0.0, self.flora.biomass[a, b] - float(cfg_f["graze_floor"]))
-                for a, b in zip(ny, nx)]
-        avail_near = sum(near) * reach
-        avail_all = avail + avail_near
+        # four gathers and four scatters per tick for nothing when reach is disabled
+        use_reach = bool(reach.any())
+        if use_reach:
+            ny = [np.clip(cy - 1, 0, G - 1), np.clip(cy + 1, 0, G - 1), cy, cy]
+            nx = [cx, cx, (cx - 1) % G, (cx + 1) % G]
+            near = [np.maximum(0.0, self.flora.biomass[a, b] - float(cfg_f["graze_floor"]))
+                    for a, b in zip(ny, nx)]
+            avail_all = avail + sum(near) * reach
+        else:
+            avail_all = avail
         take = np.minimum(bite, avail_all * graze) * want_eat * (stats["plant_digest"] > 0.02)
         take = np.maximum(take, 0.0)
         edens0 = self.flora.energy_density()[cy, cx]
@@ -594,10 +626,13 @@ class Fauna:
                               * stats["plant_digest"], 1e-6)
         take = np.minimum(take, room / per_unit)      # do not harvest what you cannot store
         if take.any():
-            share = take / np.maximum(avail_all, 1e-6)
-            scatter_sub(self.flora.biomass, cy, cx, avail * share)
-            for (a, b), nb in zip(zip(ny, nx), near):
-                scatter_sub(self.flora.biomass, a, b, nb * reach * share)
+            if use_reach:
+                share = take / np.maximum(avail_all, 1e-6)
+                scatter_sub(self.flora.biomass, cy, cx, avail * share)
+                for (a, b), nb in zip(zip(ny, nx), near):
+                    scatter_sub(self.flora.biomass, a, b, nb * reach * share)
+            else:
+                scatter_sub(self.flora.biomass, cy, cx, take)
             np.clip(self.flora.biomass, 0.0, None, out=self.flora.biomass)
             gainE = take * per_unit
             # toxin arms race: mostly a digestive tax on the energy you extract, with a

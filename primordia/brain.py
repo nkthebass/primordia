@@ -54,6 +54,8 @@ class Brain:
         b1 = g[:, o:o + N_B1]; o += N_B1
         w2 = g[:, o:o + N_W2].reshape(n, N_HID, N_OUT); o += N_W2
         b2 = g[:, o:o + N_B2]
-        h = np.tanh(np.einsum("ni,nih->nh", inputs, w1, optimize=True) + b1)
-        out = np.tanh(np.einsum("nh,nho->no", h, w2, optimize=True) + b2)
+        # optimize=False on purpose: for a two-operand contraction the path search costs
+        # more than it can ever save, and this runs every tick over the whole population
+        h = np.tanh(np.einsum("ni,nih->nh", inputs, w1, optimize=False) + b1)
+        out = np.tanh(np.einsum("nh,nho->no", h, w2, optimize=False) + b2)
         return out.astype(np.float32, copy=False)

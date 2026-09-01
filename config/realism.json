@@ -1,0 +1,16 @@
+{
+  "_comment": "The realism pack: traits cost something and body mass earns something. Pass with --config config/realism.json. See README, 'The realism pack'.",
+  "energy": {
+    "trait_cost_scale": 0.5,
+    "digest_size_min": 0.75,
+    "digest_size_gain": 0.42,
+    "speed_eff_penalty": 1.55,
+    "store_eff_penalty": 1.40,
+    "meta_floor": 0.40
+  },
+  "fauna": {
+    "cooldown_lifespan": 0.30,
+    "reach_size_min": 0.12,
+    "reach_size_span": 0.55
+  }
+}
