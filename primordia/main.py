@@ -155,11 +155,17 @@ def main(argv=None) -> int:
     # ticks later, so the saved world's geometry wins over anything on the command line.
     if args.resume and not args.fresh and ckpt.exists(ROOT):
         try:
-            saved = ckpt.load_meta(ROOT).get("config", {})
+            head = ckpt.load_meta(ROOT)
+            saved = head.get("config", {})
             for path, label in (("world.size", "--size"),
                                 ("fauna.max_pop", "--max-pop")):
                 sec, key = path.split(".")
                 want = saved.get(sec, {}).get(key)
+                if path == "fauna.max_pop":
+                    # the allocated capacity, not the config value: the watchdog lowers
+                    # max_pop under load and that lowered number is what gets saved, while
+                    # the arrays on disk are still the size they were allocated at
+                    want = head.get("fauna", {}).get("cap", want)
                 if want is None:
                     continue
                 have = cfg.get(path)

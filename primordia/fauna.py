@@ -1037,10 +1037,21 @@ class Fauna:
         return {"schema": self.schema.schema_json(), "next_uid": self._next_uid,
                 "cap": self.cap}
 
+    # per-creature scratch that is derived every tick and so is never checkpointed --
+    # but it still has to be resized when a restored world has a different capacity
+    DERIVED = ("size_eff",)
+
     def load(self, npz, meta: dict) -> None:
-        self.cap = int(meta["cap"])
+        # The checkpoint is authoritative about capacity.  config's max_pop can differ --
+        # the watchdog lowers it under load and that lowered value gets saved -- and a
+        # single array left at the config size crashes thousands of ticks later, when a
+        # birth first lands past its end.
+        self.cap = int(npz["fauna_alive"].shape[0])
         self.schema = GenomeSchema.from_schema_json(meta["schema"], self.cap)
         self.schema.data = npz["fauna_genes"]
+        self.schema.capacity = int(self.schema.data.shape[0])
+        for name in self.DERIVED:
+            setattr(self, name, np.zeros(self.cap, np.float32))
         self.brain = Brain(self.schema)
         self.effects = EffectEngine(self.schema)
         self.gi = {n: self.schema.index[n] for n in BODY_NAMES}
@@ -1049,4 +1060,8 @@ class Fauna:
         self.meat = npz["fauna_meat"]
         self.meat_matter = npz["fauna_meat_matter"]
         self._next_uid = int(meta["next_uid"])
+        bad = [k for k in self.ARRAYS if len(getattr(self, k)) != self.cap]
+        if bad or self.schema.data.shape[0] != self.cap:
+            raise ValueError(f"checkpoint is inconsistent: capacity {self.cap} but "
+                             f"{bad or 'the genome matrix'} disagree")
         self._refresh()

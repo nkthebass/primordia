@@ -287,6 +287,19 @@ torch/CUDA is detected and kept as the fallback contract, but at these grid size
 host<->device copy dominates a 3x3 stencil and numpy is 9-16x faster. The sim benchmarks
 both once at startup and picks the winner, reporting the choice in the viewer's header.
 
+## Tests
+
+```bash
+.venv\Scripts\python.exe tests	est_resume.py
+```
+
+Checkpoint and resume regressions, run as a plain script with no test framework. Each case
+in it was a live bug that only surfaced thousands of ticks after the resume that caused
+it: a restored world taking its capacity from config rather than from the checkpoint, a
+resume into a differently-shaped world, a runtime-added gene losing its effects, and a
+short run overwriting a long-lived world. They run against temporary directories and never
+touch `state/`.
+
 ## Safety
 
 `monitor.py` samples CPU/RAM/VRAM/GPU-temp every 2 s. VRAM is measured **per process**,
