@@ -5,6 +5,9 @@ interventions/done/*
 interventions/failed/*
 interventions/*.json
 
+# stdout/stderr captured from a running sim
+logs/
+
 # python
 .venv/
 __pycache__/
