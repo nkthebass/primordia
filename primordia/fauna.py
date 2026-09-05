@@ -141,6 +141,21 @@ def scatter_sub(grid, cy, cx, vals) -> None:
     scatter_add(grid, cy, cx, -np.asarray(vals, np.float32))
 
 
+def reflect_y(v, G: int):
+    """Bounce a y coordinate off the poles instead of pinning it to them.
+
+    Clamping makes the top and bottom rows absorbing: drifting in costs nothing and
+    leaving requires directed movement, so over enough ticks the boundary swallows the
+    population.  It did -- 14,326 of 19,986 creatures ended up inside the last two rows
+    of a 384-row world, which read from every summary as a thriving pelagic ecotype and
+    was in fact a queue against a wall.
+    """
+    top = np.float32(G - 1.001)
+    v = np.abs(v)                       # reflect across y = 0
+    v = np.where(v > top, 2.0 * top - v, v)
+    return np.clip(v, 0.0, top).astype(np.float32)
+
+
 def wrap_x(v, G: int):
     """Wrap an x coordinate into [0, G).  float32 `v % G` can round up to exactly G,
     which then indexes out of bounds -- clamp below the top edge as well."""
@@ -251,7 +266,7 @@ class Fauna:
         else:
             ang = self.rng.random(n) * 2 * np.pi
             r = self.rng.random(n) ** 0.5 * radius
-            py = np.clip(cy + np.sin(ang) * r, 0, self.G - 1.001).astype(np.float32)
+            py = reflect_y(cy + np.sin(ang) * r, self.G)
             px = wrap_x(cx + np.cos(ang) * r, self.G)
         self.y[idx] = py
         self.x[idx] = px
@@ -580,7 +595,10 @@ class Fauna:
                * (1.0 + 0.35 * flee)[:, None])
         vmag = np.sqrt(vel[:, 0] ** 2 + vel[:, 1] ** 2)
         newx = wrap_x(self.x[rows] + vel[:, 0], G)
-        newy = np.clip(self.y[rows] + vel[:, 1], 0.0, G - 1.001)
+        raw_y = self.y[rows] + vel[:, 1]
+        newy = reflect_y(raw_y, G)
+        # a creature that bounced is heading the other way now
+        vel[:, 1] = np.where(raw_y != newy, -vel[:, 1], vel[:, 1])
         ny_i = np.clip(newy.astype(np.int32), 0, G - 1)
         nx_i = np.clip(newx.astype(np.int32), 0, G - 1)
         deep = self.world.water_depth[ny_i, nx_i] > 0.25
@@ -811,7 +829,7 @@ class Fauna:
         self.age[kids] = 0.0
         jit = self.rng.normal(0, 1.2, (len(kids), 2)).astype(np.float32)
         self.x[kids] = wrap_x(self.x[parents] + jit[:, 0], self.G)
-        self.y[kids] = np.clip(self.y[parents] + jit[:, 1], 0, self.G - 1.001)
+        self.y[kids] = reflect_y(self.y[parents] + jit[:, 1], self.G)
         self.species[kids] = self.species[parents]
         self.birth_tick[kids] = tick
         self.parent[kids] = parents.astype(np.int32)
@@ -901,13 +919,24 @@ class Fauna:
 
         cy = np.clip(self.y[rows].astype(np.int32), 0, G - 1)
         cx = np.clip(self.x[rows].astype(np.int32), 0, G - 1)
+        G = self.G
         temp = self.world.temperature[cy, cx]
         cold_gap = np.maximum(0.0, (0.42 - stats["cold_resist"] * 0.42) - temp)
         heat_gap = np.maximum(0.0, temp - (0.62 + stats["heat_resist"] * 0.45))
         thermal = (float(cfg_e["cold_cost"]) * cold_gap / (0.35 + size)
                    + float(cfg_e["heat_cost"]) * heat_gap)
 
-        drain = basal + thermal + getattr(self, "_move_cost", 0.0)
+        # Interference competition.  Nothing in the world charged for crowding, so a
+        # single cell could hold twenty-one animals as cheaply as one -- and once the
+        # brains degenerated into a constant heading and drove everybody into the same
+        # corner, that corner became the best address in the world instead of the worst.
+        counts = np.bincount((cy.astype(np.int64) * G + cx),
+                             minlength=self.G * self.G).reshape(self.G, self.G)
+        crowd = counts[cy, cx].astype(np.float32)
+        crowding = (float(cfg_e["crowd_cost"])
+                    * np.maximum(0.0, crowd - float(cfg_e["crowd_free"])))
+
+        drain = basal + thermal + crowding + getattr(self, "_move_cost", 0.0)
         self.energy[rows] -= drain
 
         # A lean animal lives off its own condition before it starves -- but only down
@@ -977,7 +1006,14 @@ class Fauna:
         # Carrion keeps smelling for as long as it lasts.  Without this the world is
         # full of meat nothing can find, meat-eating never pays, and the diet axis
         # collapses to pure herbivory.
-        self.scent.field[2] += self.meat * float(self.cfg.scent["carrion_scent"])
+        # Saturating, not linear.  An unbounded deposit lets one cell out-signal the
+        # whole world: a freezing pole accumulated 2488 units of carrion in a single row,
+        # its blood plume drowned every other gradient, and scavengers walked into it,
+        # died of cold and fed it -- 80%% of the biosphere ended up queued in a freezer
+        # eating each other. A nose cannot tell two thousand carcasses from twenty.
+        cap = float(self.cfg.scent["carrion_scent_cap"])
+        self.scent.field[2] += (np.minimum(self.meat, cap)
+                                * float(self.cfg.scent["carrion_scent"]))
 
     # ---------------------------------------------------------------- reporting
     def trophic_counts(self) -> tuple[int, int, int]:

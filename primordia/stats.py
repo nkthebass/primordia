@@ -157,8 +157,7 @@ class Stats:
             "active_events": [e.to_json() for e in s.events.active][:10],
             "runtime_genes": [
                 {"kingdom": k, "name": g.name, "added_tick": g.added_tick,
-                 "effects": g.effects,
-                 "mean": round(float(self._gene_mean(k, g.name)), 4)}
+                 "effects": g.effects, **self._gene_report(k, g.name)}
                 for k, g in s.runtime_gene_list()],
             "interventions": {"applied": s.intervention.applied_count,
                               "failed": s.intervention.failed_count,
@@ -168,18 +167,76 @@ class Stats:
                            "energy.basal_rate": self.cfg.energy["basal_rate"]},
         }
 
-    def _gene_mean(self, kingdom: str, name: str) -> float:
+    def _gene_report(self, kingdom: str, name: str) -> dict:
+        """Distribution of one runtime gene, not just its mean.
+
+        A scalar mean cannot tell a gene that swept from a gene that is drifting: winter
+        torpor read 0.47 either way.  What separates them is the spread against the
+        between-group difference -- torpor's trophic means were 0.500/0.460/0.424 with an
+        sd of 0.298, so its selection differential was a fifth of its noise and the mean
+        was reporting drift as success.  `split` below is that ratio, made explicit.
+        """
         s = self.sim
         if kingdom == "fauna":
             rows = s.fauna.alive_idx
             if len(rows) == 0 or not s.fauna.schema.has(name):
-                return 0.0
-            return float(s.fauna.gene(name, rows).mean())
+                return {"mean": 0.0, "n": 0}
+            v = s.fauna.gene(name, rows)
+            out = self._dist(v)
+
+            diet = s.fauna.gene("diet", rows)
+            trophic = {}
+            for lo, hi, lab in ((0.0, 0.33, "herbivore"), (0.33, 0.66, "omnivore"),
+                                (0.66, 1.01, "carnivore")):
+                m = (diet >= lo) & (diet < hi)
+                # same floor as the biome groups: a bucket holding two carnivores
+                # produces a mean that swamps the split ratio with noise
+                if m.sum() >= 20:
+                    trophic[lab] = round(float(v[m].mean()), 4)
+            out["by_trophic"] = trophic
+
+            # ...and by habitat, because a gene conditioned on biome or water cannot show
+            # up in a trophic breakdown at all
+            from .world import BIOME_NAMES
+            G = s.world.G
+            cy = np.clip(s.fauna.y[rows].astype(np.int32), 0, G - 1)
+            cx = np.clip(s.fauna.x[rows].astype(np.int32), 0, G - 1)
+            b = s.world.biome[cy, cx]
+            habitat, share = {}, {}
+            for code, lab in enumerate(BIOME_NAMES):
+                m = b == code
+                if m.sum() >= 20:
+                    habitat[lab] = round(float(v[m].mean()), 4)
+                    share[lab] = round(float(m.mean()), 4)
+            out["by_biome"] = habitat
+            out["pop_share_by_biome"] = share
+
+            # `split` is the between-group spread measured in standard deviations.  Below
+            # about 0.5 a gene is drifting, whatever its mean says: winter torpor read a
+            # respectable 0.47 while splitting the fauna by 0.25 sd, which is noise.
+            for key, groups in (("split_trophic", trophic), ("split_biome", habitat)):
+                if len(groups) > 1 and out["sd"] > 1e-9:
+                    out[key] = round((max(groups.values()) - min(groups.values()))
+                                     / out["sd"], 3)
+            out["split"] = max((out.get("split_trophic", 0.0),
+                                out.get("split_biome", 0.0)))
+            return out
         if not s.flora.genome.has(name):
-            return 0.0
+            return {"mean": 0.0, "n": 0}
         m = s.flora.biomass > 1e-3
-        p = s.flora.genome.plane(name)
-        return float(p[m].mean()) if m.any() else 0.0
+        if not m.any():
+            return {"mean": 0.0, "n": 0}
+        return self._dist(s.flora.genome.plane(name)[m])
+
+    @staticmethod
+    def _dist(v) -> dict:
+        q = np.percentile(v, [5, 25, 50, 75, 95])
+        return {"mean": round(float(v.mean()), 4), "sd": round(float(v.std()), 4),
+                "n": int(v.size),
+                "p5": round(float(q[0]), 4), "p25": round(float(q[1]), 4),
+                "p50": round(float(q[2]), 4), "p75": round(float(q[3]), 4),
+                "p95": round(float(q[4]), 4),
+                "frac_above_half": round(float((v > 0.5).mean()), 4)}
 
     def _trend(self, sp) -> str:
         ser = [p for _, p in sp.pop_series[-14:]]

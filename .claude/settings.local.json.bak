@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import json;d=json.load\\(open\\('state/checkpoint_latest.json'\\)\\);print\\({k:d[k] for k in list\\(d\\)[:12] if not isinstance\\(d[k],\\(list,dict\\)\\)}\\)\")",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name like '%python%'\" | Select-Object ProcessId, CreationDate, @{n='cmd';e={$_.CommandLine.Substring\\(0,[Math]::Min\\(200,$_.CommandLine.Length\\)\\)}} | Format-List)",
+      "Bash(./.venv/Scripts/python.exe -c ' *)",
+      "PowerShell(Get-Date; Get-CimInstance Win32_Process -Filter \"Name like '%python%'\" | Select-Object ProcessId, CreationDate, @{n='cmd';e={$_.CommandLine}} | Format-List; Get-Item C:\\\\Users\\\\noahc\\\\Documents\\\\PRIMORDIA\\\\state\\\\summary.json | Select-Object LastWriteTime, Length)",
+      "Bash(tasklist /FI \"IMAGENAME eq python.exe\")",
+      "Bash(tasklist)",
+      "Bash(wmic process *)",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name like '%python%'\")",
+      "PowerShell(Get-Process -Id 1887072,505484 -ErrorAction SilentlyContinue)",
+      "PowerShell($a = \\(Get-Process -Id 505484\\).CPU; Start-Sleep -Seconds 6; $b = \\(Get-Process -Id 505484\\).CPU; \"CPU delta over 6s: $\\([math]::Round\\($b - $a, 3\\)\\) s\")",
+      "Bash(python -c ' *)",
+      "Bash(.venv/Scripts/python.exe -c ' *)",
+      "Bash(\\\\*)",
+      "Bash(grep -n \"game-master\\\\|Game-master\\\\|GM\\\\b\\\\|`\\\\*`\" chronicle/chronicle.md)",
+      "Bash(git ls-remote *)",
+      "Bash(git commit -m ' *)",
+      "Bash(python -c \"import json;d=json.load\\(open\\('state/summary.json'\\)\\);print\\(json.dumps\\({k:d[k] for k in ['tick','year','populations','warnings','genetic_variance','runtime_genes','config_hot','recent_events','species_total_ever']},indent=1\\)\\)\")",
+      "Bash(grep -n '^`\"`' chronicle/chronicle.md)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8710 -ErrorAction SilentlyContinue)",
+      "PowerShell(& \"C:\\\\Users\\\\noahc\\\\Documents\\\\PRIMORDIA\\\\.venv\\\\Scripts\\\\python.exe\" \"C:\\\\Users\\\\noahc\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-noahc-Documents-PRIMORDIA\\\\0f0ca3eb-ce43-4258-9fa8-8bf1e19fd62c\\\\scratchpad\\\\inspect.py\")"
+    ]
+  }
+}

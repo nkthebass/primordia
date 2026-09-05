@@ -4,6 +4,8 @@ from __future__ import annotations
 import argparse
 import os
 import signal
+import socket
+import subprocess
 import sys
 import threading
 import time
@@ -53,6 +55,37 @@ def build_config(args) -> Config:
     if args.port:
         over.setdefault("server", {})["port"] = args.port
     return Config.load(args.config, over)
+
+
+
+def port_holder(port: int) -> str:
+    """Best-effort description of whatever already owns a port."""
+    try:
+        out = subprocess.run(["netstat", "-ano"], capture_output=True, text=True,
+                             timeout=6).stdout
+    except Exception:
+        return ""
+    for line in out.splitlines():
+        if f":{port} " in line and "LISTENING" in line.upper():
+            pid = line.split()[-1]
+            name = ""
+            try:
+                t = subprocess.run(["tasklist", "/FI", f"PID eq {pid}", "/NH"],
+                                   capture_output=True, text=True, timeout=6).stdout
+                name = t.split()[0] if t.strip() else ""
+            except Exception:
+                pass
+            return f"PID {pid}" + (f" ({name})" if name else "")
+    return ""
+
+
+def port_free(host: str, port: int) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        try:
+            sock.bind((host, port))
+            return True
+        except OSError:
+            return False
 
 
 # --------------------------------------------------------------------- staging
@@ -149,6 +182,20 @@ def main(argv=None) -> int:
         return stage_test(args)
 
     cfg = build_config(args)
+
+    # Bind-check before touching the world.  A viewer that fails to bind *after* the
+    # resume has already advanced and re-saved the world is a confusing way to lose a
+    # run: the process exits non-zero having done real work.  Refuse up front instead.
+    if not args.headless:
+        host, port = cfg.server["host"], int(cfg.server["port"])
+        if not port_free(host, port):
+            who = port_holder(port)
+            print(f"[primordia] port {port} on {host} is already in use"
+                  + (f" by {who}" if who else "") + ".")
+            print(f"[primordia] the world was NOT loaded and nothing was changed. Either "
+                  f"stop that process, or start this one on another port with "
+                  f"--port <n>.")
+            return 2
 
     # A checkpoint describes a world of a particular size.  Resuming it into a simulation
     # built at some other size loads the arrays and then dies on a shape mismatch several

@@ -146,6 +146,18 @@ class Speciation:
             if nm not in self.used_names:
                 self.used_names.add(nm)
                 return nm
+        # A parent genus carries only len(EPI) epithets, and lineages here run twenty
+        # deep, so inherited genera exhaust within a few hundred species and every
+        # descendant after that fell through to "Incognitum 143".  Coin a fresh genus
+        # instead -- the syllable tables hold 6000 of them.
+        for _ in range(400):
+            genus = (PREFIX[int(r.integers(0, len(PREFIX)))]
+                     + MID[int(r.integers(0, len(MID)))]
+                     + SUFF[int(r.integers(0, len(SUFF)))]).capitalize()
+            nm = f"{genus} {EPI[int(r.integers(0, len(EPI)))]}"
+            if nm not in self.used_names:
+                self.used_names.add(nm)
+                return nm
         nm = f"Incognitum {self._next_id}"
         self.used_names.add(nm)
         return nm

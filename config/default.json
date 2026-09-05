@@ -159,7 +159,9 @@
     "trait_cost_scale": 0.0,
     "meta_floor": 0.0,
     "sprint_diet": 0.38,
-    "founder_condition": 0.55
+    "founder_condition": 0.55,
+    "crowd_free": 8.0,
+    "crowd_cost": 0.014
   },
   "genetics": {
     "mutation_rate_global": 1.0,
@@ -180,7 +182,8 @@
     "diffuse": 0.14,
     "deposit_scale": 0.35,
     "blood_deposit": 2.0,
-    "carrion_scent": 0.05
+    "carrion_scent": 0.05,
+    "carrion_scent_cap": 15.0
   },
   "sim": {
     "speed": 4,
