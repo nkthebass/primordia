@@ -233,6 +233,35 @@ bug, and it is yours to make. `config/realism.json` turns the whole set on in on
 .venv\Scripts\python.exe -m primordia.main --config config/realism.json
 ```
 
+### What the default costs over two thousand years
+
+The measurement above is taken on fresh worlds over five sim-years, and it is only half the
+trade. The other half shows up on a long run, and it is worse than "fragile".
+
+With `trait_cost_scale` at `0.0`, armour is **free**. Nothing selects against it, so it
+ratchets upward for as long as the world runs. A blow lands only when the attacker's power
+clears the victim's armour plus an evasion roll, and attack power is capped by the genome at
+fangs 1.0 + 0.6 x size 1.0 = **1.60**. On the reference world that requirement passed 1.60
+somewhere in the first millennium and stood at **1.95** by year 2,239: past that crossing no
+predator the genome can express is able to kill anything, four seeded waves died without a
+single kill between them, and the food chain is permanently one level deep. PLAN section 1.3
+asks that the food chain be able to genuinely shift over generations. At `0.0` it provably
+cannot, once the ratchet has run.
+
+Measured from that world's year 2,283, holding everything else fixed:
+
+| `trait_cost_scale` | armour after ~10 sim-years | attack power needed | population |
+|---|---|---|---|
+| `0.0` (default) | ~0.70, oscillating, no trend | 1.90 - 1.99 | 2,000 - 4,100 |
+| `0.5` (realism pack) | 0.60 -> 0.48 | crosses 1.60 in ~11 years | 1,800 - 2,800 |
+| `1.0` (fully costed) | 0.56 -> 0.32 | **1.16** in ~5 years | 1,788 - 2,333 |
+
+Neither costed setting collapsed the population. So the choice is not "rich ecosystem versus
+thin one" so much as "more animals, one trophic level, permanently" versus "fewer animals and
+a food chain that can still move". Still yours to make -- but worth making with both halves
+of the evidence, which is why the running world reports `predator_niche` in
+`state/summary.json` and warns when the niche has shut.
+
 ## Acceptance
 
 S4 asks for ≥2 speciation events in five sim-years and all three trophic buckets nonzero,
