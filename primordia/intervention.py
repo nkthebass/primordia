@@ -169,8 +169,16 @@ class Intervention:
                 bad = [k for k in genome if k not in self.sim.fauna.schema.index]
                 if bad:
                     raise ValueError(f"unknown fauna genes: {', '.join(bad[:6])}")
-                idx = self.sim.fauna.spawn(count, cx=x, cy=y, radius=radius,
-                                           archetype=genome, tick=tick)
+                # Seeded stock arrives as an establishing founder population, exactly as
+                # seed_founders does.  Without this it got full-strength random brains --
+                # which drown a specified genome's intent, pushing roughly two thirds of
+                # nominal attack power -- and a single start_energy, about 250 ticks of
+                # fuel to find a first kill.  Six hand-seeded predator waves were sent out
+                # under both handicaps while the engine's own founders had neither.
+                idx = self.sim.fauna.spawn(
+                    count, cx=x, cy=y, radius=radius, archetype=genome, tick=tick,
+                    energy_mult=float(self.cfg.fauna["founder_energy_mult"]),
+                    brain_quiet=float(self.cfg.fauna["founder_brain_quiet"]))
             else:
                 raise ValueError("genome must be 'random_alien' or an object of gene values")
             msg = f"seeded {len(idx)} fauna at ({int(x)},{int(y)})"
