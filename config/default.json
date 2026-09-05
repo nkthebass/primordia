@@ -72,7 +72,8 @@
     "max_active": 10,
     "fire_kill_rate": 0.06,
     "fire_duration": 220,
-    "fire_burnout": 0.045
+    "fire_burnout": 0.045,
+    "enrich_saturation": 0.35
   },
   "flora": {
     "seed_density": 0.18,
@@ -167,7 +168,8 @@
     "mutation_rate_global": 1.0,
     "macro_mutation_prob": 0.01,
     "macro_mutation_scale": 5.0,
-    "crossover_bonus": 0.85
+    "crossover_bonus": 0.85,
+    "brain_decay": 0.015
   },
   "speciation": {
     "interval": 200,

@@ -183,11 +183,18 @@ class Sim:
                 if self.predator_waves == 0:
                     self.pending_predators = -1
                 wave = self.predator_waves_total - self.predator_waves
+                arm = self.fauna.last_hunter_arming
+                detail = ""
+                if arm:
+                    detail = (f" They come armed for the prey that exist: fangs "
+                              f"{arm['fangs']:.2f} on a frame of {arm['size']:.2f}, "
+                              f"attack power {arm['power']:.2f} against grazers whose "
+                              f"armour runs to {arm['prey_armour_p60']:.2f}.")
                 self.log_event(
                     "world",
                     f"Something learns to hunt (wave {wave} of "
                     f"{self.predator_waves_total}): {n} predators appear among herds "
-                    f"{h + o} strong.")
+                    f"{h + o} strong." + detail)
         every = int(cfg.sim["housekeeping_every"])
         if tick % int(cfg.world["erosion_interval"]) == 0:
             self.world.erode()

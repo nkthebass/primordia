@@ -182,7 +182,7 @@ class Fauna:
         self.schema = GenomeSchema("fauna", cap)
         for g in BODY_GENES:
             self.schema.add(g)
-        for g in brainmod.brain_genes():
+        for g in brainmod.brain_genes(float(cfg.genetics.get("brain_decay", 0.015))):
             self.schema.add(g)
         self.brain = Brain(self.schema)
         self.effects = EffectEngine(self.schema)
@@ -213,6 +213,7 @@ class Fauna:
 
         # effective (ontogenetic) body size, refreshed every tick by build_stats
         self.size_eff = np.zeros(cap, np.float32)
+        self.last_hunter_arming: dict = {}
         self.alive_idx = np.zeros(0, np.int64)
         self.nb = max(1, -(-G // BIN))   # ceil: a grid not divisible by BIN still needs the last bin
         self.last_inputs = np.zeros((0, N_IN), np.float32)
@@ -320,6 +321,42 @@ class Fauna:
         j = int(np.argmax(dens))
         return float((j // self.nb) * BIN + BIN / 2), float((j % self.nb) * BIN + BIN / 2)
 
+    def _arm_hunter(self, arch: dict) -> dict:
+        """Scale a founder predator's weaponry to the prey it is being dropped among.
+
+        The archetype is fixed at attack power 0.90.  That ignites a fresh world, and it
+        is useless in one that has been running: after two thousand years of unopposed
+        escalation the grazers here carry effective armour 1.04, and the engine wants a
+        clear margin over that before anything registers as prey at all.  A wave seeded
+        at the default found a target on 9.5% of its ticks, then 0%, and starved in a
+        world containing five thousand animals it could not see as food.
+        """
+        rows = self.alive_idx
+        if len(rows) < 50:
+            return arch
+        d = self.schema.data
+        gi = self.gi
+        size = self.size_eff[rows]
+        armour = d[rows, gi["armor"]] + 0.35 * size
+        small = size < np.median(size) * 1.2          # what a predator would go after
+        target = float(np.percentile(armour[small] if small.any() else armour, 60))
+        need = target * PREY_POWER_MARGIN * 1.15      # clear the bar, do not graze it
+
+        arch = dict(arch)
+        base_size = float(arch.get("size", 0.46))
+        # power = fangs + 0.6 * size; spend on fangs first, then on frame
+        fangs = min(1.0, max(float(arch.get("fangs", 0.62)), need - 0.6 * base_size))
+        if fangs + 0.6 * base_size < need:
+            base_size = min(1.0, (need - fangs) / 0.6)
+        arch["fangs"] = fangs
+        arch["size"] = base_size
+        power = fangs + 0.6 * base_size
+        self.last_hunter_arming = {
+            "prey_armour_p60": round(target, 3), "power_needed": round(need, 3),
+            "fangs": round(fangs, 3), "size": round(base_size, 3),
+            "power": round(power, 3), "sufficient": bool(power >= need * 0.98)}
+        return arch
+
     def seed_founders(self, tick: int = 0, only: set[str] | None = None,
                       at: tuple[float, float] | None = None,
                       count: int | None = None) -> int:
@@ -335,6 +372,8 @@ class Fauna:
         for name, share, arch in FOUNDERS:
             if only is not None and name not in only:
                 continue
+            if name == "hunter":
+                arch = self._arm_hunter(arch)
             off = self.G * 0.05
             cy = float(np.clip(base_y + self.rng.normal(0, off), 0, self.G - 1))
             cx = float((base_x + self.rng.normal(0, off)) % self.G)
@@ -1084,6 +1123,14 @@ class Fauna:
         # birth first lands past its end.
         self.cap = int(npz["fauna_alive"].shape[0])
         self.schema = GenomeSchema.from_schema_json(meta["schema"], self.cap)
+        # Weight decay is a rule of the world, not saved population state.  A checkpoint
+        # written before the rule existed carries genes with decay 0, and rebuilding the
+        # schema from it silently reinstates the unbounded random walk on every resume.
+        brain_decay = float(self.cfg.genetics.get("brain_decay", 0.015))
+        for g in self.schema.genes:
+            if g.name.startswith("w") and g.name[1:].isdigit():
+                g.decay = brain_decay
+        self.schema._rebuild_vectors()
         self.schema.data = npz["fauna_genes"]
         self.schema.capacity = int(self.schema.data.shape[0])
         for name in self.DERIVED:

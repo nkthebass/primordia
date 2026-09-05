@@ -36,6 +36,11 @@ class Gene:
     lo: float = 0.0
     hi: float = 1.0
     heritable: bool = True
+    # Per-generation pull back toward init_mean.  Without one, a gene under weak
+    # selection is an unbiased random walk inside its bounds and converges on a uniform
+    # distribution across them -- which for a network weight means saturation, and a
+    # brain whose outputs no longer depend on its inputs at all.
+    decay: float = 0.0
     # runtime-added genes carry declarative effects; core genes are wired in code
     effects: list = field(default_factory=list)
     added_tick: int = 0
@@ -122,6 +127,9 @@ class GenomeSchema:
         self._lo = np.array([g.lo for g in self.genes], np.float32)
         self._hi = np.array([g.hi for g in self.genes], np.float32)
         self._heritable = np.array([g.heritable for g in self.genes], bool)
+        self._decay = np.array([getattr(g, "decay", 0.0) for g in self.genes], np.float32)
+        self._centre = np.array([g.init_mean for g in self.genes], np.float32)
+        self._any_decay = bool((self._decay > 0).any())
 
     @property
     def n(self) -> int:
@@ -167,7 +175,13 @@ class GenomeSchema:
             cols = rng.integers(0, n, size=len(rows))
             noise[rows, cols] *= float(macro_scale)
         noise[:, ~self._heritable] = 0.0
-        self.data[idx] = np.clip(self.data[idx] + noise, self._lo, self._hi)
+        vals = self.data[idx] + noise
+        if self._any_decay:
+            # Ornstein-Uhlenbeck rather than a free walk: mutation pushes out, decay pulls
+            # back, and the stationary spread settles at roughly mut_std/sqrt(2*decay)
+            # instead of filling the whole legal range.
+            vals -= self._decay * (vals - self._centre)
+        self.data[idx] = np.clip(vals, self._lo, self._hi)
 
     def inherit(self, child_idx: np.ndarray, parent_idx: np.ndarray,
                 mate_idx: np.ndarray | None, rng: np.random.Generator) -> None:

@@ -47,6 +47,20 @@ class Events:
         self._yy, self._xx = np.mgrid[0:world.G, 0:world.G]
 
     # ------------------------------------------------------------------ utils
+    def enrich(self) -> float:
+        """How much of a disaster's fertility gift the ground can still accept.
+
+        Ash, ejecta and silt add matter from outside the biological cycle, which is what
+        makes disasters regenerative -- but nothing bounded the total, and 2,400 of them
+        over two thousand years drove the world's matter eighteen-fold above where it
+        started, until 98% of it sat inert in saturated soil.  Saturated ground takes no
+        more: the gift scales to the room that is actually left.
+        """
+        cap = float(self.cfg.world["nutrient_cap"])
+        sat = float(self.world.nutrients.mean()) / max(cap, 1e-6)
+        return float(np.clip(1.0 - sat / float(self.cfg.events["enrich_saturation"]),
+                             0.0, 1.0))
+
     def disc(self, cy: int, cx: int, r: float) -> np.ndarray:
         G = self.world.G
         dy = self._yy - cy
@@ -175,7 +189,8 @@ class Events:
                 self.flood[m] = e.intensity
                 if e.ticks_left <= 1:
                     wr.soil_fertility[m] = np.minimum(
-                        wr.soil_fertility[m] + float(c["flood_silt_fertility"]) * e.intensity,
+                        wr.soil_fertility[m]
+                        + float(c["flood_silt_fertility"]) * e.intensity * self.enrich(),
                         float(wr.cfg.world["fertility_cap"]))
                     self.flood[m] = 0.0
             elif e.kind == "cold_snap" and e.ticks_left <= 0:
@@ -272,7 +287,7 @@ class Events:
         wr.elevation = np.clip(wr.elevation + cone, 0.0, 1.0).astype(np.float32)
         wr.classify(); wr._build_base_temp()
         wr.soil_fertility[ash] = np.minimum(
-            wr.soil_fertility[ash] + 0.45 * e.intensity,
+            wr.soil_fertility[ash] + 0.45 * e.intensity * self.enrich(),
             float(wr.cfg.world["fertility_cap"]))
         e.data["casualties"] = n
         self._log(tick, "volcano",
@@ -299,7 +314,7 @@ class Events:
         wr.classify(); wr._build_base_temp()
         wr.water_depth[crater] += 0.4
         wr.soil_fertility[ring] = np.minimum(
-            wr.soil_fertility[ring] + 0.3 * e.intensity,
+            wr.soil_fertility[ring] + 0.3 * e.intensity * self.enrich(),
             float(wr.cfg.world["fertility_cap"]))
         self.weather.dust = min(1.0, self.weather.dust + 0.8 * e.intensity)
         msg = (f"A meteor strikes ({e.x},{e.y}). {n} killed; a crater lake forms and "

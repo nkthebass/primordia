@@ -26,12 +26,18 @@ INPUT_NAMES = (
 OUTPUT_NAMES = ("move_x", "move_y", "eat", "attack", "flee_gain", "breed_desire")
 
 
-def brain_genes() -> list[Gene]:
-    """166 weight genes, unbounded-ish and mutating faster than body genes."""
-    out = []
-    for i in range(N_BRAIN):
-        out.append(Gene(f"w{i:03d}", 0.0, 0.7, 0.13, -4.0, 4.0))
-    return out
+def brain_genes(decay: float = 0.015) -> list[Gene]:
+    """166 weight genes, mutating faster than body genes and decaying toward zero.
+
+    The decay is what keeps the network responsive.  A weight under weak selection is an
+    unbiased random walk between its bounds, and after two thousand years of that the
+    weights were spread almost uniformly across the full +-4 range with 2.7% pressed
+    against the clip.  Pre-activations of that size saturate tanh, so every output pinned
+    to +-1 regardless of what the thirteen senses reported and the whole fauna drove in
+    one fixed direction until it hit the edge of the world.
+    """
+    return [Gene(f"w{i:03d}", 0.0, 0.7, 0.13, -4.0, 4.0, True, decay=decay)
+            for i in range(N_BRAIN)]
 
 
 class Brain:
