@@ -18,7 +18,7 @@ import numpy as np
 from .genetics import Gene, validate_effect
 
 TYPES = ("trigger_event", "climate", "tune", "seed_organism", "note", "add_gene",
-         "checkpoint", "set_speed")
+         "retire_gene", "checkpoint", "set_speed")
 
 
 class Intervention:
@@ -261,6 +261,36 @@ class Intervention:
             {"gene": name, "kingdom": kingdom, "effects": clean})
         return f"added {kingdom} gene '{name}' with {len(clean)} effect(s)"
 
+    def _do_retire_gene(self, item: dict, tick: int) -> str:
+        """Switch a runtime gene off without deleting it.
+
+        The protocol could add a gene and never take one back, so a trait that turned out
+        to be a mistake was permanent.  Retiring clears the effects and leaves the column
+        in place as junk DNA -- the allele frequencies stay in the record, the trait stops
+        acting on the world, and no index anywhere has to move.
+        """
+        name = str(item.get("name", "")).strip()
+        kingdom = item.get("kingdom", "fauna")
+        if kingdom not in ("fauna", "flora"):
+            raise ValueError("kingdom must be 'fauna' or 'flora'")
+        target = self.sim.fauna.schema if kingdom == "fauna" else self.sim.flora.genome
+        if not target.has(name):
+            raise ValueError(f"{kingdom} has no gene named '{name}'")
+        gene = target.genes[target.index[name]]
+        if not gene.effects:
+            raise ValueError(f"'{name}' is not a runtime gene, or is already retired")
+        n = len(gene.effects)
+        gene.effects = []
+        if kingdom == "fauna":
+            self.sim.fauna.effects.recompile()
+        else:
+            self.sim.flora.recompute_effects()
+        self.sim.speciation._rebuild_cols()
+        self.sim.log_event("gene", f"**{name}** is retired: its {n} effect(s) no longer "
+                                   f"act on the world. The gene stays in the genome as "
+                                   f"junk DNA and its frequencies remain on the record.")
+        return f"retired {kingdom} gene '{name}' ({n} effects cleared)"
+
     # ------------------------------------------------------------------ misc
     def write_example(self) -> str:
         """Drops a commented example into interventions/ (not consumed: .txt)."""
@@ -308,6 +338,10 @@ with a .err.txt explaining why).  Nothing here is executed as code.
   when:  is_night(bool) season(spring|summer|autumn|winter)
          biome(ocean|coast|plains|hills|mountain) in_water(bool)
          moisture_gt/lt(num) temp_gt/lt(num)
+
+{"type":"retire_gene","kingdom":"fauna","name":"winter_torpor"}
+  switches a runtime gene off without deleting it: effects stop acting, the column
+  stays as junk DNA and its allele frequencies stay on the record
 
 {"type":"checkpoint","label":"before-the-great-drought"}
 {"type":"set_speed","value":16}

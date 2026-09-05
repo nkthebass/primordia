@@ -77,6 +77,7 @@ The running world talks to a game-master Claude session through three paths:
 {"type":"seed_organism","kingdom":"fauna","count":10,"x":50,"y":50,"genome":"random_alien"}
 {"type":"note","text":"why I did this"}
 {"type":"add_gene", ...}
+{"type":"retire_gene","kingdom":"fauna","name":"winter_torpor"}
 ```
 
 ### `add_gene` — new heritable traits at runtime
@@ -93,6 +94,11 @@ vocabulary is rejected with an explanatory error rather than executed.
    {"stat":"detectability","op":"add","per_unit":0.4,"when":{"is_night":true}},
    {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.1}]}
 ```
+
+A gene can also be **retired**. Its effects stop acting on the world and the column
+stays in the genome as junk DNA, so the allele frequencies remain on the record and no
+index has to move — the protocol could previously add a trait and never take one back,
+which made a mistake permanent.
 
 The new gene gets a real column in the genome matrix, is initialised from its
 distribution for everything currently alive, mutates and is inherited like any other
@@ -155,6 +161,15 @@ generalists at their own game (PLAN §13) and herbivore/omnivore/carnivore are o
 reporting buckets. Species are not declared — they are clusters in genome space
 that drift apart, get a procedural Latin binomial and a stable hue, and are recorded
 with their parent so the phylogeny is a real record of descent.
+
+**Brain weights decay.** A weight under weak selection is an unbiased random walk inside
+its bounds, and after two thousand years of that the weights here had spread almost
+uniformly across the full ±4 range with 2.7% pressed against the clip. At that scale every
+pre-activation saturates , the outputs pin regardless of input, and the fauna stop
+deciding anything — they drove in one fixed direction until they hit the edge of the world.
+A 1.5%-per-generation pull toward zero turns that walk into an Ornstein–Uhlenbeck process
+whose spread settles near the founders' responsive scale. Decay is applied from config at
+load time, not read from the checkpoint: it is a rule of the world, not saved state.
 
 **Brains are genes.** Each creature carries its own 13→8→6 MLP as 166 weight genes.
 One forward pass covers the whole population as two batched matmuls. There are no
