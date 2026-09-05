@@ -183,7 +183,12 @@ class Events:
                 m = self.disc(e.y, e.x, e.radius)
                 wx.cloud[m] += 0.06 * e.intensity
                 wr.moisture[m] += 0.02 * e.intensity
-                fl.biomass[m] *= (1.0 - 0.004 * e.intensity)
+                # Stripped foliage falls to the ground it grew on.  Scaling biomass down
+                # and saying nothing about the difference quietly deleted matter, and
+                # storms are the most frequent event in the world by a wide margin.
+                torn = fl.biomass[m] * (0.004 * e.intensity)
+                fl.biomass[m] -= torn
+                wr.nutrients[m] += torn * fl.matter_per_biomass
                 hit = self.creatures_in(e.y, e.x, e.radius)
                 if len(hit):
                     fa.energy[hit] -= 0.05 * e.intensity

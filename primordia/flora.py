@@ -217,20 +217,33 @@ class Flora:
         if not valid.any():
             return 0
         sy, sx, ty, tx = sy[valid], sx[valid], ty[valid], tx[valid]
+        # One seed per target cell.  Two seeds landing on the same occupied cell used to
+        # return the displaced plant's matter twice -- np.add.at accumulates duplicates,
+        # while the assignment below writes the seedling once -- so every collision minted
+        # a plant's worth of matter out of nothing.
+        if len(ty) > 1:
+            flat = ty.astype(np.int64) * self.G + tx
+            keep = np.unique(flat, return_index=True)[1]
+            if len(keep) < len(ty):
+                keep.sort()
+                sy, sx, ty, tx = sy[keep], sx[keep], ty[keep], tx[keep]
         # returning nutrients from the displaced plant
         disp = self.biomass[ty, tx]
-        np.add.at(wr.nutrients, (ty, tx), disp * self.matter_per_biomass)
+        wr.nutrients[ty, tx] += disp * self.matter_per_biomass
 
         g = self.cfg.genetics
         gm.spawn_children(sy, sx, ty, tx, self.rng,
                           float(g["mutation_rate_global"]),
                           float(g["macro_mutation_prob"]),
                           float(g["macro_mutation_scale"]))
-        # a seedling's matter comes out of the soil, so the cycle stays closed
-        self.biomass[ty, tx] = 0.06
-        np.subtract.at(wr.soil_fertility, (ty, tx), 0.06 * self.matter_per_biomass)
-        np.clip(wr.soil_fertility, 0.0, float(self.cfg.world["fertility_cap"]),
-                out=wr.soil_fertility)
+        # A seedling's matter comes out of the soil, so the cycle stays closed -- and it
+        # masses exactly what the soil could pay.  Debiting a flat 0.06 and then clipping
+        # the field at zero handed a free seedling to every cell too poor to afford one.
+        mpb = self.matter_per_biomass
+        have = wr.soil_fertility[ty, tx]
+        paid = np.minimum(have, 0.06 * mpb)
+        wr.soil_fertility[ty, tx] = have - paid
+        self.biomass[ty, tx] = paid / mpb
         self.age[ty, tx] = 0.0
         return int(len(ty))
 
