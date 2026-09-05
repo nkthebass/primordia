@@ -21,3 +21,7 @@ Thumbs.db
 desktop.ini
 !interventions/done/.gitkeep
 !interventions/failed/.gitkeep
+
+# local machine settings, not project config
+.claude/settings.local.json
+.claude/settings.local.json.bak
