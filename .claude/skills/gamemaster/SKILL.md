@@ -20,6 +20,20 @@ tail -60 chronicle/chronicle.md
 (with `trend`), `climate`, `genetic_variance` and `runtime_genes`. The chronicle tail tells
 you what the world has been *experiencing*.
 
+Three blocks report on the machinery rather than the wildlife, and each of them has already
+hidden a failure that every other number looked fine through:
+
+- **`predator_niche`** — `power_needed` against `genome_ceiling` (1.60). Prey armour and
+  speed ratchet upward whenever nothing is hunting, and once the requirement passes the
+  ceiling **no predator the genome can express is able to kill anything**. Check this
+  before seeding any carnivore; four waves were lost to not checking it.
+- **`brains`** — `output_saturated` is the one to watch. Network weights drift to the edges
+  of their range under weak selection, and past ~0.5 the fauna stop responding to their
+  senses entirely and simply execute a fixed instruction. It reached 0.80 once while
+  population, variance and species counts all looked healthy.
+- **`matter`** — the world is a closed system and `total` is its invariant. It should stay
+  flat. If it climbs, something has started inventing matter.
+
 If `state/summary.json` is missing or its `tick` has not advanced since the last turn, the
 sim is not running. Say so and stop — do not write an intervention into a dead world.
 
@@ -29,7 +43,9 @@ Intervene only for a reason you can state in one sentence. The usual reasons:
 
 | what you see | a reasonable answer |
 |---|---|
-| a trophic level extinct or `critically low` | `seed_organism` a founder stock near the prey it needs, or a `tune` that lowers its costs |
+| a trophic level extinct or `critically low` | `seed_organism` a founder stock near the prey it needs, or a `tune` that lowers its costs — but for **carnivores, read `predator_niche` first**: if `open` is false, seeding cannot work and the fix is to bring prey defence down |
+| `predator niche closed` | `tune` herbivore armour or speed costs upward so defence erodes, or raise the genome ceiling. Seeding predators into a closed niche only kills them |
+| `brains saturated` | the fauna are not steering. Not fixable by intervention — report it; it is an engine bug |
 | `stagnation` / flat genetic variance | raise `genetics.mutation_rate_global`, or **invent a gene** |
 | `monoculture: X is N% of all fauna` | a disaster in its heartland, or a gene that rewards a different strategy |
 | `population at hard cap (runaway)` | a disaster, a climate tightening, or a predator seeding |
