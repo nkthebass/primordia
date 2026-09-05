@@ -58,6 +58,10 @@ class World:
         self.moisture = np.zeros((G, G), np.float32)
         self.temperature = np.zeros((G, G), np.float32)
         self.nutrients = np.zeros((G, G), np.float32)
+        # Mineral matter held in rock: the reservoir disasters draw on and the sink that
+        # saturated soil sheds into.  Without it the world had an unbounded source and an
+        # invisible drain, and PLAN section 1 calls for a closed system.
+        self.lithosphere = float(cfg.world.get("lithosphere_start", 0.0))
         self.biome = np.zeros((G, G), np.uint8)
         self.base_temp_map = np.zeros((G, G), np.float32)
         self.hotspots: list[tuple[int, int]] = []
@@ -162,7 +166,17 @@ class World:
         moved = np.minimum(moved, room)
         self.nutrients -= moved
         self.soil_fertility += moved
-        np.clip(self.nutrients, 0.0, float(w["nutrient_cap"]), out=self.nutrients)
+        # Ground that cannot hold any more sheds the excess into rock rather than having
+        # it deleted.  Clipping here was destroying matter every tick -- the quiet
+        # counterpart to disasters creating it.
+        cap = float(w["nutrient_cap"])
+        over = self.nutrients - cap
+        np.maximum(over, 0.0, out=over)
+        shed = float(over.sum())
+        if shed > 0.0:
+            self.nutrients -= over
+            self.lithosphere += shed
+        np.maximum(self.nutrients, 0.0, out=self.nutrients)
 
     def erode(self) -> None:
         w = self.cfg.world
@@ -174,8 +188,30 @@ class World:
     ARRAYS = ("elevation", "water_depth", "soil_fertility", "moisture",
               "temperature", "nutrients", "biome", "base_temp_map")
 
+    def draw(self, field: np.ndarray, mask, amount: float, cap: float) -> float:
+        """Move up to `amount` of matter per masked cell from rock into `field`.
+
+        Returns what was actually moved.  The addition is computed before it is applied so
+        the reservoir is never overdrawn and the gift is scaled down when the rock runs
+        thin -- disasters stay regenerative (PLAN section 1.2) without inventing matter.
+        """
+        if self.lithosphere <= 0.0:
+            return 0.0
+        cur = field[mask]
+        add = np.minimum(cur + amount, cap) - cur
+        tot = float(add.sum())
+        if tot <= 0.0:
+            return 0.0
+        if tot > self.lithosphere:
+            add *= (self.lithosphere / tot)
+            tot = self.lithosphere
+        field[mask] = cur + add
+        self.lithosphere -= tot
+        return tot
+
     def state(self) -> dict:
         d = {f"world_{k}": getattr(self, k) for k in self.ARRAYS}
+        d["world_lithosphere"] = np.float64(self.lithosphere)
         return d
 
     def meta(self) -> dict:
@@ -184,5 +220,10 @@ class World:
     def load(self, npz, meta: dict) -> None:
         for k in self.ARRAYS:
             setattr(self, k, npz[f"world_{k}"])
+        # A world saved before the lithosphere existed keeps the configured reservoir it
+        # was given at construction; the matter it inflated by beforehand is history and
+        # is not clawed back.
+        if "world_lithosphere" in npz.files:
+            self.lithosphere = float(npz["world_lithosphere"])
         self.G = int(meta["G"])
         self.hotspots = [tuple(h) for h in meta.get("hotspots", [])]

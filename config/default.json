@@ -20,7 +20,8 @@
     "lapse_rate": 0.55,
     "lat_temp_amp": 0.85,
     "base_temp": 0.55,
-    "ocean_fraction": 0.36
+    "ocean_fraction": 0.36,
+    "lithosphere_start": 250000.0
   },
   "weather": {
     "ticks_per_year": 2000,

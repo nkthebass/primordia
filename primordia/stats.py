@@ -165,6 +165,7 @@ class Stats:
             "genetic_variance": round(self._genetic_variance(fa.alive_idx), 5),
             "brains": self._brain_health(),
             "predator_niche": self._predator_niche(),
+            "matter": self._matter(),
             "warnings": self.compute_warnings(tick),
             "recent_events": recent,
             "active_events": [e.to_json() for e in s.events.active][:10],
@@ -179,6 +180,32 @@ class Stats:
             "config_hot": {"mutation_rate_global": self.cfg.genetics["mutation_rate_global"],
                            "energy.basal_rate": self.cfg.energy["basal_rate"]},
         }
+
+    def _matter(self) -> dict:
+        """Where every unit of matter in the world currently sits.
+
+        PLAN section 1 makes this a closed system.  It was not one: disasters created
+        fertility out of nothing and the nutrient cap destroyed whatever rose above it,
+        which between them took the world from ~49,000 units to 901,677.  With the
+        lithosphere in place the total is the invariant, and printing it here is what
+        makes a regression obvious instead of archaeological.
+        """
+        w = self.sim.world
+        fa = self.sim.fauna
+        pools = {
+            "soil_nutrients": float(w.nutrients.sum()),
+            "soil_fertility": float(w.soil_fertility.sum()),
+            "lithosphere": float(w.lithosphere),
+            # biomass is not matter: the soil locks up matter_per_biomass units per unit
+            # of it, and counting raw biomass here made the budget wrong by that factor
+            "plants": float(self.sim.flora.biomass.sum()
+                            * self.sim.flora.matter_per_biomass),
+            "animals": float(fa.matter[fa.alive_idx].sum()),
+            "corpses": float(fa.meat_matter.sum()),
+        }
+        out = {k: round(v, 1) for k, v in pools.items()}
+        out["total"] = round(sum(pools.values()), 1)
+        return out
 
     def _predator_niche(self) -> dict:
         """Can the genome still express an animal able to kill what is grazing here?
