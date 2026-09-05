@@ -173,9 +173,49 @@ def test_stale_save_guard() -> None:
         shutil.rmtree(root, ignore_errors=True)
 
 
+def test_tuned_config_survives() -> None:
+    """A tuned law of nature must come back, or a restart silently rewrites the world.
+
+    `tune` changed the running config and nothing else, which made it the one intervention
+    the world could forget.  trait_cost_scale was tuned 0.0 -> 0.5 on the live world and
+    seven hundred sim-years of armour selection followed it; a restart would have put
+    armour back to free and quietly undone every year of that.
+    """
+    print("tuned config survives a resume")
+    root = tempfile.mkdtemp(prefix="prim_tune_")
+    try:
+        s = fresh(root)
+        for _ in range(50):
+            s.step()
+        check(float(s.cfg.get("energy.trait_cost_scale")) == 0.0, "starts at the default")
+        s.intervention.apply(
+            {"type": "tune", "path": "energy.trait_cost_scale", "value": 0.5}, s.tick)
+        s.intervention.apply(
+            {"type": "tune", "path": "genetics.mutation_rate_global", "value": 1.4}, s.tick)
+        check(float(s.cfg.get("energy.trait_cost_scale")) == 0.5, "tune applied live")
+        s.save()
+
+        cfg = Config.load(None, {"world": {"size": 128}, "fauna": {"max_pop": 3000}})
+        check(float(cfg.get("energy.trait_cost_scale")) == 0.0,
+              "a fresh config still ships the default")
+        s2 = Sim(cfg, root=root, with_monitor=False)
+        s2.checkpoints_enabled = False
+        s2.resume()
+        check(float(s2.cfg.get("energy.trait_cost_scale")) == 0.5,
+              "trait_cost_scale came back tuned")
+        check(abs(float(s2.cfg.get("genetics.mutation_rate_global")) - 1.4) < 1e-9,
+              "a second tuned knob came back too")
+        for _ in range(50):
+            s2.step()
+        check(float(s2.cfg.get("energy.trait_cost_scale")) == 0.5, "and it stays tuned")
+    finally:
+        shutil.rmtree(root, ignore_errors=True)
+
+
 if __name__ == "__main__":
     for fn in (test_capacity_mismatch, test_grid_size_mismatch,
-               test_runtime_gene_survives, test_stale_save_guard):
+               test_runtime_gene_survives, test_stale_save_guard,
+               test_tuned_config_survives):
         fn()
         print()
     if FAILURES:

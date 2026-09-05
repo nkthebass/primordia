@@ -58,6 +58,24 @@ class Config:
             node = node[part]
         return node
 
+    def tuned(self) -> dict:
+        """Hot-tuned overrides, for the checkpoint to carry.
+
+        A `tune` intervention changes the running config and nothing else.  That made it
+        the only intervention the world could forget: trait_cost_scale was tuned from 0.0
+        to 0.5, seven hundred sim-years of armour selection followed, and a single restart
+        would have silently put armour back to free and undone all of it.
+        """
+        return dict(getattr(self, "_tuned", {}))
+
+    def apply_tuned(self, tuned: dict) -> None:
+        for path, value in (tuned or {}).items():
+            try:
+                self.set(path, value, enforce_hot=True)
+            except ValueError:
+                # a knob that no longer exists is history, not a reason to refuse the world
+                pass
+
     def set(self, path: str, value: Any, *, enforce_hot: bool = False) -> None:
         if enforce_hot and not any(path.startswith(p) for p in HOT_RELOADABLE):
             raise ValueError(f"config path '{path}' is not hot-reloadable")
@@ -71,6 +89,10 @@ class Config:
             if parts[-1] not in node and enforce_hot:
                 raise ValueError(f"unknown config leaf '{path}'")
             node[parts[-1]] = value
+            if enforce_hot:
+                if not hasattr(self, "_tuned"):
+                    self._tuned = {}
+                self._tuned[path] = value
 
     def as_dict(self) -> dict:
         return copy.deepcopy(self._d)

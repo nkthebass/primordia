@@ -61,6 +61,7 @@ def save(sim, root: str, label: str | None = None, force: bool = False) -> str:
         "speciation": sim.speciation.meta(),
         "chronicle": sim.chronicle.meta(),
         "stats": sim.stats.meta(),
+        "tuned": sim.cfg.tuned(),
         "rng": _rng_state(sim.rng),
         "runtime_genes": sim.runtime_gene_defs(),
         "pending_predators": int(sim.pending_predators),
@@ -138,6 +139,9 @@ def load(sim, root: str) -> int:
     sim.chronicle.load(meta["chronicle"])
     sim.stats.load(meta["stats"])
     sim.restore_runtime_genes(meta.get("runtime_genes", []))
+    # the rules the world was running under are part of its state, not of the shipped
+    # config -- a fresh world still starts from config/default.json
+    sim.cfg.apply_tuned(meta.get("tuned", {}))
     try:
         st = meta.get("rng")
         if st:
