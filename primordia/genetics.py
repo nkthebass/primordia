@@ -36,14 +36,16 @@ class Gene:
     lo: float = 0.0
     hi: float = 1.0
     heritable: bool = True
+    # runtime-added genes carry declarative effects; core genes are wired in code
+    effects: list = field(default_factory=list)
+    added_tick: int = 0
     # Per-generation pull back toward init_mean.  Without one, a gene under weak
     # selection is an unbiased random walk inside its bounds and converges on a uniform
     # distribution across them -- which for a network weight means saturation, and a
     # brain whose outputs no longer depend on its inputs at all.
+    # Declared last on purpose: several call sites build Gene positionally, and adding a
+    # field ahead of `effects` silently feeds the effects list into this one.
     decay: float = 0.0
-    # runtime-added genes carry declarative effects; core genes are wired in code
-    effects: list = field(default_factory=list)
-    added_tick: int = 0
 
     def to_json(self) -> dict:
         return asdict(self)

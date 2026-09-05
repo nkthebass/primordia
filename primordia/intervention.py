@@ -247,7 +247,8 @@ class Intervention:
         elif self.sim.flora.genome.has(name):
             raise ValueError(f"flora already has a gene named '{name}'")
 
-        gene = Gene(name, mean, std, mut, lo, hi, True, clean, int(tick))
+        gene = Gene(name, mean, std, mut, lo, hi, heritable=True, effects=clean,
+                    added_tick=int(tick))
         target.add_runtime_gene(gene)
         self.sim.speciation._rebuild_cols()
         desc = "; ".join(

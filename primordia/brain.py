@@ -36,7 +36,7 @@ def brain_genes(decay: float = 0.015) -> list[Gene]:
     to +-1 regardless of what the thirteen senses reported and the whole fauna drove in
     one fixed direction until it hit the edge of the world.
     """
-    return [Gene(f"w{i:03d}", 0.0, 0.7, 0.13, -4.0, 4.0, True, decay=decay)
+    return [Gene(f"w{i:03d}", 0.0, 0.7, 0.13, -4.0, 4.0, heritable=True, decay=decay)
             for i in range(N_BRAIN)]
 
 
