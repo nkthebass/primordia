@@ -165,7 +165,7 @@ with their parent so the phylogeny is a real record of descent.
 **Brain weights decay.** A weight under weak selection is an unbiased random walk inside
 its bounds, and after two thousand years of that the weights here had spread almost
 uniformly across the full ±4 range with 2.7% pressed against the clip. At that scale every
-pre-activation saturates , the outputs pin regardless of input, and the fauna stop
+pre-activation saturates `tanh`, the outputs pin regardless of input, and the fauna stop
 deciding anything — they drove in one fixed direction until they hit the edge of the world.
 A 1.5%-per-generation pull toward zero turns that walk into an Ornstein–Uhlenbeck process
 whose spread settles near the founders' responsive scale. Decay is applied from config at
