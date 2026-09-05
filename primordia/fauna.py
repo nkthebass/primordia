@@ -44,6 +44,9 @@ NEIGH = [(dy, dx) for dy in (-1, 0, 1) for dx in (-1, 0, 1)]
 PREY_POWER_MARGIN = 1.25
 THREAT_POWER_MARGIN = 1.25
 MAX_PREY_SIZE_MULT = 2.5
+# what fraction of nominal attack power a founder's wiring actually delivers through
+# the attack output; the hit check multiplies power by it, so arming must divide by it
+FOUNDER_ATTACK_DRIVE = 0.9
 
 ACT_IDLE, ACT_MOVE, ACT_EAT, ACT_ATTACK, ACT_BREED, ACT_FLEE = 0, 1, 2, 3, 4, 5
 ACTION_NAMES = ("idle", "move", "eat", "attack", "breed", "flee")
@@ -82,12 +85,21 @@ CHASE = {_w1(IN_PREY_DX, 0): 2.2, _w2(0, OUT_MOVE_X): 1.8,
          _w1(IN_PREY_DY, 1): 2.2, _w2(1, OUT_MOVE_Y): 1.8}
 FLEE = {_w1(IN_THREAT_DX, 2): 2.2, _w2(2, OUT_MOVE_X): -1.8, _w2(2, OUT_FLEE): 1.2,
         _w1(IN_THREAT_DY, 3): 2.2, _w2(3, OUT_MOVE_Y): -1.8}
-# hidden unit 4 = "am I hungry" -> drives attack.  A predator with a constant attack
-# bias surplus-kills its way through the whole prey base in one season.
 # hidden unit 4 = "am I short of a full belly".  Centred so a predator hunts at any
 # energy below roughly its breeding threshold and stops once it is full -- centred on
 # *starving* instead, it declines to hunt until it is already too weak to.
 HUNGER_GATE = {_w1(IN_ENERGY, 4): -2.5, _b1(4): 3.0}
+
+# The burst channel (OUT_FLEE) is a plain speed multiplier for whoever raises it, but
+# only the grazers were ever wired to raise it: FLEE runs threat-detector -> burst, and
+# the hunter archetype had no circuit driving that output at all.  So prey sprinted at
+# 1.35x while the animal chasing them jogged, and after two thousand years of selection
+# on prey speed no chase could close: measured over 24,796 pursuits the hunters steered
+# at their targets (alignment +0.41) and held station at 3.95 cells, real speed 1.076
+# against fleeing prey at 1.144.  They starved in sight of food.  Pursuit spends the
+# same currency flight does; hidden unit 4 already says "hungry", so it drives the
+# sprint.  Ordinary mutable genes afterwards, like every other founder prior.
+PURSUE = {_w2(4, OUT_FLEE): 1.5}
 IN_SCENT_DX, IN_SCENT_DY = 8, 9
 # follow the scent gradient (kin for grazers, blood for carnivores -- same two inputs,
 # blended by the diet gene in scent.sample_gradient)
@@ -108,7 +120,7 @@ FOUNDERS = [
                   _w2(4, OUT_ATTACK): 1.4, BIAS_ATTACK: -0.2}),
     ("hunter",   2.20, {"diet": 0.85, "size": 0.46, "speed": 0.85, "fangs": 0.62,
                   "sense_range": 0.78, "speed": 0.85, BIAS_EAT: 1.2,
-                  BIAS_BREED: 0.6, **CHASE, **TRACK, **HUNGER_GATE,
+                  BIAS_BREED: 0.6, **CHASE, **TRACK, **HUNGER_GATE, **PURSUE,
                   _w2(4, OUT_ATTACK): 2.0, BIAS_ATTACK: 0.1}),
 ]
 
@@ -237,7 +249,7 @@ class Fauna:
     def spawn(self, n: int, cx: float | None = None, cy: float | None = None,
               radius: float = 12.0, archetype: dict | None = None,
               alien: bool = False, tick: int = 0,
-              energy_mult: float = 1.0) -> np.ndarray:
+              energy_mult: float = 1.0, brain_quiet: float = 1.0) -> np.ndarray:
         """Vectorized spawn.  Returns the indices created."""
         idx = self._free_slots(n)
         if len(idx) == 0:
@@ -249,6 +261,16 @@ class Fauna:
             lo = np.array([g.lo for g in self.schema.genes], np.float32)
             hi = np.array([g.hi for g in self.schema.genes], np.float32)
             self.schema.data[idx] = (lo + self.rng.random((n, self.schema.n)).astype(np.float32) * (hi - lo))
+        if brain_quiet != 1.0:
+            # A founder prior is six weights out of 166.  The other 160 are drawn at
+            # std 0.7, and their summed contribution to any one pre-activation swamps
+            # the instinct: seeded hunters chased with alignment 0.4 and pushed their
+            # attack output to 0.65 when the wiring intends 0.97 -- and since a blow
+            # lands only if attack_power * attack_output clears armour plus the evasion
+            # roll, that shortfall put every kill mathematically out of reach.  Damping
+            # the untaught weights lets the instinct read through; mutation restores the
+            # diversity within a few dozen generations.
+            self.schema.data[idx, self.brain.start:self.brain.end] *= float(brain_quiet)
         if archetype:
             for k, v in archetype.items():
                 if k in self.schema.index:
@@ -336,11 +358,23 @@ class Fauna:
             return arch
         d = self.schema.data
         gi = self.gi
+        # size_eff is derived during perceive and is still zero on a freshly resumed
+        # world, which quietly dropped the 0.35*size term out of the armour estimate.
         size = self.size_eff[rows]
+        if not size.any():
+            size = d[rows, gi["size"]] * float(self.cfg.fauna["juvenile_size"])
         armour = d[rows, gi["armor"]] + 0.35 * size
         small = size < np.median(size) * 1.2          # what a predator would go after
-        target = float(np.percentile(armour[small] if small.any() else armour, 60))
-        need = target * PREY_POWER_MARGIN * 1.15      # clear the bar, do not graze it
+        sel = small if small.any() else np.ones(len(rows), bool)
+        target = float(np.percentile(armour[sel], 60))
+        # A blow lands when attack_power * attack_output > armour + roll, where the roll
+        # runs uniform over 0..0.45 plus 0.35*prey speed.  Arming against armour alone
+        # ignored both terms: it reported "sufficient" at power 1.32 when the real bar
+        # averaged 1.36 and the attack output only ever delivers a fraction of nominal
+        # power.  Measured over four seedings that arithmetic produced exactly zero
+        # kills while the hunters landed hits and starved.
+        evasion = 0.225 + float(self.cfg.energy["evasion"]) * float(d[rows, gi["speed"]][sel].mean())
+        need = (target + evasion) * PREY_POWER_MARGIN / FOUNDER_ATTACK_DRIVE
 
         arch = dict(arch)
         base_size = float(arch.get("size", 0.46))
@@ -352,7 +386,8 @@ class Fauna:
         arch["size"] = base_size
         power = fangs + 0.6 * base_size
         self.last_hunter_arming = {
-            "prey_armour_p60": round(target, 3), "power_needed": round(need, 3),
+            "prey_armour_p60": round(target, 3), "evasion": round(evasion, 3),
+            "power_needed": round(need, 3), "genome_ceiling": 1.6,
             "fangs": round(fangs, 3), "size": round(base_size, 3),
             "power": round(power, 3), "sufficient": bool(power >= need * 0.98)}
         return arch
@@ -383,7 +418,8 @@ class Fauna:
             spread = 0.45 if name == "hunter" else 0.30
             n += len(self.spawn(max(4, want), cx=cx, cy=cy,
                                 radius=self.G * spread, tick=tick, archetype=arch,
-                                energy_mult=float(self.cfg.fauna["founder_energy_mult"])))
+                                energy_mult=float(self.cfg.fauna["founder_energy_mult"]),
+                                brain_quiet=float(self.cfg.fauna["founder_brain_quiet"])))
         return n
 
     def _refresh(self) -> None:

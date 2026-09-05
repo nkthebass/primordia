@@ -120,7 +120,8 @@
     "cooldown_lifespan": 1.0,
     "reach_size_min": 99.0,
     "reach_size_span": 1.0,
-    "founder_energy_mult": 3.5
+    "founder_energy_mult": 3.5,
+    "founder_brain_quiet": 0.35
   },
   "energy": {
     "basal_rate": 0.1,

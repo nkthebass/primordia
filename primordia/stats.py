@@ -104,6 +104,17 @@ class Stats:
                 w.append(f"monoculture: {sp.name} is {100 * sp.pop / total:.0f}% of all fauna")
         if s.fauna.pop >= 0.97 * s.fauna.cap:
             w.append("population at hard cap (runaway)")
+        pn = self._predator_niche()
+        if pn and not pn["open"]:
+            w.append(f"predator niche closed: prey defence {pn['prey_defence']:.2f} "
+                     f"needs attack power {pn['power_needed']:.2f}, genome ceiling is "
+                     f"1.60 - seeding predators here cannot work until prey armour or "
+                     f"speed comes down")
+        b = self._brain_health()
+        if b.get("output_saturated", 0) > 0.5:
+            w.append(f"brains saturated: {b['output_saturated']*100:.0f}% of outputs "
+                     f"pinned, weight sd {b['weight_sd']:.2f} — the fauna are not "
+                     f"responding to their senses")
         if s.fauna.pop == 0:
             w.append("TOTAL FAUNAL EXTINCTION")
         if s.monitor:
@@ -152,6 +163,8 @@ class Stats:
             "species": species,
             "species_total_ever": len(s.speciation.species),
             "genetic_variance": round(self._genetic_variance(fa.alive_idx), 5),
+            "brains": self._brain_health(),
+            "predator_niche": self._predator_niche(),
             "warnings": self.compute_warnings(tick),
             "recent_events": recent,
             "active_events": [e.to_json() for e in s.events.active][:10],
@@ -166,6 +179,68 @@ class Stats:
             "config_hot": {"mutation_rate_global": self.cfg.genetics["mutation_rate_global"],
                            "energy.basal_rate": self.cfg.energy["basal_rate"]},
         }
+
+    def _predator_niche(self) -> dict:
+        """Can the genome still express an animal able to kill what is grazing here?
+
+        A blow lands when attack_power * attack_output exceeds the victim's armour plus
+        an evasion roll, and attack_power tops out at fangs 1.0 + 0.6 * size 1.0 = 1.60.
+        Herbivore armour and speed are under continuous selection; predators are not
+        always present to push back.  Two thousand years of that ratchet took the bar to
+        1.89 here, and every predator seeding after that point was arithmetically dead on
+        arrival -- the hunters chased, closed, landed blows, and could not convert them.
+        """
+        fa = self.sim.fauna
+        rows = fa.alive_idx
+        if len(rows) < 50:
+            return {}
+        d = fa.schema.data
+        gi = fa.gi
+        size = fa.size_eff[rows]
+        if not size.any():
+            size = d[rows, gi["size"]] * float(fa.cfg.fauna["juvenile_size"])
+        armour = d[rows, gi["armor"]] + 0.35 * size
+        small = size < np.median(size) * 1.2
+        sel = small if small.any() else np.ones(len(rows), bool)
+        bar = float(np.percentile(armour[sel], 60))
+        evasion = 0.225 + float(fa.cfg.energy["evasion"]) * float(d[rows, gi["speed"]][sel].mean())
+        need = (bar + evasion) * 1.25 / 0.9
+        return {"prey_defence": round(bar + evasion, 3),
+                "power_needed": round(need, 3),
+                "genome_ceiling": 1.6,
+                "open": bool(need <= 1.6)}
+
+    def _brain_health(self) -> dict:
+        """Is the network still a controller, or has it become a constant?
+
+        Weights under weak selection random-walk to the edges of their range, and once the
+        spread is large every pre-activation saturates tanh: outputs pin to +-1 whatever
+        the senses report, and the fauna stop steering.  `output_saturated` is the honest
+        alarm -- it reached 0.80 here while every other statistic in this file looked
+        healthy, and nothing in the report would have shown it.
+        """
+        fa = self.sim.fauna
+        rows = fa.alive_idx
+        if len(rows) < 20:
+            return {}
+        gn = [g.name for g in fa.schema.genes]
+        bcols = [i for i, n in enumerate(gn) if n.startswith("w") and n[1:].isdigit()]
+        if not bcols:
+            return {}
+        bw = fa.schema.data[np.ix_(rows, bcols)]
+        out = {"weight_sd": round(float(bw.std()), 3),
+               "weight_at_bound": round(float((np.abs(bw) > 3.99).mean()), 4)}
+        # last_outputs is the most recent tick's forward pass.  Requiring it to match the
+        # current row count exactly means one birth or death between the tick and the
+        # write silently drops the metric -- which it did, reporting 0.000 saturation
+        # while the brains were 80%% pinned.
+        o = fa.last_outputs
+        if len(o):
+            out["output_saturated"] = round(float((np.abs(o) > 0.95).mean()), 4)
+            # spread of one steering channel across animals seeing different things:
+            # near zero means everybody is doing the same thing regardless of input
+            out["steering_spread"] = round(float(o[:, 1].std()), 3)
+        return out
 
     def _gene_report(self, kingdom: str, name: str) -> dict:
         """Distribution of one runtime gene, not just its mean.
