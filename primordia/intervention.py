@@ -15,6 +15,8 @@ import traceback
 
 import numpy as np
 
+from . import fauna as fmod
+
 from .genetics import Gene, validate_effect
 
 TYPES = ("trigger_event", "climate", "tune", "seed_organism", "note", "add_gene",
@@ -166,6 +168,17 @@ class Intervention:
                 idx = self.sim.fauna.spawn(count, cx=x, cy=y, radius=radius,
                                            alien=True, tick=tick)
             elif isinstance(genome, dict):
+                genome = dict(genome)
+                # "instincts": "hunter" -- a named set of founder brain weights, so a
+                # seeding can ask for a behaviour without naming w-indices by hand
+                inst = genome.pop("instincts", None)
+                if inst is not None:
+                    if inst not in fmod.INSTINCTS:
+                        raise ValueError(
+                            f"unknown instincts '{inst}'; known: "
+                            f"{', '.join(sorted(fmod.INSTINCTS))}")
+                    for k, v in fmod.INSTINCTS[inst]().items():
+                        genome.setdefault(k, v)
                 bad = [k for k in genome if k not in self.sim.fauna.schema.index]
                 if bad:
                     raise ValueError(f"unknown fauna genes: {', '.join(bad[:6])}")

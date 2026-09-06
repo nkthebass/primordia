@@ -106,6 +106,37 @@ IN_SCENT_DX, IN_SCENT_DY = 8, 9
 TRACK = {_w1(IN_SCENT_DX, 5): 2.0, _w2(5, OUT_MOVE_X): 1.2,
          _w1(IN_SCENT_DY, 6): 2.0, _w2(6, OUT_MOVE_Y): 1.2}
 
+# Named behavioural priors a seeding may ask for.  A stock descended from local grazers
+# inherits a grazer's brain: it has the blood-scent inputs -- at a carnivorous diet
+# scent.sample_gradient hands it the blood gradient rather than the kin one -- but nothing
+# wired from them to movement, and no attack drive.  Measured on such a stock: it wanted to
+# attack on 22% of ticks and stood on carrion 0.5% of the time in a world holding 778 cells
+# of it, which is the rate you get by walking at random.  With these fourteen weights laid
+# over the inherited brain it landed eight times as many blows.
+#
+# Data, not code: a seeding names one of these and the engine supplies the weights.  Every
+# one is an ordinary mutable gene afterwards, and the network is unchanged -- same 13-8-6
+# shape, same 166 genes, same neuroevolution.
+def _hunter_instincts() -> dict:
+    out = {}
+    out.update(CHASE); out.update(TRACK); out.update(HUNGER_GATE); out.update(PURSUE)
+    out[_w2(4, OUT_ATTACK)] = 2.0
+    out[BIAS_ATTACK] = 0.35
+    out[BIAS_EAT] = 1.2
+    return out
+
+
+def _grazer_instincts() -> dict:
+    out = {}
+    out.update(FLEE); out.update(TRACK)
+    out[BIAS_EAT] = 1.4
+    out[BIAS_BREED] = 0.6
+    return out
+
+
+INSTINCTS = {"hunter": _hunter_instincts, "grazer": _grazer_instincts}
+
+
 # founder archetypes.  Body priors plus a *minimal* behavioural prior: a random MLP
 # eats only by accident and the whole biosphere starves before selection can act, so
 # founders are born wanting to eat and breed.  Everything after that is evolved.
