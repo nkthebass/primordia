@@ -223,6 +223,14 @@ class Stats:
             return {}
         d = fa.schema.data
         gi = fa.gi
+        # Measure the prey, not everyone.  This averaged over the whole population, so a
+        # freshly seeded predator stock -- deliberately given low armour, because armour is
+        # pure tax on an animal nothing hunts -- pulled the number down and made the niche
+        # read more open than it was.  Seeding 450 such animals into 2,300 moved it 1.33 to
+        # 1.27 on its own, and this is the number the game-master decides by.
+        prey_only = d[rows, gi["diet"]] < 0.45
+        if prey_only.sum() >= 50:
+            rows = rows[prey_only]
         size = fa.size_eff[rows]
         if not size.any():
             size = d[rows, gi["size"]] * float(fa.cfg.fauna["juvenile_size"])
@@ -233,6 +241,7 @@ class Stats:
         evasion = 0.225 + float(fa.cfg.energy["evasion"]) * float(d[rows, gi["speed"]][sel].mean())
         need = (bar + evasion) * 1.25 / 0.9
         return {"prey_defence": round(bar + evasion, 3),
+                "measured_on": int(len(rows)),
                 "power_needed": round(need, 3),
                 "genome_ceiling": 1.6,
                 "open": bool(need <= 1.6)}
