@@ -207,7 +207,8 @@
     "predator_min_tick": 900,
     "predator_seed_frac": 0.12,
     "predator_waves": 3,
-    "predator_wave_gap": 900
+    "predator_wave_gap": 900,
+    "archive_keep_years": 40
   },
   "monitor": {
     "sample_interval": 2.0,

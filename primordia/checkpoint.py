@@ -91,7 +91,36 @@ def save(sim, root: str, label: str | None = None, force: bool = False) -> str:
     if label:
         for ext in (".npz", ".json"):
             shutil.copyfile(base + ext, os.path.join(d, "archive", f"{label}{ext}"))
+        _prune_archive(d, int(sim.cfg.sim.get("archive_keep_years", 40)))
     return base + ".npz"
+
+
+def _prune_archive(d: str, keep: int) -> None:
+    """Keep a sparse ladder of yearly archives instead of every one of them.
+
+    The world archives a full checkpoint every simulated year, which is 28 MB.  At fifty
+    ticks a second that is one every forty seconds of wall clock, and four thousand six
+    hundred years of them came to 123 GB -- the disk reached 99.9% full and the run would
+    have stopped.  Keep the most recent `keep` years and then one per century further
+    back, which holds the whole history of a four-thousand-year world in about 1.5 GB.
+    Labelled saves that are not years are left alone; there are few of them.
+    """
+    a = os.path.join(d, "archive")
+    try:
+        names = [n for n in os.listdir(a) if n.startswith("year_") and n.endswith(".npz")]
+    except OSError:
+        return
+    years = sorted(int(n[5:-4]) for n in names if n[5:-4].isdigit())
+    if len(years) <= keep:
+        return
+    newest = set(years[-keep:])
+    doomed = [y for y in years[:-keep] if y % 100 != 0 and y not in newest]
+    for y in doomed:
+        for ext in (".npz", ".json"):
+            try:
+                os.remove(os.path.join(a, "year_%04d%s" % (y, ext)))
+            except OSError:
+                pass
 
 
 def _replace_with_retry(src: str, dst: str, attempts: int = 6) -> None:
