@@ -164,7 +164,8 @@
     "sprint_diet": 0.38,
     "founder_condition": 0.55,
     "crowd_free": 8.0,
-    "crowd_cost": 0.014
+    "crowd_cost": 0.014,
+    "gorge_meat": 4.0
   },
   "genetics": {
     "mutation_rate_global": 1.0,

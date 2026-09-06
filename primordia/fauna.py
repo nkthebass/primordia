@@ -667,6 +667,13 @@ class Fauna:
         speed_g = d[rows, gi["speed"]]
         action = np.full(n, ACT_IDLE, np.int8)
 
+        # The cell the senses reported, kept before movement overwrites it.  The brain
+        # decides from what is underfoot at (cy, cx) and eating was then resolved wherever
+        # the animal ended up after moving -- so a hunter that lunged onto its kill walked
+        # off the carcass and ate empty ground.  Measured: predators captured about a tenth
+        # of the energy in the corpses they made, standing on meat 0.5% of ticks while
+        # killing enough to live on.  Perception and ingestion happen in the same place now.
+        cy0, cx0 = cy, cx
         # --- movement ---------------------------------------------------------
         mv = out[:, :2]
         flee = np.clip(out[:, 4], 0.0, 1.0)
@@ -715,7 +722,7 @@ class Fauna:
                 + np.maximum(0.0, cap_t - self.tissue[rows]))
         # A grazer crops a plant; it cannot eat the crown out of it.  Without this floor
         # herbivores strip every cell to death and the whole food chain follows.
-        avail = np.maximum(0.0, self.flora.biomass[cy, cx] - float(cfg_f["graze_floor"]))
+        avail = np.maximum(0.0, self.flora.biomass[cy0, cx0] - float(cfg_f["graze_floor"]))
         # A large grazer reaches beyond the cell it stands on.  Per-tick intake capped at
         # one cell's biomass is what drives every lineage to the size floor: basal cost
         # rises with mass but the meal does not, so nothing stays big enough to be prey
@@ -726,8 +733,8 @@ class Fauna:
         # four gathers and four scatters per tick for nothing when reach is disabled
         use_reach = bool(reach.any())
         if use_reach:
-            ny = [np.clip(cy - 1, 0, G - 1), np.clip(cy + 1, 0, G - 1), cy, cy]
-            nx = [cx, cx, (cx - 1) % G, (cx + 1) % G]
+            ny = [np.clip(cy0 - 1, 0, G - 1), np.clip(cy0 + 1, 0, G - 1), cy0, cy0]
+            nx = [cx0, cx0, (cx0 - 1) % G, (cx0 + 1) % G]
             near = [np.maximum(0.0, self.flora.biomass[a, b] - float(cfg_f["graze_floor"]))
                     for a, b in zip(ny, nx)]
             avail_all = avail + sum(near) * reach
@@ -735,24 +742,24 @@ class Fauna:
             avail_all = avail
         take = np.minimum(bite, avail_all * graze) * want_eat * (stats["plant_digest"] > 0.02)
         take = np.maximum(take, 0.0)
-        edens0 = self.flora.energy_density()[cy, cx]
+        edens0 = self.flora.energy_density()[cy0, cx0]
         per_unit = np.maximum(edens0 * float(cfg_e["plant_energy_scale"])
                               * stats["plant_digest"], 1e-6)
         take = np.minimum(take, room / per_unit)      # do not harvest what you cannot store
         if take.any():
             if use_reach:
                 share = take / np.maximum(avail_all, 1e-6)
-                scatter_sub(self.flora.biomass, cy, cx, avail * share)
+                scatter_sub(self.flora.biomass, cy0, cx0, avail * share)
                 for (a, b), nb in zip(zip(ny, nx), near):
                     scatter_sub(self.flora.biomass, a, b, nb * reach * share)
             else:
-                scatter_sub(self.flora.biomass, cy, cx, take)
+                scatter_sub(self.flora.biomass, cy0, cx0, take)
             np.clip(self.flora.biomass, 0.0, None, out=self.flora.biomass)
             gainE = take * per_unit
             # toxin arms race: mostly a digestive tax on the energy you extract, with a
             # small cumulative health cost -- lethal-per-bite poison wipes the herbivores
             # out before tolerance can evolve.
-            tox = self.flora.genome.plane("toxin")[cy, cx]
+            tox = self.flora.genome.plane("toxin")[cy0, cx0]
             excess = np.maximum(0.0, tox - stats["toxin_resist"]) * (take > 1e-4)
             gainE = gainE * np.clip(1.0 - excess * float(cfg_e["toxin_energy_penalty"]), 0.0, 1.0)
             np.add.at(self.energy, rows, gainE)
@@ -761,19 +768,34 @@ class Fauna:
             ev["eaten_plant"] = float(take.sum())
             action = np.where(take > 1e-3, ACT_EAT, action).astype(np.int8)
         # carrion
-        mavail = self.meat[cy, cx]
+        mavail = self.meat[cy0, cx0]
         room = (np.maximum(0.0, cap_e - self.energy[rows])
                 + np.maximum(0.0, cap_t - self.tissue[rows]))
         # meat is stored as energy, so digestion is a loss factor, never a multiplier
         m_per_unit = np.maximum(
             min(1.0, float(cfg_e["meat_energy_scale"])) * stats["meat_digest"], 1e-6)
-        mtake = np.minimum(bite * 1.2, mavail * 0.5) * want_eat * (stats["meat_digest"] > 0.02)
+        # Meat intake used the same mouthful as grass -- bite_scale * size -- so a hunter
+        # small enough to afford its own metabolism needed about fifty ticks to strip a
+        # carcass it actually stood on for four.  Measured over a seeded cohort: income
+        # +0.002 per tick against an outgo of -0.02, and no predator ever reached breeding
+        # energy in any configuration tried.  A carnivore tearing at a kill takes far
+        # bigger mouthfuls than a grazer cropping a sward, so the rate scales with how
+        # carnivorous the animal is.
+        #
+        # Rate only, and deliberately so.  The energy in the carcass is unchanged and
+        # meat_energy_scale stays clamped at 1.0 above: corpse_energy_frac is 0.95, so any
+        # multiplier on extraction would let predators eating each other mint energy out of
+        # nothing, which is the perpetual-motion failure the corpse accounting already
+        # records having hit once.
+        gorge = 1.0 + float(cfg_e["gorge_meat"]) * stats["meat_digest"]
+        mtake = (np.minimum(bite * 1.2 * gorge, mavail * 0.5) * want_eat
+                 * (stats["meat_digest"] > 0.02))
         mtake = np.maximum(np.minimum(mtake, room / m_per_unit), 0.0)
         if mtake.any():
             frac = np.where(mavail > 1e-6, mtake / np.maximum(mavail, 1e-6), 0.0)
-            mmatter = self.meat_matter[cy, cx] * frac
-            scatter_sub(self.meat, cy, cx, mtake)
-            scatter_sub(self.meat_matter, cy, cx, mmatter)
+            mmatter = self.meat_matter[cy0, cx0] * frac
+            scatter_sub(self.meat, cy0, cx0, mtake)
+            scatter_sub(self.meat_matter, cy0, cx0, mmatter)
             np.clip(self.meat, 0.0, None, out=self.meat)
             np.clip(self.meat_matter, 0.0, None, out=self.meat_matter)
             np.add.at(self.energy, rows, mtake * m_per_unit)
