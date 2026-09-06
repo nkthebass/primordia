@@ -249,7 +249,8 @@ class Fauna:
     def spawn(self, n: int, cx: float | None = None, cy: float | None = None,
               radius: float = 12.0, archetype: dict | None = None,
               alien: bool = False, tick: int = 0,
-              energy_mult: float = 1.0, brain_quiet: float = 1.0) -> np.ndarray:
+              energy_mult: float = 1.0, brain_quiet: float = 1.0,
+              donors: np.ndarray | None = None) -> np.ndarray:
         """Vectorized spawn.  Returns the indices created."""
         idx = self._free_slots(n)
         if len(idx) == 0:
@@ -261,7 +262,20 @@ class Fauna:
             lo = np.array([g.lo for g in self.schema.genes], np.float32)
             hi = np.array([g.hi for g in self.schema.genes], np.float32)
             self.schema.data[idx] = (lo + self.rng.random((n, self.schema.n)).astype(np.float32) * (hi - lo))
-        if brain_quiet != 1.0:
+        if donors is not None and len(donors):
+            # Descend from animals that already live here.  A genome built from the gene
+            # defaults is a cold-start animal dropped into a world that has been adapting
+            # for thousands of years: at year 3,719 the residents carried toxin tolerance
+            # 0.93 against a default of 0.20, lifespan 0.91 against 0.50, and a breeding
+            # threshold of 0.17 against 0.50.  Every hand-seeded wave was therefore
+            # poisoned by the grass, short-lived, and needed half again as much energy to
+            # breed as anything around it -- for the ten or so genes nobody thought to
+            # name.  Copy a resident whole, then let the archetype below edit the traits
+            # that are actually meant to differ.  The brain comes with it, which is the
+            # point: it already knows this world.
+            pick = self.rng.choice(np.asarray(donors), n, replace=True)
+            self.schema.data[idx] = self.schema.data[pick]
+        elif brain_quiet != 1.0:
             # A founder prior is six weights out of 166.  The other 160 are drawn at
             # std 0.7, and their summed contribution to any one pre-activation swamps
             # the instinct: seeded hunters chased with alignment 0.4 and pushed their

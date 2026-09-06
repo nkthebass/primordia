@@ -175,10 +175,14 @@ class Intervention:
                 # nominal attack power -- and a single start_energy, about 250 ticks of
                 # fuel to find a first kill.  Six hand-seeded predator waves were sent out
                 # under both handicaps while the engine's own founders had neither.
+                # descend from the locals where there are locals to descend from
+                live = self.sim.fauna.alive_idx
+                donors = live if len(live) >= 20 else None
                 idx = self.sim.fauna.spawn(
                     count, cx=x, cy=y, radius=radius, archetype=genome, tick=tick,
                     energy_mult=float(self.cfg.fauna["founder_energy_mult"]),
-                    brain_quiet=float(self.cfg.fauna["founder_brain_quiet"]))
+                    brain_quiet=float(self.cfg.fauna["founder_brain_quiet"]),
+                    donors=donors)
             else:
                 raise ValueError("genome must be 'random_alien' or an object of gene values")
             msg = f"seeded {len(idx)} fauna at ({int(x)},{int(y)})"
