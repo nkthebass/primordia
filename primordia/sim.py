@@ -268,7 +268,13 @@ class Sim:
             self.checkpoints_enabled = False
             self._ckpt_last = time.time()
             self.corrupt = str(e)
-            self.log_event("checkpoint", f"WORLD STATE CORRUPT: {e}")
+            # Stop the world too, not just the saving.  The first version of this guard
+            # only disabled checkpointing, and the dead world went on running for another
+            # 1,400 years, filling the Chronicle with NaN and burning a core for nothing.
+            self.cfg.set("sim.paused", True)
+            self.paused_reason = "world state corrupt (non-finite values)"
+            self.log_event("checkpoint",
+                           f"WORLD STATE CORRUPT: {e} — simulation paused.")
             return ""
         except ckpt.StaleSaveRefused as e:
             # not a failure: this run is deliberately not allowed to clobber a longer one

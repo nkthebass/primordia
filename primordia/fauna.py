@@ -683,6 +683,33 @@ class Fauna:
         inp[:, 12] = 1.0 if ctx["is_night"] else 0.0
         return inp, cy, cx, best_prey, best_prey_d, best_threat, best_threat_d
 
+    def _ration(self, cy, cx, want, avail):
+        """Scale each animal's mouthful so a cell cannot serve more than it holds.
+
+        Eating is vectorised: every animal on a cell reads the same `avail` and takes its
+        own share of the whole, so N animals crowded together extract N times what is
+        there.  For plants the biomass is clipped at zero afterwards and the excess is
+        merely lost; for carrion it is worse, because the matter that rides along with it
+        is credited to the eater whether or not the carcass could pay.  Matter then flows
+        eater -> corpse -> carrion -> eater, and any duplication compounds around that
+        loop: at year 8524, with 19,987 animals against a cap of 20,000 and four thousand
+        cells holding more than one of them, a single cell's carrion matter had reached
+        4.2e35 and the world's total 7.9e37 against a true value near 1.3e6.  The next
+        step overflowed float32, and the world died of NaN.
+
+        The test suite never saw it because a world of thirty animals has no crowds.
+        """
+        n = len(want)
+        if n == 0:
+            return want
+        flat = cy.astype(np.int64) * self.G + cx
+        demand = np.bincount(flat, weights=want.astype(np.float64),
+                             minlength=self.G * self.G)
+        tot = demand[flat]
+        av = np.asarray(avail, np.float64)
+        scale = np.where(tot > av, av / np.maximum(tot, 1e-12), 1.0)
+        return np.maximum(want * scale.astype(np.float32), 0.0)
+
     # ------------------------------------------------------------------- act
     def act(self, rows, out, cy, cx, prey, prey_d, ctx, stats, tick) -> dict:
         cfg_f = self.cfg.fauna
@@ -777,6 +804,7 @@ class Fauna:
         per_unit = np.maximum(edens0 * float(cfg_e["plant_energy_scale"])
                               * stats["plant_digest"], 1e-6)
         take = np.minimum(take, room / per_unit)      # do not harvest what you cannot store
+        take = self._ration(cy0, cx0, take, avail_all)
         if take.any():
             if use_reach:
                 share = take / np.maximum(avail_all, 1e-6)
@@ -822,6 +850,7 @@ class Fauna:
         mtake = (np.minimum(bite * 1.2 * gorge, mavail * 0.5) * want_eat
                  * (stats["meat_digest"] > 0.02))
         mtake = np.maximum(np.minimum(mtake, room / m_per_unit), 0.0)
+        mtake = self._ration(cy0, cx0, mtake, mavail)
         if mtake.any():
             frac = np.where(mavail > 1e-6, mtake / np.maximum(mavail, 1e-6), 0.0)
             mmatter = self.meat_matter[cy0, cx0] * frac

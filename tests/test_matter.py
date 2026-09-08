@@ -92,6 +92,49 @@ def seeding_conserves(s, M):
     return 0
 
 
+def crowding_conserves(s, M):
+    """Many animals on one cell must not be served more than the cell holds.
+
+    Eating is vectorised, so every animal on a cell reads the same availability and takes
+    its share of the whole.  Uncrowded, that is harmless.  Crowded, the cell pays out N
+    times over -- and because carrion carries matter that is credited to the eater, and
+    the eater's matter returns as carrion when it dies, the duplicate compounds around
+    that loop.  A real world reached 7.9e37 units of matter this way and then overflowed
+    float32 and died.  The whole-world loop above cannot see it: thirty animals never
+    share a cell.
+    """
+    fa, wr = s.fauna, s.world
+    rows = fa.alive_idx
+    if len(rows) < 40:
+        print("crowding: too few animals to test")
+        return 1
+    # pile everybody onto nine cells, and put a fat carcass and full pasture under them
+    g = fa.G
+    fa.x[rows] = (np.arange(len(rows)) % 3 + g // 2).astype(fa.x.dtype)
+    fa.y[rows] = (np.arange(len(rows)) // 3 % 3 + g // 2).astype(fa.y.dtype)
+    ys = slice(g // 2, g // 2 + 3)
+    xs = slice(g // 2, g // 2 + 3)
+    fa.meat[ys, xs] = 5.0
+    fa.meat_matter[ys, xs] = 5.0
+    s.flora.biomass[ys, xs] = 3.0
+    fa.energy[rows] = 1.0            # hungry, so they all try to eat
+    fa.tissue[rows] = 1.0
+    before = M()
+    for _ in range(60):
+        s.step()
+    after = M()
+    drift = (after - before) / max(before, 1.0) * 100.0
+    print("crowding: %d animals on 9 cells, matter %+.6f%% over 60 ticks"
+          % (len(rows), drift))
+    # clean measures exactly 0.000000%%; the unrationed bug measures 0.000578%%, so the
+    # threshold sits an order of magnitude under the bug and well over the noise
+    if abs(drift) > 0.00005:
+        print("  <<< LEAK: a shared cell is serving more than it holds")
+        return 1
+    print("  ok")
+    return 0
+
+
 def run():
     root = tempfile.mkdtemp(prefix="prim_matter_")
     try:
@@ -165,6 +208,7 @@ def run():
             print("  %-13s %+10.3f   %+.4f%%%s" % (k, v, pct, flag))
 
         bad += ["seeding"] * seeding_conserves(s, M)
+        bad += ["crowding"] * crowding_conserves(s, M)
 
         net = abs((m1 - m0) / scale * per_k)
         if net > NET_LIMIT:
