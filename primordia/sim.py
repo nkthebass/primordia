@@ -261,6 +261,15 @@ class Sim:
                 self._ckpt_last = time.time()
             self._ckpt_fails = 0
             return p
+        except ckpt.CorruptStateRefused as e:
+            # The world has gone non-finite.  Stop checkpointing at once so the last good
+            # save survives, and say so where both the owner and the game-master will see
+            # it -- this failure once ran for eight hundred silent years.
+            self.checkpoints_enabled = False
+            self._ckpt_last = time.time()
+            self.corrupt = str(e)
+            self.log_event("checkpoint", f"WORLD STATE CORRUPT: {e}")
+            return ""
         except ckpt.StaleSaveRefused as e:
             # not a failure: this run is deliberately not allowed to clobber a longer one
             self.checkpoints_enabled = False

@@ -21,6 +21,10 @@ def _state_dir(root: str) -> str:
     return d
 
 
+class CorruptStateRefused(RuntimeError):
+    """Raised when a save would write a world containing NaN or infinity."""
+
+
 class StaleSaveRefused(Exception):
     """Raised when a save would replace a checkpoint from a much longer-lived world."""
 
@@ -48,6 +52,20 @@ def save(sim, root: str, label: str | None = None, force: bool = False) -> str:
     for part in (sim.world, sim.weather, sim.flora, sim.decomposers, sim.fauna,
                  sim.scent, sim.events):
         arrays.update(part.state())
+
+    # A corrupt world must not overwrite a good one.  This world went non-finite at year
+    # 8525 and kept running for eight hundred more, writing NaN over every checkpoint and
+    # serving NaN in summary.json to the game-master for two days, until the only clean
+    # state left was a century-old archive that happened to survive pruning.
+    dirty = sorted(k for k, v in arrays.items()
+                   if getattr(v, "dtype", None) is not None
+                   and v.dtype.kind == "f" and v.size and not np.isfinite(v).all())
+    if dirty and not force:
+        raise CorruptStateRefused(
+            "refusing to checkpoint a world with non-finite values in: "
+            + ", ".join(dirty[:6]) + (" ..." if len(dirty) > 6 else "")
+            + f" (tick {sim.tick}). The last good checkpoint is left intact; resume from "
+              "state/archive/ and see what happened. Save with force=True to override.")
     meta = {
         "version": 2,
         "saved_at": time.strftime("%Y-%m-%d %H:%M:%S"),

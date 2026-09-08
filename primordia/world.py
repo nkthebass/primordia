@@ -173,6 +173,8 @@ class World:
         over = self.nutrients - cap
         np.maximum(over, 0.0, out=over)
         shed = float(over.sum())
+        if not np.isfinite(shed):
+            shed = 0.0          # never let the reservoir take on a NaN it can never shed
         if shed > 0.0:
             self.nutrients -= over
             self.lithosphere += shed
@@ -195,7 +197,11 @@ class World:
         the reservoir is never overdrawn and the gift is scaled down when the rock runs
         thin -- disasters stay regenerative (PLAN section 1.2) without inventing matter.
         """
-        if self.lithosphere <= 0.0:
+        # `not > 0` rather than `<= 0`: NaN compares false to everything, so the old test
+        # let a poisoned reservoir through and the next line multiplied it into
+        # soil_fertility across every masked cell.  That is how one non-finite value became
+        # a world with 147,456 NaN cells in three coupled fields.
+        if not (self.lithosphere > 0.0):
             return 0.0
         cur = field[mask]
         add = np.minimum(cur + amount, cap) - cur

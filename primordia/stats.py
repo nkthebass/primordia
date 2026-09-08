@@ -65,6 +65,12 @@ class Stats:
     def compute_warnings(self, tick: int) -> list[str]:
         w: list[str] = []
         s = self.sim
+        # First, and before any early return: a corrupt world must say so even when it has
+        # too little history for the rest of these checks.
+        if getattr(s, "corrupt", None):
+            w.append("WORLD STATE CORRUPT - non-finite values in the simulation; "
+                     "checkpointing is stopped and the last good save is intact. "
+                     "Do not intervene; this needs a restore.")
         tpy = int(self.cfg.weather["ticks_per_year"])
         h = self.h
         n = len(h["tick"])
