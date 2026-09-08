@@ -1,0 +1,414 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>PRIMORDIA — State of the World</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!--
+  ============================================================================
+  A READING of the world, as opposed to viewer/index.html which is a VIEW of it.
+  Every panel answers a question in words and shows the number that justifies it.
+
+  FOR WHOEVER POLISHES THIS
+  ----------------------------------------------------------------------------
+  * All colour, type and spacing live in the :root block below. Restyling should
+    not require touching any JavaScript.
+  * Structure is semantic and stable: .panel > .panel-q (the question) +
+    .verdict (the answer) + .evidence (the number behind it). Style those four
+    and most of the page follows.
+  * Every verdict carries data-state="good|watch|bad|dead". Theme those states
+    rather than individual panels.
+  * The interpretation lives in one place: the READINGS array in the script.
+    Each entry returns {state, verdict, evidence}. Add or reword freely — that
+    is the part meant to be edited.
+  * Data comes from GET /api/summary (poll) — see FIELD NOTES at the bottom of
+    the script for what each field actually means, which is not always obvious.
+  ============================================================================
+-->
+
+<style>
+:root{
+  /* ---- palette (the whole theme is these ten values) ---- */
+  --bg:#0e1417;
+  --panel:#151d21;
+  --line:#233037;
+  --ink:#e6efee;
+  --dim:#8fa6a8;
+  --faint:#5d7276;
+  --good:#5fb98a;
+  --watch:#d8a657;
+  --bad:#d2705e;
+  --dead:#9a4f6b;
+  --accent:#6fb3c9;
+
+  /* ---- type ---- */
+  --display:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --body:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --data:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+
+  /* ---- rhythm ---- */
+  --gap:18px;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--body);line-height:1.5;
+  padding:32px clamp(16px,4vw,56px) 72px;
+}
+
+/* ---------- masthead ---------- */
+.mast{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;
+      border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:26px}
+.mast h1{font-family:var(--display);font-weight:400;font-size:clamp(26px,4vw,40px);
+         margin:0;letter-spacing:.01em}
+.mast .when{font-family:var(--data);color:var(--dim);font-size:14px}
+.mast .pulse{margin-left:auto;font-family:var(--data);font-size:12px;color:var(--faint)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;
+     background:var(--good);margin-right:6px;vertical-align:1px}
+.dot.stale{background:var(--bad)}
+
+/* ---------- the alarm strip ---------- */
+#alarms{display:grid;gap:10px;margin-bottom:26px}
+#alarms:empty{display:none}
+.alarm{border-left:3px solid var(--bad);background:#1d1416;
+       padding:12px 16px;border-radius:0 var(--radius) var(--radius) 0;font-size:14px}
+.alarm.critical{border-left-color:var(--dead);background:#22131a}
+.alarm b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+         color:var(--bad);margin-bottom:3px}
+.alarm.critical b{color:var(--dead)}
+
+/* ---------- headline numbers ---------- */
+.band{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+      gap:var(--gap);margin-bottom:30px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+      padding:14px 16px}
+.cell .v{font-family:var(--data);font-size:clamp(20px,2.6vw,27px);line-height:1.1}
+.cell .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);
+         margin-top:6px}
+
+/* ---------- interpretive panels ---------- */
+h2{font-family:var(--display);font-weight:400;font-size:20px;margin:34px 0 14px;
+   color:var(--dim)}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--gap)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+       padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.panel-q{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.verdict{font-family:var(--display);font-size:19px;line-height:1.35}
+.verdict[data-state="good"]{color:var(--good)}
+.verdict[data-state="watch"]{color:var(--watch)}
+.verdict[data-state="bad"]{color:var(--bad)}
+.verdict[data-state="dead"]{color:var(--dead)}
+.evidence{font-family:var(--data);font-size:12.5px;color:var(--dim);
+          border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+
+/* ---------- tables ---------- */
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+   font-weight:400;background:#111a1d}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-family:var(--data);text-align:right;font-variant-numeric:tabular-nums}
+.bar{height:4px;border-radius:2px;background:var(--accent);min-width:2px}
+
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);
+        color:var(--faint);font-size:12.5px}
+code{font-family:var(--data);color:var(--dim)}
+</style>
+
+<div class="mast">
+  <h1>PRIMORDIA</h1>
+  <div class="when" id="when">connecting…</div>
+  <div class="pulse" id="pulse"><span class="dot" id="dot"></span><span id="pulsetext">—</span></div>
+</div>
+
+<div id="alarms"></div>
+
+<div class="band" id="band"></div>
+
+<h2>What the numbers mean</h2>
+<div class="panels" id="panels"></div>
+
+<h2>Who is alive</h2>
+<div class="scroll"><table>
+  <thead><tr><th>species</th><th>population</th><th>share</th><th>diet</th><th>trend</th></tr></thead>
+  <tbody id="species"></tbody>
+</table></div>
+
+<h2>Genes that evolution did not invent</h2>
+<div class="scroll"><table>
+  <thead><tr><th>gene</th><th>mean</th><th>spread</th><th>carried by</th></tr></thead>
+  <tbody id="genes"></tbody>
+</table></div>
+
+<footer>
+  Reading <code>/api/summary</code> every 5&nbsp;s. The plain view is at
+  <a href="/" style="color:var(--accent)">/</a>. Interpretation lives in the
+  <code>READINGS</code> array in this file's script — that is the part to edit.
+</footer>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+const fmt = (n, d = 0) =>
+  (n === null || n === undefined || !isFinite(n)) ? "—"
+  : n.toLocaleString(undefined, {minimumFractionDigits: d, maximumFractionDigits: d});
+const pct = n => (!isFinite(n) ? "—" : (100 * n).toFixed(1) + "%");
+
+/* The genome's hard ceiling on attack power: fangs 1.0 + 0.6 * size 1.0.
+   Nothing this world can build exceeds it without an invented gene. */
+const GENOME_CEILING = 1.6;
+
+let matterBaseline = null;   // first finite total we see, to measure drift against
+let lastTick = null, lastSeen = 0;
+
+/* ==========================================================================
+   THE INTERPRETATION. Each reading turns raw fields into a sentence.
+   state: good | watch | bad | dead   -> drives colour, nothing else.
+   ========================================================================== */
+const READINGS = [
+  {
+    q: "Is the world still arithmetically sound?",
+    read(d) {
+      const t = d.matter && d.matter.total;
+      if (!isFinite(t)) return {
+        state: "dead",
+        verdict: "No. The simulation has gone non-finite and the numbers below mean nothing.",
+        evidence: "matter.total is NaN — this is the failure that killed the world twice"
+      };
+      if (matterBaseline === null) matterBaseline = t;
+      const drift = (t - matterBaseline) / matterBaseline;
+      if (Math.abs(drift) < 0.001) return {
+        state: "good",
+        verdict: "Yes. Matter is conserved — nothing is being created or destroyed.",
+        evidence: `total ${fmt(t)} · drift ${(drift * 100).toFixed(4)}% since this page loaded`
+      };
+      return {
+        state: Math.abs(drift) < 0.02 ? "watch" : "bad",
+        verdict: "Matter is drifting. Something is creating or destroying it.",
+        evidence: `total ${fmt(t)} · drift ${(drift * 100).toFixed(3)}% — a closed world should hold flat`
+      };
+    }
+  },
+  {
+    q: "Could a predator survive here?",
+    read(d) {
+      const n = d.predator_niche || {};
+      if (!n.power_needed) return {state: "watch", verdict: "Not enough animals to judge.", evidence: "—"};
+      const need = n.power_needed, ceil = n.genome_ceiling || GENOME_CEILING;
+      if (!n.open) return {
+        state: "bad",
+        verdict: "No. Prey are better defended than anything this genome can build.",
+        evidence: `needs attack power ${need.toFixed(2)} · genome tops out at ${ceil.toFixed(2)} · measured on ${fmt(n.measured_on)} prey`
+      };
+      return {
+        state: "good",
+        verdict: "Yes — a hunter could land a killing blow. Whether it can make a living is another question.",
+        evidence: `needs ${need.toFixed(2)} of ${ceil.toFixed(2)} available · prey defence ${(n.prey_defence||0).toFixed(2)}`
+      };
+    }
+  },
+  {
+    q: "How many levels does the food chain have?",
+    read(d) {
+      const p = d.populations || {};
+      const c = p.carnivore || 0, o = p.omnivore || 0;
+      if (c > 20) return {
+        state: "good",
+        verdict: "Three. Plants, grazers and hunters.",
+        evidence: `${fmt(p.herbivore)} herbivores · ${fmt(o)} omnivores · ${fmt(c)} carnivores`
+      };
+      if (c > 0 || o > 20) return {
+        state: "watch",
+        verdict: "Two and a half. The top of the chain is present but not established.",
+        evidence: `${fmt(p.herbivore)} herbivores · ${fmt(o)} omnivores · ${fmt(c)} carnivores`
+      };
+      return {
+        state: "bad",
+        verdict: "One. Everything alive eats plants.",
+        evidence: `${fmt(p.herbivore)} herbivores · ${fmt(o)} omnivores · no carnivores`
+      };
+    }
+  },
+  {
+    q: "Are the animals actually thinking?",
+    read(d) {
+      const b = d.brains || {};
+      if (b.output_saturated === undefined) return {state: "watch", verdict: "No reading.", evidence: "—"};
+      const sat = b.output_saturated;
+      if (sat > 0.5) return {
+        state: "bad",
+        verdict: "No. Their brains are pinned — they run a fixed instruction whatever their senses report.",
+        evidence: `${pct(sat)} of outputs saturated · weight spread ${b.weight_sd} · steering spread ${b.steering_spread}`
+      };
+      return {
+        state: sat > 0.4 ? "watch" : "good",
+        verdict: "Yes. Their decisions still vary with what they perceive.",
+        evidence: `${pct(sat)} of outputs saturated · weight spread ${b.weight_sd} · steering spread ${b.steering_spread}`
+      };
+    }
+  },
+  {
+    q: "Is evolution still doing anything?",
+    read(d) {
+      const v = d.genetic_variance;
+      const flat = (d.warnings || []).some(w => w.includes("stagnation"));
+      const mono = (d.warnings || []).find(w => w.startsWith("monoculture"));
+      if (flat || mono) return {
+        state: "watch",
+        verdict: mono
+          ? "Barely. One species is nearly the whole world, so there is little left to select between."
+          : "Barely. Genetic variance has gone flat — selection has nothing to push against.",
+        evidence: `variance ${v} · ${fmt((d.species || []).length)} living species of ${fmt(d.species_total_ever)} ever named`
+      };
+      return {
+        state: "good",
+        verdict: "Yes. There is real variation for selection to work on.",
+        evidence: `variance ${v} · ${fmt((d.species || []).length)} living species`
+      };
+    }
+  },
+  {
+    q: "Is the machine coping?",
+    read(d) {
+      const r = d.resources || {};
+      const hot = (r.cpu_pct > 80) || (r.ram_gb > 20) || (r.vram_gb > 7) || r.throttle_level > 0;
+      return {
+        state: hot ? "bad" : "good",
+        verdict: hot
+          ? "No — it is over the limits this box is allowed to spend."
+          : "Yes. Comfortably inside its budget.",
+        evidence: `cpu ${(r.cpu_pct||0).toFixed(1)}% · ram ${(r.ram_gb||0).toFixed(2)} GB · vram ${(r.vram_gb||0).toFixed(2)} GB · ${fmt(d.tps,1)} ticks/s`
+      };
+    }
+  }
+];
+
+/* Warnings the engine emits, rewritten for a human. Longest key wins. */
+const ALARM_TEXT = [
+  ["WORLD STATE CORRUPT", "critical", "The world has gone non-finite. It has stopped saving so the last good checkpoint survives. This needs a restore, not an intervention."],
+  ["TOTAL FAUNAL EXTINCTION", "critical", "Every animal is dead. Only plants and soil remain."],
+  ["predator niche closed", "normal", "Prey defence has out-run what any predator this genome can express is able to overcome. Seeding hunters cannot work until armour or speed comes down."],
+  ["brains saturated", "normal", "The animals have stopped responding to their senses and are executing a fixed instruction."],
+  ["population at hard cap", "normal", "The population has hit its ceiling. Crowding effects dominate from here."],
+  ["stagnation", "normal", "Genetic variance has been flat for years — nothing is changing."],
+  ["monoculture", "normal", "One species has taken nearly everything. Diversity is gone."],
+  ["critically low", "normal", "A trophic level is close to being lost."],
+  ["are extinct", "normal", "A trophic level has been lost."]
+];
+
+function render(d) {
+  /* masthead */
+  $("when").textContent =
+    `year ${fmt(d.year)} · ${d.season} · tick ${fmt(d.tick)}`;
+
+  /* alarms */
+  const box = $("alarms");
+  box.innerHTML = "";
+  (d.warnings || []).forEach(w => {
+    const hit = ALARM_TEXT.find(([k]) => w.includes(k));
+    const el = document.createElement("div");
+    el.className = "alarm" + (hit && hit[1] === "critical" ? " critical" : "");
+    el.innerHTML = `<b>${hit ? w.split(":")[0].slice(0, 60) : "notice"}</b>` +
+                   (hit ? hit[2] : w);
+    box.appendChild(el);
+  });
+
+  /* headline band */
+  const p = d.populations || {};
+  const cells = [
+    [fmt(p.total_fauna), "animals"],
+    [fmt(p.flora_biomass), "plant biomass"],
+    [fmt((d.species || []).length), "living species"],
+    [fmt(d.year), "years elapsed"],
+    [isFinite(d.matter && d.matter.total) ? fmt(d.matter.total) : "NaN", "total matter"],
+    [fmt(d.tps, 1), "ticks / sec"]
+  ];
+  $("band").innerHTML = cells
+    .map(([v, k]) => `<div class="cell"><div class="v">${v}</div><div class="k">${k}</div></div>`)
+    .join("");
+
+  /* interpretive panels */
+  $("panels").innerHTML = READINGS.map(r => {
+    let out;
+    try { out = r.read(d); }
+    catch (e) { out = {state: "watch", verdict: "Could not read this.", evidence: String(e)}; }
+    return `<div class="panel">
+      <div class="panel-q">${r.q}</div>
+      <div class="verdict" data-state="${out.state}">${out.verdict}</div>
+      <div class="evidence">${out.evidence}</div>
+    </div>`;
+  }).join("");
+
+  /* species */
+  const total = Math.max(1, p.total_fauna || 1);
+  $("species").innerHTML = (d.species || []).map(s => {
+    const share = Math.min(1, (s.pop || 0) / total);
+    return `<tr>
+      <td>${s.name}${s.rank && s.rank !== "species" ? ` <span style="color:var(--faint)">(${s.rank})</span>` : ""}</td>
+      <td class="num">${fmt(s.pop)}</td>
+      <td><div class="bar" style="width:${(share * 100).toFixed(1)}%"></div></td>
+      <td class="num">${(s.diet_mean ?? 0).toFixed(3)}</td>
+      <td style="color:var(--dim)">${s.trend || "—"}</td>
+    </tr>`;
+  }).join("") || `<tr><td colspan="5" style="color:var(--faint)">nothing alive</td></tr>`;
+
+  /* invented genes */
+  $("genes").innerHTML = (d.runtime_genes || []).map(g => `<tr>
+      <td>${g.name}</td>
+      <td class="num">${(g.mean ?? 0).toFixed(3)}</td>
+      <td class="num">${g.sd !== undefined ? g.sd.toFixed(3) : "—"}</td>
+      <td class="num">${g.frac_above_half !== undefined ? pct(g.frac_above_half) : "—"}</td>
+    </tr>`).join("") || `<tr><td colspan="4" style="color:var(--faint)">none</td></tr>`;
+
+  /* liveness */
+  if (d.tick !== lastTick) { lastTick = d.tick; lastSeen = Date.now(); }
+}
+
+function heartbeat() {
+  const stale = Date.now() - lastSeen > 20000;
+  $("dot").className = "dot" + (stale ? " stale" : "");
+  $("pulsetext").textContent = lastSeen
+    ? (stale ? "not advancing" : "running")
+    : "—";
+}
+
+async function poll() {
+  try {
+    const r = await fetch("/api/summary", {cache: "no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    render(await r.json());
+  } catch (e) {
+    $("when").textContent = "cannot reach the simulation — " + e.message;
+    $("dot").className = "dot stale";
+    $("pulsetext").textContent = "offline";
+  }
+  heartbeat();
+}
+poll();
+setInterval(poll, 5000);
+setInterval(heartbeat, 2000);
+
+/* ==========================================================================
+   FIELD NOTES — what the API actually means, where it is not obvious.
+
+   predator_niche.power_needed  Attack power required to reliably land a blow:
+                                prey armour + evasion, divided by the fraction
+                                of nominal power a founder actually delivers.
+                                genome_ceiling is 1.60 (fangs 1.0 + 0.6*size).
+                                If needed > ceiling the tier is arithmetically
+                                impossible, not merely difficult.
+   brains.output_saturated      Fraction of network outputs pinned at ±1. Past
+                                ~0.5 the animals stop responding to input at
+                                all. This has read healthy while everything
+                                else looked fine, and vice versa — trust it.
+   matter.total                 The invariant. This world is closed; the total
+                                should not move. Four separate leaks have been
+                                found by watching this one number.
+   populations.carnivore        A bucket over the continuous `diet` gene, not a
+                                species. diet > 0.66 counts as carnivore.
+   runtime_genes                Genes invented by intervention rather than
+                                evolved. `mean` is across all living animals.
+   ========================================================================== */
+</script>

@@ -15,6 +15,7 @@ from .render import OVERLAYS
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 VIEWER = os.path.join(ROOT, "viewer", "index.html")
+REPORT = os.path.join(os.path.dirname(VIEWER), "report.html")
 
 
 def create_app(sim) -> FastAPI:
@@ -27,6 +28,13 @@ def create_app(sim) -> FastAPI:
         if not os.path.exists(VIEWER):
             return HTMLResponse("<h1>PRIMORDIA</h1><p>viewer/index.html missing</p>")
         return FileResponse(VIEWER)
+
+    @app.get("/report", response_class=HTMLResponse)
+    async def report():
+        """A reading of the world in words, beside the plain view at /."""
+        if not os.path.exists(REPORT):
+            return HTMLResponse("<h1>PRIMORDIA</h1><p>viewer/report.html missing</p>")
+        return FileResponse(REPORT)
 
     @app.get("/api/meta")
     async def meta():
