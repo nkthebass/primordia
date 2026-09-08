@@ -107,7 +107,11 @@ class Stats:
         total = max(1, s.fauna.pop)
         for sp in living[:3]:
             if sp.pop / total > 0.7:
-                w.append(f"monoculture: {sp.name} is {100 * sp.pop / total:.0f}% of all fauna")
+                # sp.pop comes from the speciation census, which is recomputed on an
+                # interval, while `total` is the live count -- so a stale record could
+                # report a species as 104% of the world.
+                share = min(100.0, 100.0 * sp.pop / total)
+                w.append(f"monoculture: {sp.name} is {share:.0f}% of all fauna")
         if s.fauna.pop >= 0.97 * s.fauna.cap:
             w.append("population at hard cap (runaway)")
         pn = self._predator_niche()
