@@ -303,6 +303,23 @@ class Sim:
             self.speciation._rebuild_cols()
             self.fauna.flora = self.flora
             self.fauna.scent = self.scent
+        # The Chronicle is append-only, so a restore from an older archive leaves two
+        # timelines in one file with the same year numbers running twice.  This world was
+        # rewound 857 years after it died, and the only marker was a single terse line
+        # between year 9357 and year 8500 -- unreadable to anyone, including the
+        # game-master, who reads the tail.  A rewind now announces itself.
+        prior = max(int(getattr(self.chronicle, "last_tick", 0) or 0),
+                    self.chronicle.scan_last_tick())
+        if prior > t:
+            tpy = max(1, int(self.cfg.weather["ticks_per_year"]))
+            self.log_event(
+                "checkpoint",
+                f"=== TIMELINE BRANCH === Everything above this line, up to year "
+                f"{prior // tpy} (tick {prior}), belongs to a world that no longer "
+                f"exists. This world has been restored to year {t // tpy} (tick {t}) "
+                f"from an archive, and those {(prior - t) // tpy} years will now be lived "
+                f"again differently. Year numbers above and below this line refer to "
+                f"different histories.")
         self.log_event("checkpoint", f"World resumed from checkpoint at tick {t}.")
         return t
 

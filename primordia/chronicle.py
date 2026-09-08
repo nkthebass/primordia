@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import threading
 from collections import deque
 
@@ -16,6 +17,8 @@ ICONS = {
 
 
 class Chronicle:
+    last_tick = 0
+
     def __init__(self, root: str, weather=None):
         self.dir = os.path.join(root, "chronicle")
         os.makedirs(self.dir, exist_ok=True)
@@ -33,6 +36,9 @@ class Chronicle:
 
     # ------------------------------------------------------------------ write
     def event(self, tick: int, kind: str, text: str, extra: dict | None = None) -> None:
+        # the furthest the record has ever reached, so a restore can tell it is a rewind
+        if int(tick) > int(getattr(self, "last_tick", 0)):
+            self.last_tick = int(tick)
         stamp = self._stamp(tick)
         entry = {"tick": int(tick), "kind": kind, "text": text,
                  "stamp": stamp, "extra": extra or {}}
@@ -68,9 +74,32 @@ class Chronicle:
         return "\n".join(f"[{e['stamp']}] {e['kind']}: {e['text']}"
                          for e in list(self.recent)[-n:])
 
+    def scan_last_tick(self) -> int:
+        """The tick of the last entry in the file on disk, or 0 if there is none.
+
+        Reads the tail only; the Chronicle runs to millions of lines.
+        """
+        try:
+            size = os.path.getsize(self.md)
+        except OSError:
+            return 0
+        try:
+            with open(self.md, "rb") as f:
+                f.seek(max(0, size - 65536))
+                blob = f.read().decode("utf-8", "replace")
+        except OSError:
+            return 0
+        found = re.findall(r"\(t(\d+)\)", blob)
+        return int(found[-1]) if found else 0
+
     def meta(self) -> dict:
-        return {"count": self.count, "recent": list(self.recent)[-200:]}
+        return {"count": self.count, "recent": list(self.recent)[-200:],
+                "last_tick": int(getattr(self, "last_tick", 0))}
 
     def load(self, meta: dict) -> None:
         self.count = int(meta.get("count", 0))
+        # deliberately NOT from meta: the Chronicle file outlives any one checkpoint and
+        # is shared across restores, so only the file knows how far the record has reached.
+        # Taking this from a checkpoint would make every restore look like a fresh start.
+        self.last_tick = max(int(getattr(self, "last_tick", 0)), self.scan_last_tick())
         self.recent = deque(meta.get("recent", []), maxlen=200)
