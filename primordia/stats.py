@@ -171,7 +171,8 @@ class Stats:
             "soil": {"fertility_mean": round(float(wr.soil_fertility.mean()), 4),
                      "nutrients_mean": round(float(wr.nutrients.mean()), 4)},
             "species": species,
-            "species_total_ever": len(s.speciation.species),
+            # ids are handed out once and never reused, so this survives pruning
+            "species_total_ever": max(0, int(s.speciation._next_id) - 1),
             "genetic_variance": round(self._genetic_variance(fa.alive_idx), 5),
             "brains": self._brain_health(),
             "predator_niche": self._predator_niche(),

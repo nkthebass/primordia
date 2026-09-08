@@ -190,7 +190,14 @@ class Speciation:
         min_pop = int(self.cfg.speciation["min_species_pop"])
 
         outliers = mind > sub_d
-        if outliers.any() and len(self.species) < int(self.cfg.speciation["max_species"]):
+        # Count the living, not the dead.  self.species keeps every record ever created so
+        # the Chronicle and the taxonomy stay readable, and this gate compared that total
+        # against max_species -- so once 200 species had *ever* existed, around year 964,
+        # no new one could be born again.  The world then spent seven thousand years
+        # collapsing to a single species with no way back, and it read as an ecological
+        # result rather than what it was.  The distance computation above already works
+        # off the living set, so the living count is what this was always meant to bound.
+        if outliers.any() and self.n_living() < int(self.cfg.speciation["max_species"]):
             news += self._split(rows, vec, assigned, mind, outliers, tick, split_d, sub_d, min_pop)
 
         fa.species[rows] = assigned.astype(np.int32)
@@ -246,7 +253,7 @@ class Speciation:
                     tick, "speciation",
                     f"A new {rank} splits from {parent.name}: {sp.name} ({n} individuals).",
                     {"species": sid, "parent": parent_id})
-            if len(self.species) >= int(self.cfg.speciation["max_species"]):
+            if self.n_living() >= int(self.cfg.speciation["max_species"]):
                 break
         return news
 
@@ -280,6 +287,26 @@ class Speciation:
                 del sp.pop_series[:len(sp.pop_series) - 4000]
 
     # ---------------------------------------------------------------- reporting
+    def n_living(self) -> int:
+        """Species with members alive right now -- what max_species is meant to bound."""
+        return sum(1 for s in self.species.values() if s.extinct < 0)
+
+    def prune_extinct(self, keep: int = 600) -> int:
+        """Bound the record so a world that speciates for ever does not grow for ever.
+
+        Living species are never touched; the longest-dead are dropped first.  Nothing
+        references a pruned id -- an extinct species has no members by definition -- and
+        the count of species ever named is kept separately, so history survives the loss
+        of individual records.
+        """
+        dead = [s for s in self.species.values() if s.extinct >= 0 and s.id != 0]
+        if len(dead) <= keep:
+            return 0
+        dead.sort(key=lambda s: s.extinct)
+        for s in dead[:len(dead) - keep]:
+            self.species.pop(s.id, None)
+        return len(dead) - keep
+
     def living(self) -> list[Species]:
         return sorted((s for s in self.species.values() if s.pop > 0),
                       key=lambda s: -s.pop)
