@@ -251,11 +251,31 @@ class Stats:
         bar = float(np.percentile(armour[sel], 60))
         evasion = 0.225 + float(fa.cfg.energy["evasion"]) * float(d[rows, gi["speed"]][sel].mean())
         need = (bar + evasion) * 1.25 / 0.9
+        # The ceiling is not a constant.  fangs 1.0 + 0.6 * size 1.0 is what the *original*
+        # genome tops out at, but a runtime gene may add attack power outside it -- which is
+        # exactly what shear_tooth was invented to do.  Reporting the fixed 1.60 told the
+        # game-master the niche was shut while fifty-two carnivores were alive and hunting,
+        # which is worse than saying nothing.
+        ceiling = 1.6 + self._invented_attack_power()
         return {"prey_defence": round(bar + evasion, 3),
                 "measured_on": int(len(rows)),
                 "power_needed": round(need, 3),
-                "genome_ceiling": 1.6,
-                "open": bool(need <= 1.6)}
+                "genome_ceiling": round(ceiling, 3),
+                "base_ceiling": 1.6,
+                "open": bool(need <= ceiling)}
+
+    def _invented_attack_power(self) -> float:
+        """How much attack power the invented genes can add, at gene value 1.0."""
+        eff = getattr(self.sim.fauna, "effects", None)
+        total = 0.0
+        for entry in getattr(eff, "_compiled", []) or []:
+            try:
+                _, stat, op, per_unit, _when = entry
+            except (TypeError, ValueError):
+                continue
+            if stat == "attack_power" and op == "add":
+                total += float(per_unit)
+        return total
 
     def _brain_health(self) -> dict:
         """Is the network still a controller, or has it become a constant?
