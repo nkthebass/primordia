@@ -1,11 +1,35 @@
 {
   "version": "0.0.1",
+  "_comment": [
+    "PRIMORDIA is a persistent world, not a stateless dev server. One instance owns",
+    "state/checkpoint_latest.* and has been running continuously for 12,000+ simulated",
+    "years; a second instance would race it for the same checkpoint. So the default",
+    "config ATTACHES to the running sim rather than starting one.",
+    "",
+    "Port 8710 is not incidental and autoPort must stay false: the game-master, the",
+    "check-in schedule, CLAUDE.md and every tool address 127.0.0.1:8710 directly.",
+    "",
+    "If nothing is running, start it detached (so it outlives the session) with:",
+    "  Start-Process -FilePath '.venv\\Scripts\\python.exe' -ArgumentList '-m','primordia.main','--resume' -WindowStyle Hidden",
+    "or use the 'primordia-start' config below, which holds the world in the foreground.",
+    "",
+    "The previous version of this file passed --size 192 --max-pop 12000, which would",
+    "have tried to bootstrap a 192-cell world against a 384-cell save. It also wrote",
+    "'.venv\\Scripts\\python.exe' with a single backslash, which is not valid JSON escaping."
+  ],
   "configurations": [
     {
       "name": "primordia",
-      "runtimeExecutable": ".venv\Scripts\python.exe",
-      "runtimeArgs": ["-m", "primordia.main", "--size", "192", "--max-pop", "12000"],
-      "port": 8710
+      "url": "http://localhost:8710",
+      "port": 8710,
+      "autoPort": false
+    },
+    {
+      "name": "primordia-start",
+      "runtimeExecutable": ".venv\\Scripts\\python.exe",
+      "runtimeArgs": ["-m", "primordia.main", "--resume"],
+      "port": 8710,
+      "autoPort": false
     }
   ]
 }
