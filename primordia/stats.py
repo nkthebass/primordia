@@ -257,11 +257,31 @@ class Stats:
         # game-master the niche was shut while fifty-two carnivores were alive and hunting,
         # which is worse than saying nothing.
         ceiling = 1.6 + self._invented_attack_power()
+        # The ceiling is what the genome could express if a gene sat at 1.0. That is not
+        # the same as what exists.  With shear_tooth purged to 0.11 the ceiling still read
+        # 2.75 while the best-armed animal alive reached 1.23 against a bar of 1.90 -- so
+        # the report said "open" when nothing in the world could kill anything. Yesterday
+        # the same field said "shut" while fifty-two carnivores hunted. Report both: what
+        # could evolve, and what is actually walking around.
+        best = 0.0
+        try:
+            st = fa.build_stats(fa.alive_idx, self.sim._world_ctx(
+                fa.alive_idx, {"is_night": False, "season": 0}))
+            ap = np.asarray(st["attack_power"], np.float32)
+            if ap.size:
+                best = float(ap.max())
+        except Exception:
+            best = 0.0
         return {"prey_defence": round(bar + evasion, 3),
                 "measured_on": int(len(rows)),
                 "power_needed": round(need, 3),
                 "genome_ceiling": round(ceiling, 3),
                 "base_ceiling": 1.6,
+                "best_alive": round(best, 3),
+                # could such an animal exist at all, given the genes in play
+                "reachable": bool(need <= ceiling),
+                # does one exist right now
+                "armed": bool(best >= need),
                 "open": bool(need <= ceiling)}
 
     def _invented_attack_power(self) -> float:
