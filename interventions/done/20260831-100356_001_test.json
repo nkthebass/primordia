@@ -1,0 +1,17 @@
+[
+ {"type":"note","text":"Game-master test: carnivores are critically low, so I am seeding a predator stock, adding a defensive gene to the prey, and easing the climate."},
+ {"type":"add_gene","kingdom":"fauna","name":"spikes",
+  "init":{"mean":0.05,"std":0.04},"mut_std":0.05,
+  "effects":[{"stat":"armor_eff","op":"add","per_unit":0.7},
+             {"stat":"move_cost","op":"mul_per_unit","per_unit":0.3},
+             {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.12}]},
+ {"type":"add_gene","kingdom":"flora","name":"thorns",
+  "init":{"mean":0.04,"std":0.04},"mut_std":0.05,
+  "effects":[{"stat":"toxin_bonus","op":"add","per_unit":0.5},
+             {"stat":"growth_mult","op":"mul_per_unit","per_unit":-0.15}]},
+ {"type":"seed_organism","kingdom":"fauna","count":60,"x":96,"y":96,
+  "genome":{"diet":0.9,"size":0.62,"speed":0.72,"fangs":0.68,"sense_range":0.8}},
+ {"type":"climate","param":"rain_mult","value":1.3,"ramp_ticks":1500},
+ {"type":"tune","path":"genetics.mutation_rate_global","value":1.2},
+ {"type":"trigger_event","event":"meteor","x":40,"y":140,"intensity":0.9}
+]

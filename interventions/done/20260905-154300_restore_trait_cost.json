@@ -1,0 +1,4 @@
+[
+  {"type":"note","text":"Restoring energy.trait_cost_scale to 0.5 after a restart. The game-master set it at year 2885 and seven hundred years of armour selection followed, but a tune only ever changed the running config -- it was never written to disk and never rode in the checkpoint, so this restart reset it to 0.0 and armour was briefly free again. The checkpoint now carries tuned laws with the world's state, so this is the last time that has to be done by hand."},
+  {"type":"tune","path":"energy.trait_cost_scale","value":0.5}
+]

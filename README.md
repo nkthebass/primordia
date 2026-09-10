@@ -131,6 +131,35 @@ alongside the consequences.
 
 ---
 
+## The world's own record
+
+This world has been running continuously for over twelve thousand simulated years, and
+what happened to it is kept in the repository rather than only on the machine:
+
+| file | what it is |
+|---|---|
+| [`WORLD-LOG.md`](WORLD-LOG.md) | Generated digest — where the world stands, every turning point, species-rank origins and extinctions, disasters by era. |
+| [`CHECKINS.md`](CHECKINS.md) | Engine health over time, and the incidents: the two NaN deaths, the disk filling, the speciation cap. |
+| [`interventions/done/`](interventions/done) | The game-master's actual decisions, each with the reasoning it wrote at the time. |
+
+The raw Chronicle is deliberately **not** committed. It is append-only, 24 MB across
+105,000 entries, and about ninety-nine per cent of it is weather — 48,489 storms, 25,078
+floods. Committing it would put a fresh 24 MB blob in git history every time it was
+refreshed and bury the interesting hundred lines inside the boring hundred thousand.
+
+Refresh the digest at any time; it is safe to run against a live simulation:
+
+```bash
+.venv\Scripts\python.exe tools\worldlog.py
+```
+
+One thing the era table in `WORLD-LOG.md` shows better than any prose: speciation reads
+**zero for six thousand consecutive years**, from year 2,000 to 7,999. That was not
+ecology. `max_species` counted every species record ever created including the extinct, so
+once 200 had *ever* existed the gate read `200 < 200` and nothing could ever speciate
+again. The world's slow collapse to a single species was read as stagnation for a long time
+before it was recognised as a dead cap.
+
 ## How the world works
 
 **Energy only ever flows downhill.** A carcass is worth a fraction of the energy and body

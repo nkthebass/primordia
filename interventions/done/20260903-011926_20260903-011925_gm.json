@@ -1,0 +1,11 @@
+[
+  {"type":"note","text":"Year 599. The world woke after a long stillness -- thirty-seven hours frozen at tick 1150500, the clock stopped mid-summer while a wildfire burned at (2,254). It resumes none the worse. What I find on waking is not a dying world but a bored one. Fifty-three species live; ninety-six have ever been named; and every one of them is the same creature. Armor above 0.97, camouflage above 0.94, speed above 0.87, and a body no larger than 0.07 -- from Dorusaur tenax, founded in the fourth century of tick, to Incognitum 63 founded last era, they have all arrived at the identical answer. Variance has slid from 0.0415 to 0.037. The names are diverging; the animals are not. Meanwhile five thousand units of carrion lie on the ground and it is the decomposers, fifty-three thousand of them, that are eating it -- not one lineage of fauna has learned to. The carnivores, at 376 of 9358, are too few and too committed to the chase to touch it. So I will not tune a number; a number cannot invent a way of living. I give this world a gut. Let some small fraction of the armored multitude find that the dead are easier than the living, that a nose beats a fang, and that the richest meal in Primordia has been lying unclaimed in the grass for six hundred years. The gene starts near zero and costs upkeep -- it must earn its place or vanish. I want to see whether scavenging can invade a monoculture."},
+  {"type":"add_gene","kingdom":"fauna","name":"carrion_gut",
+   "init":{"mean":0.04,"std":0.05},
+   "mut_std":0.04,
+   "effects":[
+     {"stat":"meat_digest","op":"add","per_unit":0.6},
+     {"stat":"sense_bonus","op":"add","per_unit":0.35},
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.08}
+   ]}
+]

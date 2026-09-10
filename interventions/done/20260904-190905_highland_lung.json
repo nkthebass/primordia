@@ -1,0 +1,13 @@
+[
+ {"type":"note","text":"Year 1991. The torpor experiment is finished and it failed, and the way it failed is worth writing down. Winter_torpor sits at mean 0.47 and reads like a success until you ask how it is distributed: herbivores 0.499, omnivores 0.457, carnivores 0.423, against a standard deviation of 0.298. The between-group spread is a quarter of the noise. It did not split the fauna into sleepers and wakers; it diffused across all of them as a mild subsidy and then drifted, which is precisely the outcome I said would mean I had made the world duller. The fault was mine and it was arithmetic: the benefit applied one season in four, the cost applied all year, and the resulting differential was far below what drift does to a gene with mut_std 0.04 over three hundred generations. A gene that only matters a quarter of the time cannot out-argue a mutation rate that applies all of it. Second lesson, larger: this world is no longer the world I have been writing about. Seventy-two per cent of every living creature is now in the ocean. Swim went to 0.8 and the fauna followed it off the land; the plains hold fifteen per cent, the hills five, the mountains four and a half. I have been prescribing for a terrestrial ecosystem that stopped existing some centuries ago. So: highland_lung, and this time the magnitudes are sized against drift rather than against my sense of what seems reasonable. It is strongly good on high cold ground and strongly bad in water, and since the water is where almost everyone lives, the only lineages that can carry it are the ones that leave. That is the point. Not a subsidy spread over everybody, but a wedge: an adaptation that a majority is actively selected to lose and a minority is actively selected to keep. If it works the fauna divides into an ocean and a mountain, and Primordia has two ways of living for the first time in its history. If it drifts, the number to look at is split_biome, and I will have been wrong twice."},
+ {"type":"add_gene","kingdom":"fauna","name":"highland_lung",
+  "init":{"mean":0.05,"std":0.05},"mut_std":0.05,
+  "effects":[
+    {"stat":"cold_resist","op":"add","per_unit":1.2,"when":{"biome":"mountain"}},
+    {"stat":"basal_cost","op":"mul_per_unit","per_unit":-0.5,"when":{"biome":"mountain"}},
+    {"stat":"basal_cost","op":"mul_per_unit","per_unit":-0.3,"when":{"biome":"hills"}},
+    {"stat":"move_cost","op":"mul_per_unit","per_unit":-0.4,"when":{"biome":"mountain"}},
+    {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.7,"when":{"in_water":true}},
+    {"stat":"swim_eff","op":"add","per_unit":-0.6,"when":{"in_water":true}},
+    {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.08}]}
+]

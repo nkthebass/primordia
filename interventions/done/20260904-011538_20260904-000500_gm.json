@@ -1,0 +1,12 @@
+[
+  {"type":"note","text":"Year 1577. Nineteen thousand nine hundred and eighty-eight creatures in a world built for twenty thousand: the population has not been a variable for years, it has been a ceiling. Beneath that ceiling the plants are being shaved. Flora biomass has fallen from 26153 to 14832 in five years while cover holds at 0.51 -- the grass is not dying, it is being kept cropped, every blade eaten the day it grows. And the animals doing the eating are all the same animal. Armor 0.98, body 0.92, swim 0.8, in lineage after lineage from Incognitum 119's whole quarrelsome family to the little camouflaged grazers; genetic variance has sat at 0.0714 for three years. The last gene I gave them, the carrion gut, worked -- it went from 0.04 to 0.60 and the scavengers are real now -- which tells me this world will take a new way of living when one is offered. So here is what nobody in Primordia has ever tried: nobody uses the calendar. Winter comes round four times a century and every creature meets it the same way, awake and burning, paying an adult's metabolic bill against a frozen larder. I give them the option to sleep through it. Torpor cuts the winter upkeep by more than half, but the machinery costs a little all year round, a torpid body is expensive to move and easy to see, and a hunter who must chase in the cold will find the trade a bad one. Grazers may take it, predators may not, and that is the point -- the first gene whose right answer differs by how you make a living. If it invades, winter grazing slackens and the flora may lift its head; if it splits the fauna into sleepers and wakers, the monoculture is over."},
+  {"type":"add_gene","kingdom":"fauna","name":"winter_torpor",
+   "init":{"mean":0.04,"std":0.05},
+   "mut_std":0.045,
+   "effects":[
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":-0.55,"when":{"season":"winter"}},
+     {"stat":"move_cost","op":"mul_per_unit","per_unit":0.9,"when":{"season":"winter"}},
+     {"stat":"detectability","op":"add","per_unit":0.35,"when":{"season":"winter"}},
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.06}
+   ]}
+]
