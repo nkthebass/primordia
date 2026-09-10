@@ -16,6 +16,18 @@ from .render import OVERLAYS
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 VIEWER = os.path.join(ROOT, "viewer", "index.html")
 REPORT = os.path.join(os.path.dirname(VIEWER), "report.html")
+CHRONPAGE = os.path.join(os.path.dirname(VIEWER), "chronicle.html")
+_CHRON_IDX = None
+
+
+def _chron_index():
+    """One index per process, built lazily and extended as the file grows."""
+    global _CHRON_IDX
+    if _CHRON_IDX is None:
+        from .chronreader import ChronicleIndex
+        _CHRON_IDX = ChronicleIndex(
+            os.path.join(ROOT, "chronicle", "chronicle.jsonl"))
+    return _CHRON_IDX
 
 
 def create_app(sim) -> FastAPI:
@@ -58,6 +70,29 @@ def create_app(sim) -> FastAPI:
     @app.get("/api/chronicle")
     async def chronicle(n: int = 40):
         return sim.chronicle.tail(n)
+
+    @app.get("/api/chronicle/search")
+    async def chronicle_search(kinds: str = "", noise: int = 0, year_from: int = -1,
+                               year_to: int = -1, q: str = "", limit: int = 200,
+                               offset: int = 0):
+        """Filtered, paginated access to the whole Chronicle.
+
+        The tail endpoint above answers "what just happened"; this answers "what happened".
+        Weather is excluded unless asked for -- it is 95% of the file.
+        """
+        idx = _chron_index()
+        return idx.query(
+            kinds=[k for k in kinds.split(",") if k] or None,
+            exclude_noise=not bool(noise),
+            year_from=None if year_from < 0 else year_from,
+            year_to=None if year_to < 0 else year_to,
+            q=q or None, limit=limit, offset=offset)
+
+    @app.get("/chronicle", response_class=HTMLResponse)
+    async def chronicle_page():
+        if not os.path.exists(CHRONPAGE):
+            return HTMLResponse("<h1>PRIMORDIA</h1><p>viewer/chronicle.html missing</p>")
+        return FileResponse(CHRONPAGE)
 
     @app.get("/api/species")
     async def species():

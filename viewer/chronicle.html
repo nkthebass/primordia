@@ -1,0 +1,200 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>PRIMORDIA — the Chronicle</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!--
+  The Chronicle, readable. The file is 14 MB across 107,000 entries and about 95% of it is
+  weather, so the viewer's 45-entry tail was the only way anyone ever saw it and the raw
+  file is too large to open in an editor.
+
+  Weather is off by default here; turning it on is one click. Filtering happens server-side
+  against an in-memory index (primordia/chronreader.py), so nothing large is ever sent.
+
+  Theming: every colour and font is a variable in :root, and each entry carries
+  data-kind="<kind>" so a stylist can colour event types without touching the script.
+-->
+
+<style>
+:root{
+  --bg:#0e1417; --panel:#151d21; --line:#233037; --hair:#1b262b;
+  --ink:#e6efee; --dim:#8fa6a8; --faint:#5d7276; --accent:#6fb3c9;
+  --body:system-ui,-apple-system,"Segoe UI",sans-serif;
+  --data:"JetBrains Mono","Cascadia Mono",Consolas,monospace;
+  --display:"Iowan Old Style","Palatino Linotype",Georgia,serif;
+
+  /* event colours — one per kind, themeable */
+  --k-speciation:#5fb98a; --k-extinction:#d2705e; --k-note:#c8a2d8;
+  --k-intervention:#e0b062; --k-gene:#7fd0c4; --k-tuning:#9db4d8;
+  --k-world:#f0d98a; --k-checkpoint:#7f929a; --k-volcano:#e07a4f;
+  --k-meteor:#d8a657; --k-wildfire:#cf8a5a; --k-flood:#5aa5d6;
+  --k-storm:#7f939c; --k-cold_snap:#8fc9dd; --k-season:#63787e;
+  --k-resource:#a3b18a; --k-default:#8fa6a8;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+     padding:26px clamp(14px,3vw,44px) 60px;line-height:1.5}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.4vw,32px);margin:0}
+.mast{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;
+      border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.mast .sub{color:var(--dim);font-family:var(--data);font-size:13px}
+.mast a{color:var(--accent);text-decoration:none;font-size:13px}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+input,select,button{font:inherit;font-size:13px;background:var(--panel);color:var(--ink);
+  border:1px solid var(--line);border-radius:7px;padding:7px 10px}
+input:focus,select:focus,button:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{cursor:pointer}
+button.primary{background:var(--accent);color:#08171c;border-color:var(--accent);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.chip{font-size:12px;padding:5px 10px;border-radius:99px;border:1px solid var(--line);
+      background:var(--panel);color:var(--dim);cursor:pointer;user-select:none}
+.chip[aria-pressed="true"]{background:var(--accent);color:#08171c;border-color:var(--accent);
+      font-weight:600}
+.chip .n{opacity:.6;margin-left:5px;font-family:var(--data)}
+
+.count{color:var(--faint);font-size:12.5px;margin-bottom:10px;font-family:var(--data)}
+.feed{display:flex;flex-direction:column;gap:1px;background:var(--line);
+      border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.entry{background:var(--panel);padding:11px 14px;display:grid;
+       grid-template-columns:120px 96px 1fr;gap:12px;align-items:baseline}
+.entry .when{font-family:var(--data);font-size:12px;color:var(--faint);white-space:nowrap}
+.entry .kind{font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+             color:var(--k-default);white-space:nowrap}
+.entry .what{font-size:13.5px}
+.entry.long .what{font-family:var(--display);font-size:14.5px;line-height:1.55}
+@media (max-width:720px){
+  .entry{grid-template-columns:1fr;gap:3px}
+  .entry .when,.entry .kind{font-size:11px}
+}
+.pager{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:18px}
+.empty{padding:26px;text-align:center;color:var(--faint)}
+</style>
+
+<div class="mast">
+  <h1>The Chronicle</h1>
+  <div class="sub" id="sub">loading…</div>
+  <div style="margin-left:auto"><a href="/">← viewer</a> &nbsp; <a href="/report">reading →</a></div>
+</div>
+
+<div class="controls">
+  <input id="q" type="search" placeholder="search the text…" style="min-width:210px">
+  <label class="sub">year <input id="yf" type="number" placeholder="from" style="width:92px"></label>
+  <label class="sub">– <input id="yt" type="number" placeholder="to" style="width:92px"></label>
+  <select id="limit">
+    <option value="100">100 per page</option>
+    <option value="200" selected>200 per page</option>
+    <option value="500">500 per page</option>
+  </select>
+  <button class="primary" id="go">apply</button>
+  <button id="reset">reset</button>
+</div>
+
+<div class="chips" id="chips"></div>
+<div class="count" id="count"></div>
+<div class="feed" id="feed"></div>
+<div class="pager">
+  <button id="prev">← newer</button>
+  <span class="sub" id="page">—</span>
+  <button id="next">older →</button>
+</div>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+
+// weather: real events, but 95% of the file. Off unless asked for.
+const NOISE = ["storm", "flood", "season", "wildfire", "cold_snap"];
+const LONG = new Set(["note", "intervention", "world", "gene", "tuning"]);
+
+let state = {kinds: new Set(), offset: 0, limit: 200, q: "", yf: null, yt: null, total: 0};
+let kindCounts = {};
+
+function params() {
+  const p = new URLSearchParams();
+  if (state.kinds.size) p.set("kinds", [...state.kinds].join(","));
+  // asking for a weather kind implies wanting weather through the noise filter
+  if ([...state.kinds].some(k => NOISE.includes(k))) p.set("noise", "1");
+  if (state.q) p.set("q", state.q);
+  if (state.yf !== null) p.set("year_from", state.yf);
+  if (state.yt !== null) p.set("year_to", state.yt);
+  p.set("limit", state.limit);
+  p.set("offset", state.offset);
+  return p.toString();
+}
+
+function renderChips() {
+  const all = Object.keys(kindCounts);
+  $("#chips").innerHTML = all.map(k => {
+    const on = state.kinds.has(k);
+    const noisy = NOISE.includes(k);
+    return `<span class="chip" role="button" tabindex="0" data-k="${k}"
+      aria-pressed="${on}" title="${noisy ? "weather — hidden unless selected" : ""}"
+      style="${on ? "" : `color:var(--k-${k},var(--k-default))`}">${k}<span class="n">${kindCounts[k].toLocaleString()}</span></span>`;
+  }).join("");
+  $("#chips").querySelectorAll(".chip").forEach(c => {
+    const toggle = () => {
+      const k = c.dataset.k;
+      state.kinds.has(k) ? state.kinds.delete(k) : state.kinds.add(k);
+      state.offset = 0; load();
+    };
+    c.addEventListener("click", toggle);
+    c.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+}
+
+function render(d) {
+  kindCounts = d.kinds || {};
+  renderChips();
+  state.total = d.total;
+  const shown = d.entries.length;
+  $("#count").textContent =
+    `${d.total.toLocaleString()} matching entries · showing ${state.offset + 1}–${state.offset + shown}` +
+    (state.kinds.size ? "" : " · weather hidden (click a weather chip to include it)");
+  $("#sub").textContent = `${(d.indexed || 0).toLocaleString()} entries indexed`;
+
+  $("#feed").innerHTML = shown ? d.entries.map(e => {
+    const k = e.kind || "?";
+    return `<div class="entry ${LONG.has(k) ? "long" : ""}" data-kind="${k}">
+      <div class="when">${e.stamp || ""}</div>
+      <div class="kind" style="color:var(--k-${k},var(--k-default))">${k}</div>
+      <div class="what">${(e.text || "").replace(/[<>&]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))}</div>
+    </div>`;
+  }).join("") : `<div class="empty">nothing matches those filters</div>`;
+
+  const page = Math.floor(state.offset / state.limit) + 1;
+  const pages = Math.max(1, Math.ceil(d.total / state.limit));
+  $("#page").textContent = `page ${page} of ${pages}`;
+  $("#prev").disabled = state.offset <= 0;
+  $("#next").disabled = state.offset + state.limit >= d.total;
+}
+
+async function load() {
+  try {
+    const r = await fetch("/api/chronicle/search?" + params(), {cache: "no-store"});
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    render(await r.json());
+  } catch (e) {
+    $("#feed").innerHTML = `<div class="empty">cannot reach the simulation — ${e.message}</div>`;
+    $("#sub").textContent = "offline";
+  }
+}
+
+$("#go").onclick = () => {
+  state.q = $("#q").value.trim();
+  state.yf = $("#yf").value === "" ? null : +$("#yf").value;
+  state.yt = $("#yt").value === "" ? null : +$("#yt").value;
+  state.limit = +$("#limit").value;
+  state.offset = 0; load();
+};
+$("#reset").onclick = () => {
+  state = {kinds: new Set(), offset: 0, limit: 200, q: "", yf: null, yt: null, total: 0};
+  $("#q").value = ""; $("#yf").value = ""; $("#yt").value = ""; $("#limit").value = "200";
+  load();
+};
+$("#prev").onclick = () => { state.offset = Math.max(0, state.offset - state.limit); load(); };
+$("#next").onclick = () => { state.offset += state.limit; load(); };
+$("#q").addEventListener("keydown", e => { if (e.key === "Enter") $("#go").click(); });
+
+load();
+</script>

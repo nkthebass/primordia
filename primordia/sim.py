@@ -316,8 +316,12 @@ class Sim:
         # game-master, who reads the tail.  A rewind now announces itself.
         prior = max(int(getattr(self.chronicle, "last_tick", 0) or 0),
                     self.chronicle.scan_last_tick())
-        if prior > t:
-            tpy = max(1, int(self.cfg.weather["ticks_per_year"]))
+        tpy = max(1, int(self.cfg.weather["ticks_per_year"]))
+        # Only for a rewind worth the name. Every ordinary restart loses the few hundred
+        # ticks between the last checkpoint and the stop, and announcing those as a lost
+        # timeline -- "those 0 years will now be lived again" -- teaches the reader to
+        # ignore the banner, which is exactly what it must not do.
+        if prior - t >= tpy:
             self.log_event(
                 "checkpoint",
                 f"=== TIMELINE BRANCH === Everything above this line, up to year "
