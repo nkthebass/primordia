@@ -6,33 +6,34 @@
 
 | | |
 |---|---|
-| year | **12,299** (summer) |
-| animals | 530 — 470 herbivore / 60 omnivore / 0 carnivore |
-| plant biomass | 5,824 |
-| living species | 3 (of 538 ever named) |
-| total matter | 1,273,260 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.951, ceiling 2.75 |
-| genetic variance | 0.01961 |
-| warnings | genetic variance flat for 3 years (stagnation) |
+| year | **12,508** (spring) |
+| animals | 259 — 200 herbivore / 58 omnivore / 1 carnivore |
+| plant biomass | 3,134 |
+| living species | 4 (of 549 ever named) |
+| total matter | 1,273,256 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 2.116, ceiling 2.75 |
+| genetic variance | 0.01811 |
+| warnings | carnivore population critically low (1) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Chalymorph gelidum | 233 | 0.283 | growing |
-| Primordium vulgare | 157 | 0.079 | stable |
-| Chalymorph gelidum minimus | 137 | 0.160 | stable |
+| Chalymorph gelidum campestris | 117 | 0.279 | growing |
+| Chalymorph gelidum insularis | 62 | 0.168 | stable |
+| Primordium vulgare | 58 | 0.145 | declining |
+| Chalymorph gelidum maximus | 22 | 0.480 | declining |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.241 | 18% |
-| winter_torpor | 0.775 | 92% |
-| highland_lung | 0.447 | 46% |
-| shear_tooth | 0.101 | 0% |
-| gut_ferment | 0.912 | 100% |
-| tide_limb | 0.100 | 0% |
+| carrion_gut | 0.816 | 100% |
+| winter_torpor | 0.838 | 93% |
+| highland_lung | 0.344 | 24% |
+| shear_tooth | 0.720 | 90% |
+| gut_ferment | 0.894 | 100% |
+| tide_limb | 0.044 | 0% |
 
 ## Turning points
 
@@ -259,6 +260,12 @@
 - **Year 10210, summer** · *gene invented* — Resources back under caps; easing throttle to level 0.
 - **Year 11170, summer** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 11170 (tick 22341187), belongs to a world that no longer exists. This world has been restored to year 11170 (tick 22340801) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 11170, summer** · *restore* — World resumed from checkpoint at tick 22340801.
+- **Year 12306, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12306 (tick 24613366), belongs to a world that no longer exists. This world has been restored to year 12306 (tick 24612000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 12306, spring** · *restore* — World resumed from checkpoint at tick 24612000.
+- **Year 12353, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12353 (tick 24707378), belongs to a world that no longer exists. This world has been restored to year 12353 (tick 24706000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 12353, spring** · *restore* — World resumed from checkpoint at tick 24706000.
+- **Year 12457, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12457 (tick 24914892), belongs to a world that no longer exists. This world has been restored to year 12457 (tick 24914457) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 12457, spring** · *restore* — World resumed from checkpoint at tick 24914457.
 
 ## Species-rank origins and extinctions
 
@@ -340,41 +347,41 @@
 | 9,000–9,999 | 118 | 118 | 357 | 167 | 530 | 4339 | 7837 | 381 |
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
 | 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
-| 12,000–12,999 | 11 | 12 | 44 | 24 | 130 | 648 | 1072 | 53 |
+| 12,000–12,999 | 26 | 26 | 73 | 44 | 233 | 1175 | 1961 | 97 |
 
-**Totals:** storm 48,489 · flood 25,078 · wildfire 9,284 · cold snap 2,677 · volcano 2,518 · meteor 1,280 · speciation 649 · extinction 552 · checkpoint 123 · seeding 30 · epoch 28 · game-master note 25 · gene invented 14 · intervention 8 · tuning 5
+**Totals:** storm 49,378 · flood 25,605 · wildfire 9,387 · cold snap 2,721 · volcano 2,547 · meteor 1,300 · speciation 664 · extinction 566 · checkpoint 129 · seeding 30 · epoch 28 · game-master note 25 · gene invented 14 · intervention 8 · tuning 5
 
 ## The last 30 entries
 
 ```
-!  Year 12295, winter — A storm gathers over (122,277).
-!  Year 12295, winter — A storm gathers over (171,19).
-~  Year 12296, spring — Year 12296 begins. Flora 4841; 564 herbivores, 23 omnivores, 0 carnivores across 3 living species.
-!  Year 12296, spring — A storm gathers over (360,224).
-^  Year 12296, spring — Fire breaks out at (258,270).
-!  Year 12296, summer — A storm gathers over (98,132).
-!  Year 12296, summer — A storm gathers over (352,304).
-!  Year 12296, autumn — A storm gathers over (285,358).
-!  Year 12296, autumn — A storm gathers over (187,55).
-!  Year 12296, winter — A storm gathers over (44,236).
-~  Year 12297, spring — Year 12297 begins. Flora 4973; 411 herbivores, 24 omnivores, 0 carnivores across 3 living species.
-!  Year 12297, summer — A storm gathers over (43,286).
-=  Year 12297, summer — Floodwaters swamp (246,160); 1 drowned. Silt will enrich the plain.
-=  Year 12297, summer — Floodwaters swamp (198,143); 0 drowned. Silt will enrich the plain.
-!  Year 12297, winter — A storm gathers over (13,129).
-~  Year 12298, spring — Year 12298 begins. Flora 5024; 355 herbivores, 40 omnivores, 0 carnivores across 3 living species.
-!  Year 12298, spring — A storm gathers over (338,155).
-=  Year 12298, spring — Floodwaters swamp (128,103); 0 drowned. Silt will enrich the plain.
-!  Year 12298, summer — A storm gathers over (251,83).
-!  Year 12298, summer — A storm gathers over (178,210).
-!  Year 12298, summer — A storm gathers over (361,96).
-=  Year 12298, summer — Floodwaters swamp (358,153); 1 drowned. Silt will enrich the plain.
-!  Year 12298, summer — A storm gathers over (97,242).
-V  Year 12298, autumn — A volcano erupts at (24,180): 0 creatures and 689 plants destroyed, a wide ash ring left fertile.
-=  Year 12298, winter — Floodwaters swamp (182,198); 0 drowned. Silt will enrich the plain.
-~  Year 12299, spring — Year 12299 begins. Flora 5240; 446 herbivores, 55 omnivores, 0 carnivores across 3 living species.
-V  Year 12299, spring — A volcano erupts at (24,180): 0 creatures and 543 plants destroyed, a wide ash ring left fertile.
-!  Year 12299, summer — A storm gathers over (136,134).
-!  Year 12299, summer — A storm gathers over (143,290).
-!  Year 12299, summer — A storm gathers over (337,154).
+=  Year 12505, spring — Floodwaters swamp (157,295); 0 drowned. Silt will enrich the plain.
+^  Year 12505, spring — Fire breaks out at (22,125).
+=  Year 12505, autumn — Floodwaters swamp (204,235); 9 drowned. Silt will enrich the plain.
+!  Year 12505, autumn — A storm gathers over (65,207).
+!  Year 12505, autumn — A storm gathers over (382,14).
+=  Year 12505, autumn — Floodwaters swamp (77,241); 2 drowned. Silt will enrich the plain.
+x  Year 12505, autumn — Chalymorph gelidum australis is extinct after 344000 ticks.
+!  Year 12505, winter — A storm gathers over (361,335).
+^  Year 12505, winter — Fire breaks out at (353,205).
+~  Year 12506, spring — Year 12506 begins. Flora 3296; 173 herbivores, 64 omnivores, 0 carnivores across 6 living species.
+!  Year 12506, spring — A storm gathers over (46,112).
+=  Year 12506, summer — Floodwaters swamp (351,92); 2 drowned. Silt will enrich the plain.
+x  Year 12506, autumn — Chalymorph gelidum orientalis is extinct after 43600 ticks.
+!  Year 12506, winter — A storm gathers over (82,104).
+!  Year 12506, winter — A storm gathers over (189,144).
+=  Year 12506, winter — Floodwaters swamp (61,133); 0 drowned. Silt will enrich the plain.
+=  Year 12506, winter — Floodwaters swamp (242,129); 1 drowned. Silt will enrich the plain.
+!  Year 12506, winter — A storm gathers over (191,320).
+x  Year 12507, spring — Chalymorph gelidum occidentalis is extinct after 92800 ticks.
+~  Year 12507, spring — Year 12507 begins. Flora 3198; 178 herbivores, 65 omnivores, 0 carnivores across 4 living species.
+!  Year 12507, spring — A storm gathers over (85,113).
+=  Year 12507, spring — Floodwaters swamp (196,70); 12 drowned. Silt will enrich the plain.
+!  Year 12507, spring — A storm gathers over (309,210).
+!  Year 12507, spring — A storm gathers over (330,72).
+!  Year 12507, summer — A storm gathers over (17,115).
+!  Year 12507, summer — A storm gathers over (40,302).
+#  Year 12507, winter — A cold snap grips the world (-0.11 temp).
+=  Year 12507, winter — Floodwaters swamp (245,156); 3 drowned. Silt will enrich the plain.
+~  Year 12508, spring — Year 12508 begins. Flora 3134; 200 herbivores, 58 omnivores, 1 carnivores across 4 living species.
+=  Year 12508, spring — Floodwaters swamp (123,244); 0 drowned. Silt will enrich the plain.
 ```

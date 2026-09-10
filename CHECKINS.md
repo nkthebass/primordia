@@ -9,11 +9,36 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
-| 2026-09-10 | 12,292 | 411 | 393/18/0 | 3 | 1.27326e+06 | healthy — **carnivore tier lost**, `shear_tooth` collapsed 0.617 → 0.078 |
+| 2026-09-10 | 12,507 | 177 | 140/37/0 | 4 | 1.27326e+06 | healthy — carnivores between episodes; still armed (2.26 vs 2.14) |
+| 2026-09-10 | 12,461 | 551 | 404/123/24 | 4 | 1.27326e+06 | healthy — carnivores back and armed, best 2.441 vs 2.052 |
+| 2026-09-10 | 12,292 | 411 | 393/18/0 | 3 | 1.27326e+06 | healthy — carnivores at zero (*read as "tier lost" at the time; it was a trough*) |
 | 2026-09-09 | 11,360 | 422 | 262/154/6 | 7 | 1.27328e+06 | healthy — carnivores crashing 46 → 6, weapon still widespread |
 | 2026-09-09 | 11,264 | 452 | 340/66/46 | 5 | 1.27328e+06 | healthy — population slide reversed, predator tier holding |
 | 2026-09-09 | 11,171 | 245 | 160/54/31 | 10 | 1.27328e+06 | healthy — **first evolved carnivores**, zero warnings |
 | 2026-09-08 | 8,927 | 499 | — | 6 | 1.27335e+06 | healthy — recovered from the second NaN death |
+
+## Correction — the carnivore tier was never lost
+
+Three separate check-ins recorded the carnivore tier as lost, once with the note that
+`shear_tooth` had been "purged" from 0.617 to 0.078. That reading was wrong, and the
+Chronicle says so plainly once the whole record is looked at rather than the moment in
+front of you.
+
+Carnivores have been present in **5,120 of 15,077 recorded years — 34% of this world's
+history** — across 47 episodes lasting five years or more. The longest ran 202 years and
+peaked at 729 individuals:
+
+| years | duration | peak |
+|---|---:|---:|
+| 11,697–11,898 | 202 years | 729 |
+| 12,422–12,441 | 20 years | 50 |
+| 12,460–12,468 | 9 years | 28 |
+| 12,493–12,503 | 11 years | 21 |
+
+This is a predator–prey limit cycle with a period of roughly 10–30 years, not a tier that
+cannot establish. Every "extinction" I recorded was a trough sampled at the wrong moment.
+The lesson for anything reading this file: a single check-in cannot distinguish a cycle
+from a collapse, and this world's cycles are shorter than the gaps between checks.
 
 ## Incidents
 
