@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-10 | 13,023 | 228 | 193/24/11 | 3 | 1.27325e+06 | healthy — **`spikes` swept to 0.97 then relaxed; first co-evolutionary cycle** |
+| 2026-09-10 | 12,878 | 498 | 297/185/16 | 4 | 1.27326e+06 | healthy — **trophic inversion**, mean diet 0.124 → 0.421 |
 | 2026-09-10 | 12,507 | 177 | 140/37/0 | 4 | 1.27326e+06 | healthy — carnivores between episodes; still armed (2.26 vs 2.14) |
 | 2026-09-10 | 12,461 | 551 | 404/123/24 | 4 | 1.27326e+06 | healthy — carnivores back and armed, best 2.441 vs 2.052 |
 | 2026-09-10 | 12,292 | 411 | 393/18/0 | 3 | 1.27326e+06 | healthy — carnivores at zero (*read as "tier lost" at the time; it was a trough*) |
@@ -39,6 +41,36 @@ This is a predator–prey limit cycle with a period of roughly 10–30 years, no
 cannot establish. Every "extinction" I recorded was a trough sampled at the wrong moment.
 The lesson for anything reading this file: a single check-in cannot distinguish a cycle
 from a collapse, and this world's cycles are shorter than the gaps between checks.
+
+## The arms race (year 12,508 onward)
+
+A `spikes` gene was added from the viewer's debug dropdown at year 12,508 — +0.6 effective
+armour per unit, costing 12% basal and 25% movement. Two dull outcomes looked likely: it
+would be stripped out as pure cost with almost nothing hunting, or it would sweep and shut
+the predator niche permanently, since defence is amplified by the kill margin and attack is
+not (prey at full expression reach a bar of 2.95 against a predator ceiling near 2.75).
+
+Neither happened.
+
+| | year 12,508 | year 12,878 | year 13,023 |
+|---|---:|---:|---:|
+| `spikes` | 0.063 | **0.971** | 0.845 |
+| `shear_tooth` | 0.749 | 0.892 | 0.740 |
+| `carrion_gut` | 0.816 | 0.950 | 0.696 |
+| mean diet | 0.124 | **0.421** | — |
+
+`spikes` swept to near-fixation in ~370 years and `shear_tooth` climbed with it rather than
+being left behind. The niche never shut: the requirement stands at 2.128 against a best
+living attack power of 2.226, so predators stayed marginally ahead through the whole ascent.
+Both genes are now relaxing together as the carnivores fall back from a peak of 50. That is
+a co-evolutionary cycle rather than a ratchet, and it is the first this world has run.
+
+The larger result is the **trophic inversion**: mean diet moved 0.124 → 0.421, and for a
+stretch omnivores outnumbered herbivores three to one — never true before across thirteen
+thousand years of herbivore monoculture. `carrion_gut` reached 0.950 on the way, which is
+almost certainly the mechanism: scavenging needs no attack power, so it pays for meat
+digestion first and predation follows from ground already prepared. That is the bridge
+across the adaptive valley that seven hand-seeded predator waves could never cross by force.
 
 ## Incidents
 
