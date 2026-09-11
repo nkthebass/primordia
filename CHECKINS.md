@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-11 | 13,814 | 514 | 236/101/177 | 5 | 1.27324e+06 | **reseeded** after total extinction; 3 new genes, ocean niche opened |
+| 2026-09-11 | 13,759 | 0 | 0/0/0 | 0 | 1.27324e+06 | **TOTAL FAUNAL EXTINCTION** — matter conserved, so ecological not corruption |
 | 2026-09-11 | 13,451 | 361 | — | 1 | 1.27324e+06 | **found paused 11.7 h** by the resource watchdog; resumed, ladder made reversible |
 | 2026-09-11 | 13,450 | 531 | 526/5/0 | 1 | 1.27324e+06 | healthy — **arms race over, prey won**; niche shut (`armed: false`), 260y without carnivores |
 | 2026-09-10 | 13,023 | 228 | 193/24/11 | 3 | 1.27325e+06 | healthy — **`spikes` swept to 0.97 then relaxed; first co-evolutionary cycle** |
@@ -118,6 +120,35 @@ from an unrelated program stopped this world permanently and quietly — the GPU
 `_ease` now reverses the step that took it to each level, restoring the original values
 captured on the way up. Verified by driving all four rungs down and back: cap 3000 → 2700 →
 3000, fps 4.0 → 2.0 → 4.0, tps_cap cleared, paused cleared.
+
+**2026-09-11 — total faunal extinction at year 13,736, and it was not a bug.** Matter stayed
+perfectly conserved at 1,273,237 throughout. The prey won their arms race and then died of
+their own armour: `spikes` fixed at 0.86 costing 12% basal and 25% movement, and once the
+predators were gone that was a permanent tax for a benefit that no longer existed, stacked
+on `gut_ferment`, `winter_torpor`, `highland_lung` and `carrion_gut` still being carried and
+paid for. The last eight animals ran a **basal upkeep multiplier of 2.334** and held 19.05
+energy against a breeding threshold of 32.98. They were young, flora was at 7,400 and
+climbing, and they could never save enough to breed. The biosphere went bankrupt paying for
+armour against nothing, dwindling 504 → 183 → 102 → 0 over 300 years.
+
+**The refounding.** `spikes` retired; three conditional genes added and three stocks seeded.
+The design lesson from the corpse is that *an always-on cost with a situational benefit is a
+slow death sentence*, so every new gene charges its carrier mostly where it also helps them:
+
+| gene | benefit | cost |
+|---|---|---|
+| `mariner` | swim; −30% move cost and −0.4 detectability **in water** | +12% basal **on land** |
+| `nocturne` | −0.55 detectability, +0.5 sense **at night** | +7% basal always |
+| `sunleech` | +0.45 plant digestion, −20% basal **above temp 0.55** | −0.35 cold resistance |
+
+Seeded stock carries `toxin_tolerance` 0.95 — not optional, since the flora has evolved
+toxins to a mean of 0.561 (p90 0.953) over 13,000 years while cold-start animals arrive at
+0.20.
+
+**55 years later:** 514 animals, 236/101/177 across 5 species, no warnings. Basal upkeep is
+**1.433** against the dead world's 2.334. And for the first time in this world's history the
+ocean is inhabited — 84% of the surface is now water, and **42% of animals are in the deep**,
+with `mariner` already sorting spatially: 0.370 in deep water against 0.104 on land.
 
 ## Incidents
 

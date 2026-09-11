@@ -1,0 +1,48 @@
+[
+  {"type":"note","text":"Year 13759. The world is empty of animals and I am refounding it, but not as it was. What killed the last biosphere is worth stating because it shapes everything below: the prey won their arms race and then died of their own armour. spikes fixed at 0.86 and cost twelve per cent basal and twenty-five per cent movement; once the predators were gone that was a permanent tax on every animal for a benefit that no longer existed, stacked on gut_ferment, winter_torpor, highland_lung and carrion_gut which were all still being carried and paid for. The last eight animals ran a basal upkeep multiplier of 2.334 and held 19.05 energy against a breeding threshold of 32.98. They were young, the flora was at seven thousand and climbing, and they simply could never save enough to breed. A whole biosphere went quietly bankrupt paying for armour against nothing. So the first act is to retire spikes. Its purpose is gone and it demonstrably kills its carriers. The second act is to notice what this world has become while nobody was looking at the map. Twelve thousand years of meteor cratering with volcanic uplift concentrated on five saturated hotspots has drowned it: eighty-four per cent of the surface is now water deeper than a quarter, and the plants live on the sixteen per cent that is left. The old biosphere never touched the ocean. So the three genes I am adding are not upgrades, they are doors into rooms this world has never used. mariner makes the sea a highway and a hiding place rather than a wall -- it grants swimming, cheapens movement in water and hides its carrier there, and charges for the plumbing only on dry land. Nothing feeds in the ocean, so this is refuge and dispersal, not a pantry. nocturne splits the day: harder to see and sharper-sensed at night, for a small constant cost. sunleech splits the climate: better digestion and cheaper metabolism above temperature 0.55, paid for with a weaker grip on the cold. Each one is conditional on purpose. The lesson of the extinction is that an always-on cost with a situational benefit is a slow death sentence, so every one of these charges its carrier mostly where it also helps them. The three founder stocks are seeded with toxin tolerance at 0.95, which is not optional: the flora has been evolving toxins for thirteen thousand years and now averages 0.561 with a ninetieth percentile of 0.953, and cold-start animals arrive at 0.20. Seven earlier waves in this world's history were poisoned by grass before anything else got a chance to kill them. They also carry a low breeding threshold and light trait loads, because the corpse of the last biosphere is a warning about metabolic debt. I am seeding prey and one hunting stock, and then leaving it alone. Predation emerged here on its own once before and ran to four hundred and forty-three individuals; it does not need me to force it, only to leave the door open."},
+
+  {"type":"retire_gene","kingdom":"fauna","name":"spikes"},
+
+  {"type":"add_gene","kingdom":"fauna","name":"mariner",
+   "init":{"mean":0.08,"std":0.06},"mut_std":0.05,
+   "effects":[
+     {"stat":"swim_eff","op":"add","per_unit":0.9},
+     {"stat":"move_cost","op":"mul_per_unit","per_unit":-0.30,"when":{"in_water":true}},
+     {"stat":"detectability","op":"add","per_unit":-0.4,"when":{"in_water":true}},
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.12,"when":{"in_water":false}}]},
+
+  {"type":"add_gene","kingdom":"fauna","name":"nocturne",
+   "init":{"mean":0.06,"std":0.05},"mut_std":0.05,
+   "effects":[
+     {"stat":"detectability","op":"add","per_unit":-0.55,"when":{"is_night":true}},
+     {"stat":"sense_bonus","op":"add","per_unit":0.5,"when":{"is_night":true}},
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":0.07}]},
+
+  {"type":"add_gene","kingdom":"fauna","name":"sunleech",
+   "init":{"mean":0.06,"std":0.05},"mut_std":0.05,
+   "effects":[
+     {"stat":"plant_digest","op":"add","per_unit":0.45,"when":{"temp_gt":0.55}},
+     {"stat":"basal_cost","op":"mul_per_unit","per_unit":-0.20,"when":{"temp_gt":0.55}},
+     {"stat":"cold_resist","op":"add","per_unit":-0.35}]},
+
+  {"type":"seed_organism","kingdom":"fauna","count":600,"x":249,"y":260,"radius":70,
+   "genome":{"diet":0.08,"size":0.16,"speed":0.55,"fangs":0.05,"sense_range":0.45,
+             "armor":0.18,"toxin_tolerance":0.95,"metabolism_eff":0.80,
+             "repro_threshold":0.14,"repro_invest":0.20,"lifespan":0.60,
+             "heat_tol":0.60,"cold_tol":0.60,"social":0.55,"swim":0.10,
+             "sunleech":0.35,"instincts":"grazer"}},
+
+  {"type":"seed_organism","kingdom":"fauna","count":350,"x":322,"y":131,"radius":60,
+   "genome":{"diet":0.30,"size":0.20,"speed":0.62,"fangs":0.22,"sense_range":0.60,
+             "armor":0.14,"toxin_tolerance":0.95,"metabolism_eff":0.80,
+             "repro_threshold":0.14,"repro_invest":0.20,"lifespan":0.60,
+             "swim":0.55,"mariner":0.70,"carrion_gut":0.55,"nocturne":0.25,
+             "instincts":"grazer"}},
+
+  {"type":"seed_organism","kingdom":"fauna","count":200,"x":249,"y":260,"radius":90,
+   "genome":{"diet":0.72,"size":0.14,"speed":0.80,"fangs":0.95,"sense_range":0.85,
+             "armor":0.08,"toxin_tolerance":0.95,"metabolism_eff":0.88,
+             "repro_threshold":0.13,"repro_invest":0.18,"lifespan":0.60,
+             "shear_tooth":0.85,"carrion_gut":0.80,"nocturne":0.65,
+             "instincts":"hunter"}}
+]
