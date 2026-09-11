@@ -6,34 +6,32 @@
 
 | | |
 |---|---|
-| year | **13,026** (spring) |
-| animals | 289 — 267 herbivore / 20 omnivore / 2 carnivore |
-| plant biomass | 3,855 |
-| living species | 3 (of 575 ever named) |
-| total matter | 1,273,247 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 2.127, ceiling 2.75 |
-| genetic variance | 0.01704 |
-| warnings | omnivore population critically low (20); carnivore population critically low (2); brains saturated: 51% of outputs pinned, weight sd 0.76 — the fauna are not responding to their senses |
+| year | **13,450** (spring) |
+| animals | 531 — 526 herbivore / 5 omnivore / 0 carnivore |
+| plant biomass | 2,374 |
+| living species | 1 (of 599 ever named) |
+| total matter | 1,273,240 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 1.976, ceiling 2.75 |
+| genetic variance | 0.01388 |
+| warnings | omnivore population critically low (5); monoculture: Amaaemorph tenax is 100% of all fauna; GPU 82C > 80.0C; throttle level 3 active |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Spinabius solaris alpinus | 174 | 0.182 | growing |
-| Spinabius solaris minimus | 110 | 0.182 | declining |
-| Spinabius solaris primum | 5 | 0.644 | declining |
+| Amaaemorph tenax | 531 | 0.109 | stable |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.689 | 98% |
-| winter_torpor | 0.934 | 100% |
-| highland_lung | 0.856 | 100% |
-| shear_tooth | 0.720 | 91% |
-| gut_ferment | 0.922 | 100% |
-| tide_limb | 0.093 | 0% |
-| spikes | 0.809 | 87% |
+| carrion_gut | 0.609 | 85% |
+| winter_torpor | 0.482 | 40% |
+| highland_lung | 0.169 | 9% |
+| shear_tooth | 0.094 | 2% |
+| gut_ferment | 0.947 | 100% |
+| tide_limb | 0.069 | 0% |
+| spikes | 0.864 | 99% |
 
 ## Turning points
 
@@ -268,6 +266,13 @@
 - **Year 12457, spring** · *restore* — World resumed from checkpoint at tick 24914457.
 - **Year 12508, summer** · *intervention* — A new heritable trait appears in the fauna: **spikes** (init 0.05±0.05, mutation 0.05) — armor_eff add +0.6; move_cost mul_per_unit +0.25; basal_cost mul_per_unit +0.12.
 - **Year 13025, autumn** · *game-master note* — Year 13023. Doing nothing, deliberately, and recording why — because what has happened here in the last five hundred years is the most interesting thing this world has produced and it happened without me. At year 12508 a spike gene was added from outside: +0.6 effective armour per unit, paid for with twelve per cent basal and twenty-five per cent movement. I expected one of two dull outcomes. Either it would be stripped out as pure cost, since almost nothing was hunting, or it would sweep and shut the predator niche for good, because defence is amplified by the kill margin and attack is not, …
+- **Year 13449, summer** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 13449, summer** · *gene invented* — Resources back under caps; easing throttle to level 0.
+- **Year 13449, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 13449, winter** · *gene invented* — Still over caps (GPU 82C > 80.0C); halving viewer frame rate.
+- **Year 13449, winter** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 13449, winter** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13449, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 8 ticks/s.
 
 ## Species-rank origins and extinctions
 
@@ -332,6 +337,7 @@
 - **Year 0, autumn** — A new species splits from Xanystoma boreale: Denidens torridum (17 individuals).
 - **Year 0, autumn** — A new species splits from Xanystoma boreale: Fulgylox pallidum (23 individuals).
 - **Year 0, autumn** — A new species splits from Xanystoma boreale: Lumaechir silvae (14 individuals).
+- **Year 13385, winter** — A new species splits from Eosaulox viride: Eosaulox acutum (12 individuals).
 
 ## By era
 
@@ -350,41 +356,41 @@
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
 | 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
-| 13,000–13,999 | 1 | 1 | 1 | 1 | 14 | 53 | 99 | 6 |
+| 13,000–13,999 | 25 | 27 | 64 | 40 | 186 | 984 | 1640 | 81 |
 
-**Totals:** storm 51,224 · flood 26,704 · wildfire 9,609 · cold snap 2,802 · volcano 2,633 · meteor 1,344 · speciation 690 · extinction 592 · checkpoint 129 · seeding 30 · epoch 28 · game-master note 26 · gene invented 14 · intervention 9 · tuning 5
+**Totals:** storm 52,765 · flood 27,635 · wildfire 9,781 · cold snap 2,877 · volcano 2,696 · meteor 1,383 · speciation 714 · extinction 618 · checkpoint 129 · seeding 30 · epoch 28 · game-master note 26 · gene invented 21 · intervention 9 · tuning 5
 
 ## The last 30 entries
 
 ```
-=  Year 13022, spring — Floodwaters swamp (152,140); 0 drowned. Silt will enrich the plain.
-!  Year 13022, summer — A storm gathers over (90,182).
-!  Year 13022, autumn — A storm gathers over (124,176).
-~  Year 13023, spring — Year 13023 begins. Flora 4244; 193 herbivores, 24 omnivores, 11 carnivores across 3 living species.
-=  Year 13023, summer — Floodwaters swamp (47,232); 7 drowned. Silt will enrich the plain.
-=  Year 13023, autumn — Floodwaters swamp (177,347); 0 drowned. Silt will enrich the plain.
-=  Year 13023, winter — Floodwaters swamp (213,189); 0 drowned. Silt will enrich the plain.
-!  Year 13023, winter — A storm gathers over (53,51).
-!  Year 13023, winter — A storm gathers over (204,126).
-#  Year 13023, winter — A cold snap grips the world (-0.13 temp).
-!  Year 13023, winter — A storm gathers over (323,179).
-~  Year 13024, spring — Year 13024 begins. Flora 3799; 222 herbivores, 15 omnivores, 23 carnivores across 3 living species.
-!  Year 13024, summer — A storm gathers over (261,368).
-^  Year 13024, summer — Fire breaks out at (201,285).
-!  Year 13024, autumn — A storm gathers over (83,42).
-!  Year 13024, winter — A storm gathers over (111,259).
-!  Year 13024, winter — A storm gathers over (332,201).
-~  Year 13025, spring — Year 13025 begins. Flora 3866; 274 herbivores, 15 omnivores, 8 carnivores across 3 living species.
-!  Year 13025, spring — A storm gathers over (297,273).
-^  Year 13025, spring — Fire breaks out at (280,117).
-!  Year 13025, summer — A storm gathers over (361,201).
-!  Year 13025, summer — A storm gathers over (307,139).
-=  Year 13025, summer — Floodwaters swamp (288,152); 2 drowned. Silt will enrich the plain.
-"  Year 13025, autumn — Year 13023. Doing nothing, deliberately, and recording why — because what has happened here in the last five hundred years is the most interesting thi
-!  Year 13025, autumn — A storm gathers over (125,85).
-~  Year 13026, spring — Year 13026 begins. Flora 3855; 267 herbivores, 20 omnivores, 2 carnivores across 3 living species.
-!  Year 13026, spring — A storm gathers over (368,30).
-!  Year 13026, spring — A storm gathers over (248,251).
-!  Year 13026, spring — A storm gathers over (349,8).
-!  Year 13026, spring — A storm gathers over (7,53).
+^  Year 13446, winter — Fire breaks out at (352,124).
+#  Year 13446, winter — A cold snap grips the world (-0.15 temp).
+!  Year 13446, winter — A storm gathers over (13,382).
+!  Year 13446, winter — A storm gathers over (319,233).
+~  Year 13447, spring — Year 13447 begins. Flora 2013; 204 herbivores, 2 omnivores, 0 carnivores across 2 living species.
+=  Year 13447, spring — Floodwaters swamp (263,14); 1 drowned. Silt will enrich the plain.
+V  Year 13447, spring — A volcano erupts at (245,64): 0 creatures and 402 plants destroyed, a wide ash ring left fertile.
+V  Year 13447, spring — A volcano erupts at (230,291): 0 creatures and 147 plants destroyed, a wide ash ring left fertile.
+!  Year 13447, summer — A storm gathers over (44,290).
+!  Year 13447, autumn — A storm gathers over (74,330).
+x  Year 13447, autumn — Amaaemorph tenax maximus is extinct after 45200 ticks.
+!  Year 13447, winter — A storm gathers over (30,140).
+=  Year 13447, winter — Floodwaters swamp (0,147); 2 drowned. Silt will enrich the plain.
+~  Year 13448, spring — Year 13448 begins. Flora 2397; 327 herbivores, 7 omnivores, 0 carnivores across 1 living species.
+!  Year 13448, spring — A storm gathers over (131,5).
+=  Year 13448, summer — Floodwaters swamp (107,76); 0 drowned. Silt will enrich the plain.
+^  Year 13448, summer — Fire breaks out at (230,316).
+!  Year 13448, autumn — A storm gathers over (277,196).
+~  Year 13449, spring — Year 13449 begins. Flora 2505; 554 herbivores, 5 omnivores, 0 carnivores across 1 living species.
+=  Year 13449, spring — Floodwaters swamp (166,209); 0 drowned. Silt will enrich the plain.
+&  Year 13449, summer — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+&  Year 13449, summer — Resources back under caps; easing throttle to level 0.
+!  Year 13449, summer — A storm gathers over (109,367).
+&  Year 13449, autumn — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+=  Year 13449, autumn — Floodwaters swamp (30,298); 0 drowned. Silt will enrich the plain.
+&  Year 13449, winter — Still over caps (GPU 82C > 80.0C); halving viewer frame rate.
+&  Year 13449, winter — Still over caps (GPU 82C > 80.0C); capping simulation to 15 ticks/s.
+&  Year 13449, winter — Resources back under caps; easing throttle to level 2.
+&  Year 13449, winter — Still over caps (GPU 81C > 80.0C); capping simulation to 8 ticks/s.
+~  Year 13450, spring — Year 13450 begins. Flora 2374; 526 herbivores, 5 omnivores, 0 carnivores across 1 living species.
 ```

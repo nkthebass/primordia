@@ -9,6 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-11 | 13,450 | 531 | 526/5/0 | 1 | 1.27324e+06 | healthy — **arms race over, prey won**; niche shut (`armed: false`), 260y without carnivores |
 | 2026-09-10 | 13,023 | 228 | 193/24/11 | 3 | 1.27325e+06 | healthy — **`spikes` swept to 0.97 then relaxed; first co-evolutionary cycle** |
 | 2026-09-10 | 12,878 | 498 | 297/185/16 | 4 | 1.27326e+06 | healthy — **trophic inversion**, mean diet 0.124 → 0.421 |
 | 2026-09-10 | 12,507 | 177 | 140/37/0 | 4 | 1.27326e+06 | healthy — carnivores between episodes; still armed (2.26 vs 2.14) |
@@ -71,6 +72,36 @@ thousand years of herbivore monoculture. `carrion_gut` reached 0.950 on the way,
 almost certainly the mechanism: scavenging needs no attack power, so it pays for meat
 digestion first and predation follows from ground already prepared. That is the bridge
 across the adaptive valley that seven hand-seeded predator waves could never cross by force.
+
+### How it ended (year 13,091 onward)
+
+The race resolved, and the prey won it.
+
+Years 13,091–13,190 were the most successful predator era this world has had — carnivores
+present every single year for a century, peaking at **443**. That century of heavy predation
+is exactly the pressure that pays for armour. The prey armoured up, the predators starved,
+and the weapon went with them:
+
+| | year 12,878 | year 13,450 |
+|---|---:|---:|
+| `spikes` (prey) | 0.971 | **0.864 — fixed** |
+| `shear_tooth` (predator) | 0.892 | **0.094 — purged** |
+| best living attack power | 2.236 | 1.684 |
+| required to kill | 2.087 | 1.976 |
+| `armed` | true | **false** |
+
+Since year 13,191 the tier has been absent for 260 years — a handful of lone individuals and
+nothing more. Unlike the three earlier occasions when this log wrongly called the tier lost,
+the machinery agrees this time: nothing alive can kill anything.
+
+Armour now has nothing to defend against, but its cost (12% basal, 25% movement) is one this
+world can afford, so it has not eroded. **The niche is locked from the prey side.**
+
+Note for anyone reaching for the documented fix: `energy.trait_cost_scale` **cannot** reach
+this. It scales the built-in trait costs; `spikes` carries its own per-unit costs through the
+effects system, untouched by that multiplier. Retiring `spikes` would drop prey defence by
+~0.52 and take the requirement to ~1.26, well under what living animals already reach — but
+that is a decision about what this world is for, not about whether it is healthy.
 
 ## Incidents
 
