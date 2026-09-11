@@ -6,38 +6,43 @@
 
 | | |
 |---|---|
-| year | **13,816** (summer) |
-| animals | 498 — 244 herbivore / 79 omnivore / 175 carnivore |
-| plant biomass | 7,829 |
-| living species | 5 (of 613 ever named) |
-| total matter | 1,273,237 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.159, ceiling 2.75 |
-| genetic variance | 0.03785 |
-| warnings | none |
+| year | **14,372** (summer) |
+| animals | 1,623 — 1,502 herbivore / 121 omnivore / 0 carnivore |
+| plant biomass | 2,045 |
+| living species | 9 (of 627 ever named) |
+| total matter | 1,273,234 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 1.076, ceiling 1.95 |
+| genetic variance | 0.02857 |
+| warnings | carnivores are extinct |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Amaignath silvae | 134 | 0.079 | growing |
-| Silyphus obtusum | 123 | 0.858 | growing |
-| Primordium vulgare | 101 | 0.355 | growing |
-| Caloucera ferox | 70 | 0.101 | stable |
-| Chalerhax obtusum | 55 | 0.806 | declining |
+| Veuchir ferox primum | 336 | 0.084 | stable |
+| Veuchir ferox campestris | 315 | 0.087 | stable |
+| Pyricus pallidum orientalis | 189 | 0.321 | stable |
+| Voleipter acutum | 176 | 0.075 | stable |
+| Pyricus pallidum primum | 174 | 0.085 | stable |
+| Primordium vulgare | 149 | 0.291 | declining |
+| Pyricus pallidum | 138 | 0.078 | stable |
+| Veuchir ferox | 120 | 0.134 | declining |
+| Pyricus pallidum australis | 21 | 0.227 | stable |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.434 | 44% |
-| winter_torpor | 0.091 | 0% |
-| highland_lung | 0.084 | 0% |
-| shear_tooth | 0.380 | 38% |
-| gut_ferment | 0.128 | 0% |
-| tide_limb | 0.149 | 9% |
-| mariner | 0.175 | 20% |
-| nocturne | 0.303 | 37% |
-| sunleech | 0.410 | 19% |
+| carrion_gut | 0.166 | 5% |
+| winter_torpor | 0.332 | 23% |
+| highland_lung | 0.124 | 0% |
+| shear_tooth | 0.149 | 4% |
+| gut_ferment | 0.785 | 92% |
+| tide_limb | 0.085 | 0% |
+| mariner | 0.082 | 0% |
+| nocturne | 0.388 | 27% |
+| sunleech | 0.721 | 80% |
+| broad_crop | 0.415 | 26% |
 
 ## Turning points
 
@@ -1423,6 +1428,13 @@
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 200 fauna at (249,260).
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 350 fauna at (322,131).
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 600 fauna at (249,260).
+- **Year 14360, winter** · *game-master note* — Second extinction in 300 years, and the reseed did not fail the way I thought. I read the first death as prey dying of their own armour and the refounding as a trophic-collapse. It was neither. At year 13,900 the whole world had diet mean 0.891 and MINIMUM 0.596 -- not one plant-eater left alive anywhere -- with 6,751 biomass of uneaten flora standing over them. By 14,000 it was mean 0.955, minimum 0.857, 41 animals, flora 10,264 and still climbing. They did not starve for lack of food. They starved standing in a meadow because every one of them had evolved to be unable to eat it. The cause …
+- **Year 14360, winter** · *intervention* — A new heritable trait appears in the fauna: **broad_crop** (init 0.06±0.06, mutation 0.04) — bite_size mul_per_unit +1.1; attack_power add -0.8; move_cost mul_per_unit +0.35.
+- **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 380 fauna at (228,60).
+- **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 380 fauna at (348,204).
+- **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 420 fauna at (12,204).
+- **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.carnivore_basal_discount: 0.5 -> 0.12.
+- **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.gorge_meat: 4.0 -> 2.5.
 
 ## Species-rank origins and extinctions
 
@@ -1492,6 +1504,9 @@
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Caloucera ferox (269 individuals).
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Chalerhax obtusum (19 individuals).
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Silyphus obtusum (21 individuals).
+- **Year 14360, winter** — A new species splits from Primordium vulgare: Pyricus pallidum (178 individuals).
+- **Year 14360, winter** — A new species splits from Primordium vulgare: Veuchir ferox (59 individuals).
+- **Year 14360, winter** — A new species splits from Primordium vulgare: Voleipter acutum (92 individuals).
 
 ## By era
 
@@ -1510,41 +1525,42 @@
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
 | 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
-| 13,000–13,999 | 39 | 38 | 122 | 71 | 315 | 1828 | 2957 | 145 |
+| 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
+| 14,000–14,999 | 9 | 1 | 67 | 24 | 134 | 806 | 1475 | 66 |
 
-**Totals:** storm 54,082 · flood 28,479 · wildfire 9,910 · cold snap 2,941 · volcano 2,754 · meteor 1,414 · gene invented 1,155 · speciation 728 · extinction 629 · checkpoint 130 · seeding 33 · epoch 28 · game-master note 28 · intervention 13 · tuning 5
+**Totals:** storm 56,201 · flood 29,738 · wildfire 10,114 · cold snap 3,043 · volcano 2,852 · meteor 1,448 · gene invented 1,155 · speciation 742 · extinction 638 · checkpoint 130 · seeding 36 · game-master note 29 · epoch 28 · intervention 14 · tuning 7
 
 ## The last 30 entries
 
 ```
-!  Year 13813, autumn — A storm gathers over (229,162).
-!  Year 13813, autumn — A storm gathers over (52,295).
-^  Year 13813, autumn — Fire breaks out at (247,309).
-=  Year 13813, winter — Floodwaters swamp (297,234); 0 drowned. Silt will enrich the plain.
-~  Year 13814, spring — Year 13814 begins. Flora 13183; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-=  Year 13814, spring — Floodwaters swamp (143,141); 0 drowned. Silt will enrich the plain.
-!  Year 13814, spring — A storm gathers over (105,221).
-"  Year 13814, summer — Year 13759. The world is empty of animals and I am refounding it, but not as it was. What killed the last biosphere is worth stating because it shapes
-$  Year 13814, summer — **spikes** is retired: its 3 effect(s) no longer act on the world. The gene stays in the genome as junk DNA and its frequencies remain on the record.
-$  Year 13814, summer — A new heritable trait appears in the fauna: **mariner** (init 0.08±0.06, mutation 0.05) — swim_eff add +0.9; move_cost mul_per_unit -0.3 when {'in_wat
-$  Year 13814, summer — A new heritable trait appears in the fauna: **nocturne** (init 0.06±0.05, mutation 0.05) — detectability add -0.55 when {'is_night': True}; sense_bonu
-$  Year 13814, summer — A new heritable trait appears in the fauna: **sunleech** (init 0.06±0.05, mutation 0.05) — plant_digest add +0.45 when {'temp_gt': 0.55}; basal_cost m
->  Year 13814, summer — Life arrives from nowhere: seeded 600 fauna at (249,260).
->  Year 13814, summer — Life arrives from nowhere: seeded 350 fauna at (322,131).
->  Year 13814, summer — Life arrives from nowhere: seeded 200 fauna at (249,260).
-+  Year 13814, summer — A new species splits from Primordium vulgare: Amaignath silvae (217 individuals).
-+  Year 13814, summer — A new species splits from Primordium vulgare: Caloucera ferox (269 individuals).
-+  Year 13814, summer — A new species splits from Primordium vulgare: Silyphus obtusum (21 individuals).
-+  Year 13814, summer — A new species splits from Primordium vulgare: Chalerhax obtusum (19 individuals).
-!  Year 13814, summer — A storm gathers over (154,369).
-!  Year 13814, winter — A storm gathers over (69,299).
-~  Year 13815, spring — Year 13815 begins. Flora 8952; 155 herbivores, 42 omnivores, 89 carnivores across 5 living species.
-!  Year 13815, spring — A storm gathers over (272,85).
-=  Year 13815, summer — Floodwaters swamp (188,320); 21 drowned. Silt will enrich the plain.
-!  Year 13815, summer — A storm gathers over (298,173).
-!  Year 13815, summer — A storm gathers over (305,38).
-!  Year 13815, winter — A storm gathers over (229,39).
-~  Year 13816, spring — Year 13816 begins. Flora 7820; 254 herbivores, 55 omnivores, 145 carnivores across 5 living species.
-!  Year 13816, spring — A storm gathers over (23,24).
-!  Year 13816, spring — A storm gathers over (120,73).
+!  Year 14368, autumn — A storm gathers over (344,380).
+!  Year 14368, winter — A storm gathers over (68,291).
+~  Year 14369, spring — Year 14369 begins. Flora 1875; 2578 herbivores, 107 omnivores, 1 carnivores across 8 living species.
+!  Year 14369, spring — A storm gathers over (350,257).
+=  Year 14369, autumn — Floodwaters swamp (158,341); 0 drowned. Silt will enrich the plain.
+=  Year 14369, autumn — Floodwaters swamp (247,255); 61 drowned. Silt will enrich the plain.
+!  Year 14369, autumn — A storm gathers over (380,169).
+!  Year 14369, autumn — A storm gathers over (121,226).
+=  Year 14369, winter — Floodwaters swamp (181,153); 0 drowned. Silt will enrich the plain.
+!  Year 14369, winter — A storm gathers over (94,125).
+=  Year 14369, winter — Floodwaters swamp (111,73); 1 drowned. Silt will enrich the plain.
+~  Year 14370, spring — Year 14370 begins. Flora 1990; 2134 herbivores, 113 omnivores, 1 carnivores across 8 living species.
+=  Year 14370, spring — Floodwaters swamp (252,215); 13 drowned. Silt will enrich the plain.
+=  Year 14370, spring — Floodwaters swamp (224,149); 0 drowned. Silt will enrich the plain.
+!  Year 14370, spring — A storm gathers over (195,96).
+!  Year 14370, spring — A storm gathers over (358,271).
+=  Year 14370, summer — Floodwaters swamp (96,161); 0 drowned. Silt will enrich the plain.
+!  Year 14370, autumn — A storm gathers over (282,309).
+!  Year 14370, winter — A storm gathers over (221,104).
+#  Year 14370, winter — A cold snap grips the world (-0.17 temp).
+~  Year 14371, spring — Year 14371 begins. Flora 1936; 1822 herbivores, 111 omnivores, 2 carnivores across 8 living species.
+!  Year 14371, spring — A storm gathers over (265,1).
+!  Year 14371, spring — A storm gathers over (352,316).
+!  Year 14371, summer — A storm gathers over (185,302).
+=  Year 14371, autumn — Floodwaters swamp (226,231); 49 drowned. Silt will enrich the plain.
+!  Year 14371, autumn — A storm gathers over (242,211).
++  Year 14371, winter — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum australis (12 individuals).
+!  Year 14371, winter — A storm gathers over (315,360).
+~  Year 14372, spring — Year 14372 begins. Flora 2018; 1548 herbivores, 122 omnivores, 1 carnivores across 9 living species.
+!  Year 14372, spring — A storm gathers over (124,195).
 ```

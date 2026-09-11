@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-11 | 14,360 | 1,180 | 1180/0/0 | 4 | 1.27324e+06 | **second extinction diagnosed**: carnivory was unconditionally subsidised; discount cut, reseeded herbivore-only |
+| 2026-09-11 | 14,026 | 0 | 0/0/0 | 0 | 1.27324e+06 | **SECOND TOTAL EXTINCTION** — diet had swept to 0.955 in a world with no prey and 10,264 uneaten flora |
 | 2026-09-11 | 13,814 | 514 | 236/101/177 | 5 | 1.27324e+06 | **reseeded** after total extinction; 3 new genes, ocean niche opened |
 | 2026-09-11 | 13,759 | 0 | 0/0/0 | 0 | 1.27324e+06 | **TOTAL FAUNAL EXTINCTION** — matter conserved, so ecological not corruption |
 | 2026-09-11 | 13,451 | 361 | — | 1 | 1.27324e+06 | **found paused 11.7 h** by the resource watchdog; resumed, ladder made reversible |
@@ -149,6 +151,107 @@ toxins to a mean of 0.561 (p90 0.953) over 13,000 years while cold-start animals
 **1.433** against the dead world's 2.334. And for the first time in this world's history the
 ocean is inhabited — 84% of the surface is now water, and **42% of animals are in the deep**,
 with `mariner` already sorting spatially: 0.370 in deep water against 0.104 on land.
+
+## The thing that was actually killing it (year 14,026)
+
+Two extinctions three hundred years apart, and I read the first one wrong — "the prey died of
+their own armour" was a true description of the last eight animals and the wrong cause. The
+archives say what really happened, and they say it about both deaths.
+
+| | year 13,900 | year 14,000 |
+|---|---:|---:|
+| animals | 241 | 41 |
+| **diet, mean** | **0.891** | **0.955** |
+| **diet, minimum** | **0.596** | **0.857** |
+| body size, mean | 0.073 | 0.096 |
+| flora biomass | 6,751 | 10,264 |
+
+There was not one plant-eater left alive in the world. Not a scarce one — the *minimum* diet
+across every living animal was 0.596, then 0.857. They were standing in a meadow that was
+growing faster than anything could eat it, and every one of them had evolved to be unable to
+eat it. The population then lived for two more centuries on its own corpses (`corpse_energy_frac`
+is 0.95, so a dead animal returns almost everything it held) while shrinking toward the size
+floor, and then there was nothing left to recycle.
+
+The cause is two subsidies to carnivory that both pay **whether or not any prey exists**:
+
+- `energy.carnivore_basal_discount` **0.5** — basal upkeep is multiplied by `1 - 0.5 × diet`.
+  A pure carnivore runs at half the metabolic cost of a pure herbivore of the same body, in
+  perpetuity, for free.
+- `energy.gorge_meat` **4.0** — meat intake is `bite × 1.2 × (1 + 4 × meat_digest)`, so a
+  mouthful of meat is up to **six times** a mouthful of grass.
+
+Half the upkeep and six times the intake makes herbivory a strictly dominated strategy. Diet
+ratchets to 1.0, the plant-eaters convert *themselves* out of existence within about twenty
+years of any seeding, and the all-carnivore world that remains eats its own dead until it
+stops. Both extinctions ran that script, and so, almost certainly, did the thirteen thousand
+years of trophic instability before them — including every one of the seven hand-seeded
+predator waves that "failed to establish". They did not fail. They won, immediately and
+completely, and that was the problem.
+
+Both numbers were put there for good reasons. `gorge_meat` fixed a real measurement — a hunter
+needed fifty ticks to strip a carcass it stood on for four — and `carnivore_basal_discount` is
+PLAN §13's leaner predator. Neither was wrong on its own; stacked and unconditional, they were
+a law of nature that said *stop eating plants*.
+
+**The amendment (year 14,352).** `carnivore_basal_discount` 0.5 → **0.12**, `gorge_meat`
+4.0 → **2.5**. A carcass is still a concentrated meal at 3.5× a sward, and a predator still
+runs leaner — it is just no longer paid for prey it has not caught.
+
+**The refounding, second attempt.** No carnivores seeded. The tier evolved by itself once
+before, from `carrion_gut` by way of scavenging, and every hand-seeded wave has inverted the
+pyramid instead. 1,180 grazers in three stocks, `diet` 0.05–0.06, `toxin_tolerance` 0.95,
+body size 0.38–0.45 (the dead world ended at 0.073).
+
+One new gene, aimed squarely at the asymmetry that `gorge_meat` created:
+
+| gene | benefit | cost |
+|---|---|---|
+| `broad_crop` | mouthful ×2.1 at full expression | **attack power −0.8**, move cost +35% |
+
+A broad cropping jaw cannot kill. It is the first gene in this world that a carnivore can
+never profitably carry, which is the point — it gives the herbivore tier something the
+predator tier is structurally unable to take from it.
+
+**And a discovery from the terrain.** Twelve thousand years of cratering against volcanic
+uplift has left **6.7% of the surface as land** — 9,858 cells of 147,456. But 7,907 biomass of
+flora is growing in shallow water, which is **38% of all the plant life in the world**, and
+nothing in this world's history has ever been able to reach it. Two of the three stocks are
+swimmers (`mariner` 0.85–0.9, `tide_limb` 0.75–0.8) seeded onto the drowned shelves. Half the
+larder has been sitting there uneaten since the seas rose.
+
+**2026-09-11 — the chronicle panel was frozen for 340 years and the bug was in one missing
+word.** The viewer's chronicle sat on `Year 14032 — 0 herbivores, 0 omnivores, 0 carnivores`
+while the map, the graphs and the population counters an inch to its left were live at year
+14,371. The file on disk was current, `/api/chronicle?n=45` returned current data to `curl`,
+and the `/chronicle` page was current. The panel polls every three seconds and every one of
+those polls was being answered by the browser's HTTP cache: `api()` in `viewer/index.html`
+called `fetch(p, o)` with no cache directive, against a fixed GET URL, so the first response
+of the session was the only one that ever arrived. `viewer/chronicle.html` had passed
+`{cache:"no-store"}` by hand from the start, which is why that page was fine and this one was
+not. The helper now sets it for the whole viewer. Anyone whose tab predates this needs one
+hard refresh to pick up the new `index.html`.
+
+### Did the amendment work?
+
+The test is not whether the population survived — it is whether `diet` still ratchets when
+the world fills with corpses, which is the condition that killed it twice. Over the first
+twelve years the seeded grazers overshot hard, stripping 25,219 biomass of thirteen-thousand-
+year-old standing crop down to 1,870 and leaving 1,200–1,900 of carrion lying on the ground:
+
+| year | pop | flora | carrion | **diet** |
+|---:|---:|---:|---:|---:|
+| 14,365 | 2,597 | 3,828 | 1,932 | 0.125 |
+| 14,366 | 2,458 | 2,858 | 1,541 | **0.141** |
+| 14,368 | 2,594 | 1,971 | 1,424 | 0.117 |
+| 14,370 | 1,898 | 1,975 | 1,183 | 0.132 |
+
+Diet rose under peak carrion and came back down. That is a gradient with a restoring force,
+where before it was a one-way door — under the old laws this exact condition took it from
+0.42 to 0.955 and did not return. Flora decelerated into an equilibrium near 1,900 instead of
+running away to 24,000 uneaten, which is the first grazing equilibrium this world has held.
+Nine species inside twelve years, and the first carnivores appeared on their own — one and
+two at a time, evolved rather than seeded, which is how the tier is supposed to arrive.
 
 ## Incidents
 

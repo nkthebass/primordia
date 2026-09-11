@@ -207,7 +207,14 @@ table.kv td:last-child{text-align:right}
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 let META=null, STATE={}, SELSPP=-1, PICKING=false, SERIES=null, SPECIES=[], G=384;
 
-const api=async(p,o)=>{const r=await fetch(p,o);if(!r.ok)throw new Error((await r.text()).slice(0,200));
+// Every polled endpoint here is a fixed GET URL, so without an explicit no-store the
+// browser is free to keep serving its first response forever. The chronicle panel polls
+// /api/chronicle?n=45 every three seconds and sat frozen on a dead world for 340 years
+// while the map, the graphs and the counters beside it stayed live -- the poll was firing,
+// the cache was answering it. chronicle.html already passed {cache:"no-store"} by hand;
+// putting it here covers the whole viewer instead of one page.
+const api=async(p,o)=>{const r=await fetch(p,{cache:"no-store",...(o||{})});
+  if(!r.ok)throw new Error((await r.text()).slice(0,200));
   return r.headers.get("content-type")?.includes("json")?r.json():r.text();};
 const post=(p,b)=>api(p,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(b)});
 const fmt=n=>n>=1e6?(n/1e6).toFixed(2)+"M":n>=1e4?(n/1e3).toFixed(1)+"k":Math.round(n).toLocaleString();

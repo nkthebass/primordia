@@ -1,0 +1,40 @@
+[
+{"type":"note","text":"Second extinction in 300 years, and the reseed did not fail the way I thought. I read the first death as prey dying of their own armour and the refounding as a trophic-collapse. It was neither. At year 13,900 the whole world had diet mean 0.891 and MINIMUM 0.596 -- not one plant-eater left alive anywhere -- with 6,751 biomass of uneaten flora standing over them. By 14,000 it was mean 0.955, minimum 0.857, 41 animals, flora 10,264 and still climbing. They did not starve for lack of food. They starved standing in a meadow because every one of them had evolved to be unable to eat it. The cause is two unconditional subsidies to carnivory stacked on each other. carnivore_basal_discount 0.5 halves basal upkeep in proportion to diet, and it pays whether or not a single prey animal exists. gorge_meat 4.0 makes a mouthful of meat 6x a mouthful of grass. Together they make herbivory a strictly dominated strategy: diet ratchets to 1.0, the plant-eaters convert themselves out of existence within twenty years, and the resulting all-carnivore world subsists on its own corpses -- corpse_energy_frac is 0.95, so a population CAN eat its own dead for two centuries, shrinking (size fell to 0.073, near the 0.05 floor) until there is nothing left to recycle. Both extinctions ran this script. So did the thirteen thousand years of trophic instability before them. Cutting the discount to 0.12 keeps PLAN 13's leaner predator without paying it for prey it has not caught; gorge 2.5 keeps a carcass a concentrated meal (3.5x a sward) without making meat a one-way door. Seeding no carnivores this time -- the tier evolved on its own once, from carrion_gut, and every hand-seeded wave has inverted the pyramid instead. And a second discovery from the terrain: land is down to 6.7 per cent of the surface, but 7,907 biomass of flora is growing in shallow water that nothing in this world's history has ever been able to reach. That is nearly half the larder, untouched. broad_crop and a swimming grazer stock go after it."},
+
+{"type":"tune","path":"energy.carnivore_basal_discount","value":0.12},
+{"type":"tune","path":"energy.gorge_meat","value":2.5},
+
+{"type":"add_gene","kingdom":"fauna","name":"broad_crop",
+ "init":{"mean":0.06,"std":0.06},"mut_std":0.045,
+ "effects":[
+   {"stat":"bite_size","op":"mul_per_unit","per_unit":1.1},
+   {"stat":"attack_power","op":"add","per_unit":-0.8},
+   {"stat":"move_cost","op":"mul_per_unit","per_unit":0.35}]},
+
+{"type":"seed_organism","kingdom":"fauna","count":420,"x":12,"y":204,"radius":16,
+ "genome":{"instincts":"grazer","diet":0.06,"size":0.45,"speed":0.38,
+   "metabolism_eff":0.72,"toxin_tolerance":0.95,"repro_threshold":0.18,
+   "sense_range":0.42,"camouflage":0.45,"armor":0.10,"fangs":0.05,
+   "cold_tol":0.55,"heat_tol":0.55,"lifespan":0.5,
+   "broad_crop":0.55,"sunleech":0.6,"nocturne":0.3,"mariner":0.05,
+   "gut_ferment":0.5,"carrion_gut":0.0,"shear_tooth":0.0,"tide_limb":0.0,
+   "highland_lung":0.0,"winter_torpor":0.2}},
+
+{"type":"seed_organism","kingdom":"fauna","count":380,"x":228,"y":60,"radius":18,
+ "genome":{"instincts":"grazer","diet":0.05,"size":0.40,"speed":0.45,
+   "metabolism_eff":0.72,"toxin_tolerance":0.95,"repro_threshold":0.18,
+   "sense_range":0.45,"camouflage":0.55,"armor":0.08,"fangs":0.05,
+   "cold_tol":0.60,"heat_tol":0.50,"lifespan":0.5,
+   "broad_crop":0.5,"mariner":0.85,"tide_limb":0.8,"nocturne":0.35,
+   "sunleech":0.2,"gut_ferment":0.45,"carrion_gut":0.0,"shear_tooth":0.0,
+   "highland_lung":0.0,"winter_torpor":0.2}},
+
+{"type":"seed_organism","kingdom":"fauna","count":380,"x":348,"y":204,"radius":18,
+ "genome":{"instincts":"grazer","diet":0.05,"size":0.38,"speed":0.50,
+   "metabolism_eff":0.70,"toxin_tolerance":0.95,"repro_threshold":0.17,
+   "sense_range":0.48,"camouflage":0.50,"armor":0.08,"fangs":0.05,
+   "cold_tol":0.50,"heat_tol":0.60,"lifespan":0.5,
+   "broad_crop":0.45,"mariner":0.9,"tide_limb":0.75,"nocturne":0.6,
+   "sunleech":0.45,"gut_ferment":0.4,"carrion_gut":0.0,"shear_tooth":0.0,
+   "highland_lung":0.0,"winter_torpor":0.15}}
+]
