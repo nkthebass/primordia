@@ -164,24 +164,58 @@ class Monitor:
             self.breaches = 0
             self._throttle(b)
         elif self.breaches == 0 and self.throttle_level > 0 and self.sim:
-            # recovered: back off the ladder one step
-            self.throttle_level -= 1
-            self.sim.log_event("resource", "Resources back under caps; easing throttle "
-                                           f"to level {self.throttle_level}.")
+            self._ease()
+
+    def _ease(self) -> None:
+        """Undo the step that took us to the current level, one rung per recovery.
+
+        Every rung used to be one-way: this decremented throttle_level and reversed
+        nothing, so a transient breach permanently lowered max_pop, permanently halved the
+        viewer frame rate, permanently capped the tick rate -- and at the top rung left
+        `sim.paused` set forever. A GPU spike from an unrelated program stopped this world
+        for eleven hours and it would never have restarted itself.
+        """
+        sim = self.sim
+        lvl = self.throttle_level
+        orig = getattr(self, "_orig", {})
+        what = "eased"
+        if lvl >= 3 and bool(self.cfg.get("sim.paused")):
+            self.cfg.set("sim.paused", False)
+            what = "resumed the simulation"
+        elif lvl == 3:
+            sim.tps_cap = orig.get("tps_cap")
+            what = "removed the tick-rate cap"
+        elif lvl == 2:
+            if "target_fps" in orig:
+                self.cfg.set("sim.target_fps", orig["target_fps"])
+            what = "restored the viewer frame rate"
+        elif lvl == 1:
+            if "max_pop" in orig:
+                self.cfg.set("fauna.max_pop", int(orig["max_pop"]))
+                sim.fauna.schema.grow(int(orig["max_pop"]))
+            what = "restored the population cap"
+        self.throttle_level = max(0, lvl - 1)
+        sim.log_event("resource", f"Resources back under caps; {what} "
+                                  f"(throttle level {self.throttle_level}).")
 
     def _throttle(self, reasons: list[str]) -> None:
         sim = self.sim
         lvl = self.throttle_level
         why = ", ".join(reasons)
+        if not hasattr(self, "_orig"):
+            self._orig = {}
         if lvl == 0:
+            self._orig.setdefault("max_pop", sim.fauna.cap)
             newcap = int(sim.fauna.cap * 0.9)
             self.cfg.set("fauna.max_pop", newcap)
             sim.log_event("resource", f"Resource caps breached ({why}); "
                                       f"lowering max population to {newcap}.")
         elif lvl == 1:
+            self._orig.setdefault("target_fps", float(self.cfg.sim["target_fps"]))
             self.cfg.set("sim.target_fps", max(0.5, float(self.cfg.sim["target_fps"]) / 2))
             sim.log_event("resource", f"Still over caps ({why}); halving viewer frame rate.")
         elif lvl == 2:
+            self._orig.setdefault("tps_cap", sim.tps_cap)
             sim.tps_cap = max(4.0, sim.tps_cap * 0.5 if sim.tps_cap else 15.0)
             sim.log_event("resource", f"Still over caps ({why}); capping simulation to "
                                       f"{sim.tps_cap:.0f} ticks/s.")
@@ -189,7 +223,7 @@ class Monitor:
             self.cfg.set("sim.paused", True)
             sim.log_event("resource", f"ALERT: resource caps still breached ({why}). "
                                       f"Simulation paused to protect the desktop.")
-        self.throttle_level = min(3, lvl + 1)
+        self.throttle_level = min(4, lvl + 1)
 
     # ------------------------------------------------------------------ report
     def snapshot(self) -> dict:

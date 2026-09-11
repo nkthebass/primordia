@@ -6,32 +6,34 @@
 
 | | |
 |---|---|
-| year | **13,450** (spring) |
-| animals | 531 — 526 herbivore / 5 omnivore / 0 carnivore |
-| plant biomass | 2,374 |
-| living species | 1 (of 599 ever named) |
+| year | **13,452** (spring) |
+| animals | 439 — 434 herbivore / 5 omnivore / 0 carnivore |
+| plant biomass | 2,214 |
+| living species | 3 (of 601 ever named) |
 | total matter | 1,273,240 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.976, ceiling 2.75 |
-| genetic variance | 0.01388 |
-| warnings | omnivore population critically low (5); monoculture: Amaaemorph tenax is 100% of all fauna; GPU 82C > 80.0C; throttle level 3 active |
+| predator niche | open — needs attack power 1.952, ceiling 2.75 |
+| genetic variance | 0.01225 |
+| warnings | omnivore population critically low (5) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Amaaemorph tenax | 531 | 0.109 | stable |
+| Amaaemorph tenax | 245 | 0.050 | stable |
+| Amaaemorph tenax minimus | 146 | 0.236 | growing |
+| Amaaemorph tenax borealis | 48 | 0.076 | stable |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.609 | 85% |
-| winter_torpor | 0.482 | 40% |
-| highland_lung | 0.169 | 9% |
-| shear_tooth | 0.094 | 2% |
-| gut_ferment | 0.947 | 100% |
-| tide_limb | 0.069 | 0% |
-| spikes | 0.864 | 99% |
+| carrion_gut | 0.597 | 86% |
+| winter_torpor | 0.481 | 43% |
+| highland_lung | 0.166 | 7% |
+| shear_tooth | 0.061 | 1% |
+| gut_ferment | 0.933 | 100% |
+| tide_limb | 0.089 | 0% |
+| spikes | 0.847 | 99% |
 
 ## Turning points
 
@@ -273,6 +275,1142 @@
 - **Year 13449, winter** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 15 ticks/s.
 - **Year 13449, winter** · *gene invented* — Resources back under caps; easing throttle to level 2.
 - **Year 13449, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 8 ticks/s.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+- **Year 13450, spring** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 0.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 0.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 1.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 1.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13450, spring** · *gene invented* — Resources back under caps; easing throttle to level 2.
+- **Year 13450, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 4 ticks/s.
+- **Year 13450, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 13450, spring** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 4 ticks/s.
+- **Year 13450, spring** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 4 ticks/s.
+- **Year 13450, spring** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 4 ticks/s.
+- **Year 13450, spring** · *restore* — World resumed from checkpoint at tick 26900125.
+- **Year 13450, summer** · *game-master note* — Year 13450. The arms race is over and the prey won it. Recording the result and changing nothing, because the change that would reopen the niche is not mine to make. What happened between years 13091 and 13190 is the most successful predator era this world has ever had: carnivores held every single year for a hundred years and peaked at 443, against a previous record of 729 spread across two centuries. Then it ended. Since year 13191 the tier has been effectively absent for two hundred and sixty years -- a handful of single individuals in 13211, 13231, 13371, and nothing else. That is far …
 
 ## Species-rank origins and extinctions
 
@@ -356,41 +1494,41 @@
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
 | 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
-| 13,000–13,999 | 25 | 27 | 64 | 40 | 186 | 984 | 1640 | 81 |
+| 13,000–13,999 | 27 | 27 | 64 | 40 | 186 | 988 | 1648 | 81 |
 
-**Totals:** storm 52,765 · flood 27,635 · wildfire 9,781 · cold snap 2,877 · volcano 2,696 · meteor 1,383 · speciation 714 · extinction 618 · checkpoint 129 · seeding 30 · epoch 28 · game-master note 26 · gene invented 21 · intervention 9 · tuning 5
+**Totals:** storm 52,773 · flood 27,639 · wildfire 9,781 · cold snap 2,877 · volcano 2,696 · meteor 1,383 · gene invented 1,155 · speciation 716 · extinction 618 · checkpoint 130 · seeding 30 · epoch 28 · game-master note 27 · intervention 9 · tuning 5
 
 ## The last 30 entries
 
 ```
-^  Year 13446, winter — Fire breaks out at (352,124).
-#  Year 13446, winter — A cold snap grips the world (-0.15 temp).
-!  Year 13446, winter — A storm gathers over (13,382).
-!  Year 13446, winter — A storm gathers over (319,233).
-~  Year 13447, spring — Year 13447 begins. Flora 2013; 204 herbivores, 2 omnivores, 0 carnivores across 2 living species.
-=  Year 13447, spring — Floodwaters swamp (263,14); 1 drowned. Silt will enrich the plain.
-V  Year 13447, spring — A volcano erupts at (245,64): 0 creatures and 402 plants destroyed, a wide ash ring left fertile.
-V  Year 13447, spring — A volcano erupts at (230,291): 0 creatures and 147 plants destroyed, a wide ash ring left fertile.
-!  Year 13447, summer — A storm gathers over (44,290).
-!  Year 13447, autumn — A storm gathers over (74,330).
-x  Year 13447, autumn — Amaaemorph tenax maximus is extinct after 45200 ticks.
-!  Year 13447, winter — A storm gathers over (30,140).
-=  Year 13447, winter — Floodwaters swamp (0,147); 2 drowned. Silt will enrich the plain.
-~  Year 13448, spring — Year 13448 begins. Flora 2397; 327 herbivores, 7 omnivores, 0 carnivores across 1 living species.
-!  Year 13448, spring — A storm gathers over (131,5).
-=  Year 13448, summer — Floodwaters swamp (107,76); 0 drowned. Silt will enrich the plain.
-^  Year 13448, summer — Fire breaks out at (230,316).
-!  Year 13448, autumn — A storm gathers over (277,196).
-~  Year 13449, spring — Year 13449 begins. Flora 2505; 554 herbivores, 5 omnivores, 0 carnivores across 1 living species.
-=  Year 13449, spring — Floodwaters swamp (166,209); 0 drowned. Silt will enrich the plain.
-&  Year 13449, summer — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
-&  Year 13449, summer — Resources back under caps; easing throttle to level 0.
-!  Year 13449, summer — A storm gathers over (109,367).
-&  Year 13449, autumn — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
-=  Year 13449, autumn — Floodwaters swamp (30,298); 0 drowned. Silt will enrich the plain.
-&  Year 13449, winter — Still over caps (GPU 82C > 80.0C); halving viewer frame rate.
-&  Year 13449, winter — Still over caps (GPU 82C > 80.0C); capping simulation to 15 ticks/s.
-&  Year 13449, winter — Resources back under caps; easing throttle to level 2.
-&  Year 13449, winter — Still over caps (GPU 81C > 80.0C); capping simulation to 8 ticks/s.
-~  Year 13450, spring — Year 13450 begins. Flora 2374; 526 herbivores, 5 omnivores, 0 carnivores across 1 living species.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — ALERT: resource caps still breached (GPU 84C > 80.0C). Simulation paused to protect the desktop.
+&  Year 13450, spring — Resources back under caps; easing throttle to level 2.
+&  Year 13450, spring — Resources back under caps; easing throttle to level 1.
+&  Year 13450, spring — Resources back under caps; easing throttle to level 0.
+.  Year 13450, spring — World resumed from checkpoint at tick 26900125.
++  Year 13450, spring — A new subspecies splits from Amaaemorph tenax: Amaaemorph tenax minimus (13 individuals).
++  Year 13450, spring — A new subspecies splits from Amaaemorph tenax: Amaaemorph tenax borealis (22 individuals).
+"  Year 13450, summer — Year 13450. The arms race is over and the prey won it. Recording the result and changing nothing, because the change that would reopen the niche is no
+!  Year 13450, summer — A storm gathers over (330,88).
+!  Year 13450, winter — A storm gathers over (226,326).
+=  Year 13450, winter — Floodwaters swamp (112,183); 0 drowned. Silt will enrich the plain.
+~  Year 13451, spring — Year 13451 begins. Flora 2332; 356 herbivores, 5 omnivores, 0 carnivores across 3 living species.
+!  Year 13451, spring — A storm gathers over (234,20).
+=  Year 13451, spring — Floodwaters swamp (197,196); 0 drowned. Silt will enrich the plain.
+!  Year 13451, spring — A storm gathers over (99,312).
+!  Year 13451, summer — A storm gathers over (164,223).
+!  Year 13451, summer — A storm gathers over (156,174).
+=  Year 13451, summer — Floodwaters swamp (68,196); 5 drowned. Silt will enrich the plain.
+!  Year 13451, winter — A storm gathers over (36,18).
+!  Year 13451, winter — A storm gathers over (181,326).
+~  Year 13452, spring — Year 13452 begins. Flora 2214; 434 herbivores, 5 omnivores, 0 carnivores across 3 living species.
+=  Year 13452, spring — Floodwaters swamp (222,219); 0 drowned. Silt will enrich the plain.
 ```

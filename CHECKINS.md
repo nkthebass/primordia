@@ -9,6 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-11 | 13,451 | 361 | — | 1 | 1.27324e+06 | **found paused 11.7 h** by the resource watchdog; resumed, ladder made reversible |
 | 2026-09-11 | 13,450 | 531 | 526/5/0 | 1 | 1.27324e+06 | healthy — **arms race over, prey won**; niche shut (`armed: false`), 260y without carnivores |
 | 2026-09-10 | 13,023 | 228 | 193/24/11 | 3 | 1.27325e+06 | healthy — **`spikes` swept to 0.97 then relaxed; first co-evolutionary cycle** |
 | 2026-09-10 | 12,878 | 498 | 297/185/16 | 4 | 1.27326e+06 | healthy — **trophic inversion**, mean diet 0.124 → 0.421 |
@@ -102,6 +103,21 @@ this. It scales the built-in trait costs; `spikes` carries its own per-unit cost
 effects system, untouched by that multiplier. Retiring `spikes` would drop prey defence by
 ~0.52 and take the requirement to ~1.26, well under what living animals already reach — but
 that is a decision about what this world is for, not about whether it is healthy.
+
+**2026-09-11 — the watchdog paused the world and could not un-pause it.** Found the
+simulation stopped for 11.7 hours, tick frozen, `paused: true`. A GPU spike to 82°C — from
+something that was not the simulation, which uses numpy for its fields — drove the resource
+watchdog up its throttle ladder to the last rung, `pause`.
+
+The ladder only went down. `_ease` decremented `throttle_level` on recovery and reversed
+none of the actions: `max_pop` stayed cut, `target_fps` stayed halved, `tps_cap` stayed
+capped, and `sim.paused` stayed set. Every rung was a one-way door, so a transient breach
+from an unrelated program stopped this world permanently and quietly — the GPU was back to
+46°C and throttle 0 while the world sat frozen.
+
+`_ease` now reverses the step that took it to each level, restoring the original values
+captured on the way up. Verified by driving all four rungs down and back: cap 3000 → 2700 →
+3000, fps 4.0 → 2.0 → 4.0, tps_cap cleared, paused cleared.
 
 ## Incidents
 
