@@ -244,6 +244,43 @@ class Sim:
             self.render.snapshot(os.path.join(d, f"t{tick:09d}.png"))
         except Exception:
             pass
+        self._prune_snapshots(d)
+
+    def _prune_snapshots(self, d: str) -> None:
+        """Thin the timelapse the way `checkpoint._prune_archive` thins the archives.
+
+        The world wrote a PNG every `snapshot_every` ticks and never removed one.  By
+        year 15,218 that was 43,190 files and 3.6 GB -- larger than the checkpoint
+        archive it sits next to, and growing without bound for the whole life of the
+        run.  This is the same failure that filled the disk to 99.9% in September; the
+        archives were fixed then and the timelapse was missed.
+
+        Keep the newest `snapshot_keep` frames at full cadence, and one frame per
+        `snapshot_coarse_every` ticks further back, so the timelapse still spans the
+        whole history at a coarser step instead of being truncated to a recent window.
+        """
+        keep = int(self.cfg.sim.get("snapshot_keep", 600))
+        coarse = max(1, int(self.cfg.sim.get("snapshot_coarse_every", 200000)))
+        self._snap_prune_due = getattr(self, "_snap_prune_due", 0) - 1
+        if self._snap_prune_due > 0:
+            return
+        self._snap_prune_due = 200          # listdir of 40k names is not free
+        try:
+            names = [n for n in os.listdir(d)
+                     if n.startswith("t") and n.endswith(".png") and n[1:-4].isdigit()]
+        except OSError:
+            return
+        if len(names) <= keep:
+            return
+        ticks = sorted(int(n[1:-4]) for n in names)
+        recent = set(ticks[-keep:])
+        for t in ticks[:-keep]:
+            if t in recent or t % coarse == 0:
+                continue
+            try:
+                os.remove(os.path.join(d, "t%09d.png" % t))
+            except OSError:
+                pass
 
     # ------------------------------------------------------------- checkpoint
     def request_checkpoint(self, label: str | None = None) -> None:

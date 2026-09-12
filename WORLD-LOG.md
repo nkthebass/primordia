@@ -6,43 +6,38 @@
 
 | | |
 |---|---|
-| year | **14,372** (summer) |
-| animals | 1,623 — 1,502 herbivore / 121 omnivore / 0 carnivore |
-| plant biomass | 2,045 |
-| living species | 9 (of 627 ever named) |
-| total matter | 1,273,234 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.076, ceiling 1.95 |
-| genetic variance | 0.02857 |
-| warnings | carnivores are extinct |
+| year | **15,228** (summer) |
+| animals | 2,398 — 2,395 herbivore / 3 omnivore / 0 carnivore |
+| plant biomass | 9,298 |
+| living species | 4 (of 659 ever named) |
+| total matter | 1,273,224 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 0.957, ceiling 1.95 |
+| genetic variance | 0.01256 |
+| warnings | omnivore population critically low (3) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Veuchir ferox primum | 336 | 0.084 | stable |
-| Veuchir ferox campestris | 315 | 0.087 | stable |
-| Pyricus pallidum orientalis | 189 | 0.321 | stable |
-| Voleipter acutum | 176 | 0.075 | stable |
-| Pyricus pallidum primum | 174 | 0.085 | stable |
-| Primordium vulgare | 149 | 0.291 | declining |
-| Pyricus pallidum | 138 | 0.078 | stable |
-| Veuchir ferox | 120 | 0.134 | declining |
-| Pyricus pallidum australis | 21 | 0.227 | stable |
+| Pyrochir tenax | 1,596 | 0.067 | growing |
+| Pyrochir tenax orientalis | 328 | 0.097 | growing |
+| Pyrochir tenax occidentalis | 314 | 0.078 | growing |
+| Pyrochir tenax tertium | 260 | 0.122 | growing |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.166 | 5% |
-| winter_torpor | 0.332 | 23% |
+| carrion_gut | 0.042 | 0% |
+| winter_torpor | 0.291 | 2% |
 | highland_lung | 0.124 | 0% |
-| shear_tooth | 0.149 | 4% |
-| gut_ferment | 0.785 | 92% |
-| tide_limb | 0.085 | 0% |
-| mariner | 0.082 | 0% |
-| nocturne | 0.388 | 27% |
-| sunleech | 0.721 | 80% |
-| broad_crop | 0.415 | 26% |
+| shear_tooth | 0.041 | 0% |
+| gut_ferment | 0.892 | 100% |
+| tide_limb | 0.063 | 0% |
+| mariner | 0.065 | 0% |
+| nocturne | 0.363 | 20% |
+| sunleech | 0.475 | 50% |
+| broad_crop | 0.426 | 29% |
 
 ## Turning points
 
@@ -1435,6 +1430,12 @@
 - **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 420 fauna at (12,204).
 - **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.carnivore_basal_discount: 0.5 -> 0.12.
 - **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.gorge_meat: 4.0 -> 2.5.
+- **Year 15227, autumn** · *game-master note* — Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet stayed at 0.117-0.130 across the whole 300-year decline with flora climbing 1,666 -> 3,748 -> 17,297, so nothing converted itself into a carnivore this time. What killed them was body size. Seeded at 0.38-0.45, the population was at 0.072 by year 14,500 and 0.070 by 14,800, against a floor of 0.05. A 0.07 animal has a 0.07 mouthful: measured energy was 13.08 against a breeding bar of 22.2, and it sat 40 per cent short for three centuries while the …
+- **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (12,204).
+- **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (252,276).
+- **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (276,60).
+- **Year 15227, autumn** · *tuning* — Law of nature amended: tuned energy.digest_size_gain: 0.0 -> 1.3.
+- **Year 15227, autumn** · *tuning* — Law of nature amended: tuned energy.digest_size_min: 1.0 -> 0.7.
 
 ## Species-rank origins and extinctions
 
@@ -1507,6 +1508,7 @@
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Pyricus pallidum (178 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Veuchir ferox (59 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Voleipter acutum (92 individuals).
+- **Year 15227, autumn** — A new species splits from Primordium vulgare: Pyrochir tenax (255 individuals).
 
 ## By era
 
@@ -1526,41 +1528,42 @@
 | 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
 | 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
-| 14,000–14,999 | 9 | 1 | 67 | 24 | 134 | 806 | 1475 | 66 |
+| 14,000–14,999 | 37 | 36 | 162 | 77 | 364 | 2338 | 3780 | 180 |
+| 15,000–15,999 | 4 | 0 | 46 | 20 | 84 | 538 | 815 | 41 |
 
-**Totals:** storm 56,201 · flood 29,738 · wildfire 10,114 · cold snap 3,043 · volcano 2,852 · meteor 1,448 · gene invented 1,155 · speciation 742 · extinction 638 · checkpoint 130 · seeding 36 · game-master note 29 · epoch 28 · intervention 14 · tuning 7
+**Totals:** storm 59,321 · flood 31,808 · wildfire 10,428 · cold snap 3,198 · volcano 2,993 · meteor 1,521 · gene invented 1,155 · speciation 774 · extinction 673 · checkpoint 130 · seeding 39 · game-master note 30 · epoch 28 · intervention 14 · tuning 9
 
 ## The last 30 entries
 
 ```
-!  Year 14368, autumn — A storm gathers over (344,380).
-!  Year 14368, winter — A storm gathers over (68,291).
-~  Year 14369, spring — Year 14369 begins. Flora 1875; 2578 herbivores, 107 omnivores, 1 carnivores across 8 living species.
-!  Year 14369, spring — A storm gathers over (350,257).
-=  Year 14369, autumn — Floodwaters swamp (158,341); 0 drowned. Silt will enrich the plain.
-=  Year 14369, autumn — Floodwaters swamp (247,255); 61 drowned. Silt will enrich the plain.
-!  Year 14369, autumn — A storm gathers over (380,169).
-!  Year 14369, autumn — A storm gathers over (121,226).
-=  Year 14369, winter — Floodwaters swamp (181,153); 0 drowned. Silt will enrich the plain.
-!  Year 14369, winter — A storm gathers over (94,125).
-=  Year 14369, winter — Floodwaters swamp (111,73); 1 drowned. Silt will enrich the plain.
-~  Year 14370, spring — Year 14370 begins. Flora 1990; 2134 herbivores, 113 omnivores, 1 carnivores across 8 living species.
-=  Year 14370, spring — Floodwaters swamp (252,215); 13 drowned. Silt will enrich the plain.
-=  Year 14370, spring — Floodwaters swamp (224,149); 0 drowned. Silt will enrich the plain.
-!  Year 14370, spring — A storm gathers over (195,96).
-!  Year 14370, spring — A storm gathers over (358,271).
-=  Year 14370, summer — Floodwaters swamp (96,161); 0 drowned. Silt will enrich the plain.
-!  Year 14370, autumn — A storm gathers over (282,309).
-!  Year 14370, winter — A storm gathers over (221,104).
-#  Year 14370, winter — A cold snap grips the world (-0.17 temp).
-~  Year 14371, spring — Year 14371 begins. Flora 1936; 1822 herbivores, 111 omnivores, 2 carnivores across 8 living species.
-!  Year 14371, spring — A storm gathers over (265,1).
-!  Year 14371, spring — A storm gathers over (352,316).
-!  Year 14371, summer — A storm gathers over (185,302).
-=  Year 14371, autumn — Floodwaters swamp (226,231); 49 drowned. Silt will enrich the plain.
-!  Year 14371, autumn — A storm gathers over (242,211).
-+  Year 14371, winter — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum australis (12 individuals).
-!  Year 14371, winter — A storm gathers over (315,360).
-~  Year 14372, spring — Year 14372 begins. Flora 2018; 1548 herbivores, 122 omnivores, 1 carnivores across 9 living species.
-!  Year 14372, spring — A storm gathers over (124,195).
+!  Year 15225, spring — A storm gathers over (341,114).
+!  Year 15225, spring — A storm gathers over (324,257).
+!  Year 15225, autumn — A storm gathers over (272,149).
+~  Year 15226, spring — Year 15226 begins. Flora 17651; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 15226, summer — A storm gathers over (123,82).
+=  Year 15226, summer — Floodwaters swamp (45,194); 0 drowned. Silt will enrich the plain.
+V  Year 15226, summer — A volcano erupts at (309,53): 0 creatures and 1181 plants destroyed, a wide ash ring left fertile.
+~  Year 15227, spring — Year 15227 begins. Flora 17787; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 15227, spring — A storm gathers over (153,55).
+!  Year 15227, spring — A storm gathers over (28,93).
+=  Year 15227, spring — Floodwaters swamp (140,275); 0 drowned. Silt will enrich the plain.
+!  Year 15227, summer — A storm gathers over (289,248).
+!  Year 15227, summer — A storm gathers over (66,195).
+=  Year 15227, summer — Floodwaters swamp (40,76); 0 drowned. Silt will enrich the plain.
+"  Year 15227, autumn — Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet sta
+/  Year 15227, autumn — Law of nature amended: tuned energy.digest_size_min: 1.0 -> 0.7.
+/  Year 15227, autumn — Law of nature amended: tuned energy.digest_size_gain: 0.0 -> 1.3.
+>  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (12,204).
+>  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (276,60).
+>  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (252,276).
+!  Year 15227, autumn — A storm gathers over (142,349).
++  Year 15227, autumn — A new species splits from Primordium vulgare: Pyrochir tenax (255 individuals).
+!  Year 15227, autumn — A storm gathers over (303,313).
++  Year 15227, autumn — A new subspecies splits from Pyrochir tenax: Pyrochir tenax orientalis (39 individuals).
++  Year 15227, autumn — A new subspecies splits from Pyrochir tenax: Pyrochir tenax occidentalis (31 individuals).
+!  Year 15227, winter — A storm gathers over (188,107).
++  Year 15227, winter — A new subspecies splits from Pyrochir tenax: Pyrochir tenax tertium (12 individuals).
+~  Year 15228, spring — Year 15228 begins. Flora 11029; 2547 herbivores, 2 omnivores, 0 carnivores across 4 living species.
+!  Year 15228, spring — A storm gathers over (29,135).
+!  Year 15228, spring — A storm gathers over (105,77).
 ```

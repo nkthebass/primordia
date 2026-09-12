@@ -1,0 +1,33 @@
+[
+{"type":"note","text":"Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet stayed at 0.117-0.130 across the whole 300-year decline with flora climbing 1,666 -> 3,748 -> 17,297, so nothing converted itself into a carnivore this time. What killed them was body size. Seeded at 0.38-0.45, the population was at 0.072 by year 14,500 and 0.070 by 14,800, against a floor of 0.05. A 0.07 animal has a 0.07 mouthful: measured energy was 13.08 against a breeding bar of 22.2, and it sat 40 per cent short for three centuries while the larder filled up behind it. They did not starve because there was no food. They starved because they had evolved mouths too small to collect it. The reason size ratchets down is that there is no return on body mass in this world at all. Basal cost scales as size^0.75, so small is strictly cheaper, and the only benefit of being large is a bigger bite -- which local plant density caps. The code says so itself at fauna.py line 522: 'without a size-dependent quality term the only return on body mass is a bigger mouthful, which local plant density caps, so every lineage shrinks to the floor and leaves nothing big enough to be prey.' The knob that implements that term, energy.digest_size_gain, is set to 0.0. The Jarman-Bell effect was written, documented, wired in and then switched off. This is not only the cause of the third extinction. It is why no predator tier has ever held for long: there has never been anything big enough to be worth hunting. Setting digest_size_min 1.0 -> 0.70 and digest_size_gain 0.0 -> 1.30 makes intake scale as size*(0.7+1.3*size) against a cost of size^0.75 -- from 0.05 to 0.35 that is 10.6x the income for 4.3x the bill, so being small stops paying, and the cap on local plant density is still there as the brake that stops runaway gigantism and sets an interior optimum per habitat. Reseeding at size 0.55 with gut_ferment 0.9, which was at 0.928 and nearly fixed when they died -- that lineage had solved digestion and was beaten by its own body plan. No carnivores seeded, again: the tier appeared by itself at one and two individuals last time, which is the right way for it to arrive. And no swimmers this time. I have now handed two separate stocks mariner and tide_limb at 0.85-0.9 and watched both collapse to 0.11 and 0.05; the water is not being refused for want of the gene, so I will stop forcing it and let it be discovered if it ever pays. Unrelated, and found while checking the disk: state/ was at the 8 GB ceiling because the timelapse had written one PNG every six years since the beginning and never removed one -- 43,190 files and 3.6 GB, the same unbounded-growth bug that filled the disk in September, which was fixed for the checkpoint archives and missed for the snapshots. Thinned to 750 frames and the pruner now runs on write."},
+
+{"type":"tune","path":"energy.digest_size_min","value":0.70},
+{"type":"tune","path":"energy.digest_size_gain","value":1.30},
+
+{"type":"seed_organism","kingdom":"fauna","count":300,"x":12,"y":204,"radius":16,
+ "genome":{"instincts":"grazer","diet":0.07,"size":0.55,"speed":0.40,
+   "metabolism_eff":0.88,"toxin_tolerance":0.95,"repro_threshold":0.20,
+   "sense_range":0.45,"camouflage":0.45,"armor":0.12,"fangs":0.06,
+   "cold_tol":0.55,"heat_tol":0.55,"lifespan":0.55,
+   "gut_ferment":0.90,"broad_crop":0.40,"sunleech":0.55,"nocturne":0.35,
+   "winter_torpor":0.30,"highland_lung":0.10,
+   "mariner":0.05,"tide_limb":0.05,"carrion_gut":0.0,"shear_tooth":0.0}},
+
+{"type":"seed_organism","kingdom":"fauna","count":300,"x":276,"y":60,"radius":16,
+ "genome":{"instincts":"grazer","diet":0.06,"size":0.62,"speed":0.34,
+   "metabolism_eff":0.88,"toxin_tolerance":0.95,"repro_threshold":0.19,
+   "sense_range":0.42,"camouflage":0.35,"armor":0.20,"fangs":0.06,
+   "cold_tol":0.60,"heat_tol":0.50,"lifespan":0.60,
+   "gut_ferment":0.90,"broad_crop":0.55,"sunleech":0.30,"nocturne":0.25,
+   "winter_torpor":0.35,"highland_lung":0.15,
+   "mariner":0.05,"tide_limb":0.05,"carrion_gut":0.0,"shear_tooth":0.0}},
+
+{"type":"seed_organism","kingdom":"fauna","count":300,"x":252,"y":276,"radius":16,
+ "genome":{"instincts":"grazer","diet":0.08,"size":0.45,"speed":0.52,
+   "metabolism_eff":0.86,"toxin_tolerance":0.95,"repro_threshold":0.18,
+   "sense_range":0.52,"camouflage":0.55,"armor":0.08,"fangs":0.06,
+   "cold_tol":0.50,"heat_tol":0.60,"lifespan":0.50,
+   "gut_ferment":0.88,"broad_crop":0.30,"sunleech":0.60,"nocturne":0.55,
+   "winter_torpor":0.20,"highland_lung":0.10,
+   "mariner":0.05,"tide_limb":0.05,"carrion_gut":0.0,"shear_tooth":0.0}}
+]

@@ -198,6 +198,8 @@
     "housekeeping_every": 100,
     "summary_every": 500,
     "snapshot_every": 500,
+    "snapshot_keep": 600,
+    "snapshot_coarse_every": 200000,
     "intervention_every": 500,
     "checkpoint_seconds": 300,
     "history_max": 4000,

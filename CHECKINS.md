@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-12 | 15,227 | 900 | 900/0/0 | 1 | 1.27322e+06 | **third extinction diagnosed**: the Jarman-Bell term was switched off; size ratcheted to the floor. Reseeded |
+| 2026-09-12 | 14,845 | 0 | 0/0/0 | 0 | 1.27322e+06 | **THIRD TOTAL EXTINCTION** — diet held at 0.12; they shrank to 0.070 and could not collect enough to breed |
 | 2026-09-11 | 14,360 | 1,180 | 1180/0/0 | 4 | 1.27324e+06 | **second extinction diagnosed**: carnivory was unconditionally subsidised; discount cut, reseeded herbivore-only |
 | 2026-09-11 | 14,026 | 0 | 0/0/0 | 0 | 1.27324e+06 | **SECOND TOTAL EXTINCTION** — diet had swept to 0.955 in a world with no prey and 10,264 uneaten flora |
 | 2026-09-11 | 13,814 | 514 | 236/101/177 | 5 | 1.27324e+06 | **reseeded** after total extinction; 3 new genes, ocean niche opened |
@@ -252,6 +254,63 @@ where before it was a one-way door — under the old laws this exact condition t
 running away to 24,000 uneaten, which is the first grazing equilibrium this world has held.
 Nine species inside twelve years, and the first carnivores appeared on their own — one and
 two at a time, evolved rather than seeded, which is how the tier is supposed to arrive.
+
+## Why nothing here has ever been big (year 14,845)
+
+The diet fix held — across the whole 300-year decline `diet` stayed between 0.117 and 0.130
+while flora climbed 1,666 → 3,748 → 17,297. Nothing converted itself into a carnivore this
+time. They died of something older.
+
+| year | n | **size** | energy | breeding bar | flora |
+|---:|---:|---:|---:|---:|---:|
+| 14,500 | 377 | **0.072** | 11.69 | 21.5 | 1,666 |
+| 14,600 | 183 | **0.065** | 12.71 | 22.3 | 2,167 |
+| 14,700 | 307 | **0.071** | 11.78 | 22.0 | 2,875 |
+| 14,800 | 229 | **0.070** | 13.08 | 22.2 | 3,748 |
+
+Seeded at 0.38–0.45, at the floor of 0.05 within 140 years. **A 0.07 animal has a 0.07
+mouthful.** They sat 40% short of the breeding bar for three centuries with the larder filling
+up behind them — not starving for lack of food, starving because they had evolved mouths too
+small to collect it.
+
+Size ratchets down because there is no return on body mass in this world. Basal cost scales as
+`size^0.75`, so small is strictly cheaper, and the only benefit of being large is a bigger
+bite — which local plant density caps. `primordia/fauna.py:522` says so in as many words:
+
+> *Jarman-Bell: a larger gut holds forage longer and extracts more from it. Without a
+> size-dependent quality term the only return on body mass is a bigger mouthful, which local
+> plant density caps — so every lineage shrinks to the floor and leaves nothing big enough to
+> be prey.*
+
+`energy.digest_size_gain`, the knob that implements that term, was **0.0**. The effect was
+written, documented, wired into `plant_digest` and then switched off.
+
+This is not only the third extinction. It is the answer to a question this log has asked for
+six thousand years: there has never been anything big enough to be worth hunting. Every
+predator tier that flickered and died was hunting animals the size of a mouthful.
+
+**The amendment.** `digest_size_min` 1.0 → **0.70**, `digest_size_gain` 0.0 → **1.30**. Intake
+now scales as `size × (0.7 + 1.3 × size)` against a cost of `size^0.75`: from 0.05 to 0.35 that
+is **10.6× the income for 4.3× the bill**, so being small stops paying. The cap on local plant
+density stays as the brake on runaway gigantism, which is what makes the optimum interior and
+habitat-dependent rather than a new ratchet pointing the other way.
+
+Reseeded 900 grazers at size 0.45–0.62 with `gut_ferment` 0.90 — it was at 0.928 and nearly
+fixed when they died. That lineage had solved digestion and was beaten by its own body plan.
+
+**No swimmers this time.** Two separate stocks were handed `mariner` and `tide_limb` at
+0.85–0.9 and both collapsed to 0.11 and 0.05. The water is not being refused for want of the
+gene, so forcing it a third time would tell me nothing I have not already been told twice.
+
+**2026-09-12 — the disk filled again, in the other direction.** `state/` hit the 8 GB ceiling.
+Not the archives, which have been thinned since September: the *timelapse*. `Sim._snapshot`
+wrote a PNG every `snapshot_every` ticks and never removed one — **43,190 files, 3.6 GB**,
+larger than the checkpoint archive beside it. This is the identical unbounded-growth bug that
+took the disk to 99.9% in September; it was fixed for the archives and missed for the
+snapshots sitting in the same directory. `_prune_snapshots` now mirrors `_prune_archive`:
+newest 600 frames at full cadence, then one per 200,000 ticks, so the timelapse still spans
+the whole history at a coarser step. Caught up in place — 42,445 frames removed, 3.36 GB
+reclaimed, `state/` 8.0 GB → 4.6 GB, no restart needed.
 
 ## Incidents
 
