@@ -6,38 +6,36 @@
 
 | | |
 |---|---|
-| year | **15,228** (summer) |
-| animals | 2,398 — 2,395 herbivore / 3 omnivore / 0 carnivore |
-| plant biomass | 9,298 |
-| living species | 4 (of 659 ever named) |
-| total matter | 1,273,224 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 0.957, ceiling 1.95 |
-| genetic variance | 0.01256 |
-| warnings | omnivore population critically low (3) |
+| year | **15,536** (spring) |
+| animals | 1,170 — 1,169 herbivore / 1 omnivore / 0 carnivore |
+| plant biomass | 6,639 |
+| living species | 2 (of 680 ever named) |
+| total matter | 1,273,222 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 0.721, ceiling 1.95 |
+| genetic variance | 0.01041 |
+| warnings | omnivore population critically low (1) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Pyrochir tenax | 1,596 | 0.067 | growing |
-| Pyrochir tenax orientalis | 328 | 0.097 | growing |
-| Pyrochir tenax occidentalis | 314 | 0.078 | growing |
-| Pyrochir tenax tertium | 260 | 0.122 | growing |
+| Ursycus nigrum | 732 | 0.077 | growing |
+| Nyxeidens profundum | 438 | 0.074 | growing |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.042 | 0% |
-| winter_torpor | 0.291 | 2% |
-| highland_lung | 0.124 | 0% |
-| shear_tooth | 0.041 | 0% |
-| gut_ferment | 0.892 | 100% |
-| tide_limb | 0.063 | 0% |
+| carrion_gut | 0.040 | 0% |
+| winter_torpor | 0.299 | 1% |
+| highland_lung | 0.101 | 0% |
+| shear_tooth | 0.042 | 0% |
+| gut_ferment | 0.887 | 100% |
+| tide_limb | 0.060 | 0% |
 | mariner | 0.065 | 0% |
-| nocturne | 0.363 | 20% |
-| sunleech | 0.475 | 50% |
-| broad_crop | 0.426 | 29% |
+| nocturne | 0.350 | 5% |
+| sunleech | 0.502 | 49% |
+| broad_crop | 0.361 | 5% |
 
 ## Turning points
 
@@ -1436,6 +1434,14 @@
 - **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (276,60).
 - **Year 15227, autumn** · *tuning* — Law of nature amended: tuned energy.digest_size_gain: 0.0 -> 1.3.
 - **Year 15227, autumn** · *tuning* — Law of nature amended: tuned energy.digest_size_min: 1.0 -> 0.7.
+- **Year 15277, spring** · *game-master note* — Correcting myself within the hour. I reported that the size fix was working on the strength of one reading of 0.541 -- which was simply the mean of the three stocks I had just seeded, read back to me by a watcher script that had frozen on its first sample. A direct probe says size is 0.075 at year 15,270, back at the floor within forty-two years, and energy is 11.1 against a bar of 20.8. The fix did not work, and it could not have: it was mathematically incapable of working. Here is why, and it matters more than the fix. Intake is take = min(bite, avail*graze), and with flora around 1,650 …
+- **Year 15277, spring** · *seeding* — Life arrives from nowhere: seeded 400 fauna at (12,204).
+- **Year 15277, spring** · *tuning* — Law of nature amended: tuned fauna.reach_size_min: 99.0 -> 0.0.
+- **Year 15277, spring** · *tuning* — Law of nature amended: tuned fauna.reach_size_span: 1.0 -> 0.7.
+- **Year 15401, spring** · *game-master note* — Fourth extinction, year 15,334, and this one was mine. I have been reseeding 900 to 1,180 animals at size 0.38 to 0.62 and calling the result an experiment. The world's own record says what it carries: 241 animals at year 13,900, 585 at 14,548, 229 at 14,800 -- roughly 250 to 600, and all of those at a body size of about 0.07. Basal cost scales as size^0.75, so a 0.60 animal costs five times a 0.07 one, which puts the capacity at fifty to a hundred and twenty large animals. Two hours ago I seeded four hundred of them into a world already holding five hundred and ninety small ones. That is …
+- **Year 15401, spring** · *seeding* — Life arrives from nowhere: seeded 70 fauna at (10,210).
+- **Year 15535, autumn** · *game-master note* — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 0.62 on the richest ground on the map, well under the fifty-to-a-hundred-and-twenty capacity I estimated, in a world recovered to 5,754 biomass with 81 per cent of vegetated cells harvestable. No overshoot this time -- they bred to 410 and then size fell 0.601, 0.352, 0.173, 0.121, 0.096 in nine years and the line died at 15,419. Nine years looks impossible for a gene with mut_std 0.045 until you count generations: these animals breed on a …
+- **Year 15535, autumn** · *seeding* — Life arrives from nowhere: seeded 250 fauna at (10,210).
 
 ## Species-rank origins and extinctions
 
@@ -1509,6 +1515,10 @@
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Veuchir ferox (59 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Voleipter acutum (92 individuals).
 - **Year 15227, autumn** — A new species splits from Primordium vulgare: Pyrochir tenax (255 individuals).
+- **Year 15401, spring** — A new species splits from Primordium vulgare: Doribius placidum (18 individuals).
+- **Year 15401, spring** — A new species splits from Primordium vulgare: Thaladon pallidum (25 individuals).
+- **Year 15535, autumn** — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
+- **Year 15535, autumn** — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
 
 ## By era
 
@@ -1529,41 +1539,41 @@
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
 | 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
 | 14,000–14,999 | 37 | 36 | 162 | 77 | 364 | 2338 | 3780 | 180 |
-| 15,000–15,999 | 4 | 0 | 46 | 20 | 84 | 538 | 815 | 41 |
+| 15,000–15,999 | 25 | 22 | 93 | 54 | 179 | 1237 | 1907 | 94 |
 
-**Totals:** storm 59,321 · flood 31,808 · wildfire 10,428 · cold snap 3,198 · volcano 2,993 · meteor 1,521 · gene invented 1,155 · speciation 774 · extinction 673 · checkpoint 130 · seeding 39 · game-master note 30 · epoch 28 · intervention 14 · tuning 9
+**Totals:** storm 60,413 · flood 32,507 · wildfire 10,523 · cold snap 3,251 · volcano 3,040 · meteor 1,555 · gene invented 1,155 · speciation 795 · extinction 695 · checkpoint 173 · seeding 42 · game-master note 33 · epoch 28 · intervention 14 · tuning 11
 
 ## The last 30 entries
 
 ```
-!  Year 15225, spring — A storm gathers over (341,114).
-!  Year 15225, spring — A storm gathers over (324,257).
-!  Year 15225, autumn — A storm gathers over (272,149).
-~  Year 15226, spring — Year 15226 begins. Flora 17651; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15226, summer — A storm gathers over (123,82).
-=  Year 15226, summer — Floodwaters swamp (45,194); 0 drowned. Silt will enrich the plain.
-V  Year 15226, summer — A volcano erupts at (309,53): 0 creatures and 1181 plants destroyed, a wide ash ring left fertile.
-~  Year 15227, spring — Year 15227 begins. Flora 17787; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15227, spring — A storm gathers over (153,55).
-!  Year 15227, spring — A storm gathers over (28,93).
-=  Year 15227, spring — Floodwaters swamp (140,275); 0 drowned. Silt will enrich the plain.
-!  Year 15227, summer — A storm gathers over (289,248).
-!  Year 15227, summer — A storm gathers over (66,195).
-=  Year 15227, summer — Floodwaters swamp (40,76); 0 drowned. Silt will enrich the plain.
-"  Year 15227, autumn — Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet sta
-/  Year 15227, autumn — Law of nature amended: tuned energy.digest_size_min: 1.0 -> 0.7.
-/  Year 15227, autumn — Law of nature amended: tuned energy.digest_size_gain: 0.0 -> 1.3.
->  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (12,204).
->  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (276,60).
->  Year 15227, autumn — Life arrives from nowhere: seeded 300 fauna at (252,276).
-!  Year 15227, autumn — A storm gathers over (142,349).
-+  Year 15227, autumn — A new species splits from Primordium vulgare: Pyrochir tenax (255 individuals).
-!  Year 15227, autumn — A storm gathers over (303,313).
-+  Year 15227, autumn — A new subspecies splits from Pyrochir tenax: Pyrochir tenax orientalis (39 individuals).
-+  Year 15227, autumn — A new subspecies splits from Pyrochir tenax: Pyrochir tenax occidentalis (31 individuals).
-!  Year 15227, winter — A storm gathers over (188,107).
-+  Year 15227, winter — A new subspecies splits from Pyrochir tenax: Pyrochir tenax tertium (12 individuals).
-~  Year 15228, spring — Year 15228 begins. Flora 11029; 2547 herbivores, 2 omnivores, 0 carnivores across 4 living species.
-!  Year 15228, spring — A storm gathers over (29,135).
-!  Year 15228, spring — A storm gathers over (105,77).
+!  Year 15532, summer — A storm gathers over (370,230).
+!  Year 15532, autumn — A storm gathers over (180,309).
+!  Year 15532, winter — A storm gathers over (49,64).
+~  Year 15533, spring — Year 15533 begins. Flora 7735; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 15533, summer — A storm gathers over (290,73).
+!  Year 15533, autumn — A storm gathers over (190,155).
+@  Year 15533, autumn — A meteor strikes (56,78). 0 killed; a crater lake forms and dust dims the sun. Something came with it: 16 organisms of unknown origin stir in the ash.
+!  Year 15533, autumn — A storm gathers over (208,286).
+!  Year 15533, winter — A storm gathers over (335,222).
+~  Year 15534, spring — Year 15534 begins. Flora 7797; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+^  Year 15534, summer — Fire breaks out at (378,209).
+!  Year 15534, autumn — A storm gathers over (68,311).
+@  Year 15534, autumn — A meteor strikes (202,222). 0 killed; a crater lake forms and dust dims the sun.
+=  Year 15534, winter — Floodwaters swamp (318,160); 0 drowned. Silt will enrich the plain.
+^  Year 15534, winter — Fire breaks out at (48,183).
+~  Year 15535, spring — Year 15535 begins. Flora 7783; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 15535, spring — A storm gathers over (148,233).
+=  Year 15535, spring — Floodwaters swamp (197,137); 0 drowned. Silt will enrich the plain.
+=  Year 15535, spring — Floodwaters swamp (20,226); 0 drowned. Silt will enrich the plain.
+!  Year 15535, spring — A storm gathers over (289,248).
+!  Year 15535, summer — A storm gathers over (24,163).
+!  Year 15535, summer — A storm gathers over (376,135).
+"  Year 15535, autumn — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 
+>  Year 15535, autumn — Life arrives from nowhere: seeded 250 fauna at (10,210).
++  Year 15535, autumn — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
++  Year 15535, autumn — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
+=  Year 15535, autumn — Floodwaters swamp (303,189); 11 drowned. Silt will enrich the plain.
+=  Year 15535, autumn — Floodwaters swamp (0,245); 54 drowned. Silt will enrich the plain.
+#  Year 15535, winter — A cold snap grips the world (-0.12 temp).
+~  Year 15536, spring — Year 15536 begins. Flora 6639; 1169 herbivores, 1 omnivores, 0 carnivores across 2 living species.
 ```

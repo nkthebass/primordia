@@ -9,6 +9,9 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-12 | 15,530 | 250 | 250/0/0 | 1 | 1.27322e+06 | restored the **known-good** small-bodied state; the size question needs a human decision |
+| 2026-09-12 | 15,419 | 0 | 0/0/0 | 0 | 1.27322e+06 | **FIFTH EXTINCTION** — 70 founders at size 0.62, no overshoot; size fell 0.60→0.096 in nine years |
+| 2026-09-12 | 15,334 | 0 | 0/0/0 | 0 | 1.27322e+06 | **FOURTH EXTINCTION** — my own overshoot: 400 large animals into a world that carries 50–120 |
 | 2026-09-12 | 15,227 | 900 | 900/0/0 | 1 | 1.27322e+06 | **third extinction diagnosed**: the Jarman-Bell term was switched off; size ratcheted to the floor. Reseeded |
 | 2026-09-12 | 14,845 | 0 | 0/0/0 | 0 | 1.27322e+06 | **THIRD TOTAL EXTINCTION** — diet held at 0.12; they shrank to 0.070 and could not collect enough to breed |
 | 2026-09-11 | 14,360 | 1,180 | 1180/0/0 | 4 | 1.27324e+06 | **second extinction diagnosed**: carnivory was unconditionally subsidised; discount cut, reseeded herbivore-only |
@@ -311,6 +314,71 @@ snapshots sitting in the same directory. `_prune_snapshots` now mirrors `_prune_
 newest 600 frames at full cadence, then one per 200,000 ticks, so the timelapse still spans
 the whole history at a coarser step. Caught up in place — 42,445 frames removed, 3.36 GB
 reclaimed, `state/` 8.0 GB → 4.6 GB, no restart needed.
+
+## Two more deaths, one of them mine, and the real shape of the size problem
+
+**Year 15,334 — the fourth extinction was my error.** I reseeded 900–1,180 animals at size
+0.38–0.62 three times and called each one an experiment. The world's own record says what it
+carries — 241 animals at year 13,900, 585 at 14,548, 229 at 14,800, all at size ≈ 0.07. Basal
+cost scales `size^0.75`, so a 0.60 animal costs 5× a 0.07 one: capacity is **50–120 large
+animals**, and I put 400 into a world already holding 590 small ones. That is self-amplifying
+rather than merely wasteful — a crowd that size strips biomass below `graze_floor` 0.12, and
+since harvest is `max(0, biomass − floor)` the yield below the floor is *exactly zero*, so the
+crash takes the residents who would have persisted. I built that.
+
+**Year 15,419 — the fifth was the clean experiment, and it answered the question.** Seventy
+founders at size 0.62 on the richest ground on the map, below the estimated capacity, into
+5,754 biomass with 81% of vegetated cells harvestable. No overshoot. They bred to 410, and
+then:
+
+| year | 15,402 | 15,404 | 15,406 | 15,407 | 15,411 |
+|---|---:|---:|---:|---:|---:|
+| **size** | **0.601** | 0.352 | 0.173 | 0.121 | **0.096** |
+
+Nine years. That reads as impossible for a gene with `mut_std` 0.045 until you count
+generations rather than years: these animals breed on a cooldown of order 100 ticks against
+2,000 ticks in a year, so nine years is **200–300 generations**, and a selection differential
+of 0.003 per generation is all it takes. It is selection, it is relentless, and `reach` did
+not touch it.
+
+### Why no fix of that class can work
+
+I had been computing income over cost — a ratio of *means*. What selects here is **variance**:
+
+```
+cap_e = max_store × (0.35 + size)        basal = 0.1 × size^0.75
+
+size 0.07   store ×0.42   cost ×0.136   endurance 3.09
+size 0.20   store ×0.55   cost ×0.299   endurance 1.84
+size 0.40   store ×0.75   cost ×0.503   endurance 1.49
+size 0.62   store ×0.97   cost ×0.699   endurance 1.39
+size 1.00   store ×1.35   cost ×1.000   endurance 1.35
+```
+
+Endurance — how long an animal lives on a full stomach — **falls monotonically with mass**,
+and it cannot be repaired by making food more rewarding, because it is not about the mean
+meal. It is about the gap between meals, and this world has a day–night cycle, four seasons
+and patchy grazing. Every night is a fast; a large animal fasts at five times the rate with
+two and a third times the tank. Being large here is a bet that the next meal comes soon, and
+the small animal wins that bet three times as often.
+
+`digest_size_gain` and `reach_size_min` were both written to solve this and both were left
+disabled by sentinels. Both are now enabled and the ratchet is unchanged — which says the
+mechanism was never in the numerator.
+
+**This needs a decision that is not mine.** Making large bodies viable means changing how
+storage scales with mass — the `(0.35 + size)` term in `cap_e`, or the `size^0.75` exponent on
+basal cost. That is a choice about what this world is *for*, in the same sense as the note
+above about retiring `spikes`, and it is the difference between a world of tiny grazers that
+runs forever and a world that can carry a food chain. **A predator tier requires it**: nothing
+in fifteen thousand years has ever been big enough to be worth hunting, and that is the same
+fact as this one.
+
+**What was done instead.** Life restored in the configuration this world has actually
+demonstrated it can hold: 250 founders at size 0.12 carrying what the successful lineage
+carried — `gut_ferment` 0.90, `toxin_tolerance` 0.95, a low breeding threshold — into 7,900
+biomass of standing crop. Not a fix, and not claimed as one; the world's own known-good state,
+restored, so it is alive and stable while the question waits for an answer.
 
 ## Incidents
 
