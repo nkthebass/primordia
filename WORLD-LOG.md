@@ -6,36 +6,28 @@
 
 | | |
 |---|---|
-| year | **15,536** (spring) |
-| animals | 1,170 — 1,169 herbivore / 1 omnivore / 0 carnivore |
-| plant biomass | 6,639 |
-| living species | 2 (of 680 ever named) |
-| total matter | 1,273,222 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 0.721, ceiling 1.95 |
-| genetic variance | 0.01041 |
-| warnings | omnivore population critically low (1) |
-
-### Living species
-
-| species | population | mean diet | trend |
-|---|---:|---:|---|
-| Ursycus nigrum | 732 | 0.077 | growing |
-| Nyxeidens profundum | 438 | 0.074 | growing |
+| year | **16,667** (summer) |
+| animals | 0 — 0 herbivore / 0 omnivore / 0 carnivore |
+| plant biomass | 6,981 |
+| living species | 0 (of 700 ever named) |
+| total matter | 1,273,220 — the world is closed, so this should not move |
+| genetic variance | 0.0 |
+| warnings | TOTAL FAUNAL EXTINCTION |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.040 | 0% |
-| winter_torpor | 0.299 | 1% |
-| highland_lung | 0.101 | 0% |
-| shear_tooth | 0.042 | 0% |
-| gut_ferment | 0.887 | 100% |
-| tide_limb | 0.060 | 0% |
-| mariner | 0.065 | 0% |
-| nocturne | 0.350 | 5% |
-| sunleech | 0.502 | 49% |
-| broad_crop | 0.361 | 5% |
+| carrion_gut | 0.000 | — |
+| winter_torpor | 0.000 | — |
+| highland_lung | 0.000 | — |
+| shear_tooth | 0.000 | — |
+| gut_ferment | 0.000 | — |
+| tide_limb | 0.000 | — |
+| mariner | 0.000 | — |
+| nocturne | 0.000 | — |
+| sunleech | 0.000 | — |
+| broad_crop | 0.000 | — |
 
 ## Turning points
 
@@ -1442,6 +1434,22 @@
 - **Year 15401, spring** · *seeding* — Life arrives from nowhere: seeded 70 fauna at (10,210).
 - **Year 15535, autumn** · *game-master note* — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 0.62 on the richest ground on the map, well under the fifty-to-a-hundred-and-twenty capacity I estimated, in a world recovered to 5,754 biomass with 81 per cent of vegetated cells harvestable. No overshoot this time -- they bred to 410 and then size fell 0.601, 0.352, 0.173, 0.121, 0.096 in nine years and the line died at 15,419. Nine years looks impossible for a gene with mut_std 0.045 until you count generations: these animals breed on a …
 - **Year 15535, autumn** · *seeding* — Life arrives from nowhere: seeded 250 fauna at (10,210).
+- **Year 16239, summer** · *game-master note* — Sixth extinction, year 15,568, thirty-eight years after I restored what I called the world's known-good state. 250 founders bred to 1,169, stripped flora 6,639 to 2,640, and crashed 222, 44, 2, 0. I described that seeding as the configuration this world has demonstrated it can hold, and it was not: the 241 and 585 and 229 in the record were populations that had evolved into equilibrium and were spread over the whole map, not 250 animals dropped into one disc. Every seeding I have made this session started 10 to 30 times over local carrying capacity -- 250 in radius 14 is 0.41 animals per …
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (16,208).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (240,272).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (272,48).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (336,80).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,176).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,240).
+- **Year 16239, summer** · *tuning* — Law of nature amended: tuned energy.digest_size_min: 0.7 -> 1.0.
+- **Year 16434, autumn** · *game-master note* — Seventh extinction, year 16,385, and the first line of the record kills my dispersal theory outright: 300 founders across six separated sites became 8,349 animals in ONE year. A 28-fold increase. Spreading them out changed nothing because each site simply grew to 1,400 on its own. Seeding density is not the variable; reproductive rate is, and no founder count I can choose avoids an overshoot when the population multiplies 28 times in a single year. Which means the thing that turns every overshoot into an extinction is the only thing left, and it is the one I flagged last check-in and declined …
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (16,208).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (240,272).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (272,48).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (336,80).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,176).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,240).
+- **Year 16434, autumn** · *tuning* — Law of nature amended: tuned fauna.graze_floor: 0.12 -> 0.03.
 
 ## Species-rank origins and extinctions
 
@@ -1519,6 +1527,10 @@
 - **Year 15401, spring** — A new species splits from Primordium vulgare: Thaladon pallidum (25 individuals).
 - **Year 15535, autumn** — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
 - **Year 15535, autumn** — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
+- **Year 16239, summer** — A new species splits from Primordium vulgare: Chaleibius boreale (104 individuals).
+- **Year 16239, summer** — A new species splits from Primordium vulgare: Xaneiphus major (47 individuals).
+- **Year 16434, autumn** — A new species splits from Primordium vulgare: Pyraenyx gravis (17 individuals).
+- **Year 16434, autumn** — A new species splits from Primordium vulgare: Pyrichir montanum (21 individuals).
 
 ## By era
 
@@ -1539,41 +1551,42 @@
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
 | 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
 | 14,000–14,999 | 37 | 36 | 162 | 77 | 364 | 2338 | 3780 | 180 |
-| 15,000–15,999 | 25 | 22 | 93 | 54 | 179 | 1237 | 1907 | 94 |
+| 15,000–15,999 | 28 | 26 | 174 | 83 | 354 | 2276 | 3561 | 169 |
+| 16,000–16,999 | 17 | 17 | 123 | 40 | 225 | 1590 | 2352 | 116 |
 
-**Totals:** storm 60,413 · flood 32,507 · wildfire 10,523 · cold snap 3,251 · volcano 3,040 · meteor 1,555 · gene invented 1,155 · speciation 795 · extinction 695 · checkpoint 173 · seeding 42 · game-master note 33 · epoch 28 · intervention 14 · tuning 11
+**Totals:** storm 64,419 · flood 35,136 · wildfire 10,923 · cold snap 3,442 · volcano 3,244 · meteor 1,624 · gene invented 1,155 · speciation 815 · extinction 716 · checkpoint 174 · seeding 54 · game-master note 35 · epoch 28 · intervention 14 · tuning 13
 
 ## The last 30 entries
 
 ```
-!  Year 15532, summer — A storm gathers over (370,230).
-!  Year 15532, autumn — A storm gathers over (180,309).
-!  Year 15532, winter — A storm gathers over (49,64).
-~  Year 15533, spring — Year 15533 begins. Flora 7735; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15533, summer — A storm gathers over (290,73).
-!  Year 15533, autumn — A storm gathers over (190,155).
-@  Year 15533, autumn — A meteor strikes (56,78). 0 killed; a crater lake forms and dust dims the sun. Something came with it: 16 organisms of unknown origin stir in the ash.
-!  Year 15533, autumn — A storm gathers over (208,286).
-!  Year 15533, winter — A storm gathers over (335,222).
-~  Year 15534, spring — Year 15534 begins. Flora 7797; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-^  Year 15534, summer — Fire breaks out at (378,209).
-!  Year 15534, autumn — A storm gathers over (68,311).
-@  Year 15534, autumn — A meteor strikes (202,222). 0 killed; a crater lake forms and dust dims the sun.
-=  Year 15534, winter — Floodwaters swamp (318,160); 0 drowned. Silt will enrich the plain.
-^  Year 15534, winter — Fire breaks out at (48,183).
-~  Year 15535, spring — Year 15535 begins. Flora 7783; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15535, spring — A storm gathers over (148,233).
-=  Year 15535, spring — Floodwaters swamp (197,137); 0 drowned. Silt will enrich the plain.
-=  Year 15535, spring — Floodwaters swamp (20,226); 0 drowned. Silt will enrich the plain.
-!  Year 15535, spring — A storm gathers over (289,248).
-!  Year 15535, summer — A storm gathers over (24,163).
-!  Year 15535, summer — A storm gathers over (376,135).
-"  Year 15535, autumn — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 
->  Year 15535, autumn — Life arrives from nowhere: seeded 250 fauna at (10,210).
-+  Year 15535, autumn — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
-+  Year 15535, autumn — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
-=  Year 15535, autumn — Floodwaters swamp (303,189); 11 drowned. Silt will enrich the plain.
-=  Year 15535, autumn — Floodwaters swamp (0,245); 54 drowned. Silt will enrich the plain.
-#  Year 15535, winter — A cold snap grips the world (-0.12 temp).
-~  Year 15536, spring — Year 15536 begins. Flora 6639; 1169 herbivores, 1 omnivores, 0 carnivores across 2 living species.
+=  Year 16663, autumn — Floodwaters swamp (293,291); 0 drowned. Silt will enrich the plain.
+~  Year 16664, spring — Year 16664 begins. Flora 6751; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16664, spring — Floodwaters swamp (147,55); 0 drowned. Silt will enrich the plain.
+!  Year 16664, spring — A storm gathers over (374,145).
+V  Year 16664, summer — A volcano erupts at (245,64): 0 creatures and 1097 plants destroyed, a wide ash ring left fertile.
+!  Year 16664, autumn — A storm gathers over (69,193).
+=  Year 16664, autumn — Floodwaters swamp (250,302); 0 drowned. Silt will enrich the plain.
+!  Year 16664, winter — A storm gathers over (281,362).
+!  Year 16664, winter — A storm gathers over (186,174).
+~  Year 16665, spring — Year 16665 begins. Flora 6866; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16665, spring — Floodwaters swamp (346,190); 0 drowned. Silt will enrich the plain.
+!  Year 16665, summer — A storm gathers over (274,263).
+!  Year 16665, summer — A storm gathers over (343,197).
+=  Year 16665, winter — Floodwaters swamp (114,163); 0 drowned. Silt will enrich the plain.
+=  Year 16665, winter — Floodwaters swamp (379,333); 0 drowned. Silt will enrich the plain.
+!  Year 16665, winter — A storm gathers over (120,162).
+~  Year 16666, spring — Year 16666 begins. Flora 6963; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16666, spring — Floodwaters swamp (92,96); 0 drowned. Silt will enrich the plain.
+^  Year 16666, spring — Fire breaks out at (306,97).
+=  Year 16666, spring — Floodwaters swamp (71,217); 0 drowned. Silt will enrich the plain.
+!  Year 16666, summer — A storm gathers over (263,269).
+^  Year 16666, summer — Fire breaks out at (365,170).
+=  Year 16666, autumn — Floodwaters swamp (91,244); 0 drowned. Silt will enrich the plain.
+=  Year 16666, autumn — Floodwaters swamp (107,149); 0 drowned. Silt will enrich the plain.
+!  Year 16666, winter — A storm gathers over (68,311).
+~  Year 16667, spring — Year 16667 begins. Flora 6907; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 16667, spring — A storm gathers over (366,61).
+!  Year 16667, summer — A storm gathers over (308,177).
+!  Year 16667, summer — A storm gathers over (67,177).
+=  Year 16667, summer — Floodwaters swamp (67,175); 0 drowned. Silt will enrich the plain.
 ```
