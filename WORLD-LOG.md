@@ -6,38 +6,28 @@
 
 | | |
 |---|---|
-| year | **16,448** (winter) |
-| animals | 94 — 89 herbivore / 5 omnivore / 0 carnivore |
-| plant biomass | 632 |
-| living species | 4 (of 700 ever named) |
+| year | **16,667** (summer) |
+| animals | 0 — 0 herbivore / 0 omnivore / 0 carnivore |
+| plant biomass | 6,981 |
+| living species | 0 (of 700 ever named) |
 | total matter | 1,273,220 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.297, ceiling 1.95 |
-| genetic variance | 0.01475 |
-| warnings | omnivore biomass down 85% over last year; monoculture: Pyraenyx gravis is 86% of all fauna |
-
-### Living species
-
-| species | population | mean diet | trend |
-|---|---:|---:|---|
-| Pyraenyx gravis | 81 | 0.118 | declining |
-| Pyrichir montanum borealis | 4 | 0.433 | declining |
-| Pyrichir montanum minimus | 3 | 0.130 | declining |
-| Pyraenyx gravis occidentalis | 3 | 0.273 | declining |
+| genetic variance | 0.0 |
+| warnings | TOTAL FAUNAL EXTINCTION |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.335 | 3% |
-| winter_torpor | 0.126 | 2% |
-| highland_lung | 0.085 | 0% |
-| shear_tooth | 0.223 | 1% |
-| gut_ferment | 0.786 | 95% |
-| tide_limb | 0.114 | 0% |
-| mariner | 0.070 | 0% |
-| nocturne | 0.410 | 22% |
-| sunleech | 0.876 | 100% |
-| broad_crop | 0.384 | 19% |
+| carrion_gut | 0.000 | — |
+| winter_torpor | 0.000 | — |
+| highland_lung | 0.000 | — |
+| shear_tooth | 0.000 | — |
+| gut_ferment | 0.000 | — |
+| tide_limb | 0.000 | — |
+| mariner | 0.000 | — |
+| nocturne | 0.000 | — |
+| sunleech | 0.000 | — |
+| broad_crop | 0.000 | — |
 
 ## Turning points
 
@@ -1562,41 +1552,41 @@
 | 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
 | 14,000–14,999 | 37 | 36 | 162 | 77 | 364 | 2338 | 3780 | 180 |
 | 15,000–15,999 | 28 | 26 | 174 | 83 | 354 | 2276 | 3561 | 169 |
-| 16,000–16,999 | 17 | 13 | 86 | 28 | 148 | 1054 | 1549 | 75 |
+| 16,000–16,999 | 17 | 17 | 123 | 40 | 225 | 1590 | 2352 | 116 |
 
-**Totals:** storm 63,616 · flood 34,600 · wildfire 10,846 · cold snap 3,401 · volcano 3,207 · meteor 1,612 · gene invented 1,155 · speciation 815 · extinction 712 · checkpoint 174 · seeding 54 · game-master note 35 · epoch 28 · intervention 14 · tuning 13
+**Totals:** storm 64,419 · flood 35,136 · wildfire 10,923 · cold snap 3,442 · volcano 3,244 · meteor 1,624 · gene invented 1,155 · speciation 815 · extinction 716 · checkpoint 174 · seeding 54 · game-master note 35 · epoch 28 · intervention 14 · tuning 13
 
 ## The last 30 entries
 
 ```
-!  Year 16444, summer — A storm gathers over (59,148).
-!  Year 16444, summer — A storm gathers over (379,142).
-=  Year 16444, autumn — Floodwaters swamp (166,311); 0 drowned. Silt will enrich the plain.
-!  Year 16444, autumn — A storm gathers over (304,173).
-!  Year 16444, autumn — A storm gathers over (370,295).
-!  Year 16444, autumn — A storm gathers over (3,100).
-^  Year 16444, winter — Fire breaks out at (235,87).
-~  Year 16445, spring — Year 16445 begins. Flora 824; 110 herbivores, 82 omnivores, 1 carnivores across 4 living species.
-!  Year 16445, winter — A storm gathers over (119,181).
-~  Year 16446, spring — Year 16446 begins. Flora 737; 82 herbivores, 93 omnivores, 7 carnivores across 4 living species.
-!  Year 16446, spring — A storm gathers over (308,113).
-!  Year 16446, autumn — A storm gathers over (52,129).
-=  Year 16446, autumn — Floodwaters swamp (135,318); 0 drowned. Silt will enrich the plain.
-!  Year 16446, winter — A storm gathers over (151,174).
-~  Year 16447, spring — Year 16447 begins. Flora 608; 96 herbivores, 49 omnivores, 2 carnivores across 4 living species.
-!  Year 16447, summer — A storm gathers over (82,167).
-!  Year 16447, winter — A storm gathers over (181,94).
-=  Year 16447, winter — Floodwaters swamp (201,63); 2 drowned. Silt will enrich the plain.
-V  Year 16447, winter — A volcano erupts at (24,180): 0 creatures and 1 plants destroyed, a wide ash ring left fertile.
-x  Year 16448, spring — Pyraenyx gravis alpinus is extinct after 24200 ticks.
-~  Year 16448, spring — Year 16448 begins. Flora 555; 170 herbivores, 36 omnivores, 1 carnivores across 3 living species.
-!  Year 16448, spring — A storm gathers over (229,258).
-+  Year 16448, spring — A new subspecies splits from Pyraenyx gravis: Pyraenyx gravis occidentalis (12 individuals).
-!  Year 16448, spring — A storm gathers over (346,308).
-!  Year 16448, spring — A storm gathers over (53,13).
-!  Year 16448, summer — A storm gathers over (73,237).
-!  Year 16448, summer — A storm gathers over (364,234).
-!  Year 16448, autumn — A storm gathers over (215,19).
-=  Year 16448, autumn — Floodwaters swamp (50,252); 0 drowned. Silt will enrich the plain.
-!  Year 16448, autumn — A storm gathers over (146,368).
+=  Year 16663, autumn — Floodwaters swamp (293,291); 0 drowned. Silt will enrich the plain.
+~  Year 16664, spring — Year 16664 begins. Flora 6751; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16664, spring — Floodwaters swamp (147,55); 0 drowned. Silt will enrich the plain.
+!  Year 16664, spring — A storm gathers over (374,145).
+V  Year 16664, summer — A volcano erupts at (245,64): 0 creatures and 1097 plants destroyed, a wide ash ring left fertile.
+!  Year 16664, autumn — A storm gathers over (69,193).
+=  Year 16664, autumn — Floodwaters swamp (250,302); 0 drowned. Silt will enrich the plain.
+!  Year 16664, winter — A storm gathers over (281,362).
+!  Year 16664, winter — A storm gathers over (186,174).
+~  Year 16665, spring — Year 16665 begins. Flora 6866; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16665, spring — Floodwaters swamp (346,190); 0 drowned. Silt will enrich the plain.
+!  Year 16665, summer — A storm gathers over (274,263).
+!  Year 16665, summer — A storm gathers over (343,197).
+=  Year 16665, winter — Floodwaters swamp (114,163); 0 drowned. Silt will enrich the plain.
+=  Year 16665, winter — Floodwaters swamp (379,333); 0 drowned. Silt will enrich the plain.
+!  Year 16665, winter — A storm gathers over (120,162).
+~  Year 16666, spring — Year 16666 begins. Flora 6963; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 16666, spring — Floodwaters swamp (92,96); 0 drowned. Silt will enrich the plain.
+^  Year 16666, spring — Fire breaks out at (306,97).
+=  Year 16666, spring — Floodwaters swamp (71,217); 0 drowned. Silt will enrich the plain.
+!  Year 16666, summer — A storm gathers over (263,269).
+^  Year 16666, summer — Fire breaks out at (365,170).
+=  Year 16666, autumn — Floodwaters swamp (91,244); 0 drowned. Silt will enrich the plain.
+=  Year 16666, autumn — Floodwaters swamp (107,149); 0 drowned. Silt will enrich the plain.
+!  Year 16666, winter — A storm gathers over (68,311).
+~  Year 16667, spring — Year 16667 begins. Flora 6907; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+!  Year 16667, spring — A storm gathers over (366,61).
+!  Year 16667, summer — A storm gathers over (308,177).
+!  Year 16667, summer — A storm gathers over (67,177).
+=  Year 16667, summer — Floodwaters swamp (67,175); 0 drowned. Silt will enrich the plain.
 ```

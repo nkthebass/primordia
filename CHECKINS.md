@@ -9,7 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
-| 2026-09-12 | 16,447 | 147 | 96/49/2 | 4 | 1.27322e+06 | **`graze_floor` 0.12 → 0.03** — the crash bottomed instead of going to zero. Under review |
+| 2026-09-12 | 16,463 | 0 | 0/0/0 | 0 | 1.27322e+06 | **EIGHTH EXTINCTION** — `graze_floor` 0.12 → 0.03 moved the cliff, it did not remove it |
 | 2026-09-12 | 16,385 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SEVENTH EXTINCTION** — 300 founders across 6 sites became **8,349 in one year**; dispersal is not the variable |
 | 2026-09-12 | 15,568 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SIXTH EXTINCTION** — 250 founders bred to 1,169 and crashed to zero in 38 years |
 | 2026-09-12 | 15,530 | 250 | 250/0/0 | 1 | 1.27322e+06 | restored the **known-good** small-bodied state; the size question needs a human decision |
@@ -430,11 +430,32 @@ mechanism exactly as intended, and moves the yield cliff far below the densities
 population actually visits. At the crash density of 0.055 per cell, yield goes from nothing to
 0.025 — the difference between a low equilibrium and an empty world.
 
-**This wants a second pair of eyes.** If 0.03 is too permissive the failure mode inverts:
-herbivores graze cells down past 5e-3, the flora dies locally rather than recovering, and that
-is worse than what we have. The first thirteen years say the crash now bottoms out — 120
-founders → 1,427 → 397 → 174 → 227 → 147, holding instead of falling to zero, with flora at
-608 and still yielding — but thirteen years is not a verdict.
+**It did not work.** I reported after thirteen years that the crash had bottomed out, and said
+thirteen years was not a verdict. It was not, and the verdict went the other way — the world
+died at **year 16,463**, about twenty years later:
+
+```
+16,441  pop 174  flora 733     16,455  pop 108  flora 604
+16,444  pop 227  flora 798     16,457  pop  16  flora 662
+16,447  pop 147  flora 608     16,460  pop  42  flora 708
+16,452  pop 118  flora 572     16,463  pop   0  flora 791
+```
+
+The change moved the cliff instead of removing it. The population simply grazed down to the
+*new* floor: standing crop settled at 572–798 over ~19,000 vegetated cells, which is ≈0.03 per
+cell — exactly the new value. A fauna that multiplies twenty-eight-fold in a year grazes to
+whatever floor exists, so **an absorbing floor at any value gives the same outcome.** The
+reasoning stands as a consistency repair (24× above the death threshold was incoherent) but the
+hypothesis that it would prevent extinction is falsified.
+
+### The measurement I should have taken first
+
+With the world empty and nothing eating it, net flora production is **tens of biomass per
+year** — 76/yr at a crop of 2,000, 29/yr at 3,000, 22/yr at 4,800, 20/yr at 5,700 — and the
+grazed equilibrium sat at a crop near 600, where it is lower still. That number bounds
+everything else in this log, and I tuned digestion, reach, body size, seeding density and the
+graze floor for an entire session without once measuring it. Eight reseedings, and the first
+question — *can this world's plant growth support a fauna at all?* — went unasked.
 
 ### Also reverted: a tax I should never have levied
 
