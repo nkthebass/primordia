@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-13 | 11,900 | 305 | 234/66/5 | 6 | 1.27327e+06 | **TIMELINE BRANCH** — restored from year 11,900; the year-14,500 lineage was dying of a spatial trap |
+| 2026-09-13 | ~14,791 | 0 | 0/0/0 | 0 | 1.27323e+06 | **ELEVENTH EXTINCTION** — the year-14,500 restore died within 50 years of where the original timeline died |
 | 2026-09-13 | 14,500 | 358 | 334/24/0 | 8 | 1.27323e+06 | **TIMELINE BRANCH** — restored the world from its own year-14,500 checkpoint after ten failed seedings |
 | 2026-09-13 | 18,442 | 0 | 0/0/0 | 0 | 1.27322e+06 | **TENTH EXTINCTION** — irruption solved (350→433), still died; the breeding bar ratcheted 21.5 → 39.4 |
 | 2026-09-13 | 17,421 | 0 | 0/0/0 | 0 | 1.27322e+06 | **NINTH EXTINCTION** — proven genome + evolved brains cut the irruption 28× → 4× |
@@ -546,6 +548,72 @@ design questions can now be tested one at a time against a world that is alive t
 - **Mean energy near 12 against a breeding bar near 21, with only 11–16% of animals above it,
   is this world's NORMAL state** — true of every healthy archived population from year 9,900
   onward. I read it as starvation at least four times and intervened against it each time.
+
+## The year-14,500 population was already dead (2026-09-13)
+
+The restore from year 14,500 died at about year **14,791**. The original timeline died from
+that same checkpoint at **14,845**. Two independent runs from one state, both dead inside three
+hundred years: that population was dying when I restored it, and I restored it because it
+*looked* healthy by every number I was checking.
+
+It was not food, toxins, or the `repro_threshold` ratchet:
+
+| year | health | food energy kept | breeding bar | breeding |
+|---:|---:|---:|---:|---:|
+| 11,900 | 0.981 | 99% | 21.9 | 11% |
+| 14,500 | 0.982 | 99% | 20.5 | 11% |
+| 14,700 *(restored run)* | 0.974 | 97% | 19.7 | **5%** |
+
+Energy was the only gate that moved. Mean energy fell to **9.4**, the lowest of any archive,
+with 5,000–7,000 flora standing. The animals were surrounded by food and still under-earning.
+
+### It was geography
+
+Share of all harvestable food in the world lying near *some* animal:
+
+| year | rich cells | median distance to rich cell | within 4 cells | **within 12 cells** | `sense_range` |
+|---:|---:|---:|---:|---:|---:|
+| 11,900 | 362 | 3.0 | 24.9% | **66.7%** | 0.339 |
+| 12,900 | 648 | 2.8 | 21.5% | **60.7%** | 0.621 |
+| 14,500 | 270 | 7.1 | 23.2% | **52.9%** | 0.336 |
+| 14,600 | 1,288 | 5.0 | 4.7% | **11.6%** | 0.371 |
+| 14,700 | 5,115 | 7.0 | 1.6% | **3.3%** | **0.193** |
+
+The flora bloomed across the map — rich cells multiplied nineteen-fold — and the animals
+never went to it. They could not perceive it. Sense radius is `1 + sense_range × MAX_SENSE`
+with `MAX_SENSE` 12, so `sense_range` 0.193 is about **three cells**, and the nearest rich
+cell was a median **seven** away.
+
+Sensing costs upkeep (`cost_sense` × `trait_cost_scale`), so short sight pays while food is
+underfoot — and becomes a trap the moment the local patch is grazed out. The population
+contracts onto its own depleted ground (occupied cells 303 → 185), stops being able to find
+the grass growing everywhere else, and starves inside sight of a bloom it cannot see.
+
+The year-14,500 state was already on that path — only 270 rich cells, median distance 7.1,
+the worst of the healthy archives — which is why every run from it died the same way. **A
+checkpoint is not healthy because its population is alive; it is healthy if its population
+can still reach its food.**
+
+### The restore
+
+The world runs again from **year 11,900**: 391 animals, 15.3% land (it has eroded to ~10%
+since), two thirds of all food within twelve cells of an animal, stable for centuries, and from
+before `spikes` existed. It carries only the two laws it lived under for millennia —
+`trait_cost_scale` 0.25 and `growth_scale` 0.13.
+
+**The carnivory fix was deliberately not re-applied.** That subsidy only ever proved lethal in
+worlds I seeded by hand; this evolved world ran predator–prey cycles under it for nearly two
+thousand years. The restored world came back with a living carnivore tier.
+
+Everything rewound is kept: `archive/pre-restore-dead-world-y15041`,
+`archive/pre-restore-dead-world-y19490`, and every Chronicle entry from both branches.
+
+### The power cut
+
+The shutdown on 2026-09-13 left **1,152 NUL bytes** in `chronicle.jsonl` and **841** in
+`chronicle.md`, at the exact instant of the cut — pre-allocated file space that was never
+written. The reader skipped them, but `grep` treated the whole file as binary. Stripped with
+the sim stopped, backups kept as `*.pre-nul-strip.bak`; all 167,634 lines parse.
 
 ## Incidents
 

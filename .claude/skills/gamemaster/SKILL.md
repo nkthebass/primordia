@@ -44,7 +44,17 @@ Two readings that look like emergencies and are not:
   present in 34% of all years across 47 episodes, on a 10–30 year cycle. Check the
   year-headers before calling it lost.
 
-And one that is a real emergency and does not announce itself: **a rising `repro_threshold`
+And a real emergency that looks like prosperity: **flora blooming while the fauna declines.**
+Measure the share of the world's harvestable food (biomass above `graze_floor`) lying within
+twelve cells of any animal. Healthy eras ran 53–67%; the dying year-14,500 lineage fell to
+11.6% and then 3.3% while rich cells multiplied nineteen-fold. Sense radius is
+`1 + sense_range × 12` cells and sensing costs upkeep, so a population grazing its own patch
+evolves short sight (it reached 0.193, about three cells), contracts onto depleted ground, and
+starves within reach of a bloom it cannot perceive. Two independent runs from that checkpoint
+died the same way. **Before restoring any archive, check this number on it** — a checkpoint is
+not healthy because its population is alive, only if its population can still reach its food.
+
+And one more that does not announce itself: **a rising `repro_threshold`
 during a population decline.** A famine selects it upward — an animal that breeds gives its
 energy away and dies, one that hoards survives — so the survivors of a crash are the
 individuals least able to end it. If the mean breeding bar is climbing while the population

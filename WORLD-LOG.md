@@ -6,40 +6,36 @@
 
 | | |
 |---|---|
-| year | **14,501** (winter) |
-| animals | 222 — 215 herbivore / 7 omnivore / 0 carnivore |
-| plant biomass | 1,706 |
-| living species | 6 (of 637 ever named) |
-| total matter | 1,273,230 — the world is closed, so this should not move |
-| predator niche | shut — needs attack power 2.035, ceiling 1.95 |
-| genetic variance | 0.02752 |
-| warnings | omnivore population critically low (7); predator niche closed: prey defence 1.47 needs attack power 2.04, genome ceiling is 1.60 - seeding predators here cannot work until prey armour or speed comes down |
+| year | **11,900** (winter) |
+| animals | 273 — 212 herbivore / 58 omnivore / 3 carnivore |
+| plant biomass | 3,030 |
+| living species | 6 (of 525 ever named) |
+| total matter | 1,273,267 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 2.077, ceiling 2.75 |
+| genetic variance | 0.03229 |
+| warnings | carnivore population critically low (3); GPU 82C > 80.0C; throttle level 2 active |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Pyricus pallidum tertium | 72 | 0.045 | stable |
-| Pyricus pallidum occidentalis | 63 | 0.040 | declining |
-| Voleipter acutum | 43 | 0.117 | stable |
-| Pyricus pallidum alpinus | 15 | 0.079 | declining |
-| Pyricus pallidum campestris | 14 | 0.308 | declining |
-| Primordium vulgare | 4 | 0.199 | stable |
+| Krioubius minor primum | 85 | 0.086 | stable |
+| Primordium vulgare | 63 | 0.117 | declining |
+| Krioubius minor borealis | 51 | 0.249 | declining |
+| Krioubius minor | 39 | 0.542 | growing |
+| Calomorph minor | 28 | 0.034 | stable |
+| Krioubius minor maximus | 11 | 0.456 | stable |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.638 | 76% |
-| winter_torpor | 0.142 | 2% |
-| highland_lung | 0.474 | 35% |
-| shear_tooth | 0.511 | 51% |
-| gut_ferment | 0.820 | 99% |
-| tide_limb | 0.087 | 0% |
-| mariner | 0.088 | 0% |
-| nocturne | 0.660 | 81% |
-| sunleech | 0.801 | 89% |
-| broad_crop | 0.482 | 50% |
+| carrion_gut | 0.911 | 100% |
+| winter_torpor | 0.484 | 56% |
+| highland_lung | 0.472 | 41% |
+| shear_tooth | 0.787 | 89% |
+| gut_ferment | 0.896 | 100% |
+| tide_limb | 0.110 | 0% |
 
 ## Turning points
 
@@ -266,6 +262,19 @@
 - **Year 10210, summer** · *gene invented* — Resources back under caps; easing throttle to level 0.
 - **Year 11170, summer** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 11170 (tick 22341187), belongs to a world that no longer exists. This world has been restored to year 11170 (tick 22340801) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 11170, summer** · *restore* — World resumed from checkpoint at tick 22340801.
+- **Year 11900, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 15042 (tick 30085890), belongs to a world that no longer exists. This world has been restored to year 11900 (tick 23800000) from an archive, and those 3142 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 11900, spring** · *restore* — World resumed from checkpoint at tick 23800000.
+- **Year 11900, summer** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11900, autumn** · *game-master note* — Second timeline branch in a day, and this one is back to year 11,900. The year-14,500 restore died at about year 14,791, and the original timeline died from that same checkpoint at 14,845: two independent runs from one state, both dead inside three hundred years, which means that population was already dying when I restored it. It was not food, not toxins and not the repro_threshold ratchet. Health held at 0.97 to 0.99, animals kept 97 to 99 per cent of the energy in what they ate, and the breeding bar fell rather than rose. It was geography. In every healthy archive, 53 to 67 per cent of all …
+- **Year 11900, autumn** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 11900, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
 - **Year 12306, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12306 (tick 24613366), belongs to a world that no longer exists. This world has been restored to year 12306 (tick 24612000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 12306, spring** · *restore* — World resumed from checkpoint at tick 24612000.
 - **Year 12353, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12353 (tick 24707378), belongs to a world that no longer exists. This world has been restored to year 12353 (tick 24706000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
@@ -1435,6 +1444,172 @@
 - **Year 14500, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 19491 (tick 38982376), belongs to a world that no longer exists. This world has been restored to year 14500 (tick 29000000) from an archive, and those 4991 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 14500, spring** · *restore* — World resumed from checkpoint at tick 29000000.
 - **Year 14501, summer** · *game-master note* — Timeline branch. After ten failed seedings and roughly five thousand years of an empty world, I stopped trying to found a biosphere and restored one. This world is running again from its own year 14,500 checkpoint: 377 animals across 8 species with a mean repro_threshold of 0.182, verified finite in every array before the restore. The dead state at year 19,490 is preserved as archive/pre-restore-dead-world-y19490 and the Chronicle keeps every entry from the years that were rewound; nothing is erased, the world simply resumes from the last point at which it was alive. What the ten failures …
+- **Year 14694, spring** · *gene invented* — Resource caps breached (CPU 96% > 80.0%); lowering max population to 18000.
+- **Year 14694, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14719, spring** · *gene invented* — Resource caps breached (CPU 86% > 80.0%); lowering max population to 18000.
+- **Year 14719, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14725, winter** · *gene invented* — Resource caps breached (CPU 80% > 80.0%); lowering max population to 18000.
+- **Year 14725, winter** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14726, spring** · *gene invented* — Resource caps breached (CPU 88% > 80.0%); lowering max population to 18000.
+- **Year 14726, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14727, winter** · *gene invented* — Resource caps breached (CPU 91% > 80.0%); lowering max population to 18000.
+- **Year 14728, spring** · *restore* — World resumed from checkpoint at tick 29456000.
+- **Year 15040, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15041, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 15041, summer** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 15041, summer** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 15041, summer** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 15041, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15041, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15042, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15042, spring** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15042, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15042, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
 - **Year 15227, autumn** · *game-master note* — Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet stayed at 0.117-0.130 across the whole 300-year decline with flora climbing 1,666 -> 3,748 -> 17,297, so nothing converted itself into a carnivore this time. What killed them was body size. Seeded at 0.38-0.45, the population was at 0.072 by year 14,500 and 0.070 by 14,800, against a floor of 0.05. A 0.07 animal has a 0.07 mouthful: measured energy was 13.08 against a breeding bar of 22.2, and it sat 40 per cent short for three centuries while the …
 - **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (12,204).
 - **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (252,276).
@@ -1760,49 +1935,49 @@
 | 8,000–8,999 | 37 | 21 | 313 | 156 | 544 | 3973 | 6960 | 323 |
 | 9,000–9,999 | 118 | 118 | 357 | 167 | 530 | 4339 | 7837 | 381 |
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
-| 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
+| 11,000–11,999 | 77 | 79 | 151 | 81 | 422 | 2205 | 3482 | 173 |
 | 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
 | 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
-| 14,000–14,999 | 41 | 38 | 162 | 78 | 364 | 2339 | 3785 | 180 |
-| 15,000–15,999 | 28 | 26 | 174 | 83 | 354 | 2276 | 3561 | 169 |
+| 14,000–14,999 | 53 | 54 | 249 | 125 | 511 | 3490 | 5558 | 277 |
+| 15,000–15,999 | 28 | 26 | 185 | 88 | 367 | 2355 | 3709 | 178 |
 | 16,000–16,999 | 21 | 20 | 187 | 64 | 355 | 2388 | 3547 | 170 |
 | 17,000–17,999 | 11 | 11 | 172 | 84 | 339 | 2494 | 3599 | 166 |
 | 18,000–18,999 | 10 | 9 | 174 | 73 | 270 | 2475 | 3714 | 151 |
 | 19,000–19,999 | 0 | 0 | 87 | 40 | 136 | 1079 | 1803 | 95 |
 
-**Totals:** storm 74,735 · flood 41,983 · wildfire 11,798 · cold snap 3,908 · volcano 3,741 · meteor 1,846 · gene invented 1,335 · speciation 844 · extinction 741 · checkpoint 179 · seeding 66 · game-master note 38 · epoch 28 · intervention 14 · tuning 14
+**Totals:** storm 76,659 · flood 43,214 · wildfire 11,958 · cold snap 4,014 · volcano 3,839 · meteor 1,898 · gene invented 1,510 · speciation 857 · extinction 757 · checkpoint 182 · seeding 66 · game-master note 39 · epoch 28 · intervention 14 · tuning 14
 
 ## The last 30 entries
 
 ```
-=  Year 19489, summer — Floodwaters swamp (253,191); 0 drowned. Silt will enrich the plain.
-=  Year 19489, autumn — Floodwaters swamp (120,235); 0 drowned. Silt will enrich the plain.
-!  Year 19489, winter — A storm gathers over (332,21).
-!  Year 19489, winter — A storm gathers over (140,346).
-~  Year 19490, spring — Year 19490 begins. Flora 3101; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-V  Year 19490, spring — A volcano erupts at (361,201): 0 creatures and 1009 plants destroyed, a wide ash ring left fertile.
-#  Year 19490, winter — A cold snap grips the world (-0.09 temp).
-=  Year 19490, winter — Floodwaters swamp (184,231); 0 drowned. Silt will enrich the plain.
-~  Year 19491, spring — Year 19491 begins. Flora 3163; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-=  Year 19491, spring — Floodwaters swamp (150,222); 0 drowned. Silt will enrich the plain.
-=  Year 19491, spring — Floodwaters swamp (210,258); 0 drowned. Silt will enrich the plain.
-=  Year 19491, spring — Floodwaters swamp (377,117); 0 drowned. Silt will enrich the plain.
-=  Year 19491, spring — Floodwaters swamp (347,155); 0 drowned. Silt will enrich the plain.
-.  Year 14500, spring — === TIMELINE BRANCH === Everything above this line, up to year 19491 (tick 38982376), belongs to a world that no longer exists. This world has been re
-.  Year 14500, spring — World resumed from checkpoint at tick 29000000.
-+  Year 14500, spring — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum alpinus (13 individuals).
-+  Year 14500, spring — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum campestris (27 individuals).
-=  Year 14500, spring — Floodwaters swamp (193,117); 0 drowned. Silt will enrich the plain.
-!  Year 14500, spring — A storm gathers over (221,247).
-+  Year 14500, spring — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum occidentalis (85 individuals).
-+  Year 14500, spring — A new subspecies splits from Pyricus pallidum orientalis: Pyricus pallidum tertium (18 individuals).
-x  Year 14500, summer — Pyricus pallidum orientalis is extinct after 267800 ticks.
-x  Year 14500, autumn — Voleipter acutum primum is extinct after 28400 ticks.
-@  Year 14500, autumn — A meteor strikes (8,237). 31 killed; a crater lake forms and dust dims the sun.
-~  Year 14501, spring — Year 14501 begins. Flora 1602; 246 herbivores, 14 omnivores, 0 carnivores across 6 living species.
-"  Year 14501, summer — Timeline branch. After ten failed seedings and roughly five thousand years of an empty world, I stopped trying to found a biosphere and restored one. 
-!  Year 14501, autumn — A storm gathers over (133,206).
-!  Year 14501, autumn — A storm gathers over (362,284).
-!  Year 14501, autumn — A storm gathers over (253,62).
-!  Year 14501, autumn — A storm gathers over (2,2).
+&  Year 15042, summer — Resources back under caps; restored the population cap (throttle level 0).
+!  Year 15042, summer — A storm gathers over (84,355).
+V  Year 15042, summer — A volcano erupts at (230,291): 0 creatures and 883 plants destroyed, a wide ash ring left fertile.
+!  Year 15042, autumn — A storm gathers over (181,100).
+!  Year 15042, autumn — A storm gathers over (276,187).
+!  Year 15042, autumn — A storm gathers over (269,123).
+=  Year 15042, autumn — Floodwaters swamp (124,195); 0 drowned. Silt will enrich the plain.
+#  Year 15042, winter — A cold snap grips the world (-0.17 temp).
+!  Year 15042, winter — A storm gathers over (228,206).
+^  Year 15042, winter — Fire breaks out at (370,236).
+&  Year 15042, winter — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+!  Year 15042, winter — A storm gathers over (132,309).
+.  Year 11900, spring — === TIMELINE BRANCH === Everything above this line, up to year 15042 (tick 30085890), belongs to a world that no longer exists. This world has been re
+.  Year 11900, spring — World resumed from checkpoint at tick 23800000.
++  Year 11900, spring — A new subspecies splits from Primordium vulgare: Calomorph minor (13 individuals).
+!  Year 11900, spring — A storm gathers over (379,86).
+&  Year 11900, summer — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+"  Year 11900, autumn — Second timeline branch in a day, and this one is back to year 11,900. The year-14,500 restore died at about year 14,791, and the original timeline die
+!  Year 11900, autumn — A storm gathers over (4,209).
+=  Year 11900, autumn — Floodwaters swamp (144,322); 0 drowned. Silt will enrich the plain.
+&  Year 11900, autumn — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+!  Year 11900, autumn — A storm gathers over (249,70).
+&  Year 11900, winter — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+&  Year 11900, winter — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+&  Year 11900, winter — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+&  Year 11900, winter — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+&  Year 11900, winter — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+&  Year 11900, winter — Resources back under caps; resumed the simulation (throttle level 3).
+&  Year 11900, winter — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+&  Year 11900, winter — Resources back under caps; resumed the simulation (throttle level 3).
 ```
