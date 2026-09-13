@@ -9,6 +9,9 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-13 | 14,500 | 358 | 334/24/0 | 8 | 1.27323e+06 | **TIMELINE BRANCH** — restored the world from its own year-14,500 checkpoint after ten failed seedings |
+| 2026-09-13 | 18,442 | 0 | 0/0/0 | 0 | 1.27322e+06 | **TENTH EXTINCTION** — irruption solved (350→433), still died; the breeding bar ratcheted 21.5 → 39.4 |
+| 2026-09-13 | 17,421 | 0 | 0/0/0 | 0 | 1.27322e+06 | **NINTH EXTINCTION** — proven genome + evolved brains cut the irruption 28× → 4× |
 | 2026-09-12 | 16,463 | 0 | 0/0/0 | 0 | 1.27322e+06 | **EIGHTH EXTINCTION** — `graze_floor` 0.12 → 0.03 moved the cliff, it did not remove it |
 | 2026-09-12 | 16,385 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SEVENTH EXTINCTION** — 300 founders across 6 sites became **8,349 in one year**; dispersal is not the variable |
 | 2026-09-12 | 15,568 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SIXTH EXTINCTION** — 250 founders bred to 1,169 and crashed to zero in 38 years |
@@ -476,6 +479,73 @@ large-body bonus out of the small-body baseline.
 - **Whether the fauna should be able to breed 28-fold in a year at all.** `founder_energy_mult`
   is 3.5 and the breeding bar is ~20, so founders arrive with three and a half start-energies
   and so do their children. Every seeding is an irruption by construction.
+
+## What ten failed seedings were actually measuring
+
+Two of the three things I spent the session tuning turned out to be real, and neither was the
+cause.
+
+**The brain was real.** Every founder I made in eight attempts got a *random* brain damped to
+`founder_brain_quiet` 0.35 with a fourteen-weight grazer prior over it — because with no living
+donors that is what `seed_organism` does, and I never noticed that the 167 brain weights are
+addressable by name (`w000`–`w165`) like any other gene. Those animals wandered more or less at
+random and ate whatever they stood on, in a world whose residents had spent fourteen thousand
+years learning where food is. Seeding five *real* animals out of the year-14,500 archive with
+all 167 of their own weights cut the irruption from **28-fold to 4-fold** — the first change in
+the whole session that moved that number.
+
+**Arrival wealth was real.** `founder_energy_mult` 3.5 lands founders at ~77 energy against a
+bar near 21, so every one breeds on arrival and so do its children. Dropping it to **1.0** cut
+the irruption again, to **1.24-fold**: 350 founders became 433, not 8,349.
+
+**And neither saved them**, which is what finally identified the actual mechanism.
+
+### The ratchet that closes every crash
+
+From the last seeding, as the population fell:
+
+| | | | | | | | |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **breeding bar** | 21.5 | 22.3 | 24.3 | 26.7 | 29.1 | 31.5 | **39.4** |
+| **% able to breed** | 11 | 17 | 5 | 13 | 10 | 16 | **0** |
+
+The final two animals held **38.2 energy against a bar of 39.4**. They were not starving. They
+were rich, and they could not breed.
+
+During a famine an animal that breeds gives its energy away and dies; an animal that hoards
+survives. So a crash selects — hard, and within tens of generations — for exactly the
+individuals least able to end it. `repro_threshold` ratcheted 0.21 → 0.81, and by the time the
+grass came back the only survivors were constitutionally incapable of using it. The flora was
+*recovering past them* the whole way down.
+
+That is why every crash in this world is absorbing, and it is not a problem of numbers. It is a
+problem of **which** animals the famine leaves behind. A founding population built from five or
+seven archetypes carries no reservoir of low-threshold breeders to ride it out. A real
+population of 377 does.
+
+### The restore (2026-09-13)
+
+So I stopped founding a biosphere and restored one. The world runs again from its own
+**year-14,500 checkpoint** — 377 animals, 8 species, `repro_threshold` mean 0.182, every array
+verified finite before the restore. The dead state is preserved as
+`archive/pre-restore-dead-world-y19490`, and the Chronicle keeps every entry from the rewound
+years; nothing is erased.
+
+**No laws changed with the restore.** The checkpoint carries four tuned values —
+`trait_cost_scale` 0.25, `growth_scale` 0.13, `carnivore_basal_discount` 0.12, `gorge_meat`
+2.5 — which include the one fix from this session that was ever verified, the carnivory subsidy
+that held for three hundred years. The six I added afterwards went with the rewind and stay
+gone. This population was stable in exactly this configuration for thousands of years, and
+adding laws to a freshly restored living world is the mistake I made all session. The open
+design questions can now be tested one at a time against a world that is alive to test them on.
+
+### Corrections to earlier entries in this file
+
+- **Gross primary production is not the constraint.** 180,788 biomass/year against a standing
+  crop of 8,868. The flora-productivity worry raised in PR #3 was wrong.
+- **Mean energy near 12 against a breeding bar near 21, with only 11–16% of animals above it,
+  is this world's NORMAL state** — true of every healthy archived population from year 9,900
+  onward. I read it as starvation at least four times and intervened against it each time.
 
 ## Incidents
 
