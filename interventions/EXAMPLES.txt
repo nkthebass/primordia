@@ -19,6 +19,54 @@ with a .err.txt explaining why).  Nothing here is executed as code.
 {"type":"seed_organism","kingdom":"fauna","count":30,"x":50,"y":50,
  "genome":{"diet":0.9,"size":0.7,"speed":0.8}}
 
+  *** READ THIS BEFORE SEEDING INTO AN EMPTY WORLD ***
+
+  Seeded stock normally descends from living residents -- spawn() copies a local animal
+  whole, brain included, then the archetype edits the traits you named.  That is why
+  seeding works at all: the founders inherit a brain that already knows this world.
+
+  When NOTHING IS ALIVE there are no donors, and the fallback is a RANDOM brain damped to
+  fauna.founder_brain_quiet (0.35) with a fourteen-weight instinct prior laid over it.
+  That animal wanders more or less at random and eats whatever it happens to stand on.
+  Ten consecutive foundings failed this way over years 13,700-19,490, and no adjustment to
+  body size, diet, gene loadout, seeding density, graze floor or founder energy made any
+  difference, because none of them was the problem.
+
+  The brain is 167 genes named w000..w165, and they are addressable like any other gene.
+  To found into an empty world, lift a real animal out of an archive and pass ALL of it:
+
+      import numpy as np, json, io
+      SRC  = "state/archive/year_14500"                 # a year the world was alive
+      m    = json.load(io.open(SRC + ".json", encoding="utf-8"))
+      src  = [g["name"] for g in m["fauna"]["schema"]["genes"]]
+      cur  = {g["name"] for g in json.load(
+                 io.open("state/checkpoint_latest.json", encoding="utf-8")
+              )["fauna"]["schema"]["genes"]}
+      z    = np.load(SRC + ".npz")
+      gi   = {n: i for i, n in enumerate(src)}
+      alive = np.nonzero(z["fauna_alive"].astype(bool))[0]
+      row  = alive[0]                                    # pick a healthy adult
+      genome = {n: round(float(z["fauna_genes"][row, i]), 4)
+                for i, n in enumerate(src) if n in cur}   # skip retired genes
+
+  Seeding jitter adds normal(0, 0.48) to each weight, which is real damage against weights
+  that reach 4.0 -- but it is nothing beside a random brain at 0.35 strength.
+
+  Two more things measured the hard way:
+
+  * Use SEVERAL DIFFERENT real animals, not one archetype copied N times.  A crash selects
+    repro_threshold upward -- an animal that breeds during a famine gives its energy away
+    and dies, one that hoards survives -- so the survivors of any crash are the individuals
+    LEAST able to rebuild.  Measured: the bar ran 21.5 -> 39.4 as a population fell, and
+    the last two animals held 38.2 energy against a bar of 39.4 and could not breed.  A
+    founding population needs a reservoir of low-threshold breeders to ride that out.
+
+  * fauna.founder_energy_mult is 3.5, which lands founders at ~77 energy against a bar near
+    21, so every one breeds on arrival and so do its children.  Measured irruption ratios:
+    3.5 with random brains, 28x.  3.5 with real brains, 4x.  1.0 with real brains, 1.24x.
+    Tune it to 1.0 before founding a herbivore stock into standing crop, and put it back
+    afterwards if you are going to seed predators, which is what the 3.5 is for.
+
 {"type":"note","text":"Carnivores were collapsing so I seeded a prey refuge."}
 
 {"type":"add_gene","kingdom":"fauna","name":"bioluminescence",
