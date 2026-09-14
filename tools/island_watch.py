@@ -50,6 +50,7 @@ MIN_CELLS = 1000          # landmasses smaller than this are not worth a herd
 MIN_FOOD = 100.0          # harvestable biomass that makes an empty landmass worth settling
 MIN_DONORS = 40           # seed_organism only copies residents when >= 20 are alive
 COOLDOWN_TICKS = 200_000  # 100 simulated years before the same landmass is seeded again
+MATCH_CELLS = 40          # earlier seedings this close count as the same landmass
 PARTY = 40                # founders per seeding; islands here have held 35-120 animals
 WALK_DEPTH = 0.2          # where spawn() and grazers treat ground as walkable
 
@@ -152,8 +153,22 @@ def check_once(state: dict) -> None:
         inside = ndimage.distance_transform_edt(mask)
         iy, ix = np.unravel_index(int(np.argmax(inside)), inside.shape)
         depth = float(inside.max())
-        key = f"{ix // 16}:{iy // 16}"           # stable across the slow drift of a coast
-        last = int(state["seeded"].get(key, -10**12))
+        # The interior point drifts as the coast erodes, so an exact grid-square key let the
+        # same island be seeded twice in 45 years (keys 14:17 and 14:18).  Treat any earlier
+        # seeding within MATCH_CELLS of here -- or anywhere on this landmass -- as the same place.
+        key = f"{ix // 16}:{iy // 16}"
+        last = -10**12
+        for k, t in state["seeded"].items():
+            try:
+                kx, ky = (int(v) for v in k.split(":"))
+            except ValueError:
+                continue
+            px, py = kx * 16 + 8, ky * 16 + 8
+            dx = min(abs(px - ix), G - abs(px - ix))           # x wraps
+            same = (dx * dx + (py - iy) ** 2 <= MATCH_CELLS ** 2
+                    or L[min(max(py, 0), G - 1), px % G] == c)
+            if same:
+                last = max(last, int(t))
         if tick - last < COOLDOWN_TICKS:
             continue
         radius = float(max(4.0, min(20.0, depth * 0.6)))   # keep founders on dry land

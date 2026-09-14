@@ -9,6 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-14 | 13,145 | 131 | 41/85/5 | 4 | 1.27324e+06 | watcher seeded the island 6× in 630 years and kept it grazed; fixed its cooldown key and the archive pruner |
 | 2026-09-14 | 12,400 | 511 | 425/85/1 | 7 | 1.27326e+06 | **TIMELINE BRANCH** — restored from year 12,400; `tools/island_watch.py` now recolonises empty islands |
 | 2026-09-14 | 13,370 | 0 | 0/0/0 | 0 | 1.27325e+06 | **TWELFTH EXTINCTION** — the year-11,900 restore; 92% of all food ended up on one island with no animals |
 | 2026-09-13 | 11,900 | 305 | 234/66/5 | 6 | 1.27327e+06 | **TIMELINE BRANCH** — restored from year 11,900; the year-14,500 lineage was dying of a spatial trap |
@@ -678,6 +679,37 @@ Start-Process -FilePath '.venv\Scripts\python.exe' -ArgumentList 'tools\island_w
 ```
 
 Dead state kept as `archive/pre-restore-dead-world-y13458`.
+
+## The watcher's first 750 years, and two bugs it surfaced (2026-09-14)
+
+**It works.** `tools/island_watch.py` seeded the ~3,600-cell island near (228,292) six times
+between years 12,435 and 13,065. Its founding parties did establish — the island held **247
+animals at 12,600** and 81–94 at 12,900–13,000 — and while they held it the island's share of
+the world's food stayed at **6–24%**, against the 92% that killed the previous world. Every
+party has eventually died out; this island cannot hold a herd for long. But the world is alive
+at year 13,145, past the point where the unwatched run from 11,900 was already starving, and
+the island's food is at 33% rather than running away.
+
+**Bug: the once-a-century limit did not hold.** The watcher keyed each landmass by the 16-cell
+grid square of its deepest interior point, and that point drifts as the coast erodes — (228,292),
+(231,287), (233,286), (230,288) — so the key flipped between `14:17` and `14:18` and the island
+was seeded at 13,020 and again at **13,065, forty-five years apart**. An earlier seeding now
+counts if it lies within 40 cells or anywhere on the same landmass. Dry-run on the live
+checkpoint: no action under either key inside the cooldown, seeds once it has expired, still
+silent when every landmass is occupied.
+
+**Bug: every restore silently deleted the live run's yearly archives.** `_prune_archive` kept
+"the newest 40 years" by *year number*. After three rewinds the highest year numbers on disk
+were 19,452–19,491 of a dead timeline, so each yearly archive the restored world wrote was the
+lowest-numbered file on disk and was deleted the moment it was written. The live run was left
+with nothing finer than one save per century — which is why the island's history above could
+only be read at hundred-year resolution. The pruner now ranks by write time. Verified after
+restart: years 13,144 and 13,145 kept, the dead timeline's yearly files draining (20 → 18),
+no century archive touched.
+
+**Still below normal:** only 6% of animals are above their breeding bar, against 11–16% in
+healthy eras. The bar itself is flat at 21.0, so it is not the ratchet — but it is the number to
+watch next.
 
 ## Incidents
 

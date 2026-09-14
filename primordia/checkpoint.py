@@ -122,17 +122,31 @@ def _prune_archive(d: str, keep: int) -> None:
     have stopped.  Keep the most recent `keep` years and then one per century further
     back, which holds the whole history of a four-thousand-year world in about 1.5 GB.
     Labelled saves that are not years are left alone; there are few of them.
+
+    "Most recent" means most recently WRITTEN, not highest year number.  After a restore
+    rewinds the world, the dead timeline's archives carry larger year numbers than anything
+    the live run will write for centuries.  Ranking by year kept years 19,452-19,491 of a
+    dead world as the "newest 40" and deleted every yearly archive the restored run wrote
+    the moment it wrote it, leaving it with nothing finer than one save per century.
     """
     a = os.path.join(d, "archive")
     try:
         names = [n for n in os.listdir(a) if n.startswith("year_") and n.endswith(".npz")]
     except OSError:
         return
-    years = sorted(int(n[5:-4]) for n in names if n[5:-4].isdigit())
-    if len(years) <= keep:
+    stamped = []
+    for n in names:
+        if not n[5:-4].isdigit():
+            continue
+        try:
+            stamped.append((os.path.getmtime(os.path.join(a, n)), int(n[5:-4])))
+        except OSError:
+            continue
+    if len(stamped) <= keep:
         return
-    newest = set(years[-keep:])
-    doomed = [y for y in years[:-keep] if y % 100 != 0 and y not in newest]
+    stamped.sort()
+    newest = {y for _, y in stamped[-keep:]}
+    doomed = [y for _, y in stamped if y % 100 != 0 and y not in newest]
     for y in doomed:
         for ext in (".npz", ".json"):
             try:
