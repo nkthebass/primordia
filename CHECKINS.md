@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-14 | 12,400 | 511 | 425/85/1 | 7 | 1.27326e+06 | **TIMELINE BRANCH** — restored from year 12,400; `tools/island_watch.py` now recolonises empty islands |
+| 2026-09-14 | 13,370 | 0 | 0/0/0 | 0 | 1.27325e+06 | **TWELFTH EXTINCTION** — the year-11,900 restore; 92% of all food ended up on one island with no animals |
 | 2026-09-13 | 11,900 | 305 | 234/66/5 | 6 | 1.27327e+06 | **TIMELINE BRANCH** — restored from year 11,900; the year-14,500 lineage was dying of a spatial trap |
 | 2026-09-13 | ~14,791 | 0 | 0/0/0 | 0 | 1.27323e+06 | **ELEVENTH EXTINCTION** — the year-14,500 restore died within 50 years of where the original timeline died |
 | 2026-09-13 | 14,500 | 358 | 334/24/0 | 8 | 1.27323e+06 | **TIMELINE BRANCH** — restored the world from its own year-14,500 checkpoint after ten failed seedings |
@@ -614,6 +616,68 @@ The shutdown on 2026-09-13 left **1,152 NUL bytes** in `chronicle.jsonl` and **8
 `chronicle.md`, at the exact instant of the cut — pre-allocated file space that was never
 written. The reader skipped them, but `grep` treated the whole file as binary. Stripped with
 the sim stopped, backups kept as `*.pre-nul-strip.bak`; all 167,634 lines parse.
+
+## The food was across the sea (2026-09-14)
+
+The year-11,900 restore died at **year 13,370** with no intervention of any kind, and it broke
+the explanation I had just committed. Health held at 0.99, the breeding bar at 19.6–21.5, diet
+stayed herbivorous — and at year 13,100 `sense_range` was **0.732**, a ten-cell radius, while
+90% of the food was still out of reach. Short sight was not the cause. The spatial-trap
+section above is right about *what* happened and wrong about *why*.
+
+**The check-in at year 12,636 also misread it.** It reported food-within-reach at 22.4% as "the
+world's graze cycle", because that number had bounced from 27% back to 78% twice. The archives
+say 12,600 was already the start of the slide.
+
+### Islands
+
+Erosion and cratering have split the walkable land (`water_depth < 0.2`) into three masses.
+Movement blocks water deeper than 0.25 unless `swim_eff` exceeds 0.45, and no population here
+has held that. So each landmass keeps its own herd, and the smallest — about 3,600 cells near
+(228,293) — is marginal:
+
+| year | the island | food on it | share of all food on **empty** land |
+|---:|---|---:|---:|
+| 11,900 | 115 animals | 60 | 0% |
+| 12,000 | **empty** | 404 | 27% |
+| 12,200 | **empty** | 2,078 | 67% |
+| 12,300 | 101 animals *(recolonised)* | 88 | 0% |
+| 12,400 | 77 animals | 55 | 0% |
+| 12,500 | **empty** | 457 | 41% |
+| 12,800 | **empty** | 3,195 | 89% |
+| 13,200 | **empty** | 6,105 | **92%** |
+
+The island's herd winks out. With nothing grazing it, its flora balloons until that one empty
+island holds nine tenths of all harvestable food in the world, while ~400 animals grind the two
+big landmasses down to ~300 and starve on them. It had refilled on its own once, from 12,200 to
+12,300; the second gap did not close. The year-14,500 lineage almost certainly died the same
+way, and its "short sight" was a consequence of crowding onto depleted ground, not the cause.
+
+### What was done
+
+**Restored to year 12,400** — the latest save with all three landmasses occupied (240, 67, 77
+animals), no food on empty ground, every array finite. No laws changed.
+
+**`tools/island_watch.py`**, running detached beside the simulation. Every two minutes it reads
+the newest checkpoint, labels the walkable landmasses (joining across the x-wrap), and looks for
+one of ≥1,000 cells with ≥100 harvestable biomass and **no animals**, while ≥40 are alive
+elsewhere. It then writes an ordinary intervention: a signed note, and `seed_organism` of 40
+founders at the landmass's deepest interior point with an **empty genome** — which, with living
+donors, copies residents whole, body and all 167 brain weights. That is the only seeding path
+that has worked in this world. Once per century per landmass at most. If everything is dead it
+logs and does nothing: founding into an empty world stays a human decision.
+
+Verified before it ran, by dry-running it against the archives: no action at 12,400; seed 40 at
+(228,296) r16 at 12,500, 12,600 and 12,800; log-and-hold at 13,400. It writes data through the
+intervention folder and touches the simulation in no other way.
+
+**It must be restarted after a reboot**, like the simulation itself:
+
+```
+Start-Process -FilePath '.venv\Scripts\python.exe' -ArgumentList 'tools\island_watch.py' -WindowStyle Hidden
+```
+
+Dead state kept as `archive/pre-restore-dead-world-y13458`.
 
 ## Incidents
 

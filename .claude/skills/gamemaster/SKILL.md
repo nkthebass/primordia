@@ -45,14 +45,21 @@ Two readings that look like emergencies and are not:
   year-headers before calling it lost.
 
 And a real emergency that looks like prosperity: **flora blooming while the fauna declines.**
-Measure the share of the world's harvestable food (biomass above `graze_floor`) lying within
-twelve cells of any animal. Healthy eras ran 53–67%; the dying year-14,500 lineage fell to
-11.6% and then 3.3% while rich cells multiplied nineteen-fold. Sense radius is
-`1 + sense_range × 12` cells and sensing costs upkeep, so a population grazing its own patch
-evolves short sight (it reached 0.193, about three cells), contracts onto depleted ground, and
-starves within reach of a bloom it cannot perceive. Two independent runs from that checkpoint
-died the same way. **Before restoring any archive, check this number on it** — a checkpoint is
-not healthy because its population is alive, only if its population can still reach its food.
+It is almost always geography. Erosion has split the walkable land (`water_depth < 0.2`) into
+separate masses, movement blocks water deeper than 0.25 unless `swim_eff > 0.45`, and each
+landmass keeps its own herd. When the herd on a small island winks out, that island's flora
+balloons — one empty ~3,600-cell island came to hold **92% of all harvestable food in the
+world** while every surviving animal starved on overgrazed land it could not leave. Three
+worlds died that way. `sense_range` falling alongside it is a symptom of crowding, not the
+cause: one of those worlds starved with a ten-cell sense radius.
+
+`tools/island_watch.py` runs beside the simulation and sends 40 founders, copied whole from
+living animals, to any landmass of ≥1,000 cells that has food and no animals while ≥40 are
+alive elsewhere — at most once a century per landmass. **Check it is running** (`state/
+island_watch.log`); it dies with the machine, like the simulation. If an island is empty and the
+watcher has not acted, find out why before seeding by hand. **Before restoring any archive,
+label its landmasses and confirm every large one is occupied** — a checkpoint is not healthy
+because its population is alive, only if its populations can still reach their food.
 
 And one more that does not announce itself: **a rising `repro_threshold`
 during a population decline.** A famine selects it upward — an animal that breeds gives its
