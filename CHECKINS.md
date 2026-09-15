@@ -9,6 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-15 | 15,470 | 436 | 422/14/0 | 6 | 1.27320e+06 | continent split in two; watcher settled the new landmass unprompted. Cooldown fix holds |
 | 2026-09-14 | 13,145 | 131 | 41/85/5 | 4 | 1.27324e+06 | watcher seeded the island 6× in 630 years and kept it grazed; fixed its cooldown key and the archive pruner |
 | 2026-09-14 | 12,400 | 511 | 425/85/1 | 7 | 1.27326e+06 | **TIMELINE BRANCH** — restored from year 12,400; `tools/island_watch.py` now recolonises empty islands |
 | 2026-09-14 | 13,370 | 0 | 0/0/0 | 0 | 1.27325e+06 | **TWELFTH EXTINCTION** — the year-11,900 restore; 92% of all food ended up on one island with no animals |
@@ -710,6 +711,40 @@ no century archive touched.
 **Still below normal:** only 6% of animals are above their breeding bar, against 11–16% in
 healthy eras. The bar itself is flat at 21.0, so it is not the ratchet — but it is the number to
 watch next.
+
+## The continent broke, and the watcher settled it (2026-09-15)
+
+Two thousand three hundred years on from the restore, and the map is not what it was. At year
+12,400 there were three walkable landmasses: 19,062 / 4,833 / 3,741 cells. At year 15,470 there
+are **four**:
+
+| landmass | animals | share of the world's food |
+|---:|---:|---:|
+| 10,193 cells | 286 | 50% |
+| 4,950 cells | 66 | 11% |
+| 4,583 cells | 29 | 19% |
+| 3,437 cells | 33 | 20% |
+
+The big continent has split roughly in half. Nobody told the watcher about this: it labels the
+landmasses fresh from each checkpoint, so when the new coastline appeared it simply found a
+large landmass with food and no animals and settled it — at (0,178) in years 14,978 and 15,365,
+and at (383,192) in year 15,136. **Every landmass is currently occupied**, which is the
+condition all three dead worlds failed.
+
+**The cooldown fix holds.** Before it, the island's drifting centre point let it be seeded twice
+in forty-five years. Since the fix the spacing is exactly the intended century: 13,166 → 13,273
+→ 13,374 → 13,475 → 13,575 → 13,676 → 13,777 → 13,878 → 13,981 → 14,083 → …
+
+**And an honest reading of what the watcher is.** Twenty-six seedings of the original island,
+and it has never once held a herd for longer than the cooldown. It is not restoring a
+self-sustaining population there; it is running a permanent ferry service, and the island's food
+share stays near 20% instead of climbing to the 92% that killed the unwatched world. That is a
+treatment, not a cure, and the underlying question is still open: whether non-swimmers should be
+able to cross shallow straits at all.
+
+**Unchanged and normal:** carnivores present in 309 of the last 1,200 sampled years and
+currently at a trough; breeding 9% against the 11–16% healthy band, with the bar at 22.2, below
+the 23 that would mean the ratchet.
 
 ## Incidents
 
