@@ -6,36 +6,35 @@
 
 | | |
 |---|---|
-| year | **15,472** (autumn) |
-| animals | 265 — 256 herbivore / 9 omnivore / 0 carnivore |
-| plant biomass | 2,235 |
-| living species | 6 (of 745 ever named) |
-| total matter | 1,273,200 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 1.967, ceiling 2.75 |
-| genetic variance | 0.02667 |
-| warnings | omnivore population critically low (9) |
+| year | **15,801** (winter) |
+| animals | 597 — 590 herbivore / 7 omnivore / 0 carnivore |
+| plant biomass | 2,127 |
+| living species | 5 (of 766 ever named) |
+| total matter | 1,273,194 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 2.073, ceiling 2.75 |
+| genetic variance | 0.0123 |
+| warnings | omnivore population critically low (7) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Dorylox caeruleum campestris | 101 | 0.170 | stable |
-| Dorylox caeruleum maximus | 92 | 0.182 | growing |
-| Dorylox caeruleum insularis | 37 | 0.055 | stable |
-| Corimys fragile | 24 | 0.036 | growing |
-| Dorylox caeruleum primum | 7 | 0.089 | declining |
-| Primordium vulgare | 4 | 0.182 | declining |
+| Ursaedon caeruleum borealis | 245 | 0.110 | declining |
+| Ursaedon caeruleum maximus | 156 | 0.038 | declining |
+| Ursaedon caeruleum secundum | 93 | 0.171 | declining |
+| Ursaedon caeruleum primum | 63 | 0.106 | declining |
+| Ursaedon caeruleum tertium | 47 | 0.283 | growing |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.364 | 42% |
-| winter_torpor | 0.591 | 61% |
-| highland_lung | 0.478 | 39% |
-| shear_tooth | 0.100 | 0% |
-| gut_ferment | 0.935 | 100% |
-| tide_limb | 0.097 | 0% |
+| carrion_gut | 0.901 | 100% |
+| winter_torpor | 0.864 | 100% |
+| highland_lung | 0.875 | 100% |
+| shear_tooth | 0.762 | 95% |
+| gut_ferment | 0.909 | 100% |
+| tide_limb | 0.094 | 0% |
 
 ## Turning points
 
@@ -1879,8 +1878,39 @@
 - **Year 15401, spring** · *seeding* — Life arrives from nowhere: seeded 70 fauna at (10,210).
 - **Year 15417, autumn** · *game-master note* — Year 15417. A landmass of 3433 cells centred near (231,291) has no animals on it and 525 harvestable biomass going ungrazed, while 335 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
 - **Year 15417, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15492, summer** · *game-master note* — Year 15492. A landmass of 4584 cells centred near (0,179) has no animals on it and 140 harvestable biomass going ungrazed, while 221 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15492, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15518, winter** · *game-master note* — Year 15518. A landmass of 3445 cells centred near (231,291) has no animals on it and 602 harvestable biomass going ungrazed, while 323 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15518, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
 - **Year 15535, autumn** · *game-master note* — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 0.62 on the richest ground on the map, well under the fifty-to-a-hundred-and-twenty capacity I estimated, in a world recovered to 5,754 biomass with 81 per cent of vegetated cells harvestable. No overshoot this time -- they bred to 410 and then size fell 0.601, 0.352, 0.173, 0.121, 0.096 in nine years and the line died at 15,419. Nine years looks impossible for a gene with mut_std 0.045 until you count generations: these animals breed on a …
 - **Year 15535, autumn** · *seeding* — Life arrives from nowhere: seeded 250 fauna at (10,210).
+- **Year 15598, spring** · *game-master note* — Year 15597. A landmass of 4566 cells centred near (382,196) has no animals on it and 229 harvestable biomass going ungrazed, while 324 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15598, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (382,196).
+- **Year 15637, summer** · *game-master note* — Year 15637. A landmass of 3365 cells centred near (231,291) has no animals on it and 138 harvestable biomass going ungrazed, while 206 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15637, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15698, autumn** · *game-master note* — Year 15698. A landmass of 4584 cells centred near (0,179) has no animals on it and 1018 harvestable biomass going ungrazed, while 152 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15698, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15739, autumn** · *game-master note* — Year 15739. A landmass of 3384 cells centred near (231,291) has no animals on it and 801 harvestable biomass going ungrazed, while 564 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15739, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15778, autumn** · *game-master note* — Year 15778. A landmass of 9787 cells centred near (292,65) has no animals on it and 760 harvestable biomass going ungrazed, while 45 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15778, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (292,65).
+- **Year 15798, winter** · *game-master note* — Year 15798. A landmass of 4588 cells centred near (0,179) has no animals on it and 458 harvestable biomass going ungrazed, while 255 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15798, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15800, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 18228 (tick 36457649), belongs to a world that no longer exists. This world has been restored to year 15800 (tick 31600000) from an archive, and those 2428 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 15800, spring** · *restore* — World resumed from checkpoint at tick 31600000.
+- **Year 15800, summer** · *game-master note* — Fourth timeline branch, back to year 15,800, and I cannot tell you what killed the last one. The world ran well from the year-12,400 restore: 4,100 years, all four landmasses occupied for most of it, the watcher settling each one as it emptied, the breeding bar flat between 19.8 and 23.1, and the continent splitting in two along the way without the biosphere noticing. Then between years 16,514 and 16,523 it went 219, 191, 148, 117, 71, 31, 12, 6, 1, 0. Nine years. At year 16,500 that population was healthy by every measure I have: energy 12.8 against a bar of 21.3, thirteen per cent breeding, …
+- **Year 15840, summer** · *game-master note* — Year 15840. A landmass of 3396 cells centred near (231,291) has no animals on it and 429 harvestable biomass going ungrazed, while 253 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15840, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15906, winter** · *game-master note* — Year 15906. A landmass of 4468 cells centred near (0,179) has no animals on it and 282 harvestable biomass going ungrazed, while 197 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15906, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15942, summer** · *game-master note* — Year 15942. A landmass of 3412 cells centred near (231,291) has no animals on it and 477 harvestable biomass going ungrazed, while 345 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15942, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16043, spring** · *game-master note* — Year 16042. A landmass of 3429 cells centred near (231,291) has no animals on it and 474 harvestable biomass going ungrazed, while 304 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16043, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16142, autumn** · *game-master note* — Year 16142. A landmass of 3444 cells centred near (231,291) has no animals on it and 349 harvestable biomass going ungrazed, while 271 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16142, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16152, summer** · *game-master note* — Year 16152. A landmass of 4166 cells centred near (0,176) has no animals on it and 206 harvestable biomass going ungrazed, while 324 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16152, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,176).
 - **Year 16239, summer** · *game-master note* — Sixth extinction, year 15,568, thirty-eight years after I restored what I called the world's known-good state. 250 founders bred to 1,169, stripped flora 6,639 to 2,640, and crashed 222, 44, 2, 0. I described that seeding as the configuration this world has demonstrated it can hold, and it was not: the 241 and 585 and 229 in the record were populations that had evolved into equilibrium and were spread over the whole map, not 250 animals dropped into one disc. Every seeding I have made this session started 10 to 30 times over local carrying capacity -- 250 in radius 14 is 0.41 animals per …
 - **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (16,208).
 - **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (240,272).
@@ -1889,6 +1919,12 @@
 - **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,176).
 - **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,240).
 - **Year 16239, summer** · *tuning* — Law of nature amended: tuned energy.digest_size_min: 0.7 -> 1.0.
+- **Year 16243, winter** · *game-master note* — Year 16243. A landmass of 3460 cells centred near (231,291) has no animals on it and 417 harvestable biomass going ungrazed, while 212 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16243, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16253, winter** · *game-master note* — Year 16253. A landmass of 3896 cells centred near (0,173) has no animals on it and 659 harvestable biomass going ungrazed, while 508 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16253, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,173).
+- **Year 16343, winter** · *game-master note* — Year 16343. A landmass of 3469 cells centred near (231,291) has no animals on it and 430 harvestable biomass going ungrazed, while 194 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16343, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
 - **Year 16434, autumn** · *game-master note* — Seventh extinction, year 16,385, and the first line of the record kills my dispersal theory outright: 300 founders across six separated sites became 8,349 animals in ONE year. A 28-fold increase. Spreading them out changed nothing because each site simply grew to 1,400 on its own. Seeding density is not the variable; reproductive rate is, and no founder count I can choose avoids an overshoot when the population multiplies 28 times in a single year. Which means the thing that turns every overshoot into an extinction is the only thing left, and it is the one I flagged last check-in and declined …
 - **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (16,208).
 - **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (240,272).
@@ -1897,6 +1933,10 @@
 - **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,176).
 - **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,240).
 - **Year 16434, autumn** · *tuning* — Law of nature amended: tuned fauna.graze_floor: 0.12 -> 0.03.
+- **Year 16446, summer** · *game-master note* — Year 16446. A landmass of 3478 cells centred near (231,291) has no animals on it and 394 harvestable biomass going ungrazed, while 436 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16446, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16492, winter** · *game-master note* — Year 16492. A landmass of 4804 cells centred near (382,193) has no animals on it and 342 harvestable biomass going ungrazed, while 254 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16492, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (382,193).
 - **Year 17347, summer** · *game-master note* — The world has been dead for eight hundred years and I have reseeded it eight times, every time with an animal I invented. I never once seeded an animal this world had actually built. Two measurements changed my mind about everything I did yesterday. First, gross primary production is 180,788 biomass per year against a standing crop of 8,868 -- this world is not short of plant growth and never was, so the flora-productivity worry I raised in the PR was wrong. Second, and this is the one that matters: in every healthy archived population, mean energy sits near 12 against a breeding bar near 21, …
 - **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (16,208).
 - **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (240,272).
@@ -2197,45 +2237,45 @@
 | 12,000–12,999 | 150 | 149 | 401 | 201 | 1039 | 5683 | 9458 | 444 |
 | 13,000–13,999 | 130 | 137 | 374 | 204 | 884 | 5507 | 8775 | 455 |
 | 14,000–14,999 | 101 | 102 | 409 | 201 | 844 | 5667 | 9176 | 455 |
-| 15,000–15,999 | 58 | 53 | 279 | 112 | 531 | 3405 | 5379 | 255 |
-| 16,000–16,999 | 21 | 20 | 187 | 64 | 355 | 2388 | 3547 | 170 |
-| 17,000–17,999 | 11 | 11 | 172 | 84 | 339 | 2494 | 3599 | 166 |
-| 18,000–18,999 | 10 | 9 | 174 | 73 | 270 | 2475 | 3714 | 151 |
+| 15,000–15,999 | 93 | 84 | 368 | 151 | 677 | 4591 | 7314 | 359 |
+| 16,000–16,999 | 44 | 48 | 357 | 143 | 677 | 4568 | 7107 | 322 |
+| 17,000–17,999 | 11 | 11 | 326 | 149 | 704 | 4837 | 7318 | 322 |
+| 18,000–18,999 | 10 | 9 | 218 | 88 | 347 | 3044 | 4492 | 194 |
 | 19,000–19,999 | 0 | 0 | 87 | 40 | 136 | 1079 | 1803 | 95 |
 
-**Totals:** storm 93,228 · flood 53,334 · wildfire 13,597 · cold snap 4,832 · volcano 4,571 · meteor 2,245 · gene invented 1,699 · speciation 1,122 · extinction 1,027 · checkpoint 186 · seeding 98 · game-master note 72 · epoch 28 · intervention 14 · tuning 14
+**Totals:** storm 103,220 · flood 59,612 · wildfire 14,507 · cold snap 5,287 · volcano 5,028 · meteor 2,443 · gene invented 1,699 · speciation 1,180 · extinction 1,086 · checkpoint 189 · seeding 117 · game-master note 92 · epoch 28 · intervention 14 · tuning 14
 
 ## The last 30 entries
 
 ```
-~  Year 15469, spring — Year 15469 begins. Flora 2033; 321 herbivores, 23 omnivores, 0 carnivores across 6 living species.
-=  Year 15469, spring — Floodwaters swamp (326,216); 10 drowned. Silt will enrich the plain.
-!  Year 15469, summer — A storm gathers over (161,370).
-=  Year 15469, summer — Floodwaters swamp (227,114); 23 drowned. Silt will enrich the plain.
-=  Year 15469, summer — Floodwaters swamp (325,319); 0 drowned. Silt will enrich the plain.
-!  Year 15469, autumn — A storm gathers over (337,73).
-=  Year 15469, autumn — Floodwaters swamp (114,116); 0 drowned. Silt will enrich the plain.
-^  Year 15469, winter — Fire breaks out at (43,177).
-~  Year 15470, spring — Year 15470 begins. Flora 2357; 429 herbivores, 15 omnivores, 0 carnivores across 6 living species.
-^  Year 15470, spring — Fire breaks out at (30,171).
-!  Year 15470, spring — A storm gathers over (23,319).
-=  Year 15470, summer — Floodwaters swamp (213,97); 12 drowned. Silt will enrich the plain.
-=  Year 15470, winter — Floodwaters swamp (135,109); 0 drowned. Silt will enrich the plain.
-!  Year 15470, winter — A storm gathers over (41,304).
-!  Year 15470, winter — A storm gathers over (277,16).
-=  Year 15470, winter — Floodwaters swamp (283,258); 0 drowned. Silt will enrich the plain.
-#  Year 15470, winter — A cold snap grips the world (-0.10 temp).
-~  Year 15471, spring — Year 15471 begins. Flora 2184; 349 herbivores, 7 omnivores, 0 carnivores across 6 living species.
-^  Year 15471, spring — Fire breaks out at (290,80).
-=  Year 15471, summer — Floodwaters swamp (363,269); 10 drowned. Silt will enrich the plain.
-=  Year 15471, autumn — Floodwaters swamp (93,181); 2 drowned. Silt will enrich the plain.
-=  Year 15471, autumn — Floodwaters swamp (61,335); 0 drowned. Silt will enrich the plain.
-=  Year 15471, autumn — Floodwaters swamp (382,311); 0 drowned. Silt will enrich the plain.
-!  Year 15471, autumn — A storm gathers over (195,280).
-=  Year 15471, winter — Floodwaters swamp (301,217); 4 drowned. Silt will enrich the plain.
-~  Year 15472, spring — Year 15472 begins. Flora 2344; 316 herbivores, 12 omnivores, 0 carnivores across 6 living species.
-!  Year 15472, spring — A storm gathers over (246,18).
-!  Year 15472, spring — A storm gathers over (230,201).
-!  Year 15472, summer — A storm gathers over (83,329).
-=  Year 15472, summer — Floodwaters swamp (55,197); 6 drowned. Silt will enrich the plain.
+!  Year 18226, winter — A storm gathers over (144,323).
+~  Year 18227, spring — Year 18227 begins. Flora 32364; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+=  Year 18227, spring — Floodwaters swamp (157,267); 0 drowned. Silt will enrich the plain.
+=  Year 18227, summer — Floodwaters swamp (39,290); 0 drowned. Silt will enrich the plain.
+!  Year 18227, autumn — A storm gathers over (238,191).
+=  Year 18227, winter — Floodwaters swamp (167,224); 0 drowned. Silt will enrich the plain.
+~  Year 18228, spring — Year 18228 begins. Flora 33088; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+^  Year 18228, spring — Fire breaks out at (345,219).
+=  Year 18228, summer — Floodwaters swamp (308,132); 0 drowned. Silt will enrich the plain.
+=  Year 18228, autumn — Floodwaters swamp (377,304); 0 drowned. Silt will enrich the plain.
+!  Year 18228, winter — A storm gathers over (343,183).
+=  Year 18228, winter — Floodwaters swamp (108,214); 0 drowned. Silt will enrich the plain.
+.  Year 15800, spring — === TIMELINE BRANCH === Everything above this line, up to year 18228 (tick 36457649), belongs to a world that no longer exists. This world has been re
+.  Year 15800, spring — World resumed from checkpoint at tick 31600000.
++  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum secundum (45 individuals).
++  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum maximus (72 individuals).
++  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum primum (74 individuals).
++  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum borealis (285 individuals).
+x  Year 15800, spring — Ursaedon caeruleum campestris is extinct after 152800 ticks.
+!  Year 15800, spring — A storm gathers over (184,311).
+"  Year 15800, summer — Fourth timeline branch, back to year 15,800, and I cannot tell you what killed the last one. The world ran well from the year-12,400 restore: 4,100 ye
+=  Year 15800, summer — Floodwaters swamp (29,132); 71 drowned. Silt will enrich the plain.
+=  Year 15800, summer — Floodwaters swamp (160,168); 0 drowned. Silt will enrich the plain.
+!  Year 15800, winter — A storm gathers over (55,287).
+=  Year 15800, winter — Floodwaters swamp (367,369); 0 drowned. Silt will enrich the plain.
+~  Year 15801, spring — Year 15801 begins. Flora 2326; 1221 herbivores, 22 omnivores, 0 carnivores across 5 living species.
+^  Year 15801, spring — Fire breaks out at (272,82).
+!  Year 15801, summer — A storm gathers over (133,260).
+!  Year 15801, autumn — A storm gathers over (287,114).
+!  Year 15801, autumn — A storm gathers over (224,199).
 ```

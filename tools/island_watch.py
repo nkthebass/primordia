@@ -32,6 +32,7 @@ from __future__ import annotations
 import io
 import json
 import os
+import shutil
 import time
 import urllib.request
 
@@ -88,20 +89,37 @@ def landmasses(water_depth: np.ndarray) -> np.ndarray:
 
 
 def read_world():
-    """The newest checkpoint, retried: the sim replaces it every few seconds."""
+    """The newest checkpoint, read from a private copy, retried.
+
+    Reading the live file directly held a Windows share on it, and the simulation replaces
+    that file every few seconds with os.replace -- which fails while anyone has it open.
+    It logged "could not write the checkpoint (PermissionError: WinError 32)" twice, losing
+    a save each time.  Copying first keeps the share to the length of a file copy, and the
+    copy is what gets parsed.
+    """
+    tmp_npz, tmp_json = CKPT + ".watch.npz", CKPT + ".watch.json"
     for _ in range(5):
         try:
-            meta = json.load(io.open(CKPT + ".json", encoding="utf-8"))
-            with np.load(CKPT + ".npz") as z:
+            shutil.copyfile(CKPT + ".json", tmp_json)
+            shutil.copyfile(CKPT + ".npz", tmp_npz)
+            meta = json.load(io.open(tmp_json, encoding="utf-8"))
+            with np.load(tmp_npz) as z:
                 alive = z["fauna_alive"].astype(bool)
-                return meta, {
+                world = {
                     "x": z["fauna_x"][alive].copy(),
                     "y": z["fauna_y"][alive].copy(),
                     "water_depth": z["world_water_depth"].copy(),
                     "biomass": z["flora_biomass"].copy(),
                 }
+            return meta, world
         except Exception:
             time.sleep(3)
+        finally:
+            for p in (tmp_npz, tmp_json):
+                try:
+                    os.remove(p)
+                except OSError:
+                    pass
     return None, None
 
 

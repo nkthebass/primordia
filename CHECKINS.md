@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-16 | 15,800 | 1,043 | 1022/21/0 | 5 | 1.27319e+06 | **TIMELINE BRANCH** — restored from year 15,800 after a nine-year collapse with no identifiable cause |
+| 2026-09-16 | 16,523 | 0 | 0/0/0 | 0 | 1.27319e+06 | **THIRTEENTH EXTINCTION** — 219 → 0 in nine years from a healthy population; evidence pruned before it could be read |
 | 2026-09-15 | 15,470 | 436 | 422/14/0 | 6 | 1.27320e+06 | continent split in two; watcher settled the new landmass unprompted. Cooldown fix holds |
 | 2026-09-14 | 13,145 | 131 | 41/85/5 | 4 | 1.27324e+06 | watcher seeded the island 6× in 630 years and kept it grazed; fixed its cooldown key and the archive pruner |
 | 2026-09-14 | 12,400 | 511 | 425/85/1 | 7 | 1.27326e+06 | **TIMELINE BRANCH** — restored from year 12,400; `tools/island_watch.py` now recolonises empty islands |
@@ -745,6 +747,53 @@ able to cross shallow straits at all.
 **Unchanged and normal:** carnivores present in 309 of the last 1,200 sampled years and
 currently at a trough; breeding 9% against the 11–16% healthy band, with the bar at 22.2, below
 the 23 that would mean the ratchet.
+
+## Nine years, and no cause I can name (2026-09-16)
+
+The year-12,400 world ran well for 4,100 years. All four landmasses stayed occupied for most
+of it, the watcher settled each one as it emptied, the breeding bar stayed flat between 19.8
+and 23.1, and the continent split in two without the biosphere noticing. Then:
+
+```
+16,514  219      16,518   71      16,522    1
+16,515  191      16,519   31      16,523    0
+16,516  148      16,520   12
+16,517  117      16,521    6
+```
+
+**Nine years.** At year 16,500 that population was healthy by every measure available: energy
+12.8 against a bar of 21.3, 13% breeding, health 0.989, flora 2,644 and rising, three of four
+landmasses occupied and the fourth seeded eight years earlier.
+
+The chronicle for those nine years — **restricted to this timeline**, which matters, because
+year numbers repeat across rewinds and an unfiltered query silently mixes two worlds — holds no
+catastrophe. Volcanoes that killed nobody, floods drowning one to five each, one volcano that
+took six, and fifteen cold snaps in 130 years with five clustered in the last two decades at
+−0.10 to −0.16. Every death I can name totals about **thirty animals out of two hundred and
+fifty**. The rest simply stopped.
+
+The yearly archives for that window were pruned before I could read them, and `/api/series`
+only reaches back two hundred years. **The evidence is gone, and I am not going to invent a
+fifth mechanism to cover it.**
+
+### The pattern, which is now four deaths long
+
+This world sustains a fauna for roughly two thousand years and then loses it, with a different
+proximate cause each time: a carnivory subsidy; an island turning into an unreachable larder;
+and now nine years of nothing in particular happening to 250 animals split four ways. Small
+fragmented populations absorb ordinary bad luck until they don't.
+
+**Restored to year 15,800** — 1,480 animals across 260/619/472 with the fourth landmass empty,
+which the watcher settles within a century. Chosen over year 16,300 (441 animals, all four
+occupied) for the buffer: three times the population. No laws changed.
+
+### One repair
+
+The watcher read `checkpoint_latest.npz` directly, holding a Windows share on it while the
+simulation tried to `os.replace` that same file. It cost two saves —
+`could not write the checkpoint (PermissionError: WinError 32)` at years 13,195 and 16,555.
+It now copies the file and parses the copy, deleting it afterwards. Verified: `read_world`
+returns the current year and leaves no temp files behind.
 
 ## Incidents
 
