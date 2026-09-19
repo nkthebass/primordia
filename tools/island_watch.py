@@ -141,6 +141,20 @@ def check_once(state: dict) -> None:
     if meta is None:
         return
     tick = int(meta["tick"])
+    # A restore rewinds the world's clock, and this file outlives it.  Entries then hold
+    # seeding ticks in the future, so `tick - last` is negative, every cooldown looks
+    # unexpired, and the watcher quietly refuses to settle anything until the world grinds
+    # back past them.  That is exactly what happened after the year-15,800 restore: three of
+    # four landmasses sat empty from year 16,000 to 16,500 while entries from the dead
+    # timeline (up to tick 33.4M) blocked a world that had restarted at 31.6M.  Drop
+    # anything dated after now; those seedings belong to a world that no longer exists.
+    stale = [k for k, t in state.get("seeded", {}).items() if int(t) > tick]
+    if stale:
+        for k in stale:
+            del state["seeded"][k]
+        save_state(state)
+        log(f"tick {tick}: world rewound -- dropped {len(stale)} seeding record(s) "
+            f"dated after now ({', '.join(stale)})")
     n = len(w["x"])
     if n == 0:
         if not state.get("logged_extinct"):

@@ -6,35 +6,41 @@
 
 | | |
 |---|---|
-| year | **15,801** (winter) |
-| animals | 597 — 590 herbivore / 7 omnivore / 0 carnivore |
-| plant biomass | 2,127 |
-| living species | 5 (of 766 ever named) |
-| total matter | 1,273,194 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 2.073, ceiling 2.75 |
-| genetic variance | 0.0123 |
-| warnings | omnivore population critically low (7) |
+| year | **16,601** (winter) |
+| animals | 554 — 358 herbivore / 175 omnivore / 21 carnivore |
+| plant biomass | 2,178 |
+| living species | 11 (of 791 ever named) |
+| total matter | 1,273,184 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 2.108, ceiling 2.75 |
+| genetic variance | 0.03597 |
+| warnings | carnivore population critically low (21) |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Ursaedon caeruleum borealis | 245 | 0.110 | declining |
-| Ursaedon caeruleum maximus | 156 | 0.038 | declining |
-| Ursaedon caeruleum secundum | 93 | 0.171 | declining |
-| Ursaedon caeruleum primum | 63 | 0.106 | declining |
-| Ursaedon caeruleum tertium | 47 | 0.283 | growing |
+| Calypod acutum | 108 | 0.580 | growing |
+| Urseistoma minor | 97 | 0.166 | declining |
+| Zephouther torridum borealis | 75 | 0.114 | declining |
+| Urseistoma minor secundum | 72 | 0.077 | stable |
+| Urseistoma minor minimus | 64 | 0.068 | stable |
+| Zephouther torridum primum | 39 | 0.357 | declining |
+| Zephouther torridum australis | 27 | 0.353 | declining |
+| Xanaether tenax | 27 | 0.390 | declining |
+| Nyximys velox | 24 | 0.436 | stable |
+| Primordium vulgare | 15 | 0.354 | declining |
+| Urseistoma minor insularis | 7 | 0.081 | declining |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.901 | 100% |
-| winter_torpor | 0.864 | 100% |
-| highland_lung | 0.875 | 100% |
-| shear_tooth | 0.762 | 95% |
+| carrion_gut | 0.257 | 5% |
+| winter_torpor | 0.657 | 77% |
+| highland_lung | 0.197 | 7% |
+| shear_tooth | 0.494 | 47% |
 | gut_ferment | 0.909 | 100% |
-| tide_limb | 0.094 | 0% |
+| tide_limb | 0.072 | 0% |
 
 ## Turning points
 
@@ -1937,6 +1943,17 @@
 - **Year 16446, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
 - **Year 16492, winter** · *game-master note* — Year 16492. A landmass of 4804 cells centred near (382,193) has no animals on it and 342 harvestable biomass going ungrazed, while 254 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
 - **Year 16492, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (382,193).
+- **Year 16548, spring** · *game-master note* — Year 16547. A landmass of 3479 cells centred near (231,291) has no animals on it and 3269 harvestable biomass going ungrazed, while 130 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16548, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16600, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 17830 (tick 35660000), belongs to a world that no longer exists. This world has been restored to year 16600 (tick 33200000) from an archive, and those 1230 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 16600, spring** · *restore* — World resumed from checkpoint at tick 33200000.
+- **Year 16600, summer** · *game-master note* — Fifth timeline branch, back to year 16,600, and this death was my fault in a way the last one was not. The year-15,800 world lasted 929 years against the roughly two thousand the previous ones managed, and the archives say why: from year 16,000 to 16,500 three of the four landmasses were empty and the entire fauna was penned on one -- 180 animals, then 357, 276, 268, 184, all on a single landmass while the other three sat vacant. That is precisely the trap the watcher exists to prevent, and the watcher was running the whole time. It was blocked, by me. Its state file records the tick at which …
+- **Year 16673, summer** · *game-master note* — Year 16673. A landmass of 4163 cells centred near (383,190) has no animals on it and 152 harvestable biomass going ungrazed, while 113 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16673, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (383,190).
+- **Year 16680, spring** · *game-master note* — Year 16679. A landmass of 3183 cells centred near (231,293) has no animals on it and 101 harvestable biomass going ungrazed, while 164 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16680, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,293).
+- **Year 16710, spring** · *game-master note* — Year 16709. A landmass of 8292 cells centred near (297,56) has no animals on it and 345 harvestable biomass going ungrazed, while 68 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16710, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (297,56).
 - **Year 17347, summer** · *game-master note* — The world has been dead for eight hundred years and I have reseeded it eight times, every time with an animal I invented. I never once seeded an animal this world had actually built. Two measurements changed my mind about everything I did yesterday. First, gross primary production is 180,788 biomass per year against a standing crop of 8,868 -- this world is not short of plant growth and never was, so the flora-productivity worry I raised in the PR was wrong. Second, and this is the one that matters: in every healthy archived population, mean energy sits near 12 against a breeding bar near 21, …
 - **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (16,208).
 - **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (240,272).
@@ -2237,45 +2254,45 @@
 | 12,000–12,999 | 150 | 149 | 401 | 201 | 1039 | 5683 | 9458 | 444 |
 | 13,000–13,999 | 130 | 137 | 374 | 204 | 884 | 5507 | 8775 | 455 |
 | 14,000–14,999 | 101 | 102 | 409 | 201 | 844 | 5667 | 9176 | 455 |
-| 15,000–15,999 | 93 | 84 | 368 | 151 | 677 | 4591 | 7314 | 359 |
-| 16,000–16,999 | 44 | 48 | 357 | 143 | 677 | 4568 | 7107 | 322 |
-| 17,000–17,999 | 11 | 11 | 326 | 149 | 704 | 4837 | 7318 | 322 |
+| 15,000–15,999 | 94 | 88 | 398 | 172 | 749 | 5009 | 7988 | 389 |
+| 16,000–16,999 | 71 | 76 | 510 | 236 | 1053 | 6986 | 10726 | 514 |
+| 17,000–17,999 | 11 | 11 | 460 | 222 | 1010 | 6781 | 10302 | 464 |
 | 18,000–18,999 | 10 | 9 | 218 | 88 | 347 | 3044 | 4492 | 194 |
 | 19,000–19,999 | 0 | 0 | 87 | 40 | 136 | 1079 | 1803 | 95 |
 
-**Totals:** storm 103,220 · flood 59,612 · wildfire 14,507 · cold snap 5,287 · volcano 5,028 · meteor 2,443 · gene invented 1,699 · speciation 1,180 · extinction 1,086 · checkpoint 189 · seeding 117 · game-master note 92 · epoch 28 · intervention 14 · tuning 14
+**Totals:** storm 110,497 · flood 64,392 · wildfire 15,261 · cold snap 5,651 · volcano 5,345 · meteor 2,630 · gene invented 1,699 · speciation 1,208 · extinction 1,118 · checkpoint 192 · seeding 121 · game-master note 97 · epoch 28 · intervention 14 · tuning 14
 
 ## The last 30 entries
 
 ```
-!  Year 18226, winter — A storm gathers over (144,323).
-~  Year 18227, spring — Year 18227 begins. Flora 32364; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-=  Year 18227, spring — Floodwaters swamp (157,267); 0 drowned. Silt will enrich the plain.
-=  Year 18227, summer — Floodwaters swamp (39,290); 0 drowned. Silt will enrich the plain.
-!  Year 18227, autumn — A storm gathers over (238,191).
-=  Year 18227, winter — Floodwaters swamp (167,224); 0 drowned. Silt will enrich the plain.
-~  Year 18228, spring — Year 18228 begins. Flora 33088; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-^  Year 18228, spring — Fire breaks out at (345,219).
-=  Year 18228, summer — Floodwaters swamp (308,132); 0 drowned. Silt will enrich the plain.
-=  Year 18228, autumn — Floodwaters swamp (377,304); 0 drowned. Silt will enrich the plain.
-!  Year 18228, winter — A storm gathers over (343,183).
-=  Year 18228, winter — Floodwaters swamp (108,214); 0 drowned. Silt will enrich the plain.
-.  Year 15800, spring — === TIMELINE BRANCH === Everything above this line, up to year 18228 (tick 36457649), belongs to a world that no longer exists. This world has been re
-.  Year 15800, spring — World resumed from checkpoint at tick 31600000.
-+  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum secundum (45 individuals).
-+  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum maximus (72 individuals).
-+  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum primum (74 individuals).
-+  Year 15800, spring — A new subspecies splits from Ursaedon caeruleum campestris: Ursaedon caeruleum borealis (285 individuals).
-x  Year 15800, spring — Ursaedon caeruleum campestris is extinct after 152800 ticks.
-!  Year 15800, spring — A storm gathers over (184,311).
-"  Year 15800, summer — Fourth timeline branch, back to year 15,800, and I cannot tell you what killed the last one. The world ran well from the year-12,400 restore: 4,100 ye
-=  Year 15800, summer — Floodwaters swamp (29,132); 71 drowned. Silt will enrich the plain.
-=  Year 15800, summer — Floodwaters swamp (160,168); 0 drowned. Silt will enrich the plain.
-!  Year 15800, winter — A storm gathers over (55,287).
-=  Year 15800, winter — Floodwaters swamp (367,369); 0 drowned. Silt will enrich the plain.
-~  Year 15801, spring — Year 15801 begins. Flora 2326; 1221 herbivores, 22 omnivores, 0 carnivores across 5 living species.
-^  Year 15801, spring — Fire breaks out at (272,82).
-!  Year 15801, summer — A storm gathers over (133,260).
-!  Year 15801, autumn — A storm gathers over (287,114).
-!  Year 15801, autumn — A storm gathers over (224,199).
+=  Year 17829, autumn — Floodwaters swamp (181,193); 0 drowned. Silt will enrich the plain.
+!  Year 17829, winter — A storm gathers over (209,193).
+^  Year 17829, winter — Fire breaks out at (332,67).
+!  Year 17829, winter — A storm gathers over (301,128).
+!  Year 17829, winter — A storm gathers over (25,223).
+~  Year 17830, spring — Year 17830 begins. Flora 28475; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
+.  Year 16600, spring — === TIMELINE BRANCH === Everything above this line, up to year 17830 (tick 35660000), belongs to a world that no longer exists. This world has been re
+.  Year 16600, spring — World resumed from checkpoint at tick 33200000.
++  Year 16600, spring — A new subspecies splits from Zephouther torridum australis: Xanaether tenax (20 individuals).
++  Year 16600, spring — A new subspecies splits from Zephouther torridum australis: Calypod acutum (13 individuals).
+V  Year 16600, spring — A volcano erupts at (245,64): 2 creatures and 245 plants destroyed, a wide ash ring left fertile.
+"  Year 16600, summer — Fifth timeline branch, back to year 16,600, and this death was my fault in a way the last one was not. The year-15,800 world lasted 929 years against 
+^  Year 16600, summer — Fire breaks out at (383,138).
+!  Year 16600, summer — A storm gathers over (333,123).
+!  Year 16600, summer — A storm gathers over (107,258).
+=  Year 16600, summer — Floodwaters swamp (129,343); 0 drowned. Silt will enrich the plain.
+x  Year 16600, autumn — Urseistoma minor alpinus is extinct after 16600 ticks.
+=  Year 16600, autumn — Floodwaters swamp (111,226); 0 drowned. Silt will enrich the plain.
+x  Year 16600, autumn — Urseistoma minor maximus is extinct after 9800 ticks.
+=  Year 16600, autumn — Floodwaters swamp (243,185); 0 drowned. Silt will enrich the plain.
+!  Year 16600, autumn — A storm gathers over (334,241).
+=  Year 16600, autumn — Floodwaters swamp (242,121); 0 drowned. Silt will enrich the plain.
+=  Year 16600, winter — Floodwaters swamp (183,113); 0 drowned. Silt will enrich the plain.
+~  Year 16601, spring — Year 16601 begins. Flora 2001; 632 herbivores, 244 omnivores, 16 carnivores across 11 living species.
+=  Year 16601, spring — Floodwaters swamp (98,153); 0 drowned. Silt will enrich the plain.
+=  Year 16601, spring — Floodwaters swamp (189,66); 12 drowned. Silt will enrich the plain.
+!  Year 16601, summer — A storm gathers over (155,272).
+!  Year 16601, summer — A storm gathers over (31,316).
+=  Year 16601, autumn — Floodwaters swamp (231,170); 0 drowned. Silt will enrich the plain.
+!  Year 16601, autumn — A storm gathers over (62,318).
 ```

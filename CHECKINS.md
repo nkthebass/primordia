@@ -9,6 +9,8 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-19 | 16,600 | 892 | 632/244/16 | 11 | 1.27318e+06 | **TIMELINE BRANCH** — restored; fixed the watcher being blocked by its own pre-rewind state |
+| 2026-09-17 | 16,729 | 0 | 0/0/0 | 0 | 1.27318e+06 | **FOURTEENTH EXTINCTION** — 929 years; three landmasses sat empty for 500 of them because the watcher was blocked |
 | 2026-09-16 | 15,800 | 1,043 | 1022/21/0 | 5 | 1.27319e+06 | **TIMELINE BRANCH** — restored from year 15,800 after a nine-year collapse with no identifiable cause |
 | 2026-09-16 | 16,523 | 0 | 0/0/0 | 0 | 1.27319e+06 | **THIRTEENTH EXTINCTION** — 219 → 0 in nine years from a healthy population; evidence pruned before it could be read |
 | 2026-09-15 | 15,470 | 436 | 422/14/0 | 6 | 1.27320e+06 | continent split in two; watcher settled the new landmass unprompted. Cooldown fix holds |
@@ -794,6 +796,52 @@ simulation tried to `os.replace` that same file. It cost two saves —
 `could not write the checkpoint (PermissionError: WinError 32)` at years 13,195 and 16,555.
 It now copies the file and parses the copy, deleting it afterwards. Verified: `read_world`
 returns the current year and leaves no temp files behind.
+
+## The watcher was blocked by its own memory of a dead world (2026-09-19)
+
+The year-15,800 world lasted **929 years**, against roughly two thousand for the ones before
+it, and the archives say why:
+
+| year | animals per landmass |
+|---:|---|
+| 16,000 | **180 / 0 / 0 / 0** |
+| 16,100 | **357 / 0 / 0 / 0** |
+| 16,300 | **268 / 0 / 0 / 0** |
+| 16,500 | **213 / 0 / 0 / 0** |
+
+Three of four landmasses empty for five hundred years, the entire fauna penned on one. That is
+exactly the trap `island_watch` exists to prevent, and it was running the whole time.
+
+**It was blocked, by me.** Its state file records the tick at which each landmass was last
+seeded, and that file outlives a restore. Rewinding the world to year 15,800 set the clock back
+to tick 31,600,000 while the file still held seedings from the dead timeline dated as late as
+tick **33,418,000**. The cooldown test is `tick - last < COOLDOWN_TICKS`; with `last` in the
+future that difference is negative, so every cooldown looked unexpired and the watcher declined
+to settle anything until the world ground back past those ticks. It logged nothing, because a
+cooldown is not an error. By the time it could act the population was down to 130, then 113,
+then 68, and the ungrazed island's flora had reached 3,269.
+
+**The fix:** any seeding record dated after the current tick belongs to a world that no longer
+exists, so it is dropped, with a line in the log. This restore is itself the test — year 16,600
+is tick 33,200,000 and three records sat above it. Dry-run against the restored checkpoint:
+`dropped 3 seeding record(s) dated after now (14:18, 23:11, 18:3)`, then correctly seeds
+nothing because all four landmasses are occupied.
+
+### The watcher's log is not timeline-aware either
+
+Its year numbers repeat across rewinds exactly as the Chronicle's do. Entries for years 15,840
+through 16,492 belong to the *previous* world, not the one that died. **Only the lines after the
+most recent `island_watch started` describe the world now running** — reading that file without
+this in mind cost an hour of wrong conclusions.
+
+### The restore
+
+Year 16,600: 1,192 animals across 326/229/226/258, every landmass occupied, energy 10.8 against
+a bar of 20.6, health 0.990, all arrays finite. No laws changed. Dead world kept as
+`archive/pre-restore-dead-world-y17829`.
+
+**The two-day gap:** the simulation and the watcher both stopped around 2026-09-17 10:53 with an
+empty error log — a machine shutdown, not a failure. Neither restarts itself.
 
 ## Incidents
 
