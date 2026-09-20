@@ -9,6 +9,7 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-20 | 18,169 | 80 | 62/4/0 | 2 | 1.27316e+06 | fixed the watcher merging two landmasses across the wrap seam into one cooldown |
 | 2026-09-19 | 16,600 | 892 | 632/244/16 | 11 | 1.27318e+06 | **TIMELINE BRANCH** — restored; fixed the watcher being blocked by its own pre-rewind state |
 | 2026-09-17 | 16,729 | 0 | 0/0/0 | 0 | 1.27318e+06 | **FOURTEENTH EXTINCTION** — 929 years; three landmasses sat empty for 500 of them because the watcher was blocked |
 | 2026-09-16 | 15,800 | 1,043 | 1022/21/0 | 5 | 1.27319e+06 | **TIMELINE BRANCH** — restored from year 15,800 after a nine-year collapse with no identifiable cause |
@@ -842,6 +843,41 @@ a bar of 20.6, health 0.990, all arrays finite. No laws changed. Dead world kept
 
 **The two-day gap:** the simulation and the watcher both stopped around 2026-09-17 10:53 with an
 empty error log — a machine shutdown, not a failure. Neither restarts itself.
+
+## Two landmasses, one cooldown (2026-09-20)
+
+The world is alive at year 18,169 but three of its four landmasses were empty at once, the
+whole fauna crowded onto the smallest (3,311 cells) while the other three held 94% of the food.
+The watcher was not blocked this time — but it was settling that pair at half the intended rate,
+because of a flaw in the matching rule I added on 2026-09-14.
+
+That rule treats an earlier seeding as "the same landmass" if it lies within 40 cells. The map
+wraps in x, and two genuinely separate landmasses have interiors **32 cells apart across the
+seam**:
+
+| landmass | cells | interior | key |
+|---:|---:|---|---|
+| 3 | 3,992 | (2,181) | `0:11` |
+| 4 | 3,986 | (361,201) | `22:12` |
+
+`dx = 25, dy = 20, distance = 32.0` — under the threshold, so they shared one hundred-year
+clock and were settled alternately instead of each on its own schedule. They are separated by
+deep water and between them hold three quarters of the world's food, which is the wrong pair to
+economise on.
+
+**The fix is identity before proximity.** If the remembered point still sits on walkable ground,
+only the *same* landmass counts; distance is the fallback for when that ground has eroded away.
+Verified against the live checkpoint: the three empty landmasses now match `18:4`, `0:11` and
+`22:12` separately, where before two collapsed onto one. On restart the watcher immediately
+settled the largest (8,415 cells, 40 founders at (296,64)).
+
+### A reading I got wrong, and the correction
+
+I opened this check-in describing a collapse: 384 animals at year 17,366 down to 66. It is not a
+decline. The population sawtooths violently — 108, 93, 183, 281, 216, 114, 92, 171, 231, 160,
+89, 80 across twelve consecutive years — and over the last 800 years it has swung between 61 and
+879 with no trend. Two points on that curve prove nothing, which is exactly what the check-in
+instructions warn about.
 
 ## Incidents
 

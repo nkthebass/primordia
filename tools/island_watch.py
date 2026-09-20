@@ -196,9 +196,20 @@ def check_once(state: dict) -> None:
             except ValueError:
                 continue
             px, py = kx * 16 + 8, ky * 16 + 8
-            dx = min(abs(px - ix), G - abs(px - ix))           # x wraps
-            same = (dx * dx + (py - iy) ** 2 <= MATCH_CELLS ** 2
-                    or L[min(max(py, 0), G - 1), px % G] == c)
+            # Identity first, proximity only as a fallback.  Distance alone merged two
+            # different landmasses whose interiors sit 32 cells apart ACROSS THE WRAP SEAM
+            # -- (2,181) and (361,201), 3,992 and 3,986 cells, separated by deep water --
+            # so the pair shared one cooldown and each got settled half as often as
+            # intended, which is the wrong half to economise on when between them they hold
+            # three quarters of the world's food.  If the remembered point still sits on
+            # walkable ground, only the same landmass counts; if its ground has eroded
+            # away, fall back to distance.
+            label_there = int(L[min(max(py, 0), G - 1), px % G])
+            if label_there:
+                same = label_there == c
+            else:
+                dx = min(abs(px - ix), G - abs(px - ix))       # x wraps
+                same = dx * dx + (py - iy) ** 2 <= MATCH_CELLS ** 2
             if same:
                 last = max(last, int(t))
         if tick - last < COOLDOWN_TICKS:
