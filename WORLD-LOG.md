@@ -6,36 +6,31 @@
 
 | | |
 |---|---|
-| year | **15,536** (spring) |
-| animals | 1,170 — 1,169 herbivore / 1 omnivore / 0 carnivore |
-| plant biomass | 6,639 |
-| living species | 2 (of 680 ever named) |
-| total matter | 1,273,222 — the world is closed, so this should not move |
-| predator niche | open — needs attack power 0.721, ceiling 1.95 |
-| genetic variance | 0.01041 |
-| warnings | omnivore population critically low (1) |
+| year | **18,171** (spring) |
+| animals | 110 — 91 herbivore / 19 omnivore / 0 carnivore |
+| plant biomass | 2,360 |
+| living species | 1 (of 864 ever named) |
+| total matter | 1,273,164 — the world is closed, so this should not move |
+| predator niche | open — needs attack power 1.146, ceiling 2.75 |
+| genetic variance | 0.01243 |
+| warnings | omnivore population critically low (19); monoculture: Myryphor silvae occidentalis is 100% of all fauna |
 
 ### Living species
 
 | species | population | mean diet | trend |
 |---|---:|---:|---|
-| Ursycus nigrum | 732 | 0.077 | growing |
-| Nyxeidens profundum | 438 | 0.074 | growing |
+| Myryphor silvae occidentalis | 110 | 0.198 | stable |
 
 ### Genes that evolution did not invent
 
 | gene | mean | carried by |
 |---|---:|---:|
-| carrion_gut | 0.040 | 0% |
-| winter_torpor | 0.299 | 1% |
-| highland_lung | 0.101 | 0% |
-| shear_tooth | 0.042 | 0% |
-| gut_ferment | 0.887 | 100% |
-| tide_limb | 0.060 | 0% |
-| mariner | 0.065 | 0% |
-| nocturne | 0.350 | 5% |
-| sunleech | 0.502 | 49% |
-| broad_crop | 0.361 | 5% |
+| carrion_gut | 0.061 | 0% |
+| winter_torpor | 0.580 | 72% |
+| highland_lung | 0.349 | 10% |
+| shear_tooth | 0.617 | 87% |
+| gut_ferment | 0.842 | 97% |
+| tide_limb | 0.102 | 0% |
 
 ## Turning points
 
@@ -262,14 +257,226 @@
 - **Year 10210, summer** · *gene invented* — Resources back under caps; easing throttle to level 0.
 - **Year 11170, summer** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 11170 (tick 22341187), belongs to a world that no longer exists. This world has been restored to year 11170 (tick 22340801) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 11170, summer** · *restore* — World resumed from checkpoint at tick 22340801.
+- **Year 11900, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 15042 (tick 30085890), belongs to a world that no longer exists. This world has been restored to year 11900 (tick 23800000) from an archive, and those 3142 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 11900, spring** · *restore* — World resumed from checkpoint at tick 23800000.
+- **Year 11900, summer** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11900, autumn** · *game-master note* — Second timeline branch in a day, and this one is back to year 11,900. The year-14,500 restore died at about year 14,791, and the original timeline died from that same checkpoint at 14,845: two independent runs from one state, both dead inside three hundred years, which means that population was already dying when I restored it. It was not food, not toxins and not the repro_threshold ratchet. Health held at 0.97 to 0.99, animals kept 97 to 99 per cent of the energy in what they ate, and the breeding bar fell rather than rose. It was geography. In every healthy archive, 53 to 67 per cent of all …
+- **Year 11900, autumn** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 11900, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11900, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11900, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11900, winter** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11900, winter** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11901, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 11904, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11905, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 11905, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11905, spring** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11905, summer** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11905, summer** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11905, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 11908, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11908, winter** · *gene invented* — Still over caps (GPU 82C > 80.0C); halving viewer frame rate.
+- **Year 11908, winter** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11908, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11908, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11908, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11908, winter** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11909, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11909, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 11909, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11909, autumn** · *gene invented* — Still over caps (GPU 82C > 80.0C); halving viewer frame rate.
+- **Year 11909, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11909, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11909, winter** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11910, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11910, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 11910, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11911, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 11911, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11911, spring** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11911, spring** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11911, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11911, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 11970, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 11970, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 11971, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 11971, spring** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 11971, spring** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 11971, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 11971, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
 - **Year 12306, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12306 (tick 24613366), belongs to a world that no longer exists. This world has been restored to year 12306 (tick 24612000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 12306, spring** · *restore* — World resumed from checkpoint at tick 24612000.
 - **Year 12353, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12353 (tick 24707378), belongs to a world that no longer exists. This world has been restored to year 12353 (tick 24706000) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 12353, spring** · *restore* — World resumed from checkpoint at tick 24706000.
+- **Year 12400, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 13466 (tick 26932000), belongs to a world that no longer exists. This world has been restored to year 12400 (tick 24800000) from an archive, and those 1066 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 12400, spring** · *restore* — World resumed from checkpoint at tick 24800000.
+- **Year 12400, summer** · *game-master note* — Third timeline branch, back to year 12,400, and this time the cause is not in the animals at all. The year-11,900 restore died at 13,370 with no intervention of any kind, and every explanation I had offered for the earlier deaths failed against it. Health held at 0.99, the breeding bar held at 19.6 to 21.5, diet stayed herbivorous, and sense_range was as high as 0.732 -- a ten-cell radius -- while ninety per cent of the food was still out of reach. The food was not beyond their sight. It was across the sea. Erosion and cratering have split the land into three masses, and movement blocks water …
+- **Year 12435, summer** · *game-master note* — Year 12435. A landmass of 3742 cells centred near (228,292) has no animals on it and 325 harvestable biomass going ungrazed, while 197 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 12435, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (228,292).
 - **Year 12457, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 12457 (tick 24914892), belongs to a world that no longer exists. This world has been restored to year 12457 (tick 24914457) from an archive, and those 0 years will now be lived again differently. Year numbers above and below this line refer to different histories.
 - **Year 12457, spring** · *restore* — World resumed from checkpoint at tick 24914457.
 - **Year 12508, summer** · *intervention* — A new heritable trait appears in the fauna: **spikes** (init 0.05±0.05, mutation 0.05) — armor_eff add +0.6; move_cost mul_per_unit +0.25; basal_cost mul_per_unit +0.12.
+- **Year 12557, summer** · *game-master note* — Year 12557. A landmass of 3747 cells centred near (228,292) has no animals on it and 188 harvestable biomass going ungrazed, while 346 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 12557, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (228,292).
+- **Year 12660, spring** · *game-master note* — Year 12659. A landmass of 3757 cells centred near (229,291) has no animals on it and 509 harvestable biomass going ungrazed, while 551 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 12660, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (229,291).
+- **Year 12686, autumn** · *gene invented* — Resource caps breached (CPU 100% > 80.0%); lowering max population to 18000.
+- **Year 12686, autumn** · *gene invented* — Still over caps (CPU 100% > 80.0%); halving viewer frame rate.
+- **Year 12686, autumn** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 12686, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 12833, autumn** · *game-master note* — Year 12833. A landmass of 3657 cells centred near (231,287) has no animals on it and 217 harvestable biomass going ungrazed, while 330 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 12833, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,287).
+- **Year 13020, autumn** · *game-master note* — Year 13020. A landmass of 3682 cells centred near (233,286) has no animals on it and 303 harvestable biomass going ungrazed, while 250 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13020, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (233,286).
 - **Year 13025, autumn** · *game-master note* — Year 13023. Doing nothing, deliberately, and recording why — because what has happened here in the last five hundred years is the most interesting thing this world has produced and it happened without me. At year 12508 a spike gene was added from outside: +0.6 effective armour per unit, paid for with twelve per cent basal and twenty-five per cent movement. I expected one of two dull outcomes. Either it would be stripped out as pure cost, since almost nothing was hunting, or it would sweep and shut the predator niche for good, because defence is amplified by the kill margin and attack is not, …
+- **Year 13066, spring** · *game-master note* — Year 13065. A landmass of 3690 cells centred near (230,288) has no animals on it and 169 harvestable biomass going ungrazed, while 422 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13066, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,288).
+- **Year 13143, spring** · *restore* — World resumed from checkpoint at tick 26286000.
+- **Year 13166, autumn** · *game-master note* — Year 13166. A landmass of 3654 cells centred near (232,288) has no animals on it and 802 harvestable biomass going ungrazed, while 268 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13166, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,288).
+- **Year 13274, spring** · *game-master note* — Year 13273. A landmass of 3651 cells centred near (232,288) has no animals on it and 174 harvestable biomass going ungrazed, while 313 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13274, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,288).
+- **Year 13375, spring** · *game-master note* — Year 13374. A landmass of 3664 cells centred near (232,288) has no animals on it and 835 harvestable biomass going ungrazed, while 266 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13375, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,288).
 - **Year 13449, summer** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
 - **Year 13449, summer** · *gene invented* — Resources back under caps; easing throttle to level 0.
 - **Year 13449, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
@@ -1413,6 +1620,26 @@
 - **Year 13450, spring** · *gene invented* — Still over caps (GPU 82C > 80.0C); capping simulation to 4 ticks/s.
 - **Year 13450, spring** · *restore* — World resumed from checkpoint at tick 26900125.
 - **Year 13450, summer** · *game-master note* — Year 13450. The arms race is over and the prey won it. Recording the result and changing nothing, because the change that would reopen the niche is not mine to make. What happened between years 13091 and 13190 is the most successful predator era this world has ever had: carnivores held every single year for a hundred years and peaked at 443, against a previous record of 729 spread across two centuries. Then it ended. Since year 13191 the tier has been effectively absent for two hundred and sixty years -- a handful of single individuals in 13211, 13231, 13371, and nothing else. That is far …
+- **Year 13476, spring** · *game-master note* — Year 13475. A landmass of 3677 cells centred near (231,289) has no animals on it and 586 harvestable biomass going ungrazed, while 290 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13476, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,289).
+- **Year 13575, autumn** · *game-master note* — Year 13575. A landmass of 3687 cells centred near (231,289) has no animals on it and 569 harvestable biomass going ungrazed, while 612 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13575, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,289).
+- **Year 13641, autumn** · *gene invented* — Resource caps breached (CPU 89% > 80.0%); lowering max population to 18000.
+- **Year 13641, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 13642, summer** · *gene invented* — Resource caps breached (CPU 83% > 80.0%); lowering max population to 18000.
+- **Year 13642, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 13643, spring** · *gene invented* — Resource caps breached (CPU 84% > 80.0%); lowering max population to 18000.
+- **Year 13643, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 13643, summer** · *gene invented* — Resource caps breached (CPU 100% > 80.0%); lowering max population to 18000.
+- **Year 13643, autumn** · *gene invented* — Still over caps (CPU 87% > 80.0%); halving viewer frame rate.
+- **Year 13643, autumn** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 13643, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 13643, winter** · *gene invented* — Resource caps breached (CPU 93% > 80.0%); lowering max population to 18000.
+- **Year 13643, winter** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 13676, summer** · *game-master note* — Year 13676. A landmass of 3699 cells centred near (230,290) has no animals on it and 399 harvestable biomass going ungrazed, while 549 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13676, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 13777, winter** · *game-master note* — Year 13777. A landmass of 3621 cells centred near (234,287) has no animals on it and 762 harvestable biomass going ungrazed, while 208 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13777, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,287).
 - **Year 13814, summer** · *game-master note* — Year 13759. The world is empty of animals and I am refounding it, but not as it was. What killed the last biosphere is worth stating because it shapes everything below: the prey won their arms race and then died of their own armour. spikes fixed at 0.86 and cost twelve per cent basal and twenty-five per cent movement; once the predators were gone that was a permanent tax on every animal for a benefit that no longer existed, stacked on gut_ferment, winter_torpor, highland_lung and carrion_gut which were all still being carried and paid for. The last eight animals ran a basal upkeep multiplier …
 - **Year 13814, summer** · *intervention* — **spikes** is retired: its 3 effect(s) no longer act on the world. The gene stays in the genome as junk DNA and its frequencies remain on the record.
 - **Year 13814, summer** · *intervention* — A new heritable trait appears in the fauna: **mariner** (init 0.08±0.06, mutation 0.05) — swim_eff add +0.9; move_cost mul_per_unit -0.3 when {'in_water': True}; detectability add -0.4 when {'in_water': True}; basal_cost mul_per_unit +0.12 when {'in_water': False}.
@@ -1421,6 +1648,16 @@
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 200 fauna at (249,260).
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 350 fauna at (322,131).
 - **Year 13814, summer** · *seeding* — Life arrives from nowhere: seeded 600 fauna at (249,260).
+- **Year 13878, summer** · *game-master note* — Year 13878. A landmass of 3629 cells centred near (234,287) has no animals on it and 469 harvestable biomass going ungrazed, while 469 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13878, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,287).
+- **Year 13981, summer** · *game-master note* — Year 13981. A landmass of 3628 cells centred near (234,287) has no animals on it and 584 harvestable biomass going ungrazed, while 232 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 13981, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,287).
+- **Year 14083, summer** · *game-master note* — Year 14083. A landmass of 3515 cells centred near (234,288) has no animals on it and 385 harvestable biomass going ungrazed, while 366 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14083, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,288).
+- **Year 14183, winter** · *game-master note* — Year 14183. A landmass of 3494 cells centred near (234,288) has no animals on it and 395 harvestable biomass going ungrazed, while 340 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14183, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,288).
+- **Year 14284, summer** · *game-master note* — Year 14284. A landmass of 3491 cells centred near (234,288) has no animals on it and 900 harvestable biomass going ungrazed, while 373 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14284, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (234,288).
 - **Year 14360, winter** · *game-master note* — Second extinction in 300 years, and the reseed did not fail the way I thought. I read the first death as prey dying of their own armour and the refounding as a trophic-collapse. It was neither. At year 13,900 the whole world had diet mean 0.891 and MINIMUM 0.596 -- not one plant-eater left alive anywhere -- with 6,751 biomass of uneaten flora standing over them. By 14,000 it was mean 0.955, minimum 0.857, 41 animals, flora 10,264 and still climbing. They did not starve for lack of food. They starved standing in a meadow because every one of them had evolved to be unable to eat it. The cause …
 - **Year 14360, winter** · *intervention* — A new heritable trait appears in the fauna: **broad_crop** (init 0.06±0.06, mutation 0.04) — bite_size mul_per_unit +1.1; attack_power add -0.8; move_cost mul_per_unit +0.35.
 - **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 380 fauna at (228,60).
@@ -1428,6 +1665,197 @@
 - **Year 14360, winter** · *seeding* — Life arrives from nowhere: seeded 420 fauna at (12,204).
 - **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.carnivore_basal_discount: 0.5 -> 0.12.
 - **Year 14360, winter** · *tuning* — Law of nature amended: tuned energy.gorge_meat: 4.0 -> 2.5.
+- **Year 14386, winter** · *game-master note* — Year 14386. A landmass of 3428 cells centred near (233,289) has no animals on it and 508 harvestable biomass going ungrazed, while 194 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14386, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (233,289).
+- **Year 14486, summer** · *game-master note* — Year 14486. A landmass of 3399 cells centred near (231,290) has no animals on it and 398 harvestable biomass going ungrazed, while 125 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14486, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 14500, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 19491 (tick 38982376), belongs to a world that no longer exists. This world has been restored to year 14500 (tick 29000000) from an archive, and those 4991 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 14500, spring** · *restore* — World resumed from checkpoint at tick 29000000.
+- **Year 14501, summer** · *game-master note* — Timeline branch. After ten failed seedings and roughly five thousand years of an empty world, I stopped trying to found a biosphere and restored one. This world is running again from its own year 14,500 checkpoint: 377 animals across 8 species with a mean repro_threshold of 0.182, verified finite in every array before the restore. The dead state at year 19,490 is preserved as archive/pre-restore-dead-world-y19490 and the Chronicle keeps every entry from the years that were rewound; nothing is erased, the world simply resumes from the last point at which it was alive. What the ten failures …
+- **Year 14587, spring** · *game-master note* — Year 14586. A landmass of 3390 cells centred near (231,290) has no animals on it and 784 harvestable biomass going ungrazed, while 314 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14587, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 14686, autumn** · *game-master note* — Year 14686. A landmass of 3382 cells centred near (231,290) has no animals on it and 620 harvestable biomass going ungrazed, while 437 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14686, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 14694, spring** · *gene invented* — Resource caps breached (CPU 96% > 80.0%); lowering max population to 18000.
+- **Year 14694, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14719, spring** · *gene invented* — Resource caps breached (CPU 86% > 80.0%); lowering max population to 18000.
+- **Year 14719, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14725, winter** · *gene invented* — Resource caps breached (CPU 80% > 80.0%); lowering max population to 18000.
+- **Year 14725, winter** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14726, spring** · *gene invented* — Resource caps breached (CPU 88% > 80.0%); lowering max population to 18000.
+- **Year 14726, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 14727, winter** · *gene invented* — Resource caps breached (CPU 91% > 80.0%); lowering max population to 18000.
+- **Year 14728, spring** · *restore* — World resumed from checkpoint at tick 29456000.
+- **Year 14786, winter** · *game-master note* — Year 14786. A landmass of 3391 cells centred near (232,290) has no animals on it and 538 harvestable biomass going ungrazed, while 510 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14786, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,290).
+- **Year 14915, spring** · *game-master note* — Year 14914. A landmass of 3398 cells centred near (232,290) has no animals on it and 168 harvestable biomass going ungrazed, while 246 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14915, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,290).
+- **Year 14978, autumn** · *game-master note* — Year 14978. A landmass of 4602 cells centred near (0,178) has no animals on it and 162 harvestable biomass going ungrazed, while 94 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 14978, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,178).
+- **Year 15014, winter** · *game-master note* — Year 15014. A landmass of 3408 cells centred near (232,290) has no animals on it and 488 harvestable biomass going ungrazed, while 287 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15014, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (232,290).
+- **Year 15040, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15041, spring** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 15041, summer** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 15041, summer** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 15041, summer** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 15041, summer** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 15041, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15041, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15042, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15042, spring** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15042, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 15042, winter** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 15114, winter** · *game-master note* — Year 15114. A landmass of 3409 cells centred near (230,291) has no animals on it and 476 harvestable biomass going ungrazed, while 415 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15114, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,291).
+- **Year 15137, spring** · *game-master note* — Year 15136. A landmass of 5249 cells centred near (383,192) has no animals on it and 143 harvestable biomass going ungrazed, while 345 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15137, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (383,192).
+- **Year 15215, summer** · *game-master note* — Year 15215. A landmass of 3418 cells centred near (230,291) has no animals on it and 398 harvestable biomass going ungrazed, while 295 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15215, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,291).
 - **Year 15227, autumn** · *game-master note* — Third extinction, year 14,845, and the fix from last time held -- this was a different disease and I think it is the oldest one in the world. Diet stayed at 0.117-0.130 across the whole 300-year decline with flora climbing 1,666 -> 3,748 -> 17,297, so nothing converted itself into a carnivore this time. What killed them was body size. Seeded at 0.38-0.45, the population was at 0.072 by year 14,500 and 0.070 by 14,800, against a floor of 0.05. A 0.07 animal has a 0.07 mouthful: measured energy was 13.08 against a breeding bar of 22.2, and it sat 40 per cent short for three centuries while the …
 - **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (12,204).
 - **Year 15227, autumn** · *seeding* — Life arrives from nowhere: seeded 300 fauna at (252,276).
@@ -1438,10 +1866,339 @@
 - **Year 15277, spring** · *seeding* — Life arrives from nowhere: seeded 400 fauna at (12,204).
 - **Year 15277, spring** · *tuning* — Law of nature amended: tuned fauna.reach_size_min: 99.0 -> 0.0.
 - **Year 15277, spring** · *tuning* — Law of nature amended: tuned fauna.reach_size_span: 1.0 -> 0.7.
+- **Year 15317, winter** · *game-master note* — Year 15317. A landmass of 3426 cells centred near (231,291) has no animals on it and 553 harvestable biomass going ungrazed, while 514 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15317, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15365, summer** · *game-master note* — Year 15365. A landmass of 4579 cells centred near (0,178) has no animals on it and 258 harvestable biomass going ungrazed, while 126 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15365, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,178).
 - **Year 15401, spring** · *game-master note* — Fourth extinction, year 15,334, and this one was mine. I have been reseeding 900 to 1,180 animals at size 0.38 to 0.62 and calling the result an experiment. The world's own record says what it carries: 241 animals at year 13,900, 585 at 14,548, 229 at 14,800 -- roughly 250 to 600, and all of those at a body size of about 0.07. Basal cost scales as size^0.75, so a 0.60 animal costs five times a 0.07 one, which puts the capacity at fifty to a hundred and twenty large animals. Two hours ago I seeded four hundred of them into a world already holding five hundred and ninety small ones. That is …
 - **Year 15401, spring** · *seeding* — Life arrives from nowhere: seeded 70 fauna at (10,210).
+- **Year 15417, autumn** · *game-master note* — Year 15417. A landmass of 3433 cells centred near (231,291) has no animals on it and 525 harvestable biomass going ungrazed, while 335 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15417, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15492, summer** · *game-master note* — Year 15492. A landmass of 4584 cells centred near (0,179) has no animals on it and 140 harvestable biomass going ungrazed, while 221 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15492, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15518, winter** · *game-master note* — Year 15518. A landmass of 3445 cells centred near (231,291) has no animals on it and 602 harvestable biomass going ungrazed, while 323 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15518, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
 - **Year 15535, autumn** · *game-master note* — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 0.62 on the richest ground on the map, well under the fifty-to-a-hundred-and-twenty capacity I estimated, in a world recovered to 5,754 biomass with 81 per cent of vegetated cells harvestable. No overshoot this time -- they bred to 410 and then size fell 0.601, 0.352, 0.173, 0.121, 0.096 in nine years and the line died at 15,419. Nine years looks impossible for a gene with mut_std 0.045 until you count generations: these animals breed on a …
 - **Year 15535, autumn** · *seeding* — Life arrives from nowhere: seeded 250 fauna at (10,210).
+- **Year 15598, spring** · *game-master note* — Year 15597. A landmass of 4566 cells centred near (382,196) has no animals on it and 229 harvestable biomass going ungrazed, while 324 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15598, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (382,196).
+- **Year 15637, summer** · *game-master note* — Year 15637. A landmass of 3365 cells centred near (231,291) has no animals on it and 138 harvestable biomass going ungrazed, while 206 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15637, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15698, autumn** · *game-master note* — Year 15698. A landmass of 4584 cells centred near (0,179) has no animals on it and 1018 harvestable biomass going ungrazed, while 152 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15698, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15739, autumn** · *game-master note* — Year 15739. A landmass of 3384 cells centred near (231,291) has no animals on it and 801 harvestable biomass going ungrazed, while 564 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15739, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15778, autumn** · *game-master note* — Year 15778. A landmass of 9787 cells centred near (292,65) has no animals on it and 760 harvestable biomass going ungrazed, while 45 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15778, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (292,65).
+- **Year 15798, winter** · *game-master note* — Year 15798. A landmass of 4588 cells centred near (0,179) has no animals on it and 458 harvestable biomass going ungrazed, while 255 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15798, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15800, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 18228 (tick 36457649), belongs to a world that no longer exists. This world has been restored to year 15800 (tick 31600000) from an archive, and those 2428 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 15800, spring** · *restore* — World resumed from checkpoint at tick 31600000.
+- **Year 15800, summer** · *game-master note* — Fourth timeline branch, back to year 15,800, and I cannot tell you what killed the last one. The world ran well from the year-12,400 restore: 4,100 years, all four landmasses occupied for most of it, the watcher settling each one as it emptied, the breeding bar flat between 19.8 and 23.1, and the continent splitting in two along the way without the biosphere noticing. Then between years 16,514 and 16,523 it went 219, 191, 148, 117, 71, 31, 12, 6, 1, 0. Nine years. At year 16,500 that population was healthy by every measure I have: energy 12.8 against a bar of 21.3, thirteen per cent breeding, …
+- **Year 15840, summer** · *game-master note* — Year 15840. A landmass of 3396 cells centred near (231,291) has no animals on it and 429 harvestable biomass going ungrazed, while 253 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15840, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 15906, winter** · *game-master note* — Year 15906. A landmass of 4468 cells centred near (0,179) has no animals on it and 282 harvestable biomass going ungrazed, while 197 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15906, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,179).
+- **Year 15942, summer** · *game-master note* — Year 15942. A landmass of 3412 cells centred near (231,291) has no animals on it and 477 harvestable biomass going ungrazed, while 345 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 15942, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16043, spring** · *game-master note* — Year 16042. A landmass of 3429 cells centred near (231,291) has no animals on it and 474 harvestable biomass going ungrazed, while 304 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16043, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16142, autumn** · *game-master note* — Year 16142. A landmass of 3444 cells centred near (231,291) has no animals on it and 349 harvestable biomass going ungrazed, while 271 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16142, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16152, summer** · *game-master note* — Year 16152. A landmass of 4166 cells centred near (0,176) has no animals on it and 206 harvestable biomass going ungrazed, while 324 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16152, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,176).
+- **Year 16239, summer** · *game-master note* — Sixth extinction, year 15,568, thirty-eight years after I restored what I called the world's known-good state. 250 founders bred to 1,169, stripped flora 6,639 to 2,640, and crashed 222, 44, 2, 0. I described that seeding as the configuration this world has demonstrated it can hold, and it was not: the 241 and 585 and 229 in the record were populations that had evolved into equilibrium and were spread over the whole map, not 250 animals dropped into one disc. Every seeding I have made this session started 10 to 30 times over local carrying capacity -- 250 in radius 14 is 0.41 animals per …
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (16,208).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (240,272).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (272,48).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (336,80).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,176).
+- **Year 16239, summer** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,240).
+- **Year 16239, summer** · *tuning* — Law of nature amended: tuned energy.digest_size_min: 0.7 -> 1.0.
+- **Year 16243, winter** · *game-master note* — Year 16243. A landmass of 3460 cells centred near (231,291) has no animals on it and 417 harvestable biomass going ungrazed, while 212 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16243, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16253, winter** · *game-master note* — Year 16253. A landmass of 3896 cells centred near (0,173) has no animals on it and 659 harvestable biomass going ungrazed, while 508 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16253, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,173).
+- **Year 16343, winter** · *game-master note* — Year 16343. A landmass of 3469 cells centred near (231,291) has no animals on it and 430 harvestable biomass going ungrazed, while 194 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16343, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16434, autumn** · *game-master note* — Seventh extinction, year 16,385, and the first line of the record kills my dispersal theory outright: 300 founders across six separated sites became 8,349 animals in ONE year. A 28-fold increase. Spreading them out changed nothing because each site simply grew to 1,400 on its own. Seeding density is not the variable; reproductive rate is, and no founder count I can choose avoids an overshoot when the population multiplies 28 times in a single year. Which means the thing that turns every overshoot into an extinction is the only thing left, and it is the one I flagged last check-in and declined …
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (16,208).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (240,272).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (272,48).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (336,80).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,176).
+- **Year 16434, autumn** · *seeding* — Life arrives from nowhere: seeded 20 fauna at (368,240).
+- **Year 16434, autumn** · *tuning* — Law of nature amended: tuned fauna.graze_floor: 0.12 -> 0.03.
+- **Year 16446, summer** · *game-master note* — Year 16446. A landmass of 3478 cells centred near (231,291) has no animals on it and 394 harvestable biomass going ungrazed, while 436 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16446, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16492, winter** · *game-master note* — Year 16492. A landmass of 4804 cells centred near (382,193) has no animals on it and 342 harvestable biomass going ungrazed, while 254 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16492, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (382,193).
+- **Year 16548, spring** · *game-master note* — Year 16547. A landmass of 3479 cells centred near (231,291) has no animals on it and 3269 harvestable biomass going ungrazed, while 130 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16548, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,291).
+- **Year 16600, spring** · *restore* — === TIMELINE BRANCH === Everything above this line, up to year 17830 (tick 35660000), belongs to a world that no longer exists. This world has been restored to year 16600 (tick 33200000) from an archive, and those 1230 years will now be lived again differently. Year numbers above and below this line refer to different histories.
+- **Year 16600, spring** · *restore* — World resumed from checkpoint at tick 33200000.
+- **Year 16600, summer** · *game-master note* — Fifth timeline branch, back to year 16,600, and this death was my fault in a way the last one was not. The year-15,800 world lasted 929 years against the roughly two thousand the previous ones managed, and the archives say why: from year 16,000 to 16,500 three of the four landmasses were empty and the entire fauna was penned on one -- 180 animals, then 357, 276, 268, 184, all on a single landmass while the other three sat vacant. That is precisely the trap the watcher exists to prevent, and the watcher was running the whole time. It was blocked, by me. Its state file records the tick at which …
+- **Year 16645, winter** · *game-master note* — Year 16645. A landmass of 3315 cells centred near (230,292) has no animals on it and 166 harvestable biomass going ungrazed, while 459 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16645, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,292).
+- **Year 16673, summer** · *game-master note* — Year 16673. A landmass of 4163 cells centred near (383,190) has no animals on it and 152 harvestable biomass going ungrazed, while 113 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16673, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (383,190).
+- **Year 16674, winter** · *game-master note* — Year 16674. A landmass of 8754 cells centred near (297,57) has no animals on it and 422 harvestable biomass going ungrazed, while 86 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16674, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (297,57).
+- **Year 16680, spring** · *game-master note* — Year 16679. A landmass of 3183 cells centred near (231,293) has no animals on it and 101 harvestable biomass going ungrazed, while 164 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16680, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,293).
+- **Year 16710, spring** · *game-master note* — Year 16709. A landmass of 8292 cells centred near (297,56) has no animals on it and 345 harvestable biomass going ungrazed, while 68 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16710, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (297,56).
+- **Year 16789, summer** · *game-master note* — Year 16788. A landmass of 3317 cells centred near (230,292) has no animals on it and 162 harvestable biomass going ungrazed, while 211 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16789, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,292).
+- **Year 16812, spring** · *game-master note* — Year 16811. A landmass of 4078 cells centred near (0,180) has no animals on it and 215 harvestable biomass going ungrazed, while 255 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16812, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,180).
+- **Year 16904, winter** · *game-master note* — Year 16904. A landmass of 3314 cells centred near (230,291) has no animals on it and 109 harvestable biomass going ungrazed, while 380 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 16904, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,291).
+- **Year 17005, summer** · *game-master note* — Year 17005. A landmass of 3333 cells centred near (230,291) has no animals on it and 531 harvestable biomass going ungrazed, while 125 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17005, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,291).
+- **Year 17063, winter** · *game-master note* — Year 17063. A landmass of 4239 cells centred near (383,189) has no animals on it and 143 harvestable biomass going ungrazed, while 182 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17063, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (383,189).
+- **Year 17107, spring** · *game-master note* — Year 17106. A landmass of 3343 cells centred near (230,291) has no animals on it and 268 harvestable biomass going ungrazed, while 90 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17107, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,291).
+- **Year 17165, autumn** · *game-master note* — Year 17165. A landmass of 4099 cells centred near (0,181) has no animals on it and 754 harvestable biomass going ungrazed, while 137 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17165, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,181).
+- **Year 17206, summer** · *game-master note* — Year 17206. A landmass of 3352 cells centred near (231,290) has no animals on it and 451 harvestable biomass going ungrazed, while 92 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17206, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 17282, summer** · *game-master note* — Year 17282. A landmass of 4108 cells centred near (0,181) has no animals on it and 132 harvestable biomass going ungrazed, while 329 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17282, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,181).
+- **Year 17308, spring** · *game-master note* — Year 17307. A landmass of 3309 cells centred near (231,290) has no animals on it and 414 harvestable biomass going ungrazed, while 311 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17308, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 17347, summer** · *game-master note* — The world has been dead for eight hundred years and I have reseeded it eight times, every time with an animal I invented. I never once seeded an animal this world had actually built. Two measurements changed my mind about everything I did yesterday. First, gross primary production is 180,788 biomass per year against a standing crop of 8,868 -- this world is not short of plant growth and never was, so the flora-productivity worry I raised in the PR was wrong. Second, and this is the one that matters: in every healthy archived population, mean energy sits near 12 against a breeding bar near 21, …
+- **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (16,208).
+- **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (240,272).
+- **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (272,48).
+- **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (336,80).
+- **Year 17347, summer** · *seeding* — Life arrives from nowhere: seeded 25 fauna at (368,176).
+- **Year 17408, spring** · *game-master note* — Year 17407. A landmass of 3291 cells centred near (231,290) has no animals on it and 398 harvestable biomass going ungrazed, while 317 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17408, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 17509, winter** · *game-master note* — Year 17509. A landmass of 3285 cells centred near (230,290) has no animals on it and 243 harvestable biomass going ungrazed, while 217 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17509, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 17513, spring** · *game-master note* — Year 17512. A landmass of 4002 cells centred near (362,200) has no animals on it and 115 harvestable biomass going ungrazed, while 248 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17513, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (362,200).
+- **Year 17610, winter** · *game-master note* — Year 17610. A landmass of 3291 cells centred near (231,290) has no animals on it and 391 harvestable biomass going ungrazed, while 91 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17610, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (231,290).
+- **Year 17614, spring** · *game-master note* — Year 17613. A landmass of 4101 cells centred near (0,182) has no animals on it and 1309 harvestable biomass going ungrazed, while 325 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17614, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,182).
+- **Year 17626, autumn** · *game-master note* — Year 17626. A landmass of 8703 cells centred near (298,63) has no animals on it and 415 harvestable biomass going ungrazed, while 415 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17626, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (298,63).
+- **Year 17712, summer** · *game-master note* — Year 17712. A landmass of 3295 cells centred near (230,290) has no animals on it and 506 harvestable biomass going ungrazed, while 76 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17712, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 17715, winter** · *game-master note* — Year 17715. A landmass of 4100 cells centred near (1,182) has no animals on it and 411 harvestable biomass going ungrazed, while 411 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17715, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (1,182).
+- **Year 17728, autumn** · *game-master note* — Year 17728. A landmass of 8607 cells centred near (297,64) has no animals on it and 509 harvestable biomass going ungrazed, while 244 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17728, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (297,64).
+- **Year 17815, spring** · *game-master note* — Year 17814. A landmass of 3299 cells centred near (230,290) has no animals on it and 389 harvestable biomass going ungrazed, while 126 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17815, spring** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 17818, summer** · *game-master note* — Year 17818. A landmass of 3962 cells centred near (14,177) has no animals on it and 556 harvestable biomass going ungrazed, while 356 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17818, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (14,177).
+- **Year 17914, winter** · *game-master note* — Year 17914. A landmass of 3303 cells centred near (230,290) has no animals on it and 397 harvestable biomass going ungrazed, while 73 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17914, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 17918, summer** · *game-master note* — Year 17918. A landmass of 3965 cells centred near (0,180) has no animals on it and 461 harvestable biomass going ungrazed, while 365 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 17918, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (0,180).
+- **Year 18012, summer** · *game-master note* — Year 18012. A landmass of 8725 cells centred near (296,64) has no animals on it and 702 harvestable biomass going ungrazed, while 43 animals are alive on 2 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 18012, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (296,64).
+- **Year 18015, autumn** · *game-master note* — Year 18015. A landmass of 3308 cells centred near (230,290) has no animals on it and 419 harvestable biomass going ungrazed, while 186 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 18015, autumn** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 18069, summer** · *game-master note* — Year 18069. A landmass of 3966 cells centred near (361,201) has no animals on it and 127 harvestable biomass going ungrazed, while 47 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 18069, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (361,201).
+- **Year 18117, summer** · *game-master note* — Year 18117. A landmass of 3310 cells centred near (230,290) has no animals on it and 389 harvestable biomass going ungrazed, while 226 animals are alive on 3 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 18117, summer** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (230,290).
+- **Year 18169, winter** · *game-master note* — Year 18169. A landmass of 8415 cells centred near (296,64) has no animals on it and 257 harvestable biomass going ungrazed, while 74 animals are alive on 1 other landmass(es) they cannot leave. That is how three worlds died: an island herd winks out, the island becomes the world's larder, and everyone else starves on overgrazed ground across water too deep to walk. Sending 40 founders copied whole from living animals, brains included. -- tools/island_watch.py
+- **Year 18169, winter** · *seeding* — Life arrives from nowhere: seeded 40 fauna at (296,64).
+- **Year 18329, spring** · *gene invented* — Resource caps breached (CPU 100% > 80.0%); lowering max population to 18000.
+- **Year 18329, spring** · *gene invented* — Still over caps (CPU 100% > 80.0%); halving viewer frame rate.
+- **Year 18329, summer** · *gene invented* — Still over caps (CPU 100% > 80.0%); capping simulation to 15 ticks/s.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — ALERT: resource caps still breached (CPU 100% > 80.0%). Simulation paused to protect the desktop.
+- **Year 18329, summer** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 18329, summer** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 18329, summer** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 18329, autumn** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18337, spring** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 18337, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18337, summer** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 18337, summer** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18337, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 18337, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 18337, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 82C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — ALERT: resource caps still breached (GPU 83C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18337, winter** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 18338, spring** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 18338, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 18338, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18346, spring** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 18346, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18346, autumn** · *gene invented* — Resource caps breached (GPU 81C > 80.0C); lowering max population to 18000.
+- **Year 18346, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); halving viewer frame rate.
+- **Year 18346, winter** · *gene invented* — Still over caps (GPU 81C > 80.0C); capping simulation to 15 ticks/s.
+- **Year 18347, spring** · *gene invented* — ALERT: resource caps still breached (GPU 81C > 80.0C). Simulation paused to protect the desktop.
+- **Year 18347, spring** · *gene invented* — Resources back under caps; resumed the simulation (throttle level 3).
+- **Year 18347, spring** · *gene invented* — Resources back under caps; removed the tick-rate cap (throttle level 2).
+- **Year 18347, spring** · *gene invented* — Resources back under caps; restored the viewer frame rate (throttle level 1).
+- **Year 18347, spring** · *gene invented* — Resources back under caps; restored the population cap (throttle level 0).
+- **Year 18376, winter** · *game-master note* — Ninth extinction, year 17,421, and the proven genome half-worked. Seeding five real animals out of the year 14,500 archive with all 167 of their brain weights cut the irruption from 28-fold to 4-fold: 125 founders became 486 rather than 8,349. That is the first time any change has moved that number, and it confirms the brain was a real part of the problem. It was not enough. 486 animals still took the standing crop from 9,092 to 185 in four years, and then the population died out while the flora recovered past it -- 59 animals at a crop of 1,287, when the same world held 377 animals at a crop …
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (16,208).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (240,272).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (272,48).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (30,180).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (336,80).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,176).
+- **Year 18376, winter** · *seeding* — Life arrives from nowhere: seeded 50 fauna at (368,240).
+- **Year 18376, winter** · *tuning* — Law of nature amended: tuned fauna.founder_energy_mult: 3.5 -> 1.0.
 
 ## Species-rank origins and extinctions
 
@@ -1511,6 +2268,7 @@
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Caloucera ferox (269 individuals).
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Chalerhax obtusum (19 individuals).
 - **Year 13814, summer** — A new species splits from Primordium vulgare: Silyphus obtusum (21 individuals).
+- **Year 14060, winter** — A new species splits from Chalather nigrum: Chalather fragile (12 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Pyricus pallidum (178 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Veuchir ferox (59 individuals).
 - **Year 14360, winter** — A new species splits from Primordium vulgare: Voleipter acutum (92 individuals).
@@ -1519,6 +2277,13 @@
 - **Year 15401, spring** — A new species splits from Primordium vulgare: Thaladon pallidum (25 individuals).
 - **Year 15535, autumn** — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
 - **Year 15535, autumn** — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
+- **Year 16239, summer** — A new species splits from Primordium vulgare: Chaleibius boreale (104 individuals).
+- **Year 16239, summer** — A new species splits from Primordium vulgare: Xaneiphus major (47 individuals).
+- **Year 16434, autumn** — A new species splits from Primordium vulgare: Pyraenyx gravis (17 individuals).
+- **Year 16434, autumn** — A new species splits from Primordium vulgare: Pyrichir montanum (21 individuals).
+- **Year 17347, summer** — A new species splits from Primordium vulgare: Dorecus montanum (25 individuals).
+- **Year 18376, winter** — A new species splits from Primordium vulgare: Amaegnath velox (50 individuals).
+- **Year 18376, winter** — A new species splits from Primordium vulgare: Glauychir litoris (42 individuals).
 
 ## By era
 
@@ -1535,45 +2300,49 @@
 | 8,000–8,999 | 37 | 21 | 313 | 156 | 544 | 3973 | 6960 | 323 |
 | 9,000–9,999 | 118 | 118 | 357 | 167 | 530 | 4339 | 7837 | 381 |
 | 10,000–10,999 | 108 | 108 | 165 | 73 | 438 | 2188 | 3546 | 166 |
-| 11,000–11,999 | 76 | 79 | 151 | 81 | 422 | 2204 | 3479 | 173 |
-| 12,000–12,999 | 51 | 51 | 158 | 87 | 441 | 2221 | 3708 | 172 |
-| 13,000–13,999 | 44 | 46 | 153 | 81 | 385 | 2281 | 3601 | 181 |
-| 14,000–14,999 | 37 | 36 | 162 | 77 | 364 | 2338 | 3780 | 180 |
-| 15,000–15,999 | 25 | 22 | 93 | 54 | 179 | 1237 | 1907 | 94 |
+| 11,000–11,999 | 79 | 85 | 165 | 91 | 467 | 2410 | 3839 | 190 |
+| 12,000–12,999 | 150 | 149 | 401 | 201 | 1039 | 5683 | 9458 | 444 |
+| 13,000–13,999 | 130 | 137 | 374 | 204 | 884 | 5507 | 8775 | 455 |
+| 14,000–14,999 | 101 | 102 | 409 | 201 | 844 | 5667 | 9176 | 455 |
+| 15,000–15,999 | 94 | 88 | 398 | 172 | 749 | 5009 | 7988 | 389 |
+| 16,000–16,999 | 88 | 101 | 582 | 266 | 1189 | 7895 | 12199 | 590 |
+| 17,000–17,999 | 60 | 60 | 615 | 290 | 1315 | 9204 | 13946 | 628 |
+| 18,000–18,999 | 17 | 17 | 244 | 96 | 384 | 3426 | 5076 | 212 |
+| 19,000–19,999 | 0 | 0 | 87 | 40 | 136 | 1079 | 1803 | 95 |
 
-**Totals:** storm 60,413 · flood 32,507 · wildfire 10,523 · cold snap 3,251 · volcano 3,040 · meteor 1,555 · gene invented 1,155 · speciation 795 · extinction 695 · checkpoint 173 · seeding 42 · game-master note 33 · epoch 28 · intervention 14 · tuning 11
+**Totals:** storm 116,198 · flood 68,106 · wildfire 15,739 · cold snap 5,909 · volcano 5,598 · meteor 2,736 · gene invented 1,699 · speciation 1,281 · extinction 1,200 · checkpoint 192 · seeding 151 · game-master note 127 · epoch 28 · intervention 14 · tuning 14
 
 ## The last 30 entries
 
 ```
-!  Year 15532, summer — A storm gathers over (370,230).
-!  Year 15532, autumn — A storm gathers over (180,309).
-!  Year 15532, winter — A storm gathers over (49,64).
-~  Year 15533, spring — Year 15533 begins. Flora 7735; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15533, summer — A storm gathers over (290,73).
-!  Year 15533, autumn — A storm gathers over (190,155).
-@  Year 15533, autumn — A meteor strikes (56,78). 0 killed; a crater lake forms and dust dims the sun. Something came with it: 16 organisms of unknown origin stir in the ash.
-!  Year 15533, autumn — A storm gathers over (208,286).
-!  Year 15533, winter — A storm gathers over (335,222).
-~  Year 15534, spring — Year 15534 begins. Flora 7797; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-^  Year 15534, summer — Fire breaks out at (378,209).
-!  Year 15534, autumn — A storm gathers over (68,311).
-@  Year 15534, autumn — A meteor strikes (202,222). 0 killed; a crater lake forms and dust dims the sun.
-=  Year 15534, winter — Floodwaters swamp (318,160); 0 drowned. Silt will enrich the plain.
-^  Year 15534, winter — Fire breaks out at (48,183).
-~  Year 15535, spring — Year 15535 begins. Flora 7783; 0 herbivores, 0 omnivores, 0 carnivores across 0 living species.
-!  Year 15535, spring — A storm gathers over (148,233).
-=  Year 15535, spring — Floodwaters swamp (197,137); 0 drowned. Silt will enrich the plain.
-=  Year 15535, spring — Floodwaters swamp (20,226); 0 drowned. Silt will enrich the plain.
-!  Year 15535, spring — A storm gathers over (289,248).
-!  Year 15535, summer — A storm gathers over (24,163).
-!  Year 15535, summer — A storm gathers over (376,135).
-"  Year 15535, autumn — Fifth extinction, and the reach fix is answered: it does not work, and I now think I know why none of this class of fix can. Seventy founders at size 
->  Year 15535, autumn — Life arrives from nowhere: seeded 250 fauna at (10,210).
-+  Year 15535, autumn — A new species splits from Primordium vulgare: Ursycus nigrum (67 individuals).
-+  Year 15535, autumn — A new species splits from Primordium vulgare: Nyxeidens profundum (43 individuals).
-=  Year 15535, autumn — Floodwaters swamp (303,189); 11 drowned. Silt will enrich the plain.
-=  Year 15535, autumn — Floodwaters swamp (0,245); 54 drowned. Silt will enrich the plain.
-#  Year 15535, winter — A cold snap grips the world (-0.12 temp).
-~  Year 15536, spring — Year 15536 begins. Flora 6639; 1169 herbivores, 1 omnivores, 0 carnivores across 2 living species.
+!  Year 18166, spring — A storm gathers over (225,257).
+=  Year 18166, spring — Floodwaters swamp (278,275); 5 drowned. Silt will enrich the plain.
+!  Year 18166, autumn — A storm gathers over (18,179).
+!  Year 18166, autumn — A storm gathers over (239,144).
+=  Year 18166, autumn — Floodwaters swamp (272,234); 2 drowned. Silt will enrich the plain.
+=  Year 18166, winter — Floodwaters swamp (174,175); 0 drowned. Silt will enrich the plain.
+~  Year 18167, spring — Year 18167 begins. Flora 2277; 74 herbivores, 6 omnivores, 0 carnivores across 2 living species.
+!  Year 18167, summer — A storm gathers over (379,133).
+!  Year 18167, autumn — A storm gathers over (318,154).
+=  Year 18167, autumn — Floodwaters swamp (160,236); 0 drowned. Silt will enrich the plain.
+~  Year 18168, spring — Year 18168 begins. Flora 2290; 85 herbivores, 11 omnivores, 0 carnivores across 1 living species.
+=  Year 18168, spring — Floodwaters swamp (158,69); 0 drowned. Silt will enrich the plain.
+!  Year 18168, summer — A storm gathers over (262,368).
+=  Year 18168, summer — Floodwaters swamp (38,176); 0 drowned. Silt will enrich the plain.
+~  Year 18169, spring — Year 18169 begins. Flora 2370; 67 herbivores, 7 omnivores, 0 carnivores across 1 living species.
+=  Year 18169, spring — Floodwaters swamp (148,139); 0 drowned. Silt will enrich the plain.
+^  Year 18169, spring — Fire breaks out at (45,169).
+=  Year 18169, spring — Floodwaters swamp (99,292); 0 drowned. Silt will enrich the plain.
+!  Year 18169, spring — A storm gathers over (70,132).
+"  Year 18169, winter — Year 18169. A landmass of 8415 cells centred near (296,64) has no animals on it and 257 harvestable biomass going ungrazed, while 74 animals are alive
+>  Year 18169, winter — Life arrives from nowhere: seeded 40 fauna at (296,64).
+~  Year 18170, spring — Year 18170 begins. Flora 2351; 127 herbivores, 22 omnivores, 0 carnivores across 1 living species.
+!  Year 18170, spring — A storm gathers over (5,256).
+!  Year 18170, summer — A storm gathers over (117,250).
+^  Year 18170, summer — Fire breaks out at (45,155).
+!  Year 18170, autumn — A storm gathers over (185,68).
+=  Year 18170, winter — Floodwaters swamp (288,234); 0 drowned. Silt will enrich the plain.
+~  Year 18171, spring — Year 18171 begins. Flora 2360; 91 herbivores, 19 omnivores, 0 carnivores across 1 living species.
+=  Year 18171, spring — Floodwaters swamp (25,105); 0 drowned. Silt will enrich the plain.
+!  Year 18171, spring — A storm gathers over (211,270).
 ```

@@ -9,6 +9,23 @@ Newest first. `matter` is the invariant — this world is closed, so it should n
 
 | date | year | pop | H/O/C | species | matter | verdict |
 |---|---:|---:|---|---:|---|---|
+| 2026-09-20 | 18,169 | 80 | 62/4/0 | 2 | 1.27316e+06 | fixed the watcher merging two landmasses across the wrap seam into one cooldown |
+| 2026-09-19 | 16,600 | 892 | 632/244/16 | 11 | 1.27318e+06 | **TIMELINE BRANCH** — restored; fixed the watcher being blocked by its own pre-rewind state |
+| 2026-09-17 | 16,729 | 0 | 0/0/0 | 0 | 1.27318e+06 | **FOURTEENTH EXTINCTION** — 929 years; three landmasses sat empty for 500 of them because the watcher was blocked |
+| 2026-09-16 | 15,800 | 1,043 | 1022/21/0 | 5 | 1.27319e+06 | **TIMELINE BRANCH** — restored from year 15,800 after a nine-year collapse with no identifiable cause |
+| 2026-09-16 | 16,523 | 0 | 0/0/0 | 0 | 1.27319e+06 | **THIRTEENTH EXTINCTION** — 219 → 0 in nine years from a healthy population; evidence pruned before it could be read |
+| 2026-09-15 | 15,470 | 436 | 422/14/0 | 6 | 1.27320e+06 | continent split in two; watcher settled the new landmass unprompted. Cooldown fix holds |
+| 2026-09-14 | 13,145 | 131 | 41/85/5 | 4 | 1.27324e+06 | watcher seeded the island 6× in 630 years and kept it grazed; fixed its cooldown key and the archive pruner |
+| 2026-09-14 | 12,400 | 511 | 425/85/1 | 7 | 1.27326e+06 | **TIMELINE BRANCH** — restored from year 12,400; `tools/island_watch.py` now recolonises empty islands |
+| 2026-09-14 | 13,370 | 0 | 0/0/0 | 0 | 1.27325e+06 | **TWELFTH EXTINCTION** — the year-11,900 restore; 92% of all food ended up on one island with no animals |
+| 2026-09-13 | 11,900 | 305 | 234/66/5 | 6 | 1.27327e+06 | **TIMELINE BRANCH** — restored from year 11,900; the year-14,500 lineage was dying of a spatial trap |
+| 2026-09-13 | ~14,791 | 0 | 0/0/0 | 0 | 1.27323e+06 | **ELEVENTH EXTINCTION** — the year-14,500 restore died within 50 years of where the original timeline died |
+| 2026-09-13 | 14,500 | 358 | 334/24/0 | 8 | 1.27323e+06 | **TIMELINE BRANCH** — restored the world from its own year-14,500 checkpoint after ten failed seedings |
+| 2026-09-13 | 18,442 | 0 | 0/0/0 | 0 | 1.27322e+06 | **TENTH EXTINCTION** — irruption solved (350→433), still died; the breeding bar ratcheted 21.5 → 39.4 |
+| 2026-09-13 | 17,421 | 0 | 0/0/0 | 0 | 1.27322e+06 | **NINTH EXTINCTION** — proven genome + evolved brains cut the irruption 28× → 4× |
+| 2026-09-12 | 16,463 | 0 | 0/0/0 | 0 | 1.27322e+06 | **EIGHTH EXTINCTION** — `graze_floor` 0.12 → 0.03 moved the cliff, it did not remove it |
+| 2026-09-12 | 16,385 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SEVENTH EXTINCTION** — 300 founders across 6 sites became **8,349 in one year**; dispersal is not the variable |
+| 2026-09-12 | 15,568 | 0 | 0/0/0 | 0 | 1.27322e+06 | **SIXTH EXTINCTION** — 250 founders bred to 1,169 and crashed to zero in 38 years |
 | 2026-09-12 | 15,530 | 250 | 250/0/0 | 1 | 1.27322e+06 | restored the **known-good** small-bodied state; the size question needs a human decision |
 | 2026-09-12 | 15,419 | 0 | 0/0/0 | 0 | 1.27322e+06 | **FIFTH EXTINCTION** — 70 founders at size 0.62, no overshoot; size fell 0.60→0.096 in nine years |
 | 2026-09-12 | 15,334 | 0 | 0/0/0 | 0 | 1.27322e+06 | **FOURTH EXTINCTION** — my own overshoot: 400 large animals into a world that carries 50–120 |
@@ -379,6 +396,488 @@ demonstrated it can hold: 250 founders at size 0.12 carrying what the successful
 carried — `gut_ferment` 0.90, `toxin_tolerance` 0.95, a low breeding threshold — into 7,900
 biomass of standing crop. Not a fix, and not claimed as one; the world's own known-good state,
 restored, so it is alive and stable while the question waits for an answer.
+
+## The floor had no bottom (years 15,568 and 16,385)
+
+Two more deaths, and between them they eliminate every explanation except one.
+
+**Year 15,568.** 250 founders at size 0.12 — what I had called the world's known-good state —
+bred to 1,169, stripped flora 6,639 → 2,640, and crashed 222 → 44 → 2 → 0 in thirty-eight
+years. I had mislabelled that seeding: the 241 / 585 / 229 populations in the record were
+*evolved* and spread over the whole map, not 250 animals dropped into one disc. Every seeding
+this session started 10–30× over local carrying capacity — 250 in radius 14 is 0.41 animals
+per cell against 0.027 for a stable 400 spread over the world's 14,800 land cells.
+
+**Year 16,385 — and this is the one that settles it.** 300 founders across **six
+well-separated sites**, 50 each at radius 30, which is 0.018 per cell, below the density the
+world sustained rather than thirty times above it. One year later there were **8,349 animals**.
+A 28-fold increase. Dispersal changed nothing, because each site grew to 1,400 by itself.
+
+Seeding density is not the variable. Reproductive rate is, and no founder count avoids an
+overshoot when the population multiplies twenty-eight-fold in a single year. Which leaves only
+the mechanism that turns an overshoot into an extinction:
+
+```python
+avail = np.maximum(0.0, self.flora.biomass[cy0, cx0] - float(cfg_f["graze_floor"]))
+```
+
+With `graze_floor` at **0.12**, yield below the floor is not small — it is *exactly zero*. So a
+grazing crash has no bottom. 8,349 animals take the mean cell from 0.30 to 0.055, **every cell
+in the world reaches zero yield at the same moment**, and the entire fauna starves regardless
+of body size, diet, gene loadout or starting position. All seven deaths on the seeded side ran
+that script, and so, most likely, did the depletion phase of the three before them.
+
+### The change, and why it is a change to a law rather than a repair
+
+The floor's stated purpose is sound — flora stripped to death cannot regrow, and the food chain
+follows. The *number* is wrong by more than an order of magnitude. `primordia/flora.py:167`
+kills a cell only when biomass falls below **5e-3**:
+
+```python
+dead = alive & ((self.age > max_age) | (self.biomass < 5e-3))
+```
+
+So the floor protecting regrowth sat **24× higher than the threshold it was protecting**.
+
+`graze_floor` **0.12 → 0.03** keeps a six-fold margin over the death threshold, preserves the
+mechanism exactly as intended, and moves the yield cliff far below the densities a grazing
+population actually visits. At the crash density of 0.055 per cell, yield goes from nothing to
+0.025 — the difference between a low equilibrium and an empty world.
+
+**It did not work.** I reported after thirteen years that the crash had bottomed out, and said
+thirteen years was not a verdict. It was not, and the verdict went the other way — the world
+died at **year 16,463**, about twenty years later:
+
+```
+16,441  pop 174  flora 733     16,455  pop 108  flora 604
+16,444  pop 227  flora 798     16,457  pop  16  flora 662
+16,447  pop 147  flora 608     16,460  pop  42  flora 708
+16,452  pop 118  flora 572     16,463  pop   0  flora 791
+```
+
+The change moved the cliff instead of removing it. The population simply grazed down to the
+*new* floor: standing crop settled at 572–798 over ~19,000 vegetated cells, which is ≈0.03 per
+cell — exactly the new value. A fauna that multiplies twenty-eight-fold in a year grazes to
+whatever floor exists, so **an absorbing floor at any value gives the same outcome.** The
+reasoning stands as a consistency repair (24× above the death threshold was incoherent) but the
+hypothesis that it would prevent extinction is falsified.
+
+### The measurement I should have taken first
+
+With the world empty and nothing eating it, net flora production is **tens of biomass per
+year** — 76/yr at a crop of 2,000, 29/yr at 3,000, 22/yr at 4,800, 20/yr at 5,700 — and the
+grazed equilibrium sat at a crop near 600, where it is lower still. That number bounds
+everything else in this log, and I tuned digestion, reach, body size, seeding density and the
+graze floor for an entire session without once measuring it. Eight reseedings, and the first
+question — *can this world's plant growth support a fauna at all?* — went unasked.
+
+### Also reverted: a tax I should never have levied
+
+Setting `digest_size_min` to 0.70 to give large bodies a return cut small-animal digestive
+yield by **21% at size 0.07 and 14% at 0.12** — it made the only strategy this world has ever
+sustained materially poorer, and I then reseeded into it. Back to **1.0**, with
+`digest_size_gain` left at 1.30, so quality is `1.0 + 1.3 × size`: at least as good as the
+original at every body size, and still rewarding mass. There was never a reason to pay for the
+large-body bonus out of the small-body baseline.
+
+### Still open, and not mine to decide
+
+- **How energy storage scales with mass.** `cap_e = max_store × (0.35 + size)` against
+  `basal = 0.1 × size^0.75` makes endurance fall monotonically with body size, so large bodies
+  lose every fast — and this world fasts every night and every winter. No change to food
+  reward can reach it. A predator tier requires it: nothing in sixteen thousand years has been
+  big enough to be worth hunting.
+- **Whether the fauna should be able to breed 28-fold in a year at all.** `founder_energy_mult`
+  is 3.5 and the breeding bar is ~20, so founders arrive with three and a half start-energies
+  and so do their children. Every seeding is an irruption by construction.
+
+## What ten failed seedings were actually measuring
+
+Two of the three things I spent the session tuning turned out to be real, and neither was the
+cause.
+
+**The brain was real.** Every founder I made in eight attempts got a *random* brain damped to
+`founder_brain_quiet` 0.35 with a fourteen-weight grazer prior over it — because with no living
+donors that is what `seed_organism` does, and I never noticed that the 167 brain weights are
+addressable by name (`w000`–`w165`) like any other gene. Those animals wandered more or less at
+random and ate whatever they stood on, in a world whose residents had spent fourteen thousand
+years learning where food is. Seeding five *real* animals out of the year-14,500 archive with
+all 167 of their own weights cut the irruption from **28-fold to 4-fold** — the first change in
+the whole session that moved that number.
+
+**Arrival wealth was real.** `founder_energy_mult` 3.5 lands founders at ~77 energy against a
+bar near 21, so every one breeds on arrival and so do its children. Dropping it to **1.0** cut
+the irruption again, to **1.24-fold**: 350 founders became 433, not 8,349.
+
+**And neither saved them**, which is what finally identified the actual mechanism.
+
+### The ratchet that closes every crash
+
+From the last seeding, as the population fell:
+
+| | | | | | | | |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| **breeding bar** | 21.5 | 22.3 | 24.3 | 26.7 | 29.1 | 31.5 | **39.4** |
+| **% able to breed** | 11 | 17 | 5 | 13 | 10 | 16 | **0** |
+
+The final two animals held **38.2 energy against a bar of 39.4**. They were not starving. They
+were rich, and they could not breed.
+
+During a famine an animal that breeds gives its energy away and dies; an animal that hoards
+survives. So a crash selects — hard, and within tens of generations — for exactly the
+individuals least able to end it. `repro_threshold` ratcheted 0.21 → 0.81, and by the time the
+grass came back the only survivors were constitutionally incapable of using it. The flora was
+*recovering past them* the whole way down.
+
+That is why every crash in this world is absorbing, and it is not a problem of numbers. It is a
+problem of **which** animals the famine leaves behind. A founding population built from five or
+seven archetypes carries no reservoir of low-threshold breeders to ride it out. A real
+population of 377 does.
+
+### The restore (2026-09-13)
+
+So I stopped founding a biosphere and restored one. The world runs again from its own
+**year-14,500 checkpoint** — 377 animals, 8 species, `repro_threshold` mean 0.182, every array
+verified finite before the restore. The dead state is preserved as
+`archive/pre-restore-dead-world-y19490`, and the Chronicle keeps every entry from the rewound
+years; nothing is erased.
+
+**No laws changed with the restore.** The checkpoint carries four tuned values —
+`trait_cost_scale` 0.25, `growth_scale` 0.13, `carnivore_basal_discount` 0.12, `gorge_meat`
+2.5 — which include the one fix from this session that was ever verified, the carnivory subsidy
+that held for three hundred years. The six I added afterwards went with the rewind and stay
+gone. This population was stable in exactly this configuration for thousands of years, and
+adding laws to a freshly restored living world is the mistake I made all session. The open
+design questions can now be tested one at a time against a world that is alive to test them on.
+
+### Corrections to earlier entries in this file
+
+- **Gross primary production is not the constraint.** 180,788 biomass/year against a standing
+  crop of 8,868. The flora-productivity worry raised in PR #3 was wrong.
+- **Mean energy near 12 against a breeding bar near 21, with only 11–16% of animals above it,
+  is this world's NORMAL state** — true of every healthy archived population from year 9,900
+  onward. I read it as starvation at least four times and intervened against it each time.
+
+## The year-14,500 population was already dead (2026-09-13)
+
+The restore from year 14,500 died at about year **14,791**. The original timeline died from
+that same checkpoint at **14,845**. Two independent runs from one state, both dead inside three
+hundred years: that population was dying when I restored it, and I restored it because it
+*looked* healthy by every number I was checking.
+
+It was not food, toxins, or the `repro_threshold` ratchet:
+
+| year | health | food energy kept | breeding bar | breeding |
+|---:|---:|---:|---:|---:|
+| 11,900 | 0.981 | 99% | 21.9 | 11% |
+| 14,500 | 0.982 | 99% | 20.5 | 11% |
+| 14,700 *(restored run)* | 0.974 | 97% | 19.7 | **5%** |
+
+Energy was the only gate that moved. Mean energy fell to **9.4**, the lowest of any archive,
+with 5,000–7,000 flora standing. The animals were surrounded by food and still under-earning.
+
+### It was geography
+
+Share of all harvestable food in the world lying near *some* animal:
+
+| year | rich cells | median distance to rich cell | within 4 cells | **within 12 cells** | `sense_range` |
+|---:|---:|---:|---:|---:|---:|
+| 11,900 | 362 | 3.0 | 24.9% | **66.7%** | 0.339 |
+| 12,900 | 648 | 2.8 | 21.5% | **60.7%** | 0.621 |
+| 14,500 | 270 | 7.1 | 23.2% | **52.9%** | 0.336 |
+| 14,600 | 1,288 | 5.0 | 4.7% | **11.6%** | 0.371 |
+| 14,700 | 5,115 | 7.0 | 1.6% | **3.3%** | **0.193** |
+
+The flora bloomed across the map — rich cells multiplied nineteen-fold — and the animals
+never went to it. They could not perceive it. Sense radius is `1 + sense_range × MAX_SENSE`
+with `MAX_SENSE` 12, so `sense_range` 0.193 is about **three cells**, and the nearest rich
+cell was a median **seven** away.
+
+Sensing costs upkeep (`cost_sense` × `trait_cost_scale`), so short sight pays while food is
+underfoot — and becomes a trap the moment the local patch is grazed out. The population
+contracts onto its own depleted ground (occupied cells 303 → 185), stops being able to find
+the grass growing everywhere else, and starves inside sight of a bloom it cannot see.
+
+The year-14,500 state was already on that path — only 270 rich cells, median distance 7.1,
+the worst of the healthy archives — which is why every run from it died the same way. **A
+checkpoint is not healthy because its population is alive; it is healthy if its population
+can still reach its food.**
+
+### The restore
+
+The world runs again from **year 11,900**: 391 animals, 15.3% land (it has eroded to ~10%
+since), two thirds of all food within twelve cells of an animal, stable for centuries, and from
+before `spikes` existed. It carries only the two laws it lived under for millennia —
+`trait_cost_scale` 0.25 and `growth_scale` 0.13.
+
+**The carnivory fix was deliberately not re-applied.** That subsidy only ever proved lethal in
+worlds I seeded by hand; this evolved world ran predator–prey cycles under it for nearly two
+thousand years. The restored world came back with a living carnivore tier.
+
+Everything rewound is kept: `archive/pre-restore-dead-world-y15041`,
+`archive/pre-restore-dead-world-y19490`, and every Chronicle entry from both branches.
+
+### The power cut
+
+The shutdown on 2026-09-13 left **1,152 NUL bytes** in `chronicle.jsonl` and **841** in
+`chronicle.md`, at the exact instant of the cut — pre-allocated file space that was never
+written. The reader skipped them, but `grep` treated the whole file as binary. Stripped with
+the sim stopped, backups kept as `*.pre-nul-strip.bak`; all 167,634 lines parse.
+
+## The food was across the sea (2026-09-14)
+
+The year-11,900 restore died at **year 13,370** with no intervention of any kind, and it broke
+the explanation I had just committed. Health held at 0.99, the breeding bar at 19.6–21.5, diet
+stayed herbivorous — and at year 13,100 `sense_range` was **0.732**, a ten-cell radius, while
+90% of the food was still out of reach. Short sight was not the cause. The spatial-trap
+section above is right about *what* happened and wrong about *why*.
+
+**The check-in at year 12,636 also misread it.** It reported food-within-reach at 22.4% as "the
+world's graze cycle", because that number had bounced from 27% back to 78% twice. The archives
+say 12,600 was already the start of the slide.
+
+### Islands
+
+Erosion and cratering have split the walkable land (`water_depth < 0.2`) into three masses.
+Movement blocks water deeper than 0.25 unless `swim_eff` exceeds 0.45, and no population here
+has held that. So each landmass keeps its own herd, and the smallest — about 3,600 cells near
+(228,293) — is marginal:
+
+| year | the island | food on it | share of all food on **empty** land |
+|---:|---|---:|---:|
+| 11,900 | 115 animals | 60 | 0% |
+| 12,000 | **empty** | 404 | 27% |
+| 12,200 | **empty** | 2,078 | 67% |
+| 12,300 | 101 animals *(recolonised)* | 88 | 0% |
+| 12,400 | 77 animals | 55 | 0% |
+| 12,500 | **empty** | 457 | 41% |
+| 12,800 | **empty** | 3,195 | 89% |
+| 13,200 | **empty** | 6,105 | **92%** |
+
+The island's herd winks out. With nothing grazing it, its flora balloons until that one empty
+island holds nine tenths of all harvestable food in the world, while ~400 animals grind the two
+big landmasses down to ~300 and starve on them. It had refilled on its own once, from 12,200 to
+12,300; the second gap did not close. The year-14,500 lineage almost certainly died the same
+way, and its "short sight" was a consequence of crowding onto depleted ground, not the cause.
+
+### What was done
+
+**Restored to year 12,400** — the latest save with all three landmasses occupied (240, 67, 77
+animals), no food on empty ground, every array finite. No laws changed.
+
+**`tools/island_watch.py`**, running detached beside the simulation. Every two minutes it reads
+the newest checkpoint, labels the walkable landmasses (joining across the x-wrap), and looks for
+one of ≥1,000 cells with ≥100 harvestable biomass and **no animals**, while ≥40 are alive
+elsewhere. It then writes an ordinary intervention: a signed note, and `seed_organism` of 40
+founders at the landmass's deepest interior point with an **empty genome** — which, with living
+donors, copies residents whole, body and all 167 brain weights. That is the only seeding path
+that has worked in this world. Once per century per landmass at most. If everything is dead it
+logs and does nothing: founding into an empty world stays a human decision.
+
+Verified before it ran, by dry-running it against the archives: no action at 12,400; seed 40 at
+(228,296) r16 at 12,500, 12,600 and 12,800; log-and-hold at 13,400. It writes data through the
+intervention folder and touches the simulation in no other way.
+
+**It must be restarted after a reboot**, like the simulation itself:
+
+```
+Start-Process -FilePath '.venv\Scripts\python.exe' -ArgumentList 'tools\island_watch.py' -WindowStyle Hidden
+```
+
+Dead state kept as `archive/pre-restore-dead-world-y13458`.
+
+## The watcher's first 750 years, and two bugs it surfaced (2026-09-14)
+
+**It works.** `tools/island_watch.py` seeded the ~3,600-cell island near (228,292) six times
+between years 12,435 and 13,065. Its founding parties did establish — the island held **247
+animals at 12,600** and 81–94 at 12,900–13,000 — and while they held it the island's share of
+the world's food stayed at **6–24%**, against the 92% that killed the previous world. Every
+party has eventually died out; this island cannot hold a herd for long. But the world is alive
+at year 13,145, past the point where the unwatched run from 11,900 was already starving, and
+the island's food is at 33% rather than running away.
+
+**Bug: the once-a-century limit did not hold.** The watcher keyed each landmass by the 16-cell
+grid square of its deepest interior point, and that point drifts as the coast erodes — (228,292),
+(231,287), (233,286), (230,288) — so the key flipped between `14:17` and `14:18` and the island
+was seeded at 13,020 and again at **13,065, forty-five years apart**. An earlier seeding now
+counts if it lies within 40 cells or anywhere on the same landmass. Dry-run on the live
+checkpoint: no action under either key inside the cooldown, seeds once it has expired, still
+silent when every landmass is occupied.
+
+**Bug: every restore silently deleted the live run's yearly archives.** `_prune_archive` kept
+"the newest 40 years" by *year number*. After three rewinds the highest year numbers on disk
+were 19,452–19,491 of a dead timeline, so each yearly archive the restored world wrote was the
+lowest-numbered file on disk and was deleted the moment it was written. The live run was left
+with nothing finer than one save per century — which is why the island's history above could
+only be read at hundred-year resolution. The pruner now ranks by write time. Verified after
+restart: years 13,144 and 13,145 kept, the dead timeline's yearly files draining (20 → 18),
+no century archive touched.
+
+**Still below normal:** only 6% of animals are above their breeding bar, against 11–16% in
+healthy eras. The bar itself is flat at 21.0, so it is not the ratchet — but it is the number to
+watch next.
+
+## The continent broke, and the watcher settled it (2026-09-15)
+
+Two thousand three hundred years on from the restore, and the map is not what it was. At year
+12,400 there were three walkable landmasses: 19,062 / 4,833 / 3,741 cells. At year 15,470 there
+are **four**:
+
+| landmass | animals | share of the world's food |
+|---:|---:|---:|
+| 10,193 cells | 286 | 50% |
+| 4,950 cells | 66 | 11% |
+| 4,583 cells | 29 | 19% |
+| 3,437 cells | 33 | 20% |
+
+The big continent has split roughly in half. Nobody told the watcher about this: it labels the
+landmasses fresh from each checkpoint, so when the new coastline appeared it simply found a
+large landmass with food and no animals and settled it — at (0,178) in years 14,978 and 15,365,
+and at (383,192) in year 15,136. **Every landmass is currently occupied**, which is the
+condition all three dead worlds failed.
+
+**The cooldown fix holds.** Before it, the island's drifting centre point let it be seeded twice
+in forty-five years. Since the fix the spacing is exactly the intended century: 13,166 → 13,273
+→ 13,374 → 13,475 → 13,575 → 13,676 → 13,777 → 13,878 → 13,981 → 14,083 → …
+
+**And an honest reading of what the watcher is.** Twenty-six seedings of the original island,
+and it has never once held a herd for longer than the cooldown. It is not restoring a
+self-sustaining population there; it is running a permanent ferry service, and the island's food
+share stays near 20% instead of climbing to the 92% that killed the unwatched world. That is a
+treatment, not a cure, and the underlying question is still open: whether non-swimmers should be
+able to cross shallow straits at all.
+
+**Unchanged and normal:** carnivores present in 309 of the last 1,200 sampled years and
+currently at a trough; breeding 9% against the 11–16% healthy band, with the bar at 22.2, below
+the 23 that would mean the ratchet.
+
+## Nine years, and no cause I can name (2026-09-16)
+
+The year-12,400 world ran well for 4,100 years. All four landmasses stayed occupied for most
+of it, the watcher settled each one as it emptied, the breeding bar stayed flat between 19.8
+and 23.1, and the continent split in two without the biosphere noticing. Then:
+
+```
+16,514  219      16,518   71      16,522    1
+16,515  191      16,519   31      16,523    0
+16,516  148      16,520   12
+16,517  117      16,521    6
+```
+
+**Nine years.** At year 16,500 that population was healthy by every measure available: energy
+12.8 against a bar of 21.3, 13% breeding, health 0.989, flora 2,644 and rising, three of four
+landmasses occupied and the fourth seeded eight years earlier.
+
+The chronicle for those nine years — **restricted to this timeline**, which matters, because
+year numbers repeat across rewinds and an unfiltered query silently mixes two worlds — holds no
+catastrophe. Volcanoes that killed nobody, floods drowning one to five each, one volcano that
+took six, and fifteen cold snaps in 130 years with five clustered in the last two decades at
+−0.10 to −0.16. Every death I can name totals about **thirty animals out of two hundred and
+fifty**. The rest simply stopped.
+
+The yearly archives for that window were pruned before I could read them, and `/api/series`
+only reaches back two hundred years. **The evidence is gone, and I am not going to invent a
+fifth mechanism to cover it.**
+
+### The pattern, which is now four deaths long
+
+This world sustains a fauna for roughly two thousand years and then loses it, with a different
+proximate cause each time: a carnivory subsidy; an island turning into an unreachable larder;
+and now nine years of nothing in particular happening to 250 animals split four ways. Small
+fragmented populations absorb ordinary bad luck until they don't.
+
+**Restored to year 15,800** — 1,480 animals across 260/619/472 with the fourth landmass empty,
+which the watcher settles within a century. Chosen over year 16,300 (441 animals, all four
+occupied) for the buffer: three times the population. No laws changed.
+
+### One repair
+
+The watcher read `checkpoint_latest.npz` directly, holding a Windows share on it while the
+simulation tried to `os.replace` that same file. It cost two saves —
+`could not write the checkpoint (PermissionError: WinError 32)` at years 13,195 and 16,555.
+It now copies the file and parses the copy, deleting it afterwards. Verified: `read_world`
+returns the current year and leaves no temp files behind.
+
+## The watcher was blocked by its own memory of a dead world (2026-09-19)
+
+The year-15,800 world lasted **929 years**, against roughly two thousand for the ones before
+it, and the archives say why:
+
+| year | animals per landmass |
+|---:|---|
+| 16,000 | **180 / 0 / 0 / 0** |
+| 16,100 | **357 / 0 / 0 / 0** |
+| 16,300 | **268 / 0 / 0 / 0** |
+| 16,500 | **213 / 0 / 0 / 0** |
+
+Three of four landmasses empty for five hundred years, the entire fauna penned on one. That is
+exactly the trap `island_watch` exists to prevent, and it was running the whole time.
+
+**It was blocked, by me.** Its state file records the tick at which each landmass was last
+seeded, and that file outlives a restore. Rewinding the world to year 15,800 set the clock back
+to tick 31,600,000 while the file still held seedings from the dead timeline dated as late as
+tick **33,418,000**. The cooldown test is `tick - last < COOLDOWN_TICKS`; with `last` in the
+future that difference is negative, so every cooldown looked unexpired and the watcher declined
+to settle anything until the world ground back past those ticks. It logged nothing, because a
+cooldown is not an error. By the time it could act the population was down to 130, then 113,
+then 68, and the ungrazed island's flora had reached 3,269.
+
+**The fix:** any seeding record dated after the current tick belongs to a world that no longer
+exists, so it is dropped, with a line in the log. This restore is itself the test — year 16,600
+is tick 33,200,000 and three records sat above it. Dry-run against the restored checkpoint:
+`dropped 3 seeding record(s) dated after now (14:18, 23:11, 18:3)`, then correctly seeds
+nothing because all four landmasses are occupied.
+
+### The watcher's log is not timeline-aware either
+
+Its year numbers repeat across rewinds exactly as the Chronicle's do. Entries for years 15,840
+through 16,492 belong to the *previous* world, not the one that died. **Only the lines after the
+most recent `island_watch started` describe the world now running** — reading that file without
+this in mind cost an hour of wrong conclusions.
+
+### The restore
+
+Year 16,600: 1,192 animals across 326/229/226/258, every landmass occupied, energy 10.8 against
+a bar of 20.6, health 0.990, all arrays finite. No laws changed. Dead world kept as
+`archive/pre-restore-dead-world-y17829`.
+
+**The two-day gap:** the simulation and the watcher both stopped around 2026-09-17 10:53 with an
+empty error log — a machine shutdown, not a failure. Neither restarts itself.
+
+## Two landmasses, one cooldown (2026-09-20)
+
+The world is alive at year 18,169 but three of its four landmasses were empty at once, the
+whole fauna crowded onto the smallest (3,311 cells) while the other three held 94% of the food.
+The watcher was not blocked this time — but it was settling that pair at half the intended rate,
+because of a flaw in the matching rule I added on 2026-09-14.
+
+That rule treats an earlier seeding as "the same landmass" if it lies within 40 cells. The map
+wraps in x, and two genuinely separate landmasses have interiors **32 cells apart across the
+seam**:
+
+| landmass | cells | interior | key |
+|---:|---:|---|---|
+| 3 | 3,992 | (2,181) | `0:11` |
+| 4 | 3,986 | (361,201) | `22:12` |
+
+`dx = 25, dy = 20, distance = 32.0` — under the threshold, so they shared one hundred-year
+clock and were settled alternately instead of each on its own schedule. They are separated by
+deep water and between them hold three quarters of the world's food, which is the wrong pair to
+economise on.
+
+**The fix is identity before proximity.** If the remembered point still sits on walkable ground,
+only the *same* landmass counts; distance is the fallback for when that ground has eroded away.
+Verified against the live checkpoint: the three empty landmasses now match `18:4`, `0:11` and
+`22:12` separately, where before two collapsed onto one. On restart the watcher immediately
+settled the largest (8,415 cells, 40 founders at (296,64)).
+
+### A reading I got wrong, and the correction
+
+I opened this check-in describing a collapse: 384 animals at year 17,366 down to 66. It is not a
+decline. The population sawtooths violently — 108, 93, 183, 281, 216, 114, 92, 171, 231, 160,
+89, 80 across twelve consecutive years — and over the last 800 years it has swung between 61 and
+879 with no trend. Two points on that curve prove nothing, which is exactly what the check-in
+instructions warn about.
 
 ## Incidents
 
